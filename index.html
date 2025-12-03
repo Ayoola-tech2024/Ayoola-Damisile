@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams - Crafting Experiences in Code and Music</title>
+    <meta name="description" content="Adams (Damisile Ayoola) - Frontend Developer & Pianist. 7+ years creating stunning websites and beautiful music.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1a1f36',
+                        'gold': '#d4af37',
+                        'light-gray': '#f8f9fa',
+                        'charcoal': '#2c3e50'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #1a1f36 0%, #2c3e50 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('./resources/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #d4af37 0%, #f4e4a6 100%);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+        
+        .project-card img {
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4af37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #p5-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="font-body text-charcoal bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-display font-bold text-2xl text-navy">
+                    Adams
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-charcoal hover:text-navy font-medium">Home</a>
+                    <a href="music.html" class="nav-link text-charcoal hover:text-navy font-medium">Music</a>
+                    <a href="projects.html" class="nav-link text-charcoal hover:text-navy font-medium">Projects</a>
+                    <a href="#hire" class="nav-link text-charcoal hover:text-navy font-medium">Hire Me</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-charcoal hover:text-navy">Home</a>
+                <a href="music.html" class="block py-2 text-charcoal hover:text-navy">Music</a>
+                <a href="projects.html" class="block py-2 text-charcoal hover:text-navy">Projects</a>
+                <a href="#hire" class="block py-2 text-charcoal hover:text-navy">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center">
+        <div id="p5-container" class="absolute inset-0"></div>
+        <div class="hero-content w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+                            <span id="typed-text"></span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                            Frontend Developer • Pianist • Creative Technologist
+                        </p>
+                        <p class="text-lg text-gray-400 mb-12 max-w-2xl">
+                            I build fast, modern, responsive websites — and I create music that inspires.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <button onclick="scrollToSection('hire')" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                                Hire Me
+                            </button>
+                            <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
+                               class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift text-center">
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden lg:block">
+                        <div class="relative">
+                            <img src="./resources/adams-portrait.jpg" alt="Adams - Frontend Developer & Pianist" 
+                                 class="rounded-2xl shadow-2xl w-full max-w-md mx-auto">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-gold rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">7+ Years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">About Me</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="./resources/adams-portrait.jpg" alt="Adams Portrait" 
+                         class="rounded-2xl shadow-lg w-full max-w-lg mx-auto">
+                </div>
+                
+                <div class="reveal">
+                    <h3 class="font-display text-3xl font-semibold text-navy mb-6">
+                        Crafting Digital Experiences with Musical Precision
+                    </h3>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        With over 7 years of experience in both web development and music, I bring a unique blend of 
+                        technical expertise and creative artistry to every project. My journey began with a passion 
+                        for creating beautiful experiences, whether through code or melody.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        As a frontend developer, I specialize in building fast, responsive, and visually stunning 
+                        websites that not only look great but perform exceptionally. As a pianist and organist, 
+                        I bring the same attention to detail and artistic flair to my musical performances.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('hire')" class="bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover-lift">
+                            Work With Me
+                        </button>
+                        <button class="border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold hover-lift">
+                            Download CV
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Skills & Expertise</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                
+                <div class="flex justify-center space-x-4 mb-12">
+                    <button id="tech-skills-btn" class="px-6 py-3 bg-navy text-white rounded-lg font-semibold">
+                        Technical Skills
+                    </button>
+                    <button id="music-skills-btn" class="px-6 py-3 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-white">
+                        Music Skills
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Technical Skills -->
+            <div id="tech-skills" class="grid md:grid-cols-2 gap-8 reveal">
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">HTML/CSS</span>
+                            <span class="text-gold font-semibold">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">JavaScript</span>
+                            <span class="text-gold font-semibold">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">React</span>
+                            <span class="text-gold font-semibold">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Tailwind CSS</span>
+                            <span class="text-gold font-semibold">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Next.js</span>
+                            <span class="text-gold font-semibold">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Git & GitHub</span>
+                            <span class="text-gold font-semibold">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Responsive Design</span>
+                            <span class="text-gold font-semibold">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="93"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">UI/UX Design</span>
+                            <span class="text-gold font-semibold">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Music Skills -->
+            <div id="music-skills" class="hidden grid md:grid-cols-2 gap-8 reveal">
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Piano Performance</span>
+                            <span class="text-gold font-semibold">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Organ Performance</span>
+                            <span class="text-gold font-semibold">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Choir Accompaniment</span>
+                            <span class="text-gold font-semibold">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Classical & Gospel</span>
+                            <span class="text-gold font-semibold">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Sight Reading</span>
+                            <span class="text-gold font-semibold">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold text-navy">Ear Training</span>
+                            <span class="text-gold font-semibold">82%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="82"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects" class="py-20 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+                    A showcase of my best work in web development and design
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover-lift reveal">
+                    <img src="./resources/project-1.jpg" alt="Paul Hilpert Consultancy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-navy mb-3">Paul Hilpert Consultancy</h3>
+                        <p class="text-gray-600 mb-4">Professional consulting website with modern design and smooth interactions.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">CSS</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <a href="https://paulhilpert.vercel.app/index.html" target="_blank" 
+                           class="inline-flex items-center text-gold hover:text-yellow-600 font-semibold">
+                            View Live Site
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover-lift reveal">
+                    <img src="./resources/project-2.jpg" alt="MemoDams" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-navy mb-3">MemoDams</h3>
+                        <p class="text-gray-600 mb-4">Smart note-taking application with organized workflow and beautiful UI.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">Tailwind</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Node.js</span>
+                        </div>
+                        <a href="https://memo-dams.vercel.app" target="_blank" 
+                           class="inline-flex items-center text-gold hover:text-yellow-600 font-semibold">
+                            View Live Site
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover-lift reveal">
+                    <img src="./resources/project-3.jpg" alt="Damiqueen Designs" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-navy mb-3">Damiqueen Designs</h3>
+                        <p class="text-gray-600 mb-4">Creative portfolio website showcasing beautiful design work and projects.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Figma</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">CSS</span>
+                        </div>
+                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" 
+                           class="inline-flex items-center text-gold hover:text-yellow-600 font-semibold">
+                            View Live Site
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="projects.html" class="inline-flex items-center bg-navy hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover-lift">
+                    View All Projects
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hire Me Section -->
+    <section id="hire" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Hire Me</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6">
+                    Let's work together to bring your vision to life
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8 reveal">
+                <form id="hire-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-navy mb-2">Name *</label>
+                            <input type="text" id="name" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-navy mb-2">Email *</label>
+                            <input type="email" id="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-navy mb-2">Phone Number</label>
+                            <input type="tel" id="phone" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-navy mb-2">Service Type *</label>
+                            <select id="service-type" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="music">Music/Piano Tutorials</option>
+                                <option value="website">Website Development</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Conditional Fields -->
+                    <div id="music-fields" class="hidden space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-navy mb-2">Duration</label>
+                            <select id="duration" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                                <option value="">Select duration</option>
+                                <option value="1 month">1 Month</option>
+                                <option value="3 months">3 Months</option>
+                                <option value="long-term">Long-term</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="website-fields" class="hidden space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-navy mb-2">Project Details</label>
+                            <textarea id="project-details" rows="4" 
+                                      placeholder="Describe your project requirements, timeline, and any specific features you need..."
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-navy mb-2">Additional Message</label>
+                        <textarea id="message" rows="4" 
+                                  placeholder="Tell me more about your project or any questions you have..."
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" 
+                                class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                            Send Message via WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-300 mt-6">
+                    Ready to start your next project? Let's connect!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-gray-300">damisileayoola@gmail.com</p>
+                </div>
+                
+                <div class="reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.51 13.5c-.22.48-.68.84-1.23 1.02-.41.14-.88.23-2.12.37-1.25.14-2.17.02-2.17.02s-1.25-.14-2.17-.02c-1.24-.14-1.71-.23-2.12-.37-.55-.18-1.01-.54-1.23-1.02-.22-.48-.14-1.01-.14-1.01s.09-.53.14-1.01c.22-.48.68-.84 1.23-1.02.41-.14.88-.23 2.12-.37 1.25-.14 2.17-.02 2.17-.02s1.25.14 2.17.02c1.24.14 1.71.23 2.12.37.55.18 1.01.54 1.23 1.02.22.48.14 1.01.14 1.01s-.09.53-.14 1.01z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">WhatsApp</h3>
+                    <p class="text-gray-300">+234 816 978 7869</p>
+                </div>
+                
+                <div class="reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Location</h3>
+                    <p class="text-gray-300">Nigeria</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
+                   class="inline-flex items-center bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                    Chat on WhatsApp
+                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.51 13.5c-.22.48-.68.84-1.23 1.02-.41.14-.88.23-2.12.37-1.25.14-2.17.02-2.17.02s-1.25-.14-2.17-.02c-1.24-.14-1.71-.23-2.12-.37-.55-.18-1.01-.54-1.23-1.02-.22-.48-.14-1.01-.14-1.01s.09-.53.14-1.01c.22-.48.68-.84 1.23-1.02.41-.14.88-.23 2.12-.37 1.25-.14 2.17-.02 2.17-.02s1.25.14 2.17.02c1.24.14 1.71.23 2.12.37.55.18 1.01.54 1.23 1.02.22.48.14 1.01.14 1.01s-.09.53-.14 1.01z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-lg font-display font-semibold mb-2">Adams</p>
+                <p class="text-gray-400 mb-4">Crafting Experiences in Code and Music</p>
+                <p class="text-sm text-gray-500">
+                    © 2025 Designed & Built by Adams. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
+       class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.51 13.5c-.22.48-.68.84-1.23 1.02-.41.14-.88.23-2.12.37-1.25.14-2.17.02-2.17.02s-1.25-.14-2.17-.02c-1.24-.14-1.71-.23-2.12-.37-.55-.18-1.01-.54-1.23-1.02-.22-.48-.14-1.01-.14-1.01s.09-.53.14-1.01c.22-.48.68-.84 1.23-1.02.41-.14.88-.23 2.12-.37 1.25-.14 2.17-.02 2.17-.02s1.25.14 2.17.02c1.24.14 1.71.23 2.12.37.55.18 1.01.54 1.23 1.02.22.48.14 1.01.14 1.01s-.09.53-.14 1.01z"/>
+        </svg>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

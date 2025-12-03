@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams - Web Development Projects</title>
+    <meta name="description" content="Explore Adams' portfolio of stunning web development projects. Professional websites built with modern technologies and beautiful design.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1a1f36',
+                        'gold': '#d4af37',
+                        'light-gray': '#f8f9fa',
+                        'charcoal': '#2c3e50'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .projects-hero-bg {
+            background: linear-gradient(135deg, #1a1f36 0%, #2c3e50 50%, #4a5568 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .projects-hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('./resources/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+        
+        .project-card img {
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4af37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .tech-tag.html { background: #e34c26; color: white; }
+        .tech-tag.css { background: #1572b6; color: white; }
+        .tech-tag.javascript { background: #f7df1e; color: black; }
+        .tech-tag.react { background: #61dafb; color: black; }
+        .tech-tag.tailwind { background: #06b6d4; color: white; }
+        .tech-tag.nodejs { background: #339933; color: white; }
+        .tech-tag.figma { background: #f24e1e; color: white; }
+        .tech-tag.nextjs { background: #000000; color: white; }
+        .tech-tag.github { background: #333333; color: white; }
+        
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #6b7280;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="font-body text-charcoal bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-display font-bold text-2xl text-navy">
+                    <a href="index.html">Adams</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-charcoal hover:text-navy font-medium">Home</a>
+                    <a href="music.html" class="nav-link text-charcoal hover:text-navy font-medium">Music</a>
+                    <a href="projects.html" class="nav-link text-gold font-medium">Projects</a>
+                    <a href="index.html#hire" class="nav-link text-charcoal hover:text-navy font-medium">Hire Me</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-charcoal hover:text-navy">Home</a>
+                <a href="music.html" class="block py-2 text-charcoal hover:text-navy">Music</a>
+                <a href="projects.html" class="block py-2 text-gold">Projects</a>
+                <a href="index.html#hire" class="block py-2 text-charcoal hover:text-navy">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="projects-hero-bg min-h-screen flex items-center">
+        <div class="hero-content w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+                        My <span class="gradient-text">Creative Works</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                        Professional Web Development Projects
+                    </p>
+                    <div class="flex justify-center items-center space-x-8 mb-12">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gold">5+</div>
+                            <div class="text-gray-300">Completed Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gold">3</div>
+                            <div class="text-gray-300">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gold">100%</div>
+                            <div class="text-gray-300">Client Satisfaction</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#featured-projects" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                            View Projects
+                        </a>
+                        <a href="index.html#hire" class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                            Start Your Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Statistics -->
+    <section class="py-20 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="project-stats reveal">
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Years of Development</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="featured-projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+                    A collection of my best web development work, showcasing modern design, 
+                    responsive layouts, and cutting-edge technologies.
+                </p>
+            </div>
+            
+            <div class="space-y-16">
+                <!-- Project 1: Paul Hilpert Consultancy -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="relative">
+                            <img src="./resources/project-1.jpg" alt="Paul Hilpert Consultancy Website" 
+                                 class="w-full h-80 lg:h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
+                        </div>
+                        <div class="p-8 lg:p-12">
+                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Paul Hilpert Consultancy</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                A professional consultancy website featuring a modern, clean design with smooth animations 
+                                and interactive elements. Built with a focus on user experience and conversion optimization.
+                            </p>
+                            
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag html">HTML5</span>
+                                <span class="tech-tag css">CSS3</span>
+                                <span class="tech-tag javascript">JavaScript</span>
+                                <span class="tech-tag tailwind">Tailwind CSS</span>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <h4 class="font-semibold text-navy">Key Features:</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Responsive design for all devices
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Smooth scroll animations
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Contact form with validation
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        SEO optimized structure
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="https://paulhilpert.vercel.app/index.html" target="_blank" 
+                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Live Site
+                                </a>
+                                <button onclick="showProjectDetails('paul-hilpert')" 
+                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: MemoDams -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="relative lg:order-2">
+                            <img src="./resources/project-2.jpg" alt="MemoDams App Interface" 
+                                 class="w-full h-80 lg:h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
+                        </div>
+                        <div class="p-8 lg:p-12 lg:order-1">
+                            <h3 class="font-display text-3xl font-bold text-navy mb-4">MemoDams</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                A sophisticated note-taking application with a clean, minimalist interface. 
+                                Features include rich text editing, organization tools, and seamless user experience.
+                            </p>
+                            
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag react">React</span>
+                                <span class="tech-tag tailwind">Tailwind CSS</span>
+                                <span class="tech-tag nodejs">Node.js</span>
+                                <span class="tech-tag github">GitHub</span>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <h4 class="font-semibold text-navy">Key Features:</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Rich text editing capabilities
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Advanced search functionality
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Local storage backup
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Mobile-responsive design
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="https://memo-dams.vercel.app" target="_blank" 
+                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Live Site
+                                </a>
+                                <button onclick="showProjectDetails('memodams')" 
+                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Damiqueen Designs -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="relative">
+                            <img src="./resources/project-3.jpg" alt="Damiqueen Designs Portfolio" 
+                                 class="w-full h-80 lg:h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
+                        </div>
+                        <div class="p-8 lg:p-12">
+                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Damiqueen Designs</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                A creative portfolio website showcasing beautiful design work and projects. 
+                                Features an elegant layout with smooth animations and interactive galleries.
+                            </p>
+                            
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag figma">Figma</span>
+                                <span class="tech-tag html">HTML5</span>
+                                <span class="tech-tag css">CSS3</span>
+                                <span class="tech-tag javascript">JavaScript</span>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <h4 class="font-semibold text-navy">Key Features:</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Interactive project gallery
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Smooth scroll animations
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Contact form integration
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Performance optimized
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" 
+                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Live Site
+                                </a>
+                                <button onclick="showProjectDetails('damiqueen')" 
+                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Victory Edge Solutions -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="relative lg:order-2">
+                            <img src="./resources/project-4.jpg" alt="Victory Edge Solutions Website" 
+                                 class="w-full h-80 lg:h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
+                        </div>
+                        <div class="p-8 lg:p-12 lg:order-1">
+                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Victory Edge Solutions</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                A professional business website for a solutions provider company. Features a modern 
+                                corporate design with comprehensive service information and client testimonials.
+                            </p>
+                            
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag html">HTML5</span>
+                                <span class="tech-tag css">CSS3</span>
+                                <span class="tech-tag javascript">JavaScript</span>
+                                <span class="tech-tag nextjs">Next.js</span>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <h4 class="font-semibold text-navy">Key Features:</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Corporate branding design
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Service showcase sections
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Client testimonial carousel
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Contact form with validation
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="https://ayoola-tech2024.github.io/victoryedge/" target="_blank" 
+                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Live Site
+                                </a>
+                                <button onclick="showProjectDetails('victory-edge')" 
+                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Tee Stella Stitches -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="relative">
+                            <img src="./resources/project-5.jpg" alt="Tee Stella Stitches Fashion Website" 
+                                 class="w-full h-80 lg:h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
+                        </div>
+                        <div class="p-8 lg:p-12">
+                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Tee Stella Stitches</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                A luxury fashion brand website featuring elegant product showcases, 
+                                shopping functionality, and a sophisticated aesthetic that matches the brand's premium positioning.
+                            </p>
+                            
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag react">React</span>
+                                <span class="tech-tag tailwind">Tailwind CSS</span>
+                                <span class="tech-tag nextjs">Next.js</span>
+                                <span class="tech-tag nodejs">Node.js</span>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <h4 class="font-semibold text-navy">Key Features:</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Product catalog with filtering
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Shopping cart functionality
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Image gallery with zoom
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Mobile-optimized shopping
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" 
+                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Live Site
+                                </a>
+                                <button onclick="showProjectDetails('tee-stella')" 
+                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-navy text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+                    Ready to Start Your Project?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Let's work together to bring your vision to life with a stunning, 
+                    high-performance website that drives results.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html#hire" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                        Start Your Project
+                    </a>
+                    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
+                       class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-lg font-display font-semibold mb-2">Adams</p>
+                <p class="text-gray-400 mb-4">Crafting Experiences in Code and Music</p>
+                <p class="text-sm text-gray-500">
+                    © 2025 Designed & Built by Adams. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
+       class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.51 13.5c-.22.48-.68.84-1.23 1.02-.41.14-.88.23-2.12.37-1.25.14-2.17.02-2.17.02s-1.25-.14-2.17-.02c-1.24-.14-1.71-.23-2.12-.37-.55-.18-1.01-.54-1.23-1.02-.22-.48-.14-1.01-.14-1.01s.09-.53.14-1.01c.22-.48.68-.84 1.23-1.02.41-.14.88-.23 2.12-.37 1.25-.14 2.17-.02 2.17-.02s1.25.14 2.17.02c1.24.14 1.71.23 2.12.37.55.18 1.01.54 1.23 1.02.22.48.14 1.01.14 1.01s-.09.53-.14 1.01z"/>
+        </svg>
+    </a>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="modal-title" class="font-display text-3xl font-bold text-navy"></h3>
+                    <button onclick="closeProjectModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="modal-content" class="space-y-6">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeNavigation();
+            initializeScrollReveal();
+        });
+
+        // Navigation functionality
+        function initializeNavigation() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Scroll reveal animations
+        function initializeScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+        }
+
+        // Project details modal
+        function showProjectDetails(projectId) {
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const projectData = {
+                'paul-hilpert': {
+                    title: 'Paul Hilpert Consultancy',
+                    content: `
+                        <div class="space-y-6">
+                            <img src="./resources/project-1.jpg" alt="Paul Hilpert Consultancy" class="w-full h-64 object-cover rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
+                                <p class="text-gray-600 mb-4">
+                                    A comprehensive consultancy website designed to establish credibility and attract high-value clients. 
+                                    The project focused on creating a professional online presence with clear service offerings and 
+                                    easy contact methods.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Technical Implementation</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• Built with semantic HTML5 for better SEO</li>
+                                    <li>• Responsive CSS Grid and Flexbox layouts</li>
+                                    <li>• Vanilla JavaScript for interactions</li>
+                                    <li>• Tailwind CSS for rapid styling</li>
+                                    <li>• Optimized for Core Web Vitals</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Results</h4>
+                                <p class="text-gray-600">
+                                    The website successfully increased client inquiries by 40% and improved the company's 
+                                    professional image in the consultancy market.
+                                </p>
+                            </div>
+                        </div>
+                    `
+                },
+                'memodams': {
+                    title: 'MemoDams - Note Taking App',
+                    content: `
+                        <div class="space-y-6">
+                            <img src="./resources/project-2.jpg" alt="MemoDams App" class="w-full h-64 object-cover rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
+                                <p class="text-gray-600 mb-4">
+                                    A sophisticated note-taking application designed for productivity and organization. 
+                                    The app provides users with a clean, intuitive interface for creating, organizing, and managing notes.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Technical Implementation</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• React.js for component-based architecture</li>
+                                    <li>• Tailwind CSS for responsive design</li>
+                                    <li>• Local storage for data persistence</li>
+                                    <li>• Advanced search and filtering</li>
+                                    <li>• Rich text editing capabilities</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">User Experience</h4>
+                                <p class="text-gray-600">
+                                    The application features a distraction-free writing environment with powerful organization 
+                                    tools, making it perfect for students, professionals, and anyone needing to capture ideas quickly.
+                                </p>
+                            </div>
+                        </div>
+                    `
+                },
+                'damiqueen': {
+                    title: 'Damiqueen Designs Portfolio',
+                    content: `
+                        <div class="space-y-6">
+                            <img src="./resources/project-3.jpg" alt="Damiqueen Designs" class="w-full h-64 object-cover rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
+                                <p class="text-gray-600 mb-4">
+                                    A creative portfolio website showcasing design work and creative projects. 
+                                    The site features an elegant, artistic design that reflects the creative nature of the brand.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Design Process</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• Figma for design and prototyping</li>
+                                    <li>• Custom CSS animations and transitions</li>
+                                    <li>• Interactive project showcase</li>
+                                    <li>• Optimized image galleries</li>
+                                    <li>• Mobile-first responsive approach</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Impact</h4>
+                                <p class="text-gray-600">
+                                    The portfolio successfully showcases the designer's work and has helped attract new clients 
+                                    and opportunities in the creative industry.
+                                </p>
+                            </div>
+                        </div>
+                    `
+                },
+                'victory-edge': {
+                    title: 'Victory Edge Solutions',
+                    content: `
+                        <div class="space-y-6">
+                            <img src="./resources/project-4.jpg" alt="Victory Edge Solutions" class="w-full h-64 object-cover rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
+                                <p class="text-gray-600 mb-4">
+                                    A professional business website for a solutions provider company. The site features 
+                                    a modern corporate design with comprehensive service information and client testimonials.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Business Goals</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• Establish professional online presence</li>
+                                    <li>• Showcase service offerings clearly</li>
+                                    <li>• Build trust through testimonials</li>
+                                    <li>• Generate qualified leads</li>
+                                    <li>• Support business growth objectives</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Technical Features</h4>
+                                <p class="text-gray-600">
+                                    Built with Next.js for optimal performance and SEO, featuring dynamic content management, 
+                                    responsive design, and integrated analytics tracking.
+                                </p>
+                            </div>
+                        </div>
+                    `
+                },
+                'tee-stella': {
+                    title: 'Tee Stella Stitches',
+                    content: `
+                        <div class="space-y-6">
+                            <img src="./resources/project-5.jpg" alt="Tee Stella Stitches" class="w-full h-64 object-cover rounded-lg">
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
+                                <p class="text-gray-600 mb-4">
+                                    A luxury fashion e-commerce website featuring elegant product showcases and shopping functionality. 
+                                    The design reflects the premium nature of the brand while providing a seamless shopping experience.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">E-commerce Features</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>• Product catalog with advanced filtering</li>
+                                    <li>• Shopping cart and checkout process</li>
+                                    <li>• Image gallery with zoom functionality</li>
+                                    <li>• Mobile-optimized shopping experience</li>
+                                    <li>• Inventory management integration</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy mb-3">Design Excellence</h4>
+                                <p class="text-gray-600">
+                                    The website combines elegant aesthetics with powerful functionality, creating an online 
+                                    shopping experience that matches the quality and sophistication of the fashion brand.
+                                </p>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            const project = projectData[projectId];
+            if (project) {
+                title.textContent = project.title;
+                content.innerHTML = project.content;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close project modal
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>

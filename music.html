@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams - Musician & Pianist</title>
+    <meta name="description" content="Adams (Damisile Ayoola) - Professional Pianist & Organist with 7+ years experience in classical, gospel, and contemporary music.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1a1f36',
+                        'gold': '#d4af37',
+                        'light-gray': '#f8f9fa',
+                        'charcoal': '#2c3e50'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .music-hero-bg {
+            background: linear-gradient(135deg, #1a1f36 0%, #2c3e50 50%, #4a5568 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .music-hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('./resources/piano-3.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4af37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .piano-keys {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .piano-key {
+            width: 40px;
+            height: 120px;
+            margin: 0 2px;
+            border-radius: 0 0 8px 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .piano-key.white {
+            background: white;
+            border: 2px solid #ddd;
+        }
+        
+        .piano-key.black {
+            background: #333;
+            height: 80px;
+            width: 25px;
+            margin: 0 -12px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .piano-key:hover {
+            transform: translateY(2px);
+        }
+        
+        .piano-key.white:hover {
+            background: #f0f0f0;
+        }
+        
+        .piano-key.black:hover {
+            background: #555;
+        }
+        
+        .audio-player {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #d4af37;
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-body text-charcoal bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-display font-bold text-2xl text-navy">
+                    <a href="index.html">Adams</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-charcoal hover:text-navy font-medium">Home</a>
+                    <a href="music.html" class="nav-link text-gold font-medium">Music</a>
+                    <a href="projects.html" class="nav-link text-charcoal hover:text-navy font-medium">Projects</a>
+                    <a href="index.html#hire" class="nav-link text-charcoal hover:text-navy font-medium">Hire Me</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-charcoal hover:text-navy">Home</a>
+                <a href="music.html" class="block py-2 text-gold">Music</a>
+                <a href="projects.html" class="block py-2 text-charcoal hover:text-navy">Projects</a>
+                <a href="index.html#hire" class="block py-2 text-charcoal hover:text-navy">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="music-hero-bg min-h-screen flex items-center">
+        <div class="hero-content w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+                        Adams <span class="gradient-text">Musician</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                        Professional Pianist • Organist • Music Educator
+                    </p>
+                    <div class="flex justify-center items-center space-x-8 mb-12">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gold">7+</div>
+                            <div class="text-gray-300">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gold">50+</div>
+                            <div class="text-gray-300">Performances</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gold">100+</div>
+                            <div class="text-gray-300">Students Taught</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#hire-music" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                            Hire for Performance
+                        </a>
+                        <a href="index.html#hire" class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                            Book Music Lessons
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Musical Journey -->
+    <section class="py-20 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">My Musical Journey</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+                    From humble beginnings to professional performances, my musical journey has been filled with 
+                    passion, dedication, and countless beautiful moments.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="./resources/piano-1.jpg" alt="Piano Performance" 
+                         class="rounded-2xl shadow-lg w-full">
+                </div>
+                
+                <div class="reveal">
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <h3 class="font-display text-xl font-semibold text-navy mb-2">Early Beginnings</h3>
+                            <p class="text-gray-600">
+                                Started learning piano at age 15, discovering a natural talent for music and 
+                                a deep connection to the instrument that would shape my future.
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h3 class="font-display text-xl font-semibold text-navy mb-2">Formal Training</h3>
+                            <p class="text-gray-600">
+                                Underwent rigorous classical training, mastering technique, theory, and 
+                                developing a deep appreciation for musical composition and expression.
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h3 class="font-display text-xl font-semibold text-navy mb-2">Church Ministry</h3>
+                            <p class="text-gray-600">
+                                Began playing for church services, developing skills in gospel music, 
+                                congregational singing, and choir accompaniment.
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h3 class="font-display text-xl font-semibold text-navy mb-2">Professional Career</h3>
+                            <p class="text-gray-600">
+                                Expanded into professional performances, music education, and studio work, 
+                                sharing my passion with audiences and students alike.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Specializations -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Musical Expertise</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover-lift reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy mb-3">Piano Performance</h3>
+                    <p class="text-gray-600">
+                        Classical and contemporary piano performances for concerts, events, and special occasions.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover-lift reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy mb-3">Organ Performance</h3>
+                    <p class="text-gray-600">
+                        Church organ music for services, weddings, and special religious ceremonies.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover-lift reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy mb-3">Choir Accompaniment</h3>
+                    <p class="text-gray-600">
+                        Professional accompaniment for choirs, vocal groups, and solo vocalists.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover-lift reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy mb-3">Music Education</h3>
+                    <p class="text-gray-600">
+                        Private piano lessons, music theory instruction, and skill development for all ages.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover-lift reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy mb-3">Sight Reading</h3>
+                    <p class="text-gray-600">
+                        Exceptional sight-reading abilities for studio sessions and live performances.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover-lift reveal">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-navy mb-3">Genre Versatility</h3>
+                    <p class="text-gray-600">
+                        Proficient in classical, gospel, jazz, contemporary, and traditional music styles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Piano -->
+    <section class="py-20 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Experience the Music</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6">
+                    Try out this virtual piano to get a feel for the musical experience
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8 reveal">
+                <div class="piano-keys mb-8">
+                    <div class="piano-key white" data-note="C"></div>
+                    <div class="piano-key black" data-note="C#"></div>
+                    <div class="piano-key white" data-note="D"></div>
+                    <div class="piano-key black" data-note="D#"></div>
+                    <div class="piano-key white" data-note="E"></div>
+                    <div class="piano-key white" data-note="F"></div>
+                    <div class="piano-key black" data-note="F#"></div>
+                    <div class="piano-key white" data-note="G"></div>
+                    <div class="piano-key black" data-note="G#"></div>
+                    <div class="piano-key white" data-note="A"></div>
+                    <div class="piano-key black" data-note="A#"></div>
+                    <div class="piano-key white" data-note="B"></div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-gray-600 mb-4">Click the keys to play notes (visual demonstration)</p>
+                    <div id="played-notes" class="text-gold font-mono text-lg h-8"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Showcase -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Audio Samples</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6">
+                    Listen to some of my recent performances and compositions
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="audio-player reveal">
+                    <h3 class="font-display text-xl font-semibold text-white mb-4">Classical Piece - Moonlight Sonata</h3>
+                    <p class="text-gray-300 mb-4">A beautiful interpretation of Beethoven's famous composition</p>
+                    <div class="flex items-center space-x-4">
+                        <button class="bg-gold hover:bg-yellow-600 text-white px-6 py-2 rounded-lg font-semibold">
+                            ▶ Play
+                        </button>
+                        <span class="text-gray-300">3:45</span>
+                    </div>
+                </div>
+                
+                <div class="audio-player reveal">
+                    <h3 class="font-display text-xl font-semibold text-white mb-4">Gospel Medley</h3>
+                    <p class="text-gray-300 mb-4">Uplifting gospel favorites for church and worship</p>
+                    <div class="flex items-center space-x-4">
+                        <button class="bg-gold hover:bg-yellow-600 text-white px-6 py-2 rounded-lg font-semibold">
+                            ▶ Play
+                        </button>
+                        <span class="text-gray-300">4:20</span>
+                    </div>
+                </div>
+                
+                <div class="audio-player reveal">
+                    <h3 class="font-display text-xl font-semibold text-white mb-4">Original Composition</h3>
+                    <p class="text-gray-300 mb-4">"Morning Prayer" - an original piece inspired by nature</p>
+                    <div class="flex items-center space-x-4">
+                        <button class="bg-gold hover:bg-yellow-600 text-white px-6 py-2 rounded-lg font-semibold">
+                            ▶ Play
+                        </button>
+                        <span class="text-gray-300">2:55</span>
+                    </div>
+                </div>
+                
+                <div class="audio-player reveal">
+                    <h3 class="font-display text-xl font-semibold text-white mb-4">Jazz Improvisation</h3>
+                    <p class="text-gray-300 mb-4">Smooth jazz improvisation in the style of contemporary artists</p>
+                    <div class="flex items-center space-x-4">
+                        <button class="bg-gold hover:bg-yellow-600 text-white px-6 py-2 rounded-lg font-semibold">
+                            ▶ Play
+                        </button>
+                        <span class="text-gray-300">3:15</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Gallery -->
+    <section class="py-20 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Performance Gallery</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="splide" id="performance-gallery">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                                <img src="./resources/piano-1.jpg" alt="Piano Performance" class="w-full h-80 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-display text-xl font-semibold">Church Service</h3>
+                                    <p class="text-gray-300">Sunday Morning Worship</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                                <img src="./resources/piano-2.jpg" alt="Organ Performance" class="w-full h-80 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-display text-xl font-semibold">Wedding Ceremony</h3>
+                                    <p class="text-gray-300">Beautiful Wedding Music</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                                <img src="./resources/piano-3.jpg" alt="Concert Performance" class="w-full h-80 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="font-display text-xl font-semibold">Concert Hall</h3>
+                                    <p class="text-gray-300">Classical Recital</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hire for Music Services -->
+    <section id="hire-music" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Book a Performance</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6">
+                    Available for weddings, church services, concerts, and special events
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift reveal">
+                    <h3 class="font-display text-2xl font-semibold text-navy mb-4">Wedding Ceremonies</h3>
+                    <p class="text-gray-600 mb-6">
+                        Beautiful wedding music from ceremony to reception. Classical pieces, 
+                        contemporary favorites, and custom requests.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Ceremony music
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Cocktail hour
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Reception entertainment
+                        </li>
+                    </ul>
+                    <div class="text-2xl font-bold text-gold mb-4">From $300</div>
+                    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I'm%20interested%20in%20booking%20you%20for%20a%20wedding%20ceremony." 
+                       class="block w-full bg-navy hover:bg-gray-800 text-white text-center px-6 py-3 rounded-lg font-semibold">
+                        Book Now
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift reveal">
+                    <h3 class="font-display text-2xl font-semibold text-navy mb-4">Church Services</h3>
+                    <p class="text-gray-600 mb-6">
+                        Regular church services, special programs, and religious celebrations. 
+                        Experienced in congregational singing and choir accompaniment.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Sunday services
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Special programs
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Holiday celebrations
+                        </li>
+                    </ul>
+                    <div class="text-2xl font-bold text-gold mb-4">From $150</div>
+                    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I'm%20interested%20in%20booking%20you%20for%20church%20services." 
+                       class="block w-full bg-navy hover:bg-gray-800 text-white text-center px-6 py-3 rounded-lg font-semibold">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <p class="text-lg text-gray-600 mb-6">
+                    Need something different? Contact me for custom packages and pricing.
+                </p>
+                <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I'd%20like%20to%20discuss%20a%20custom%20music%20performance." 
+                   class="inline-flex items-center bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                    Discuss Custom Package
+                    <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.51 13.5c-.22.48-.68.84-1.23 1.02-.41.14-.88.23-2.12.37-1.25.14-2.17.02-2.17.02s-1.25-.14-2.17-.02c-1.24-.14-1.71-.23-2.12-.37-.55-.18-1.01-.54-1.23-1.02-.22-.48-.14-1.01-.14-1.01s.09-.53.14-1.01c.22-.48.68-.84 1.23-1.02.41-.14.88-.23 2.12-.37 1.25-.14 2.17-.02 2.17-.02s1.25.14 2.17.02c1.24.14 1.71.23 2.12.37.55.18 1.01.54 1.23 1.02.22.48.14 1.01.14 1.01s-.09.53-.14 1.01z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-lg font-display font-semibold mb-2">Adams</p>
+                <p class="text-gray-400 mb-4">Crafting Experiences in Code and Music</p>
+                <p class="text-sm text-gray-500">
+                    © 2025 Designed & Built by Adams. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
+       class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.51 13.5c-.22.48-.68.84-1.23 1.02-.41.14-.88.23-2.12.37-1.25.14-2.17.02-2.17.02s-1.25-.14-2.17-.02c-1.24-.14-1.71-.23-2.12-.37-.55-.18-1.01-.54-1.23-1.02-.22-.48-.14-1.01-.14-1.01s.09-.53.14-1.01c.22-.48.68-.84 1.23-1.02.41-.14.88-.23 2.12-.37 1.25-.14 2.17-.02 2.17-.02s1.25.14 2.17.02c1.24.14 1.71.23 2.12.37.55.18 1.01.54 1.23 1.02.22.48.14 1.01.14 1.01s-.09.53-.14 1.01z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeNavigation();
+            initializeScrollReveal();
+            initializePiano();
+            initializeGallery();
+        });
+
+        // Navigation functionality
+        function initializeNavigation() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Scroll reveal animations
+        function initializeScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+        }
+
+        // Interactive piano
+        function initializePiano() {
+            const pianoKeys = document.querySelectorAll('.piano-key');
+            const playedNotes = document.getElementById('played-notes');
+            let notes = [];
+
+            pianoKeys.forEach(key => {
+                key.addEventListener('click', function() {
+                    const note = this.getAttribute('data-note');
+                    notes.push(note);
+                    if (notes.length > 5) notes.shift();
+                    
+                    playedNotes.textContent = 'Played: ' + notes.join(' - ');
+                    
+                    // Visual feedback
+                    this.style.transform = 'translateY(4px)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(0)';
+                    }, 150);
+                });
+            });
+        }
+
+        // Initialize gallery carousel
+        function initializeGallery() {
+            new Splide('#performance-gallery', {
+                type: 'loop',
+                perPage: 3,
+                perMove: 1,
+                gap: '2rem',
+                autoplay: true,
+                interval: 4000,
+                breakpoints: {
+                    768: {
+                        perPage: 1,
+                    },
+                    1024: {
+                        perPage: 2,
+                    }
+                }
+            }).mount();
+        }
+    </script>
+</body>
+</html>
