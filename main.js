@@ -15,7 +15,8 @@ function initializeAnimations() {
     // Typewriter effect
     const typed = new Typed('#typed-text', {
         strings: [
-            'Adams',
+            'Ayoola Damisile',
+            'Scholar & Researcher',
             'Frontend Developer',
             'Pianist',
             'Creative Technologist'
