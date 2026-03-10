@@ -18,6 +18,7 @@ function initializeAnimations() {
             'Ayoola Damisile',
             'Scholar & Researcher',
             'Frontend Developer',
+            'Project Manager',
             'Pianist',
             'Creative Technologist'
         ],
