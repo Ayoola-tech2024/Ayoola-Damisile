@@ -471,7 +471,7 @@
                 </div>
                 
                 <div class="text-center">
-                    <p class="text-gray-600 mb-4">Click the keys to play notes (visual demonstration)</p>
+                    <p class="text-gray-600 mb-4">Click the keys to play notes</p>
                     <div id="played-notes" class="text-gold font-mono text-lg h-8"></div>
                 </div>
             </div>
@@ -697,21 +697,75 @@
         function initializePiano() {
             const pianoKeys = document.querySelectorAll('.piano-key');
             const playedNotes = document.getElementById('played-notes');
+            const noteFrequencies = {
+                'C': 261.63,
+                'C#': 277.18,
+                'D': 293.66,
+                'D#': 311.13,
+                'E': 329.63,
+                'F': 349.23,
+                'F#': 369.99,
+                'G': 392.00,
+                'G#': 415.30,
+                'A': 440.00,
+                'A#': 466.16,
+                'B': 493.88
+            };
             let notes = [];
+            let audioContext;
+
+            function getAudioContext() {
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
+                }
+
+                return audioContext;
+            }
+
+            function playNote(note) {
+                const frequency = noteFrequencies[note];
+                if (!frequency) return;
+
+                const context = getAudioContext();
+                const oscillator = context.createOscillator();
+                const gainNode = context.createGain();
+
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(frequency, context.currentTime);
+
+                gainNode.gain.setValueAtTime(0.0001, context.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.25, context.currentTime + 0.01);
+                gainNode.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.5);
+
+                oscillator.connect(gainNode);
+                gainNode.connect(context.destination);
+
+                oscillator.start(context.currentTime);
+                oscillator.stop(context.currentTime + 0.5);
+            }
+
+            function handlePianoKeyPress(key) {
+                const note = key.getAttribute('data-note');
+                notes.push(note);
+                if (notes.length > 5) notes.shift();
+
+                playedNotes.textContent = 'Played: ' + notes.join(' - ');
+                playNote(note);
+
+                // Visual feedback
+                key.style.transform = 'translateY(4px)';
+                setTimeout(() => {
+                    key.style.transform = 'translateY(0)';
+                }, 150);
+            }
 
             pianoKeys.forEach(key => {
                 key.addEventListener('click', function() {
-                    const note = this.getAttribute('data-note');
-                    notes.push(note);
-                    if (notes.length > 5) notes.shift();
-                    
-                    playedNotes.textContent = 'Played: ' + notes.join(' - ');
-                    
-                    // Visual feedback
-                    this.style.transform = 'translateY(4px)';
-                    setTimeout(() => {
-                        this.style.transform = 'translateY(0)';
-                    }, 150);
+                    handlePianoKeyPress(this);
                 });
             });
         }
