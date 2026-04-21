@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
     <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
@@ -136,45 +137,77 @@
             transform: translateY(0);
         }
         
-        .piano-keys {
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-        
-        .piano-key {
-            width: 40px;
-            height: 120px;
-            margin: 0 2px;
-            border-radius: 0 0 8px 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .piano-key.white {
-            background: white;
-            border: 2px solid #ddd;
-        }
-        
-        .piano-key.black {
-            background: #333;
-            height: 80px;
-            width: 25px;
-            margin: 0 -12px;
-            z-index: 2;
+        .piano {
             position: relative;
+            max-width: 960px;
+            margin: 0 auto 2rem;
+            padding: 1.2rem 1rem 1.8rem;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #18130f, #2a211c 35%, #100d0a);
+            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.08), 0 18px 26px rgba(0, 0, 0, 0.3);
         }
-        
-        .piano-key:hover {
+
+        .piano-keybed {
+            position: relative;
+            display: flex;
+            height: 230px;
+            border-radius: 0 0 14px 14px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #2e2621, #1d1714);
+            padding: 0 0.5rem 0.6rem;
+        }
+
+        .piano-key {
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: none;
+            transition: transform 0.08s ease, background 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .piano-key.white {
+            position: relative;
+            width: calc(100% / 14);
+            height: 100%;
+            border-right: 1px solid #d9d0c6;
+            border-left: 1px solid #f7f1e7;
+            border-bottom: 6px solid #cfc4b7;
+            border-radius: 0 0 10px 10px;
+            background: linear-gradient(to bottom, #fffef8 0%, #f5eee1 70%, #ece2d3 100%);
+            box-shadow: inset 0 -10px 8px rgba(0, 0, 0, 0.07);
+        }
+
+        .piano-key.white:first-child {
+            border-left: none;
+        }
+
+        .piano-key.black {
+            position: absolute;
+            top: 0;
+            width: calc((100% / 14) * 0.62);
+            height: 62%;
+            border-radius: 0 0 8px 8px;
+            background: linear-gradient(to bottom, #2f3135, #111317 75%, #08090b);
+            box-shadow: 0 7px 10px rgba(0, 0, 0, 0.45), inset 0 -4px 4px rgba(255, 255, 255, 0.08);
+            z-index: 3;
+        }
+
+        .piano-key.white.active {
             transform: translateY(2px);
+            background: linear-gradient(to bottom, #f1e7d4 0%, #ebdcc6 100%);
+            box-shadow: inset 0 -6px 6px rgba(0, 0, 0, 0.12);
         }
-        
-        .piano-key.white:hover {
-            background: #f0f0f0;
+
+        .piano-key.black.active {
+            transform: translateY(2px);
+            background: linear-gradient(to bottom, #212328 0%, #090a0d 100%);
+            box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4), inset 0 -3px 3px rgba(255, 255, 255, 0.07);
         }
-        
-        .piano-key.black:hover {
-            background: #555;
+
+        .piano-hint {
+            font-size: 0.95rem;
+            color: #6b7280;
+            text-align: center;
         }
         
         .audio-player {
@@ -455,23 +488,12 @@
             </div>
             
             <div class="bg-white rounded-2xl shadow-lg p-8 reveal">
-                <div class="piano-keys mb-8">
-                    <div class="piano-key white" data-note="C"></div>
-                    <div class="piano-key black" data-note="C#"></div>
-                    <div class="piano-key white" data-note="D"></div>
-                    <div class="piano-key black" data-note="D#"></div>
-                    <div class="piano-key white" data-note="E"></div>
-                    <div class="piano-key white" data-note="F"></div>
-                    <div class="piano-key black" data-note="F#"></div>
-                    <div class="piano-key white" data-note="G"></div>
-                    <div class="piano-key black" data-note="G#"></div>
-                    <div class="piano-key white" data-note="A"></div>
-                    <div class="piano-key black" data-note="A#"></div>
-                    <div class="piano-key white" data-note="B"></div>
+                <div class="piano mb-8" id="piano">
+                    <div class="piano-keybed" id="piano-keybed"></div>
                 </div>
                 
                 <div class="text-center">
-                    <p class="text-gray-600 mb-4">Click the keys to play notes (visual demonstration)</p>
+                    <p class="piano-hint mb-4">Click keys or use A-S-D-F-G-H-J-K to play. Hold keyboard keys to sustain notes.</p>
                     <div id="played-notes" class="text-gold font-mono text-lg h-8"></div>
                 </div>
             </div>
@@ -694,25 +716,148 @@
         }
 
         // Interactive piano
-        function initializePiano() {
-            const pianoKeys = document.querySelectorAll('.piano-key');
+        async function initializePiano() {
+            const keybed = document.getElementById('piano-keybed');
             const playedNotes = document.getElementById('played-notes');
-            let notes = [];
+            let playedHistory = [];
+            const activeKeys = new Map();
+            const heldKeyboardKeys = new Set();
 
-            pianoKeys.forEach(key => {
-                key.addEventListener('click', function() {
-                    const note = this.getAttribute('data-note');
-                    notes.push(note);
-                    if (notes.length > 5) notes.shift();
-                    
-                    playedNotes.textContent = 'Played: ' + notes.join(' - ');
-                    
-                    // Visual feedback
-                    this.style.transform = 'translateY(4px)';
-                    setTimeout(() => {
-                        this.style.transform = 'translateY(0)';
-                    }, 150);
+            const allNotes = [
+                "C3", "C#3", "D3", "D#3", "E3", "F3", "F#3", "G3", "G#3", "A3", "A#3", "B3",
+                "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4"
+            ];
+            const whiteNotes = allNotes.filter(note => !note.includes('#'));
+            const blackNotes = allNotes.filter(note => note.includes('#'));
+            const keyboardMap = {
+                a: "C3", s: "D3", d: "E3", f: "F3", g: "G3", h: "A3", j: "B3", k: "C4"
+            };
+
+            const sampler = new Tone.Sampler({
+                urls: {
+                    A0: "A0.mp3",
+                    C1: "C1.mp3",
+                    "D#1": "Ds1.mp3",
+                    "F#1": "Fs1.mp3",
+                    A1: "A1.mp3",
+                    C2: "C2.mp3",
+                    "D#2": "Ds2.mp3",
+                    "F#2": "Fs2.mp3",
+                    A2: "A2.mp3",
+                    C3: "C3.mp3",
+                    "D#3": "Ds3.mp3",
+                    "F#3": "Fs3.mp3",
+                    A3: "A3.mp3",
+                    C4: "C4.mp3",
+                    "D#4": "Ds4.mp3",
+                    "F#4": "Fs4.mp3",
+                    A4: "A4.mp3",
+                    C5: "C5.mp3",
+                    "D#5": "Ds5.mp3",
+                    "F#5": "Fs5.mp3",
+                    A5: "A5.mp3",
+                    C6: "C6.mp3",
+                    "D#6": "Ds6.mp3",
+                    "F#6": "Fs6.mp3",
+                    A6: "A6.mp3",
+                    C7: "C7.mp3",
+                    "D#7": "Ds7.mp3",
+                    "F#7": "Fs7.mp3",
+                    A7: "A7.mp3",
+                    C8: "C8.mp3"
+                },
+                release: 2.5,
+                baseUrl: "https://tonejs.github.io/audio/salamander/"
+            }).toDestination();
+            sampler.volume.value = -5;
+
+            const noteToKey = new Map();
+
+            whiteNotes.forEach(note => {
+                const key = document.createElement('button');
+                key.type = 'button';
+                key.className = 'piano-key white';
+                key.dataset.note = note;
+                key.setAttribute('aria-label', `Piano key ${note}`);
+                keybed.appendChild(key);
+                noteToKey.set(note, key);
+            });
+
+            const whiteIndexByNote = {};
+            whiteNotes.forEach((note, index) => {
+                whiteIndexByNote[note] = index;
+            });
+
+            blackNotes.forEach(note => {
+                const naturalBefore = note.replace('#', '');
+                const key = document.createElement('button');
+                key.type = 'button';
+                key.className = 'piano-key black';
+                key.dataset.note = note;
+                key.setAttribute('aria-label', `Piano key ${note}`);
+                key.style.left = `calc((100% / 14) * ${whiteIndexByNote[naturalBefore] + 1} - ((100% / 14) * 0.31))`;
+                keybed.appendChild(key);
+                noteToKey.set(note, key);
+            });
+
+            const updatePlayedNotes = (note) => {
+                playedHistory.push(note);
+                if (playedHistory.length > 8) playedHistory.shift();
+                playedNotes.textContent = `Played: ${playedHistory.join(' · ')}`;
+            };
+
+            const ensureAudio = async () => {
+                if (Tone.context.state !== "running") {
+                    await Tone.start();
+                }
+            };
+
+            const pressNote = async (note) => {
+                await ensureAudio();
+                if (!activeKeys.has(note)) {
+                    sampler.triggerAttack(note);
+                    activeKeys.set(note, true);
+                }
+                const keyEl = noteToKey.get(note);
+                if (keyEl) keyEl.classList.add('active');
+                updatePlayedNotes(note);
+            };
+
+            const releaseNote = (note) => {
+                sampler.triggerRelease(note);
+                activeKeys.delete(note);
+                const keyEl = noteToKey.get(note);
+                if (keyEl) keyEl.classList.remove('active');
+            };
+
+            keybed.querySelectorAll('.piano-key').forEach((keyEl) => {
+                const note = keyEl.dataset.note;
+
+                keyEl.addEventListener('mousedown', () => {
+                    pressNote(note);
                 });
+
+                keyEl.addEventListener('mouseup', () => releaseNote(note));
+                keyEl.addEventListener('mouseleave', () => releaseNote(note));
+                keyEl.addEventListener('touchstart', (event) => {
+                    event.preventDefault();
+                    pressNote(note);
+                }, { passive: false });
+                keyEl.addEventListener('touchend', () => releaseNote(note));
+            });
+
+            document.addEventListener('keydown', (event) => {
+                const mappedNote = keyboardMap[event.key.toLowerCase()];
+                if (!mappedNote || heldKeyboardKeys.has(event.key.toLowerCase()) || event.repeat) return;
+                heldKeyboardKeys.add(event.key.toLowerCase());
+                pressNote(mappedNote);
+            });
+
+            document.addEventListener('keyup', (event) => {
+                const mappedNote = keyboardMap[event.key.toLowerCase()];
+                if (!mappedNote) return;
+                heldKeyboardKeys.delete(event.key.toLowerCase());
+                releaseNote(mappedNote);
             });
         }
 
