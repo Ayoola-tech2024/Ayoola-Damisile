@@ -211,8 +211,70 @@
           transition: 0.3s ease;
         }
         
-       .social-links a:hover {
+        .social-links a:hover {
           color: #00acee; /* Hover color */
+        }
+
+        .project-title {
+            font-size: clamp(1.5rem, 2.8vw, 1.875rem);
+            line-height: 1.2;
+            overflow-wrap: anywhere;
+        }
+
+        .project-feature {
+            align-items: flex-start;
+        }
+
+        @media (max-width: 1024px) {
+            .project-card:hover {
+                transform: none;
+            }
+
+            .project-card img {
+                height: clamp(220px, 42vw, 340px) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-hero-bg {
+                min-height: 88vh;
+            }
+
+            .hero-metrics {
+                gap: 0.75rem;
+            }
+
+            .metric-card {
+                min-width: 145px;
+                padding: 0.75rem;
+                border-radius: 0.75rem;
+                background: rgba(255, 255, 255, 0.07);
+            }
+
+            .project-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 2rem 0 0;
+            }
+
+            .floating-whatsapp {
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-card {
+                border-radius: 1rem;
+            }
+
+            .project-card img {
+                height: 220px !important;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
         }
 
     </style>
@@ -263,16 +325,16 @@
                     <p class="text-xl md:text-2xl text-gray-300 mb-8">
                         Professional Web Development Projects
                     </p>
-                    <div class="flex justify-center items-center space-x-8 mb-12">
-                        <div class="text-center">
+                    <div class="hero-metrics flex flex-wrap justify-center gap-4 sm:gap-8 mb-12">
+                        <div class="metric-card text-center">
                             <div class="text-4xl font-bold text-gold">5+</div>
                             <div class="text-gray-300">Completed Projects</div>
                         </div>
-                        <div class="text-center">
+                        <div class="metric-card text-center">
                             <div class="text-4xl font-bold text-gold">3</div>
                             <div class="text-gray-300">Years Experience</div>
                         </div>
-                        <div class="text-center">
+                        <div class="metric-card text-center">
                             <div class="text-4xl font-bold text-gold">100%</div>
                             <div class="text-gray-300">Client Satisfaction</div>
                         </div>
@@ -336,8 +398,8 @@
                                  class="w-full h-80 lg:h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
                         </div>
-                        <div class="p-8 lg:p-12">
-                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Paul Hilpert Consultancy</h3>
+                        <div class="p-6 sm:p-8 lg:p-12">
+                            <h3 class="project-title font-display font-bold text-navy mb-4">Paul Hilpert Consultancy</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                                 A professional consultancy website featuring a modern, clean design with smooth animations 
                                 and interactive elements. Built with a focus on user experience and conversion optimization.
@@ -353,25 +415,25 @@
                             <div class="space-y-4 mb-8">
                                 <h4 class="font-semibold text-navy">Key Features:</h4>
                                 <ul class="space-y-2 text-gray-600">
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Responsive design for all devices
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Smooth scroll animations
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Contact form with validation
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
@@ -402,8 +464,8 @@
                                  class="w-full h-80 lg:h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
                         </div>
-                        <div class="p-8 lg:p-12 lg:order-1">
-                            <h3 class="font-display text-3xl font-bold text-navy mb-4">MemoDams</h3>
+                        <div class="p-6 sm:p-8 lg:p-12 lg:order-1">
+                            <h3 class="project-title font-display font-bold text-navy mb-4">MemoDams</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                                 A sophisticated note-taking application with a clean, minimalist interface. 
                                 Features include rich text editing, organization tools, and seamless user experience.
@@ -419,25 +481,25 @@
                             <div class="space-y-4 mb-8">
                                 <h4 class="font-semibold text-navy">Key Features:</h4>
                                 <ul class="space-y-2 text-gray-600">
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Rich text editing capabilities
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Advanced search functionality
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Firebase cloud storage backup
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
@@ -469,8 +531,8 @@
                                  class="w-full h-80 lg:h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
                         </div>
-                        <div class="p-8 lg:p-12 lg:order-1">
-                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Apostolic Faith Secondary School Ado Ekiti, (Set 2024/2025) E-&nbsp;Magazine</h3>
+                        <div class="p-6 sm:p-8 lg:p-12 lg:order-1">
+                            <h3 class="project-title font-display font-bold text-navy mb-4">Apostolic Faith Secondary School Ado Ekiti, (Set 2024/2025) E-&nbsp;Magazine</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                              A digital magazine platform created to document and celebrate the graduating class of AFSS SET 2024–25. 
                                 The website presents memories, achievements, and creative contributions 
@@ -487,25 +549,25 @@
                             <div class="space-y-4 mb-8">
                                 <h4 class="font-semibold text-navy">Key Features:</h4>
                                 <ul class="space-y-2 text-gray-600">
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                        Digital magazine layout for graduating students
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Responsive design for mobile and desktop viewing
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                        Image galleries showcasing student moments
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
@@ -536,8 +598,8 @@
                                  class="w-full h-80 lg:h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
                         </div>
-                        <div class="p-8 lg:p-12">
-                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Damiqueen Designs</h3>
+                        <div class="p-6 sm:p-8 lg:p-12">
+                            <h3 class="project-title font-display font-bold text-navy mb-4">Damiqueen Designs</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                                 A creative E-commerce website showcasing beautiful design work and projects. 
                                 Features an elegant layout with smooth animations and interactive galleries.
@@ -553,25 +615,25 @@
                             <div class="space-y-4 mb-8">
                                 <h4 class="font-semibold text-navy">Key Features:</h4>
                                 <ul class="space-y-2 text-gray-600">
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Interactive project gallery
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Smooth scroll animations
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Contact form integration
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
@@ -602,8 +664,8 @@
                                  class="w-full h-80 lg:h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
                         </div>
-                        <div class="p-8 lg:p-12 lg:order-1">
-                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Victory Edge Solutions</h3>
+                        <div class="p-6 sm:p-8 lg:p-12 lg:order-1">
+                            <h3 class="project-title font-display font-bold text-navy mb-4">Victory Edge Solutions</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                                 A professional business website for a solutions provider company. Features a modern 
                                 corporate design with comprehensive service information and client testimonials.
@@ -619,25 +681,25 @@
                             <div class="space-y-4 mb-8">
                                 <h4 class="font-semibold text-navy">Key Features:</h4>
                                 <ul class="space-y-2 text-gray-600">
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Corporate branding design
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Service showcase sections
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Client testimonial carousel
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
@@ -668,8 +730,8 @@
                                  class="w-full h-80 lg:h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
                         </div>
-                        <div class="p-8 lg:p-12">
-                            <h3 class="font-display text-3xl font-bold text-navy mb-4">Tee Stella Stitches</h3>
+                        <div class="p-6 sm:p-8 lg:p-12">
+                            <h3 class="project-title font-display font-bold text-navy mb-4">Tee Stella Stitches</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                                 A luxury fashion brand website featuring elegant product showcases, 
                                 shopping functionality, and a sophisticated aesthetic that matches the brand's premium positioning.
@@ -685,25 +747,25 @@
                             <div class="space-y-4 mb-8">
                                 <h4 class="font-semibold text-navy">Key Features:</h4>
                                 <ul class="space-y-2 text-gray-600">
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Product catalog with filtering
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Shopping cart functionality
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                         Image gallery with zoom
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="project-feature flex">
                                         <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
