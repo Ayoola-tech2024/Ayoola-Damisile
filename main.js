@@ -62,17 +62,7 @@ function initializeForm() {
         websiteFields.classList.add('hidden');
         
         // Show relevant fields
-        if (value === 'music') {
-            musicFields.classList.remove('hidden');
-            // Add animation
-            anime({
-                targets: musicFields,
-                opacity: [0, 1],
-                translateY: [20, 0],
-                duration: 500,
-                easing: 'easeOutQuart'
-            });
-        } else if (value === 'website') {
+        if (['fullstack','software-dev','architecture'].includes(value)) {
             websiteFields.classList.remove('hidden');
             // Add animation
             anime({
@@ -112,25 +102,20 @@ function handleFormSubmission() {
 
     // Format WhatsApp message based on service type
     let whatsappMessage = '';
-    if (formData.serviceType === 'music') {
-        whatsappMessage = `Hi Adams!
-I am interested in Music/Piano lessons.
+    const serviceLabels = {
+        'fullstack': 'Full-Stack System Build',
+        'software-dev': 'Software Application Development',
+        'architecture': 'Product Architecture & Planning'
+    };
 
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Duration: ${formData.duration || 'Not specified'}
-Message: ${formData.message || 'No additional message'}`;
-    } else if (formData.serviceType === 'website') {
-        whatsappMessage = `Hi Adams!
-I want to hire you to build a website.
+    whatsappMessage = `Hi Adams!
+I want to hire you for ${serviceLabels[formData.serviceType] || 'a technical project'}.
 
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Project Details: ${formData.projectDetails || 'Not specified'}
 Message: ${formData.message || 'No additional message'}`;
-    }
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -241,52 +226,7 @@ function updateActiveNavLink() {
 
 // Skills section toggle
 function initializeSkillsToggle() {
-    const techSkillsBtn = document.getElementById('tech-skills-btn');
-    const musicSkillsBtn = document.getElementById('music-skills-btn');
-    const techSkills = document.getElementById('tech-skills');
-    const musicSkills = document.getElementById('music-skills');
-
-    techSkillsBtn.addEventListener('click', function() {
-        // Update button styles
-        techSkillsBtn.className = 'px-6 py-3 bg-navy text-white rounded-lg font-semibold';
-        musicSkillsBtn.className = 'px-6 py-3 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-white';
-        
-        // Show/hide skills
-        techSkills.classList.remove('hidden');
-        musicSkills.classList.add('hidden');
-        
-        // Animate skill bars
-        setTimeout(() => {
-            const skillBars = techSkills.querySelectorAll('.skill-progress');
-            skillBars.forEach((bar, index) => {
-                setTimeout(() => {
-                    const width = bar.getAttribute('data-width');
-                    bar.style.width = width + '%';
-                }, index * 100);
-            });
-        }, 200);
-    });
-
-    musicSkillsBtn.addEventListener('click', function() {
-        // Update button styles
-        musicSkillsBtn.className = 'px-6 py-3 bg-navy text-white rounded-lg font-semibold';
-        techSkillsBtn.className = 'px-6 py-3 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-white';
-        
-        // Show/hide skills
-        musicSkills.classList.remove('hidden');
-        techSkills.classList.add('hidden');
-        
-        // Animate skill bars
-        setTimeout(() => {
-            const skillBars = musicSkills.querySelectorAll('.skill-progress');
-            skillBars.forEach((bar, index) => {
-                setTimeout(() => {
-                    const width = bar.getAttribute('data-width');
-                    bar.style.width = width + '%';
-                }, index * 100);
-            });
-        }, 200);
-    });
+    // Skills matrix is static on the homepage; no toggle behavior required.
 }
 
 // Scroll reveal animations
