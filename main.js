@@ -375,15 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add parallax effect to hero section
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const heroSection = document.querySelector('.hero-bg');
-    
-    if (heroSection && scrolled < window.innerHeight) {
-        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+// Hero background static alignment (prevents vertical overlap overflow on scroll)
 
 // Initialize skill bars animation on first load
 document.addEventListener('DOMContentLoaded', function() {

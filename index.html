@@ -278,14 +278,11 @@
                     Ayoola Damisile
                 </div>
                 
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-charcoal hover:text-navy font-medium">Home</a>
                     <a href="music.html" class="nav-link text-charcoal hover:text-navy font-medium">Music</a>
                     <a href="projects.html" class="nav-link text-charcoal hover:text-navy font-medium">Projects</a>
                     <a href="#hire" class="nav-link text-charcoal hover:text-navy font-medium">Hire Me</a>
-                    <a href="https://drive.google.com/file/d/1BbO5gdcI1KpThUzYT0APM9DGv0guvyyT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="bg-gold hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center gap-2 shadow-sm">
-                        <i class="fas fa-file-download"></i> Download CV
-                    </a>
                 </div>
                 
                 <button id="mobile-menu-btn" class="md:hidden p-2">
@@ -298,20 +295,17 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <div class="px-4 py-3 space-y-2">
+            <div class="px-4 py-2 space-y-2">
                 <a href="#home" class="block py-2 text-charcoal hover:text-navy">Home</a>
                 <a href="music.html" class="block py-2 text-charcoal hover:text-navy">Music</a>
                 <a href="projects.html" class="block py-2 text-charcoal hover:text-navy">Projects</a>
                 <a href="#hire" class="block py-2 text-charcoal hover:text-navy">Hire Me</a>
-                <a href="https://drive.google.com/file/d/1BbO5gdcI1KpThUzYT0APM9DGv0guvyyT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-gold text-white rounded-lg hover:bg-yellow-600 font-medium mt-2 shadow-sm">
-                    <i class="fas fa-file-download"></i> Download CV
-                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center">
+    <section id="home" class="hero-bg min-h-screen flex items-center relative z-10 py-24">
         <div id="p5-container" class="absolute inset-0"></div>
         <div class="hero-content w-full">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -328,15 +322,11 @@
                         </p>
                         
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button onclick="scrollToSection('hire')" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
+                            <button onclick="scrollToSection('hire')" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift shadow-md">
                                 Hire Me
                             </button>
-                            <a href="https://drive.google.com/file/d/1BbO5gdcI1KpThUzYT0APM9DGv0guvyyT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" 
-                               class="bg-white/10 backdrop-blur-md border-2 border-gold text-gold hover:bg-gold hover:text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift text-center inline-flex items-center justify-center gap-2 transition-all">
-                                <i class="fas fa-file-download"></i> Download CV
-                            </a>
                             <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
-                               class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift text-center inline-flex items-center justify-center gap-2">
+                               class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift text-center inline-flex items-center justify-center gap-2 transition-all">
                                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                             </a>
                         </div>
@@ -357,7 +347,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-light-gray">
+    <section id="about" class="py-20 bg-light-gray relative z-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">About Me</h2>
@@ -382,11 +372,11 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="scrollToSection('hire')" class="bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover-lift">
+                        <button onclick="scrollToSection('hire')" class="bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover-lift shadow-md">
                             Work With Me
                         </button>
                         <a href="https://drive.google.com/file/d/1BbO5gdcI1KpThUzYT0APM9DGv0guvyyT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" 
-                           class="border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold hover-lift inline-flex items-center justify-center gap-2 transition-all">
+                           class="bg-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover-lift inline-flex items-center justify-center gap-2 transition-all shadow-md">
                             <i class="fas fa-file-download"></i> Download CV
                         </a>
                     </div>
