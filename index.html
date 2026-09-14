@@ -6,7 +6,7 @@
     <title>Ayoola Damisile — Software Engineer & Open-Source Creator</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
     
-    <meta name="description" content="Ayoola Damisile (Adams) - Software Engineer & Open-Source Author. Creator of fixmcp and @damisile_ayoola/envvault. BIT student at FUTA.">
+    <meta name="description" content="Ayoola Damisile - Software Engineer & Open-Source Author. Creator of fixmcp and @damisile_ayoola/envvault. BIT student at FUTA.">
     <link rel="canonical" href="https://www.damisile.name.ng/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.damisile.name.ng/">
@@ -78,8 +78,8 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <!-- Command Palette Trigger Button -->
-                <button class="cmd-palette-trigger px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400 hover:text-white hover:border-zinc-700 transition-all flex items-center gap-2">
+                <!-- Desktop Search Trigger -->
+                <button class="cmd-palette-trigger hidden sm:flex px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400 hover:text-white hover:border-zinc-700 transition-all items-center gap-2">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <span>Search</span>
                     <kbd class="px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-300">⌘K</kbd>
@@ -104,7 +104,7 @@
         </div>
     </header>
 
-    <!-- COMMAND PALETTE (CMD+K) SPOTLIGHT OVERLAY -->
+    <!-- DESKTOP COMMAND PALETTE (CMD+K) SPOTLIGHT OVERLAY -->
     <div id="cmd-palette-overlay" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm p-4 sm:p-6 items-start justify-center pt-20">
         <div class="bg-[#101014] border border-zinc-700 rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl space-y-3 p-4">
             <div class="flex items-center gap-3 px-3 py-2 border-b border-zinc-800">
@@ -181,8 +181,70 @@
         </div>
     </div>
 
+    <!-- MOBILE TOUCH-OPTIMIZED BOTTOM ACTION SHEET DRAWER -->
+    <div id="mobile-sheet-backdrop" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-xs md:hidden"></div>
+    <div id="mobile-action-sheet" class="fixed bottom-0 left-0 right-0 z-50 bg-[#101014] border-t border-zinc-800 rounded-t-3xl p-6 transform translate-y-full transition-transform duration-300 md:hidden space-y-4 shadow-2xl">
+        <!-- Drag Handle Indicator -->
+        <div class="w-12 h-1.5 bg-zinc-700 rounded-full mx-auto mb-2"></div>
+        
+        <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-amber-400"></i> Quick Mobile Touch Actions
+            </h3>
+            <button onclick="closeMobileSheet()" class="text-zinc-500 hover:text-white p-1 text-xs">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+            <button class="mobile-action-tile p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-left space-y-1 hover:border-zinc-700" data-action="copy" data-target="npx fixmcp">
+                <i class="fa-solid fa-terminal text-cyan-400 block mb-1"></i>
+                <span class="text-white block font-bold">npx fixmcp</span>
+                <span class="text-[10px] text-zinc-400 block">Tap to Copy</span>
+            </button>
+
+            <button class="mobile-action-tile p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-left space-y-1 hover:border-zinc-700" data-action="copy" data-target="npx @damisile_ayoola/envvault">
+                <i class="fa-solid fa-shield-halved text-emerald-400 block mb-1"></i>
+                <span class="text-white block font-bold">npx envvault</span>
+                <span class="text-[10px] text-zinc-400 block">Tap to Copy</span>
+            </button>
+
+            <button class="mobile-action-tile p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-left space-y-1 hover:border-zinc-700" data-action="link" data-target="https://check-in-gray.vercel.app">
+                <i class="fa-solid fa-eye text-cyan-400 block mb-1"></i>
+                <span class="text-white block font-bold">checkIn App</span>
+                <span class="text-[10px] text-zinc-400 block">Tap to Launch</span>
+            </button>
+
+            <button class="mobile-action-tile p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-left space-y-1 hover:border-zinc-700" data-action="link" data-target="https://wa.me/2348169787869">
+                <i class="fa-brands fa-whatsapp text-emerald-400 block mb-1"></i>
+                <span class="text-white block font-bold">WhatsApp</span>
+                <span class="text-[10px] text-zinc-400 block">Tap to Chat</span>
+            </button>
+
+            <button class="mobile-action-tile p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-left space-y-1 hover:border-zinc-700" data-action="copy" data-target="ayooladamisile24@gmail.com">
+                <i class="fa-solid fa-envelope text-zinc-400 block mb-1"></i>
+                <span class="text-white block font-bold">Copy Email</span>
+                <span class="text-[10px] text-zinc-400 block">ayooladamisile...</span>
+            </button>
+
+            <button class="mobile-action-tile p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-left space-y-1 hover:border-zinc-700" data-action="scroll" data-target="#music">
+                <i class="fa-solid fa-music text-purple-400 block mb-1"></i>
+                <span class="text-white block font-bold">Music & Organ</span>
+                <span class="text-[10px] text-zinc-400 block">Performances</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MOBILE FLOATING ACTION BUTTON (FAB) FOR TOUCH TWIST -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 md:hidden">
+        <button id="mobile-fab-btn" class="px-5 py-3 rounded-full bg-white text-black font-semibold text-xs font-mono shadow-2xl border border-zinc-300 flex items-center gap-2 active:scale-95 transition-transform">
+            <i class="fa-solid fa-bolt text-amber-500"></i>
+            <span>Touch Quick Actions</span>
+        </button>
+    </div>
+
     <!-- MAIN BENTO GRID CANVAS -->
-    <main id="home" class="pt-28 pb-20 px-4 sm:px-6 max-w-6xl mx-auto space-y-8">
+    <main id="home" class="pt-28 pb-24 md:pb-20 px-4 sm:px-6 max-w-6xl mx-auto space-y-8">
         
         <!-- HERO BENTO BLOCK -->
         <div class="grid lg:grid-cols-12 gap-6 items-stretch">
@@ -233,7 +295,7 @@
                         AD
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-white">Ayoola Damisile (Adams)</h3>
+                        <h3 class="text-lg font-bold text-white">Ayoola Damisile</h3>
                         <p class="text-xs font-mono text-zinc-400">@Ayoola-tech2024</p>
                     </div>
                     <ul class="space-y-2 text-xs font-mono text-zinc-300 border-t border-zinc-800/80 pt-3">
@@ -245,8 +307,12 @@
                 </div>
 
                 <div class="pt-2">
-                    <button class="cmd-palette-trigger w-full py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300 hover:text-white hover:border-zinc-700 transition-all flex items-center justify-center gap-2">
+                    <button class="cmd-palette-trigger hidden sm:flex w-full py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300 hover:text-white hover:border-zinc-700 transition-all items-center justify-center gap-2">
                         <span>Press ⌘K for Spotlight</span>
+                    </button>
+                    <button onclick="openMobileSheet()" class="sm:hidden w-full py-2.5 rounded-lg bg-white text-black font-semibold text-xs font-mono flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Touch Quick Actions</span>
                     </button>
                 </div>
             </div>

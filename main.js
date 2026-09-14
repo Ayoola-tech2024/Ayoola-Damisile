@@ -1,13 +1,14 @@
-// Ayoola Damisile - Bento Grid & Command Palette Engine (v4.0)
+// Ayoola Damisile - Bento Grid, Command Palette & Mobile Action Sheet Engine (v5.0)
 
 document.addEventListener('DOMContentLoaded', function () {
     initializeCommandPalette();
+    initializeMobileActionSheet();
     initializeNavigation();
     initializeScrollReveal();
     initializeForm();
 });
 
-// 1. Command Palette (Cmd+K / Ctrl+K)
+// 1. Desktop Command Palette (Cmd+K / Ctrl+K)
 function initializeCommandPalette() {
     const paletteOverlay = document.getElementById('cmd-palette-overlay');
     const paletteInput = document.getElementById('cmd-palette-input');
@@ -17,6 +18,12 @@ function initializeCommandPalette() {
     if (!paletteOverlay || !paletteInput) return;
 
     function openPalette() {
+        // If on mobile (screen width < 768px), open mobile action sheet instead for better touch UX
+        if (window.innerWidth < 768) {
+            openMobileSheet();
+            return;
+        }
+
         paletteOverlay.classList.remove('hidden');
         paletteOverlay.classList.add('flex');
         paletteInput.value = '';
@@ -29,7 +36,6 @@ function initializeCommandPalette() {
         paletteOverlay.classList.remove('flex');
     }
 
-    // Toggle with Cmd+K or Ctrl+K or Escape
     window.addEventListener('keydown', function (e) {
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
             e.preventDefault();
@@ -50,7 +56,6 @@ function initializeCommandPalette() {
         if (e.target === paletteOverlay) closePalette();
     });
 
-    // Filter Palette List
     paletteInput.addEventListener('input', function () {
         filterItems(this.value.toLowerCase().trim());
     });
@@ -67,7 +72,6 @@ function initializeCommandPalette() {
         });
     }
 
-    // Item Action Handlers
     paletteList.querySelectorAll('.cmd-item').forEach(item => {
         item.addEventListener('click', function () {
             const action = this.getAttribute('data-action');
@@ -90,7 +94,80 @@ function initializeCommandPalette() {
     });
 }
 
-// 2. Navigation & Mobile Menu
+// 2. Mobile Bottom Action Sheet Drawer (Touch-Optimized Mobile Experience)
+function openMobileSheet() {
+    const mobileSheet = document.getElementById('mobile-action-sheet');
+    const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
+    if (!mobileSheet) return;
+
+    mobileSheet.classList.remove('translate-y-full');
+    if (mobileBackdrop) mobileBackdrop.classList.remove('hidden');
+}
+
+function closeMobileSheet() {
+    const mobileSheet = document.getElementById('mobile-action-sheet');
+    const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
+    if (!mobileSheet) return;
+
+    mobileSheet.classList.add('translate-y-full');
+    if (mobileBackdrop) mobileBackdrop.classList.add('hidden');
+}
+
+function initializeMobileActionSheet() {
+    const mobileSheet = document.getElementById('mobile-action-sheet');
+    const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
+    const fabBtn = document.getElementById('mobile-fab-btn');
+
+    if (fabBtn) {
+        fabBtn.addEventListener('click', openMobileSheet);
+    }
+
+    if (mobileBackdrop) {
+        mobileBackdrop.addEventListener('click', closeMobileSheet);
+    }
+
+    // Touch Swipe Down to Close Drawer
+    let touchStartY = 0;
+    if (mobileSheet) {
+        mobileSheet.addEventListener('touchstart', function (e) {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        mobileSheet.addEventListener('touchmove', function (e) {
+            const touchMoveY = e.touches[0].clientY;
+            if (touchMoveY - touchStartY > 60) {
+                closeMobileSheet();
+            }
+        }, { passive: true });
+
+        mobileSheet.querySelectorAll('.mobile-action-tile').forEach(tile => {
+            tile.addEventListener('click', function () {
+                const action = this.getAttribute('data-action');
+                const target = this.getAttribute('data-target');
+
+                closeMobileSheet();
+
+                if (action === 'copy' && target) {
+                    copyToClipboard(target);
+                } else if (action === 'link' && target) {
+                    window.open(target, '_blank');
+                } else if (action === 'scroll' && target) {
+                    const targetEl = document.querySelector(target);
+                    if (targetEl) {
+                        const offsetTop = targetEl.offsetTop - 80;
+                        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    }
+
+    // Expose globally
+    window.openMobileSheet = openMobileSheet;
+    window.closeMobileSheet = closeMobileSheet;
+}
+
+// 3. Navigation & Mobile Menu
 function initializeNavigation() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -119,9 +196,9 @@ function initializeNavigation() {
     });
 }
 
-// 3. Scroll Reveal Observer
+// 4. Scroll Reveal Observer
 function initializeScrollReveal() {
-    const revealEls = document.querySelectorAll('.bento-item');
+    const revealEls = document.querySelectorAll('.bento-card');
     if (!revealEls.length) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -137,7 +214,7 @@ function initializeScrollReveal() {
     revealEls.forEach(el => observer.observe(el));
 }
 
-// 4. Copy Helper & Toast
+// 5. Copy Helper & Toast
 function copyToClipboard(text, btnElement) {
     navigator.clipboard.writeText(text).then(() => {
         showToast(`Copied: ${text}`);
@@ -158,7 +235,7 @@ function showToast(message) {
     existing.forEach(t => t.remove());
 
     const toast = document.createElement('div');
-    toast.className = 'app-toast fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs font-mono text-zinc-200 shadow-2xl flex items-center gap-2';
+    toast.className = 'app-toast fixed bottom-20 md:bottom-6 right-6 z-50 px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs font-mono text-zinc-200 shadow-2xl flex items-center gap-2';
     toast.innerHTML = `<span>✓</span> <span>${message}</span>`;
     document.body.appendChild(toast);
 
@@ -169,7 +246,7 @@ function showToast(message) {
     }, 2500);
 }
 
-// 5. Contact Form Handler
+// 6. Contact Form Handler
 function initializeForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;

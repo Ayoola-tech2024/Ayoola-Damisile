@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hi there, I'm Ayoola Damisile (Adams) 👋
+# Hi there, I'm Ayoola Damisile 👋
 
 **Full-Stack Software Engineer • Open-Source Creator • Systems Architect • Classical Pianist & Organist**
 
