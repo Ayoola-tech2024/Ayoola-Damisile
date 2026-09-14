@@ -1,434 +1,304 @@
-// Adams Portfolio - Main JavaScript
+// Ayoola Damisile (Adams) - Portfolio Main JavaScript Engine (v2.0)
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initializeAnimations();
-    initializeForm();
+document.addEventListener('DOMContentLoaded', function () {
+    initializeTypedEffect();
+    initializeTerminal();
     initializeNavigation();
-    initializeSkillsToggle();
+    initializeProjectFilters();
     initializeScrollReveal();
-    initializeP5Background();
+    initializeHireForm();
 });
 
-// Typewriter Animation for Hero
-function initializeAnimations() {
-    // Typewriter effect
-    const typed = new Typed('#typed-text', {
-        strings: [
-            'Ayoola Damisile',
-            'Scholar & Researcher',
-            'Frontend Developer',
-            'Project Manager',
-            'Pianist',
-            'Creative Technologist'
-        ],
-        typeSpeed: 80,
-        backSpeed: 50,
-        backDelay: 2000,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|'
-    });
-
-    // Animate skill bars when they come into view
-    const skillBars = document.querySelectorAll('.skill-progress');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const width = entry.target.getAttribute('data-width');
-                setTimeout(() => {
-                    entry.target.style.width = width + '%';
-                }, 200);
-            }
+// 1. Typed.js Hero Subtitle
+function initializeTypedEffect() {
+    const typedTarget = document.getElementById('typed-text');
+    if (typedTarget && typeof Typed !== 'undefined') {
+        new Typed('#typed-text', {
+            strings: [
+                'Full-Stack Software Engineer',
+                'Open-Source Security Author',
+                'Biometric & AI Systems Developer',
+                'Classical Pianist & Organist'
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2200,
+            loop: true,
+            showCursor: true,
+            cursorChar: '_'
         });
-    }, { threshold: 0.5 });
-
-    skillBars.forEach(bar => observer.observe(bar));
+    }
 }
 
-// Dynamic Form Logic
-function initializeForm() {
-    const serviceType = document.getElementById('service-type');
-    const musicFields = document.getElementById('music-fields');
-    const websiteFields = document.getElementById('website-fields');
-    const form = document.getElementById('hire-form');
+// 2. Interactive Terminal Simulator
+function initializeTerminal() {
+    const termInput = document.getElementById('terminal-input');
+    const termBody = document.getElementById('terminal-body');
+    const termQuickBtns = document.querySelectorAll('.term-quick-btn');
 
-    // Show/hide conditional fields based on service type
-    serviceType.addEventListener('change', function() {
-        const value = this.value;
+    if (!termInput || !termBody) return;
+
+    const COMMANDS = {
+        'npx fixmcp': `<span class="text-cyan-400 font-semibold">[fixmcp v0.1.0]</span> Model Context Protocol Diagnostic & Auto-Fix Tool
+<span class="text-emerald-400">✔</span> Scanning system for Claude Code, Cursor, and Windsurf configurations...
+<span class="text-emerald-400">✔</span> Claude Code Config: <span class="text-slate-300">~/.claude.json</span> (Validated)
+<span class="text-emerald-400">✔</span> Cursor MCP Schema: <span class="text-slate-300">JSON-RPC 2.0 Endpoint Verified</span>
+<span class="text-emerald-400">✔</span> Registered Servers: <span class="text-amber-300">stitch, memory</span>
+<span class="text-emerald-400">✔ 0 Errors Detected. All MCP Servers Healthy!</span>
+📦 Package: <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-cyan-400 underline hover:text-cyan-300">https://www.npmjs.com/package/fixmcp</a>
+🐙 GitHub:  <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-cyan-400 underline hover:text-cyan-300">https://github.com/Ayoola-tech2024/fixmcp</a>`,
+
+        'npx @damisile_ayoola/envvault': `<span class="text-emerald-400 font-semibold">[@damisile_ayoola/envvault v1.1.0]</span> Encrypted Environment Variable Vault
+<span class="text-emerald-400">✔</span> Authenticated Cipher: <span class="text-amber-300">AES-256-GCM</span> (Zero-Dependency)
+<span class="text-emerald-400">✔</span> Key Derivation: <span class="text-amber-300">PBKDF2 SHA-512 (100,000 iterations)</span>
+<span class="text-emerald-400">✔</span> Pre-Commit Git Hook: Active (0 Plaintext Secrets Leaked)
+🔒 Security Status: <span class="text-emerald-400">Vault Secure (.env.vault)</span>
+📦 Package: <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-emerald-400 underline hover:text-emerald-300">https://www.npmjs.com/package/@damisile_ayoola/envvault</a>
+🐙 GitHub:  <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-emerald-400 underline hover:text-emerald-300">https://github.com/Ayoola-tech2024/envvault</a>`,
+
+        'cat bio': `<span class="text-amber-400 font-bold">AYOOLA DAMISILE (ADAMS)</span> — Full-Stack Engineer & Product Builder
+<span class="text-slate-300">Degree:</span> Business Information Technology @ FUTA
+<span class="text-slate-300">Focus:</span> Mission-Critical Systems, Developer Security CLI Tools, Biometrics & AI
+<span class="text-slate-300">Location:</span> Nigeria (Available for Global / Remote Full-Time Engineering Roles)
+<span class="text-slate-300">Dual Track:</span> Accomplished Classical Pianist & Organist (Bach, Polyphony, Choir Director)`,
+
+        'skills': `<span class="text-cyan-400 font-bold">CORE TECHNICAL COMPETENCIES</span>
+<span class="text-amber-400">▸ Security & Tools:</span> AES-256-GCM, PBKDF2 SHA-512, MCP JSON-RPC, Git Pre-Commit Security Hooks
+<span class="text-amber-400">▸ Full-Stack & Mobile:</span> Next.js 15 (App Router), TypeScript, React, React Native / Expo, Tailwind CSS, Zustand
+<span class="text-amber-400">▸ Cloud & Databases:</span> PostgreSQL, Supabase, InsForge, Cloudinary, IndexedDB (idb), Webhooks
+<span class="text-amber-400">▸ AI & Biometrics:</span> MediaPipe 3D FaceMesh, Computer Vision, Telegram/WhatsApp AI Agents`,
+
+        'projects': `<span class="text-cyan-400 font-bold">FEATURED ENGINEERING PROJECTS</span>
+1. <span class="text-emerald-400 font-semibold">fixmcp</span> — npm CLI tool for MCP server diagnosis & repair
+2. <span class="text-emerald-400 font-semibold">@damisile_ayoola/envvault</span> — AES-256-GCM encrypted .env secret manager
+3. <span class="text-emerald-400 font-semibold">checkIn</span> — AI & Facial Recognition Biometric Attendance Portal
+4. <span class="text-emerald-400 font-semibold">buysolar.ng</span> — E-Commerce Solar Energy Sizing & Checkout Platform
+5. <span class="text-emerald-400 font-semibold">Memodams</span> — Digital Tribute & Memory Book System
+6. <span class="text-emerald-400 font-semibold">Paul Hilpert Consultancy</span> — Enterprise Strategic Management Portal`,
+
+        'contact': `<span class="text-emerald-400 font-bold">DIRECT CONTACT CHANNELS</span>
+📧 Email:    <a href="mailto:ayooladamisile24@gmail.com" class="text-cyan-400 underline">ayooladamisile24@gmail.com</a>
+📱 WhatsApp: <a href="https://wa.me/2348169787869" target="_blank" class="text-cyan-400 underline">+234 816 978 7869</a>
+💼 LinkedIn: <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="text-cyan-400 underline">linkedin.com/in/damisile-ayoola-096a7b382</a>
+🐙 GitHub:   <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-cyan-400 underline">github.com/Ayoola-tech2024</a>
+📦 NPM:      <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="text-cyan-400 underline">npmjs.com/~damisile_ayoola</a>`,
+
+        'help': `<span class="text-slate-300 font-bold">AVAILABLE CLI COMMANDS:</span>
+  <span class="text-cyan-400">npx fixmcp</span>                  Diagnose & fix MCP server configurations
+  <span class="text-emerald-400">npx @damisile_ayoola/envvault</span> Encrypted AES-256 environment vault
+  <span class="text-amber-400">cat bio</span>                     Display developer background & focus
+  <span class="text-cyan-400">skills</span>                      List technical competencies & architecture
+  <span class="text-emerald-400">projects</span>                    Showcase published tools & full-stack apps
+  <span class="text-amber-400">contact</span>                     Show direct communication channels
+  <span class="text-slate-400">clear</span>                       Clear terminal screen`
+    };
+
+    function executeCommand(cmdRaw) {
+        const cmd = cmdRaw.trim().toLowerCase();
+        if (!cmd) return;
+
+        if (cmd === 'clear') {
+            termBody.innerHTML = '';
+            termInput.value = '';
+            return;
+        }
+
+        // Add command prompt line
+        const cmdLine = document.createElement('div');
+        cmdLine.className = 'mb-1 text-slate-300';
+        cmdLine.innerHTML = `<span class="text-emerald-400">ayoola@portfolio</span>:<span class="text-cyan-400">~</span>$ <span class="text-white font-mono font-semibold">${escapeHtml(cmdRaw)}</span>`;
+        termBody.appendChild(cmdLine);
+
+        // Add output line
+        const outLine = document.createElement('div');
+        outLine.className = 'mb-3 font-mono text-xs md:text-sm text-slate-300 leading-relaxed pl-3 border-l-2 border-slate-700';
+
+        // Match command (flexible matching)
+        let matchedKey = Object.keys(COMMANDS).find(k => k === cmd || cmd.includes(k) || (k.startsWith('npx') && cmd.includes(k.split(' ')[1])));
         
-        // Hide all conditional fields first
-        musicFields.classList.add('hidden');
-        websiteFields.classList.add('hidden');
-        
-        // Show relevant fields
-        if (['fullstack','software-dev','architecture'].includes(value)) {
-            websiteFields.classList.remove('hidden');
-            // Add animation
-            anime({
-                targets: websiteFields,
-                opacity: [0, 1],
-                translateY: [20, 0],
-                duration: 500,
-                easing: 'easeOutQuart'
-            });
+        if (cmd === 'bio' || cmd === 'about') matchedKey = 'cat bio';
+
+        if (matchedKey && COMMANDS[matchedKey]) {
+            outLine.innerHTML = COMMANDS[matchedKey];
+        } else {
+            outLine.innerHTML = `<span class="text-red-400">command not found: ${escapeHtml(cmdRaw)}</span>. Type <span class="text-cyan-400 font-bold">help</span> to see available commands.`;
+        }
+
+        termBody.appendChild(outLine);
+        termInput.value = '';
+        termBody.scrollTop = termBody.scrollHeight;
+    }
+
+    termInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            executeCommand(this.value);
         }
     });
 
-    // Form submission handler
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        handleFormSubmission();
-    });
-}
-
-// Handle form submission and WhatsApp redirect
-function handleFormSubmission() {
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        serviceType: document.getElementById('service-type').value,
-        duration: document.getElementById('duration')?.value || '',
-        projectDetails: document.getElementById('project-details')?.value || '',
-        message: document.getElementById('message').value
-    };
-
-    // Validate required fields
-    if (!formData.name || !formData.email || !formData.serviceType) {
-        showNotification('Please fill in all required fields.', 'error');
-        return;
-    }
-
-    // Format WhatsApp message based on service type
-    let whatsappMessage = '';
-    const serviceLabels = {
-        'fullstack': 'Full-Stack System Build',
-        'software-dev': 'Software Application Development',
-        'architecture': 'Product Architecture & Planning'
-    };
-
-    whatsappMessage = `Hi Adams!
-I want to hire you for ${serviceLabels[formData.serviceType] || 'a technical project'}.
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Project Details: ${formData.projectDetails || 'Not specified'}
-Message: ${formData.message || 'No additional message'}`;
-
-    // Encode message for URL
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/2348169787869?text=${encodedMessage}`;
-
-    // Show success notification
-    showNotification('Redirecting to WhatsApp...', 'success');
-    
-    // Redirect to WhatsApp after short delay
-    setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-    }, 1000);
-}
-
-// Show notification messages
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(n => n.remove());
-
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification fixed top-20 right-4 z-50 px-6 py-4 rounded-lg shadow-lg text-white font-semibold ${
-        type === 'success' ? 'bg-green-500' : 
-        type === 'error' ? 'bg-red-500' : 'bg-blue-500'
-    }`;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-
-    // Animate in
-    anime({
-        targets: notification,
-        translateX: [300, 0],
-        opacity: [0, 1],
-        duration: 500,
-        easing: 'easeOutQuart'
-    });
-
-    // Remove after 3 seconds
-    setTimeout(() => {
-        anime({
-            targets: notification,
-            translateX: [0, 300],
-            opacity: [1, 0],
-            duration: 500,
-            easing: 'easeInQuart',
-            complete: () => {
-                notification.remove();
+    termQuickBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const cmd = this.getAttribute('data-cmd');
+            if (cmd) {
+                termInput.value = cmd;
+                executeCommand(cmd);
             }
         });
-    }, 3000);
+    });
 }
 
-// Navigation functionality
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+// 3. One-Click Copy to Clipboard Tool
+function copyToClipboard(text, btnElement) {
+    navigator.clipboard.writeText(text).then(() => {
+        showToast(`Copied to clipboard: "${text}"`, 'success');
+        if (btnElement) {
+            const origContent = btnElement.innerHTML;
+            btnElement.innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i> Copied!`;
+            setTimeout(() => {
+                btnElement.innerHTML = origContent;
+            }, 2000);
+        }
+    }).catch(() => {
+        showToast('Failed to copy text', 'error');
+    });
+}
+
+// 4. Toast Notification System
+function showToast(message, type = 'info') {
+    const existingToasts = document.querySelectorAll('.app-toast');
+    existingToasts.forEach(t => t.remove());
+
+    const toast = document.createElement('div');
+    toast.className = `app-toast fixed bottom-6 right-6 z-50 px-5 py-3 rounded-lg shadow-xl text-xs md:text-sm font-mono font-medium border flex items-center gap-3 transition-all duration-300 ${
+        type === 'success' ? 'bg-slate-900 border-emerald-500/60 text-emerald-400 shadow-emerald-950/50' :
+        type === 'error' ? 'bg-slate-900 border-red-500/60 text-red-400 shadow-red-950/50' :
+        'bg-slate-900 border-cyan-500/60 text-cyan-400 shadow-cyan-950/50'
+    }`;
+    
+    toast.innerHTML = `<span>${type === 'success' ? '✓' : 'ℹ'}</span> <span>${message}</span>`;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        setTimeout(() => toast.remove(), 300);
+    }, 2800);
+}
+
+// 5. Navigation Scroll & Active Link Tracking
 function initializeNavigation() {
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    if (mobileMenuBtn && mobileMenu) {
-        // Mobile menu toggle
-        mobileMenuBtn.addEventListener('click', function() {
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', function () {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link inside it is clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-            });
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
     }
 
-    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+        anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId === '#home') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 80; // Account for fixed header
-                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                }
+            if (targetId === '#') return;
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+                e.preventDefault();
+                const offsetTop = targetEl.offsetTop - 75;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
         });
     });
-
-    // Update active navigation link on scroll
-    window.addEventListener('scroll', updateActiveNavLink);
 }
 
-// Update active navigation link
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop && 
-            window.pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
+// 6. Project Filtering System
+function initializeProjectFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-item');
+
+    if (!filterBtns.length || !projectCards.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-cyan-500', 'text-slate-950', 'font-bold', 'border-cyan-400');
+                b.classList.add('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
+            });
+
+            this.classList.remove('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
+            this.classList.add('bg-cyan-500', 'text-slate-950', 'font-bold', 'border-cyan-400');
+
+            const category = this.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category || (cardCat && cardCat.includes(category))) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
-
-    navLinks.forEach(link => {
-        link.classList.remove('text-gold');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('text-gold');
-        }
-    });
 }
 
-// Skills section toggle
-function initializeSkillsToggle() {
-    // Skills matrix is static on the homepage; no toggle behavior required.
-}
-
-// Scroll reveal animations
+// 7. Scroll Reveal Observer
 function initializeScrollReveal() {
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    const revealObserver = new IntersectionObserver((entries) => {
+    const revealEls = document.querySelectorAll('.reveal-on-scroll');
+    if (!revealEls.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                
-                // Add staggered animation for child elements
-                const children = entry.target.querySelectorAll('.project-card, .skill-bar');
-                children.forEach((child, index) => {
-                    setTimeout(() => {
-                        child.style.opacity = '1';
-                        child.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-6');
+                observer.unobserve(entry.target);
             }
         });
-    }, { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
+    }, { threshold: 0.1 });
 
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
-    });
+    revealEls.forEach(el => observer.observe(el));
 }
 
-// P5.js background animation
-function initializeP5Background() {
-    // Only initialize on larger screens to avoid performance issues
-    if (window.innerWidth > 768) {
-        new p5(backgroundSketch, 'p5-container');
-    }
-}
+// 8. Hire Form to Direct WhatsApp Formatting
+function initializeHireForm() {
+    const form = document.getElementById('hire-form');
+    if (!form) return;
 
-// P5.js sketch for animated background
-function backgroundSketch(p) {
-    let particles = [];
-    let numParticles = 50;
-    
-    p.setup = function() {
-        const canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-        canvas.id('p5-canvas');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
         
-        // Create particles
-        for (let i = 0; i < numParticles; i++) {
-            particles.push({
-                x: p.random(p.width),
-                y: p.random(p.height),
-                vx: p.random(-0.5, 0.5),
-                vy: p.random(-0.5, 0.5),
-                size: p.random(2, 6),
-                opacity: p.random(0.1, 0.3)
-            });
+        const name = document.getElementById('hire-name')?.value || '';
+        const email = document.getElementById('hire-email')?.value || '';
+        const roleType = document.getElementById('hire-role')?.value || 'Engineering Role / Project';
+        const msg = document.getElementById('hire-message')?.value || '';
+
+        if (!name || !email) {
+            showToast('Please fill in your name and email.', 'error');
+            return;
         }
-    };
-    
-    p.draw = function() {
-        p.clear();
-        
-        // Update and draw particles
-        particles.forEach(particle => {
-            // Update position
-            particle.x += particle.vx;
-            particle.y += particle.vy;
-            
-            // Wrap around edges
-            if (particle.x < 0) particle.x = p.width;
-            if (particle.x > p.width) particle.x = 0;
-            if (particle.y < 0) particle.y = p.height;
-            if (particle.y > p.height) particle.y = 0;
-            
-            // Draw particle
-            p.fill(212, 175, 55, particle.opacity * 255);
-            p.noStroke();
-            p.ellipse(particle.x, particle.y, particle.size);
-        });
-        
-        // Draw connections between nearby particles
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dist = p.dist(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
-                if (dist < 100) {
-                    const alpha = p.map(dist, 0, 100, 0.1, 0);
-                    p.stroke(212, 175, 55, alpha * 255);
-                    p.strokeWeight(1);
-                    p.line(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
-                }
-            }
-        }
-    };
-    
-    p.windowResized = function() {
-        p.resizeCanvas(p.windowWidth, p.windowHeight);
-    };
-}
 
-// Utility function for smooth scrolling
-function scrollToSection(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-        const offsetTop = element.offsetTop - 80;
-        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-    }
-}
+        const formattedMsg = `Hi Ayoola!
+I reached out via your portfolio website.
 
-// Add hover effects to project cards
-document.addEventListener('DOMContentLoaded', function() {
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            anime({
-                targets: this,
-                scale: 1.02,
-                rotateX: 5,
-                rotateY: 5,
-                duration: 300,
-                easing: 'easeOutQuart'
-            });
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            anime({
-                targets: this,
-                scale: 1,
-                rotateX: 0,
-                rotateY: 0,
-                duration: 300,
-                easing: 'easeOutQuart'
-            });
-        });
+Name: ${name}
+Email: ${email}
+Opportunity / Role: ${roleType}
+Message: ${msg}`;
+
+        const waUrl = `https://wa.me/2348169787869?text=${encodeURIComponent(formattedMsg)}`;
+        showToast('Redirecting to WhatsApp...', 'success');
+
+        setTimeout(() => {
+            window.open(waUrl, '_blank');
+        }, 800);
     });
-});
-
-// Hero background static alignment (prevents vertical overlap overflow on scroll)
-
-// Initialize skill bars animation on first load
-document.addEventListener('DOMContentLoaded', function() {
-    // Animate skill bars when skills section is visible
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach((bar, index) => {
-                        setTimeout(() => {
-                            const width = bar.getAttribute('data-width');
-                            bar.style.width = width + '%';
-                        }, index * 100);
-                    });
-                }
-            });
-        }, { threshold: 0.3 });
-        
-        observer.observe(skillsSection);
-    }
-});
-
-// Add loading animation
-window.addEventListener('load', function() {
-    // Hide loading screen if exists
-    const loader = document.querySelector('.loader');
-    if (loader) {
-        loader.style.display = 'none';
-    }
-    
-    // Animate hero elements
-    anime.timeline({
-        easing: 'easeOutExpo',
-        duration: 1000
-    })
-    .add({
-        targets: '.hero-content h1',
-        translateY: [60, 0],
-        opacity: [0, 1],
-        delay: 500
-    })
-    .add({
-        targets: '.hero-content p',
-        translateY: [40, 0],
-        opacity: [0, 1],
-        delay: 200
-    }, '-=800')
-    .add({
-        targets: '.hero-content .flex',
-        translateY: [30, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(100)
-    }, '-=600');
-});
+}

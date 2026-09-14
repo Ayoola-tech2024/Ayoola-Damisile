@@ -1,1360 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayoola Damisile - Web Development Projects</title>
-    <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/png">
-    <meta name="description" content="Explore Adams' portfolio of stunning web development projects. Professional websites built with modern technologies and beautiful design.">
+    <title>Ayoola Damisile — Engineering Projects & Open-Source Portfolio</title>
+    <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
+    <meta name="description" content="Explore Ayoola Damisile's software engineering portfolio: published npm packages (fixmcp, @damisile_ayoola/envvault), biometric AI systems (checkIn), clean energy platforms (buysolar.ng), and enterprise client web applications.">
     <link rel="canonical" href="https://www.damisile.name.ng/projects.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.damisile.name.ng/projects.html">
-    <meta property="og:title" content="Ayoola Damisile - Web Development Projects">
-    <meta property="og:description" content="Portfolio of web development projects - professional websites built with modern technologies.">
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Core Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    
-    <!-- Vercel Web Analytics -->
-    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-    
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'navy': '#1a1f36',
-                        'gold': '#d4af37',
-                        'light-gray': '#f8f9fa',
-                        'charcoal': '#2c3e50'
+                        darkBg: '#0B0F17',
+                        darkCard: '#131B2E',
+                        brandCyan: '#38bdf8',
+                        brandEmerald: '#10b981',
+                        brandAmber: '#f59e0b'
                     },
                     fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'body': ['Inter', 'sans-serif'],
-                        'mono': ['JetBrains Mono', 'monospace']
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
         }
     </script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
-        .projects-hero-bg {
-            background: linear-gradient(135deg, #1a1f36 0%, #2c3e50 50%, #4a5568 100%);
-            position: relative;
-            overflow: hidden;
+        body {
+            background-color: #0B0F17;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
         }
-        
-        .projects-hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('./resources/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
-            z-index: 1;
+        .glass-panel {
+            background: rgba(19, 27, 46, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        .glass-nav {
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .project-card {
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .project-card:hover {
-            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-        }
-        
-        .project-card img {
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #d4af37;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        
-        .tech-tag {
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .tech-tag.html { background: #e34c26; color: white; }
-        .tech-tag.css { background: #1572b6; color: white; }
-        .tech-tag.javascript { background: #f7df1e; color: black; }
-        .tech-tag.react { background: #61dafb; color: black; }
-        .tech-tag.tailwind { background: #06b6d4; color: white; }
-        .tech-tag.nodejs { background: #339933; color: white; }
-        .tech-tag.figma { background: #f24e1e; color: white; }
-        .tech-tag.nextjs { background: #000000; color: white; }
-        .tech-tag.github { background: #333333; color: white; }
-        
-        .project-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #d4af37;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: #6b7280;
-            font-weight: 500;
-        }
-        .social-links a {
-          margin: 0 12px;
-          font-size: 28px;
-          justify-content: center; /* Horizontal center */
-          align-items: center;     /* Vertical center */
-          text-align: center; 
-          color: #ffffff; /* Change to match your site theme */
-          text-decoration: none;
-          transition: 0.3s ease;
-        }
-        
-        .social-links a:hover {
-          color: #00acee; /* Hover color */
-        }
-
-        .project-title {
-            font-size: clamp(1.5rem, 2.8vw, 1.875rem);
-            line-height: 1.2;
-            overflow-wrap: anywhere;
-        }
-
-        .project-feature {
-            align-items: flex-start;
-        }
-
-        @media (max-width: 1024px) {
-            .project-card:hover {
-                transform: none;
-            }
-
-            .project-card img {
-                height: clamp(220px, 42vw, 340px) !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .projects-hero-bg {
-                min-height: 88vh;
-            }
-
-            .hero-metrics {
-                gap: 0.75rem;
-            }
-
-            .metric-card {
-                min-width: 145px;
-                padding: 0.75rem;
-                border-radius: 0.75rem;
-                background: rgba(255, 255, 255, 0.07);
-            }
-
-            .project-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                margin: 2rem 0 0;
-            }
-
-            .floating-whatsapp {
-                bottom: 16px;
-                right: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .project-card {
-                border-radius: 1rem;
-            }
-
-            .project-card img {
-                height: 220px !important;
-            }
-
-            .stat-number {
-                font-size: 2.2rem;
-            }
-        }
-
     </style>
 </head>
-<body class="font-body text-charcoal bg-white">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="font-display font-bold text-2xl text-navy">
-                    <a href="index.html">Ayoola Damisile</a>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-charcoal hover:text-navy font-medium">Home</a>
-                    <a href="music.html" class="nav-link text-charcoal hover:text-navy font-medium">Music</a>
-                    <a href="projects.html" class="nav-link text-gold font-medium">Projects</a>
-                    <a href="index.html#hire" class="nav-link text-charcoal hover:text-navy font-medium">Hire Me</a>
-                </div>
-                
-                <button id="mobile-menu-btn" class="md:hidden p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <div class="px-4 py-2 space-y-2">
-                <a href="index.html" class="block py-2 text-charcoal hover:text-navy">Home</a>
-                <a href="music.html" class="block py-2 text-charcoal hover:text-navy">Music</a>
-                <a href="projects.html" class="block py-2 text-gold">Projects</a>
-                <a href="index.html#hire" class="block py-2 text-charcoal hover:text-navy">Hire Me</a>
-            </div>
-        </div>
-    </nav>
+<body class="antialiased selection:bg-cyan-500 selection:text-slate-950">
 
-    <!-- Hero Section -->
-    <section class="projects-hero-bg min-h-screen flex items-center">
-        <div class="hero-content w-full">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
-                        My <span class="gradient-text">Creative Works</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-300 mb-8">
-                        Professional Web Development Projects
-                    </p>
-                    <div class="hero-metrics flex flex-wrap justify-center gap-4 sm:gap-8 mb-12">
-                        <div class="metric-card text-center">
-                            <div class="text-4xl font-bold text-gold">5+</div>
-                            <div class="text-gray-300">Completed Projects</div>
-                        </div>
-                        <div class="metric-card text-center">
-                            <div class="text-4xl font-bold text-gold">3</div>
-                            <div class="text-gray-300">Years Experience</div>
-                        </div>
-                        <div class="metric-card text-center">
-                            <div class="text-4xl font-bold text-gold">100%</div>
-                            <div class="text-gray-300">Client Satisfaction</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#featured-projects" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
-                            View Projects
-                        </a>
-                        <a href="index.html#hire" class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
-                            Start Your Project
-                        </a>
-                    </div>
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    AD
                 </div>
-            </div>
+                <div>
+                    <span class="font-bold text-slate-100 tracking-tight text-lg group-hover:text-cyan-400 transition-colors">Ayoola Damisile</span>
+                    <span class="block text-xs font-mono text-cyan-400">Project Catalog</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="index.html#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="index.html#open-source" class="hover:text-cyan-400 transition-colors">Open Source</a>
+                <a href="index.html#systems" class="hover:text-cyan-400 transition-colors">Systems</a>
+                <a href="projects.html" class="text-cyan-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-layer-group"></i> All Projects</a>
+                <a href="music.html" class="hover:text-cyan-400 transition-colors">Music</a>
+                <a href="index.html#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <a href="https://wa.me/2348169787869" target="_blank" class="px-4 py-2 rounded-full glass-panel text-xs font-mono text-emerald-400 flex items-center gap-2 border-emerald-500/30 hover:border-emerald-500/60 transition-all">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Hire Ayoola
+            </a>
+        </div>
+    </header>
+
+    <!-- HEADER HERO -->
+    <section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-mono">
+            <i class="fa-solid fa-code-branch"></i> Engineering Showcase
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight">
+            Complete Project & Software Catalog
+        </h1>
+        <p class="text-slate-400 text-base max-w-2xl mx-auto">
+            From published npm CLI security utilities to production facial biometric attendance portals and enterprise web client systems.
+        </p>
+
+        <!-- CATEGORY FILTER BUTTONS -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-8 font-mono text-xs">
+            <button class="filter-btn px-4 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold border border-cyan-400 transition-all" data-filter="all">
+                All Projects
+            </button>
+            <button class="filter-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 border border-slate-700 hover:border-cyan-400 transition-all" data-filter="open-source">
+                📦 Open-Source Tools
+            </button>
+            <button class="filter-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 border border-slate-700 hover:border-cyan-400 transition-all" data-filter="systems">
+                ⚡ Full-Stack & AI Systems
+            </button>
+            <button class="filter-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 border border-slate-700 hover:border-cyan-400 transition-all" data-filter="client">
+                💼 Client Applications
+            </button>
         </div>
     </section>
 
-    <!-- Project Statistics -->
-    <section class="py-20 bg-light-gray">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="project-stats reveal">
-                <div class="stat-card">
-                    <div class="stat-number">6+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Years of Development</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Client Satisfaction</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support Available</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section id="featured-projects" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-6">Featured Projects</h2>
-                <div class="w-24 h-1 bg-gold mx-auto"></div>
-                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
-                    A collection of my web development work, showcasing modern design, 
-                    responsive layouts, and cutting-edge technologies, and secure systems.
-                </p>
-            </div>
+    <!-- PROJECTS GRID CATALOG -->
+    <section class="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="space-y-16">
-                <!-- Project 0A: fixmcp (Published NPM CLI Tool) -->
-                <div class="project-card bg-navy text-white rounded-2xl shadow-xl overflow-hidden reveal border border-gray-800">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="p-6 sm:p-8 lg:p-12 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="bg-gold/20 text-gold border border-gold/40 text-xs font-mono px-3 py-1 rounded-full font-semibold">
-                                        NPM Package v0.1.0
-                                    </span>
-                                    <span class="text-gray-400 text-xs font-mono">Published Open Source</span>
-                                </div>
-                                <h3 class="project-title font-display font-bold text-white mb-4">fixmcp — Doctor CLI for MCP Servers</h3>
-                                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                                    A zero-install diagnostic CLI that finds every Model Context Protocol (MCP) server configuration across 6 AI agents (Claude Code, Cursor, VS Code, opencode, Codex), executes real stdio JSON-RPC handshakes, measures per-server latency, and auto-fixes broken registry paths.
-                                </p>
-                                
-                                <div class="bg-gray-900 rounded-lg p-3 font-mono text-sm text-green-400 mb-6 flex justify-between items-center border border-gray-800">
-                                    <code>$ npx fixmcp</code>
-                                    <button onclick="navigator.clipboard.writeText('npx fixmcp'); alert('Copied npx fixmcp!')" class="text-gray-400 hover:text-white text-xs bg-gray-800 px-3 py-1.5 rounded">
-                                        Copy
-                                    </button>
-                                </div>
-
-                                <div class="space-y-3 mb-8">
-                                    <h4 class="font-semibold text-gold text-sm uppercase tracking-wider">Key Engineering Features:</h4>
-                                    <ul class="space-y-2 text-gray-300 text-sm">
-                                        <li class="project-feature flex">
-                                            <i class="fas fa-check-circle text-gold mr-2.5 mt-1"></i>
-                                            Multi-Agent Config Auto-Discovery across Windows, macOS, and Linux
-                                        </li>
-                                        <li class="project-feature flex">
-                                            <i class="fas fa-check-circle text-gold mr-2.5 mt-1"></i>
-                                            Real stdio JSON-RPC Handshakes & Response Latency Diagnostics
-                                        </li>
-                                        <li class="project-feature flex">
-                                            <i class="fas fa-check-circle text-gold mr-2.5 mt-1"></i>
-                                            Safe Rewrite Engine with automatic <code class="text-gold">.bak</code> configuration backups
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="flex flex-wrap gap-4 pt-4 border-t border-gray-800">
-                                <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener" class="bg-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
-                                    <i class="fab fa-npm text-lg"></i> View on NPM
-                                </a>
-                                <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" rel="noopener" class="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
-                                    <i class="fab fa-github text-lg"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="p-8 bg-gray-900 font-mono text-xs text-gray-300 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-800">
-                            <div class="bg-black/60 p-6 rounded-xl border border-gray-800 space-y-3">
-                                <div class="text-green-400 font-bold">$ npx fixmcp</div>
-                                <div class="text-gray-400">🔍 Discovering MCP configs (Claude Code, Cursor, VS Code)...</div>
-                                <div class="text-gray-400">⚡ Executing stdio handshakes...</div>
-                                <div class="text-white">✓ <span class="text-gold">context7</span>: healthy (42ms, 12 tools)</div>
-                                <div class="text-red-400">✗ <span class="text-red-400">sqlite-mcp</span>: command not found (npx @latest roundtrip)</div>
-                                <div class="text-yellow-400">💡 Run <code class="text-white">npx fixmcp --fix</code> to rewrite paths safely</div>
-                            </div>
-                        </div>
+            <!-- Project 1: fixmcp -->
+            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-cyan-500/50 transition-all group flex flex-col justify-between" data-category="open-source">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-[11px] font-mono border border-cyan-800/40">npm CLI Tool</span>
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-slate-400 hover:text-cyan-400 text-lg">
+                            <i class="fa-brands fa-npm"></i>
+                        </a>
+                    </div>
+                    <h3 class="text-2xl font-bold font-mono text-cyan-400">fixmcp</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Diagnostic and auto-repair utility for Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
+                    </p>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
+                        <span class="text-cyan-400">$ npx fixmcp</span>
+                        <button onclick="copyToClipboard('npx fixmcp', this)" class="text-slate-400 hover:text-cyan-400"><i class="fa-regular fa-copy"></i></button>
                     </div>
                 </div>
-
-                <!-- Project 0B: @damisile_ayoola/envvault (Published NPM CLI Tool) -->
-                <div class="project-card bg-navy text-white rounded-2xl shadow-xl overflow-hidden reveal border border-gray-800">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="p-6 sm:p-8 lg:p-12 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="bg-green-500/20 text-green-400 border border-green-500/40 text-xs font-mono px-3 py-1 rounded-full font-semibold">
-                                        NPM Package v1.1.0
-                                    </span>
-                                    <span class="text-gray-400 text-xs font-mono">Security Infrastructure</span>
-                                </div>
-                                <h3 class="project-title font-display font-bold text-white mb-4">EnvVault — AES-256 Encrypted Secret Manager</h3>
-                                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                                    Zero-dependency AES-256-GCM environment variable CLI manager. Encrypts project secrets with PBKDF2 SHA-512 key derivation, injects decrypted variables into process memory (<code class="text-gold">envvault run</code>) without saving plain text files to disk, and audits git security.
-                                </p>
-                                
-                                <div class="bg-gray-900 rounded-lg p-3 font-mono text-sm text-green-400 mb-6 flex justify-between items-center border border-gray-800">
-                                    <code>$ npm i -g @damisile_ayoola/envvault</code>
-                                    <button onclick="navigator.clipboard.writeText('npm i -g @damisile_ayoola/envvault'); alert('Copied install command!')" class="text-gray-400 hover:text-white text-xs bg-gray-800 px-3 py-1.5 rounded">
-                                        Copy
-                                    </button>
-                                </div>
-
-                                <div class="space-y-3 mb-8">
-                                    <h4 class="font-semibold text-gold text-sm uppercase tracking-wider">Key Security Features:</h4>
-                                    <ul class="space-y-2 text-gray-300 text-sm">
-                                        <li class="project-feature flex">
-                                            <i class="fas fa-shield-alt text-green-400 mr-2.5 mt-1"></i>
-                                            AES-256-GCM Authenticated Encryption & PBKDF2 100k Iteration Key Derivation
-                                        </li>
-                                        <li class="project-feature flex">
-                                            <i class="fas fa-shield-alt text-green-400 mr-2.5 mt-1"></i>
-                                            Direct Process Memory Injection (<code class="text-gold">envvault run -- npm start</code>)
-                                        </li>
-                                        <li class="project-feature flex">
-                                            <i class="fas fa-shield-alt text-green-400 mr-2.5 mt-1"></i>
-                                            Built-in Git Security Linter & Leak Auditor (<code class="text-gold">envvault audit</code>)
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="flex flex-wrap gap-4 pt-4 border-t border-gray-800">
-                                <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener" class="bg-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
-                                    <i class="fab fa-npm text-lg"></i> View on NPM
-                                </a>
-                                <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" rel="noopener" class="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
-                                    <i class="fab fa-github text-lg"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="p-8 bg-gray-900 font-mono text-xs text-gray-300 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-800">
-                            <div class="bg-black/60 p-6 rounded-xl border border-gray-800 space-y-3">
-                                <div class="text-green-400 font-bold">$ envvault audit</div>
-                                <div class="text-gray-300">🛡️ Running EnvVault Security Audit...</div>
-                                <div class="text-green-400">  ✅ Encrypted .envvault storage detected.</div>
-                                <div class="text-green-400">  ✅ .envvault is properly listed in .gitignore.</div>
-                                <div class="text-green-400">  ✅ Zero plaintext secrets exposed on disk.</div>
-                            </div>
-                        </div>
+                <div class="pt-4 border-t border-slate-800 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-400 border border-cyan-900/40">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-400 border border-cyan-900/40">JSON-RPC 2.0</span>
                     </div>
-                </div>
-
-                <!-- Project 0C: checkIn (Biometric Platform) -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal border border-gray-200">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="p-6 sm:p-8 lg:p-12">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-mono font-semibold px-3 py-1 rounded-full">Production Platform • FUTA SLIT</span>
-                            <h3 class="project-title font-display font-bold text-navy mt-4 mb-4">checkIn — Biometric Attendance System</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                A production university attendance platform engineered for FUTA School of Logistics and Innovation Technology. Solves physical scanner dependency by validating students directly on their phones via 3D facial biometrics and GPS geofencing.
-                            </p>
-
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag tailwind">Next.js 16</span>
-                                <span class="tech-tag javascript">TypeScript</span>
-                                <span class="tech-tag html">MediaPipe 3D</span>
-                                <span class="tech-tag css">PostgreSQL</span>
-                                <span class="tech-tag tailwind">IndexedDB</span>
-                            </div>
-
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Engineering Innovations:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        Google MediaPipe FaceMesh 468 3D landmark extraction & similarity routing
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        Haversine GPS validation (50m radius threshold around lecturer session)
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        IndexedDB offline payload queueing with automatic background sync when network returns
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-navy p-8 text-white flex flex-col justify-center">
-                            <div class="space-y-4">
-                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-                                    <div class="text-gold font-mono text-sm font-semibold">Biometric Match Rate</div>
-                                    <div class="text-2xl font-bold">&gt; 50% Present • 40-50% Pending Review</div>
-                                </div>
-                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-                                    <div class="text-gold font-mono text-sm font-semibold">Hierarchy Support</div>
-                                    <div class="text-2xl font-bold">Admin • HOD • Lecturer • Student</div>
-                                </div>
-                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-                                    <div class="text-gold font-mono text-sm font-semibold">SLIT Departments</div>
-                                    <div class="text-sm text-gray-300">FINT, BIT, EMT, LTT, PMT, PRMT, SIMT</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 0D: buysolar.ng (Clean Energy Marketplace) -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal border border-gray-200">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="p-6 sm:p-8 lg:p-12">
-                            <span class="bg-amber-100 text-amber-800 text-xs font-mono font-semibold px-3 py-1 rounded-full">E-Commerce & AI Copilot</span>
-                            <h3 class="project-title font-display font-bold text-navy mt-4 mb-4">buysolar.ng — Solar Marketplace & AI Bot</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Commercial solar equipment e-commerce platform & product catalog. Features automated Cloudinary media pipelines, PostgreSQL data layer, and an omnichannel WhatsApp/Telegram AI support copilot.
-                            </p>
-
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag tailwind">Next.js</span>
-                                <span class="tech-tag css">Cloudinary CDN</span>
-                                <span class="tech-tag javascript">PostgreSQL</span>
-                                <span class="tech-tag html">WhatsApp AI Bot</span>
-                            </div>
-
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Features:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        Automated image matching & Cloudinary CDN asset pipelines
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        Omnichannel WhatsApp & Telegram AI customer inquiry bot
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-charcoal p-8 text-white flex flex-col justify-center">
-                            <div class="space-y-4">
-                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-                                    <div class="text-gold font-mono text-sm font-semibold">Catalog Capacity</div>
-                                    <div class="text-2xl font-bold">500+ Authentic Solar Products</div>
-                                </div>
-                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-                                    <div class="text-gold font-mono text-sm font-semibold">Integrations</div>
-                                    <div class="text-sm text-gray-300">Cloudinary CDN, InsForge API, Telegram Bot API</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 1: Paul Hilpert Consultancy -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="relative">
-                            <img src="/cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy Website" 
-                                 class="w-full h-80 lg:h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
-                        </div>
-                        <div class="p-6 sm:p-8 lg:p-12">
-                            <h3 class="project-title font-display font-bold text-navy mb-4">Paul Hilpert Consultancy</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                A professional consultancy website featuring a modern, clean design with smooth animations 
-                                and interactive elements. Built with a focus on user experience and conversion optimization.
-                            </p>
-                            
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag html">HTML5</span>
-                                <span class="tech-tag css">CSS3</span>
-                                <span class="tech-tag javascript">JavaScript</span>
-                                <span class="tech-tag tailwind">Tailwind CSS</span>
-                            </div>
-                            
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Features:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Responsive design for all devices
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Smooth scroll animations
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Contact form with validation
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        SEO optimized structure
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://paulhilpert.vercel.app/index.html" target="_blank" 
-                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Live Site
-                                </a>
-                                <button onclick="showProjectDetails('paul-hilpert')" 
-                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: MemoDams -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="relative lg:order-2">
-                            <img src="/cover images/Memodams.jpg" alt="MemoDams App Interface" 
-                                 class="w-full h-80 lg:h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
-                        </div>
-                        <div class="p-6 sm:p-8 lg:p-12 lg:order-1">
-                            <h3 class="project-title font-display font-bold text-navy mb-4">MemoDams</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                A sophisticated note-taking application with a clean, minimalist interface. 
-                                Features include rich text editing, organization tools, and seamless user experience.
-                            </p>
-                            
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag react">React</span>
-                                <span class="tech-tag tailwind">Tailwind CSS</span>
-                                <span class="tech-tag nodejs">Node.js</span>
-                                <span class="tech-tag github">GitHub</span>
-                            </div>
-                            
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Features:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Rich text editing capabilities
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Advanced search functionality
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Firebase cloud storage backup
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Mobile-responsive design
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://memo-dams.vercel.app" target="_blank" 
-                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Live Site
-                                </a>
-                                <button onclick="showProjectDetails('memodams')" 
-                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <!-- Project 2: AFSS E-magazine -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="relative lg:order-2">
-                            <img src="./resources/Afss Logo.png" alt="AFSS - SET 2024/2025 E-magazine" 
-                                 class="w-full h-80 lg:h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
-                        </div>
-                        <div class="p-6 sm:p-8 lg:p-12 lg:order-1">
-                            <h3 class="project-title font-display font-bold text-navy mb-4">Apostolic Faith Secondary School Ado Ekiti, (Set 2024/2025) E-&nbsp;Magazine</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                             A digital magazine platform created to document and celebrate the graduating class of AFSS SET 2024–25. 
-                                The website presents memories, achievements, and creative contributions 
-                                from students in a modern and engaging format.
-                            </p>
-                            
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag react">HTML</span>
-                                <span class="tech-tag tailwind">Tailwind CSS</span>
-                                <span class="tech-tag nodejs"> JavaScript</span>
-                                <span class="tech-tag github"> GitHub</span>
-                            </div>
-                            
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Features:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                       Digital magazine layout for graduating students
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Responsive design for mobile and desktop viewing
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                       Image galleries showcasing student moments
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                       Organized sections for articles, memories, and highlights
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://afss-set2024-25.onrender.com" target="_blank" 
-                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Live Site
-                                </a>
-                                <button onclick="showProjectDetails('AFSS')" 
-                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Damiqueen Designs -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="relative">
-                            <img src="/cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs Portfolio" 
-                                 class="w-full h-80 lg:h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
-                        </div>
-                        <div class="p-6 sm:p-8 lg:p-12">
-                            <h3 class="project-title font-display font-bold text-navy mb-4">Damiqueen Designs</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                A creative E-commerce website showcasing beautiful design work and projects. 
-                                Features an elegant layout with smooth animations and interactive galleries.
-                            </p>
-                            
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag figma">Figma</span>
-                                <span class="tech-tag html">HTML5</span>
-                                <span class="tech-tag css">CSS3</span>
-                                <span class="tech-tag javascript">JavaScript</span>
-                            </div>
-                            
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Features:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Interactive project gallery
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Smooth scroll animations
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Contact form integration
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Performance optimized
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" 
-                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Live Site
-                                </a>
-                                <button onclick="showProjectDetails('damiqueen')" 
-                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Victory Edge Solutions -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="relative lg:order-2">
-                            <img src="Victory Edge Solutions Provider Cover image.jpg" alt="Victory Edge Solutions Website" 
-                                 class="w-full h-80 lg:h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/20 lg:hidden"></div>
-                        </div>
-                        <div class="p-6 sm:p-8 lg:p-12 lg:order-1">
-                            <h3 class="project-title font-display font-bold text-navy mb-4">Victory Edge Solutions</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                A professional business website for a solutions provider company. Features a modern 
-                                corporate design with comprehensive service information and client testimonials.
-                            </p>
-                            
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag html">HTML5</span>
-                                <span class="tech-tag css">CSS3</span>
-                                <span class="tech-tag javascript">JavaScript</span>
-                                <span class="tech-tag nextjs">Next.js</span>
-                            </div>
-                            
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Features:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Corporate branding design
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Service showcase sections
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Client testimonial carousel
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Contact form with validation
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://ayoola-tech2024.github.io/victoryedge/" target="_blank" 
-                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Live Site
-                                </a>
-                                <button onclick="showProjectDetails('victory-edge')" 
-                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Tee Stella Stitches -->
-                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="grid lg:grid-cols-2 gap-0">
-                        <div class="relative">
-                            <img src="Tee Stella Stitches Cover Image.jpg" alt="Tee Stella Stitches Fashion Website" 
-                                 class="w-full h-80 lg:h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:hidden"></div>
-                        </div>
-                        <div class="p-6 sm:p-8 lg:p-12">
-                            <h3 class="project-title font-display font-bold text-navy mb-4">Tee Stella Stitches</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                A luxury fashion brand website featuring elegant product showcases, 
-                                shopping functionality, and a sophisticated aesthetic that matches the brand's premium positioning.
-                            </p>
-                            
-                            <div class="tech-stack mb-6">
-                                <span class="tech-tag react">React</span>
-                                <span class="tech-tag tailwind">Tailwind CSS</span>
-                                <span class="tech-tag nextjs">Next.js</span>
-                                <span class="tech-tag nodejs">Node.js</span>
-                            </div>
-                            
-                            <div class="space-y-4 mb-8">
-                                <h4 class="font-semibold text-navy">Key Features:</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Product catalog with filtering
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Shopping cart functionality
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Image gallery with zoom
-                                    </li>
-                                    <li class="project-feature flex">
-                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        Mobile-optimized shopping
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" 
-                                   class="flex-1 bg-navy hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Live Site
-                                </a>
-                                <button onclick="showProjectDetails('tee-stella')" 
-                                        class="flex-1 border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-lg font-semibold text-center">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
+                    <div class="flex items-center justify-between text-xs font-mono">
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-cyan-400 hover:underline">npm Package</a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-slate-400 hover:text-white">GitHub Repo</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Call to Action -->
-    <section class="py-20 bg-navy text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="reveal">
-                <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
-                    Ready to Start Your Project?
-                </h2>
-                <p class="text-xl text-gray-300 mb-8">
-                    Let's work together to bring your vision to life with a stunning, 
-                    high-performance website that drives results.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="index.html#hire" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
-                        Start Your Project
-                    </a>
-                    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
-                       class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg hover-lift">
-                        Chat on WhatsApp
+            <!-- Project 2: @damisile_ayoola/envvault -->
+            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-emerald-500/50 transition-all group flex flex-col justify-between" data-category="open-source">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-emerald-950 text-emerald-400 text-[11px] font-mono border border-emerald-800/40">Cryptography CLI</span>
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-slate-400 hover:text-emerald-400 text-lg">
+                            <i class="fa-brands fa-npm"></i>
+                        </a>
+                    </div>
+                    <h3 class="text-2xl font-bold font-mono text-emerald-400">@damisile_ayoola/envvault</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Zero-dependency encrypted environment variable vault using AES-256-GCM cipher and git pre-commit secret leak scanners.
+                    </p>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
+                        <span class="text-emerald-400">$ npx @damisile_ayoola/envvault</span>
+                        <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-slate-400 hover:text-emerald-400"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-slate-800 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-400 border border-emerald-900/40">AES-256-GCM</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-400 border border-emerald-900/40">PBKDF2 SHA-512</span>
+                    </div>
+                    <div class="flex items-center justify-between text-xs font-mono">
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-emerald-400 hover:underline">npm Package</a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-slate-400 hover:text-white">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: checkIn -->
+            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-cyan-500/50 transition-all group flex flex-col justify-between" data-category="systems">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-[11px] font-mono border border-cyan-800/40">Biometrics & AI</span>
+                        <a href="https://check-in-gray.vercel.app" target="_blank" class="text-slate-400 hover:text-cyan-400 text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-100">checkIn</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Facial biometric attendance portal powered by MediaPipe 3D FaceMesh, anti-spoofing liveness verification, and real-time database webhooks.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">Next.js 14</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">MediaPipe AI</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">Supabase</span>
+                    </div>
+                    <a href="https://check-in-gray.vercel.app" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">
+                        Launch Live App <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </a>
                 </div>
             </div>
+
+            <!-- Project 4: buysolar.ng -->
+            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-amber-500/50 transition-all group flex flex-col justify-between" data-category="systems">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-amber-950 text-amber-400 text-[11px] font-mono border border-amber-800/40">E-Commerce</span>
+                        <a href="https://buysolar.ng" target="_blank" class="text-slate-400 hover:text-amber-400 text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-100">buysolar.ng</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Clean energy solar deployment platform featuring load sizing wizard, equipment recommendations, and payment checkout gateway.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">Next.js</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">Paystack</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">PostgreSQL</span>
+                    </div>
+                    <a href="https://buysolar.ng" target="_blank" class="text-xs font-mono text-amber-400 hover:underline flex items-center gap-1">
+                        Visit Site <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 5: Memodams -->
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
+                <div>
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/Memodams.jpg" alt="Memodams" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-100">Memodams</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Digital memorial & tribute platform offering interactive memory books, photo streams, and condolences messaging.</p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-slate-400">Client Web Platform</span>
+                    <a href="https://memodams.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">memodams.com</a>
+                </div>
+            </div>
+
+            <!-- Project 6: Paul Hilpert Consultancy -->
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
+                <div>
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-100">Paul Hilpert Consultancy</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Corporate web application for executive strategy and management consulting firm with scheduling integrations.</p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-slate-400">Corporate Site</span>
+                    <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">paulhilpert...</a>
+                </div>
+            </div>
+
+            <!-- Project 7: Victory Edge Solutions -->
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
+                <div>
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/Victory Edge Solutions Provider.jpg" alt="Victory Edge Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-100">Victory Edge Solutions</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Corporate services portal highlighting advisory programs, client portfolios, and engineering consultation.</p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-slate-400">Business Services</span>
+                    <a href="https://victoryedgesolutions.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">victoryedge...</a>
+                </div>
+            </div>
+
+            <!-- Project 8: Tee Stella Stitches -->
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
+                <div>
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-100">Tee Stella Stitches</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Fashion catalog & bespoke tailoring e-commerce showcase featuring dynamic garment customizers.</p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-slate-400">Fashion E-Commerce</span>
+                    <span class="text-xs font-mono text-slate-400">Client Showcase</span>
+                </div>
+            </div>
+
+            <!-- Project 9: Damiqueen Designs -->
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
+                <div>
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-slate-100">Damiqueen Designs</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">Visual brand portfolio and design studio web portal highlighting graphics, branding, and media art.</p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between">
+                    <span class="text-[10px] font-mono text-slate-400">Brand Showcase</span>
+                    <span class="text-xs font-mono text-slate-400">Design Studio</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-charcoal text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-lg font-display font-semibold mb-2">Adams</p>
-                <p class="text-gray-400 mb-4">Crafting Experiences in Code and Music</p>
-                <p class="text-sm text-gray-500">
-                    &copy; 2026 Ayoola Damisile. All rights reserved.
-                </p>
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 font-mono">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-cyan-500 flex items-center justify-center font-bold text-slate-950">AD</div>
+                <span>© 2026 Ayoola Damisile (Adams). Project Showcase.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-cyan-400 transition-colors">GitHub</a>
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:text-cyan-400 transition-colors">NPM</a>
+                <a href="music.html" class="hover:text-cyan-400 transition-colors">Music</a>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/2348169787869?text=Hi%20Adams!%20I%20came%20from%20your%20portfolio%20and%20I%20want%20to%20chat." 
-       class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.51 13.5c-.22.48-.68.84-1.23 1.02-.41.14-.88.23-2.12.37-1.25.14-2.17.02-2.17.02s-1.25-.14-2.17-.02c-1.24-.14-1.71-.23-2.12-.37-.55-.18-1.01-.54-1.23-1.02-.22-.48-.14-1.01-.14-1.01s.09-.53.14-1.01c.22-.48.68-.84 1.23-1.02.41-.14.88-.23 2.12-.37 1.25-.14 2.17-.02 2.17-.02s1.25.14 2.17.02c1.24.14 1.71.23 2.12.37.55.18 1.01.54 1.23 1.02.22.48.14 1.01.14 1.01s-.09.53-.14 1.01z"/>
-        </svg>
-    </a>
-
-    <!-- Project Details Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-8">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 id="modal-title" class="font-display text-3xl font-bold text-navy"></h3>
-                    <button onclick="closeProjectModal()" class="text-gray-500 hover:text-gray-700">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div id="modal-content" class="space-y-6">
-                    <!-- Dynamic content will be inserted here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeNavigation();
-            initializeScrollReveal();
-        });
-
-        // Navigation functionality
-        function initializeNavigation() {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuBtn.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Scroll reveal animations
-        function initializeScrollReveal() {
-            const revealElements = document.querySelectorAll('.reveal');
-            
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { 
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            revealElements.forEach(element => {
-                revealObserver.observe(element);
-            });
-        }
-
-        // Project details modal
-        function showProjectDetails(projectId) {
-            const modal = document.getElementById('project-modal');
-            const title = document.getElementById('modal-title');
-            const content = document.getElementById('modal-content');
-            
-            const projectData = {
-                'paul-hilpert': {
-                    title: 'Paul Hilpert Consultancy',
-                    content: `
-                        <div class="space-y-6">
-                            <img src="./resources/project-1.jpg" alt="Paul Hilpert Consultancy" class="w-full h-64 object-cover rounded-lg">
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
-                                <p class="text-gray-600 mb-4">
-                                    A comprehensive consultancy website designed to establish credibility and attract high-value clients. 
-                                    The project focused on creating a professional online presence with clear service offerings and 
-                                    easy contact methods.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Technical Implementation</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>• Built with semantic HTML5 for better SEO</li>
-                                    <li>• Responsive CSS Grid and Flexbox layouts</li>
-                                    <li>• Vanilla JavaScript for interactions</li>
-                                    <li>• Tailwind CSS for rapid styling</li>
-                                    <li>• Optimized for Core Web Vitals</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Results</h4>
-                                <p class="text-gray-600">
-                                    The website successfully increased client inquiries by 40% and improved the company's 
-                                    professional image in the consultancy market.
-                                </p>
-                            </div>
-                        </div>
-                    `
-                },
-               'AFSS': {
-                    title: 'AFSS - SET 2024/2025 E-magazine',
-                    content: `
-                        <div class="space-y-6">
-                            <img src="./resources/Afss Logo.png" alt="AFSS SET 2024–25 E-Magazine" class="w-full h-64 object-cover rounded-lg">
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
-                                <p class="text-gray-600 mb-4">
-                                            A web-based e-magazine developed to showcase the experiences, memories, and 
-                                    achievements of the AFSS SET 2024–25 graduating class. The platform acts as a digital yearbook, allowing students and visitors to explore stories, photos,
-                            and reflections from the graduating set in an engaging and accessible format.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Technical Implementation</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>•Digital magazine layout for graduating students </li>
-                                    <li>• Tailwind CSS for responsive design</li>
-                                    <li>•Image galleries showcasing student moments</li>
-                                    <li>• Responsive design for mobile and desktop viewing </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">impact</h4>
-                                <p class="text-gray-600">The platform serves as a digital archive for the graduating class, 
-                                preserving memories and experiences while allowing students, 
-                                teachers, and visitors to easily explore the collective journey of the AFSS SET 2024–25 set.
-                                </p>
-                            </div>
-                        </div>
-                    `
-                },
-                'memodams': {
-                    title: 'MemoDams - Note Taking App',
-                    content: `
-                        <div class="space-y-6">
-                            <img src="./resources/project-2.jpg" alt="MemoDams App" class="w-full h-64 object-cover rounded-lg">
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
-                                <p class="text-gray-600 mb-4">
-                                    A sophisticated note-taking application designed for productivity and organization. 
-                                    The app provides users with a clean, intuitive interface for creating, organizing, and managing notes.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Technical Implementation</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>• React.js for component-based architecture</li>
-                                    <li>• Tailwind CSS for responsive design</li>
-                                    <li>• Local storage for data persistence</li>
-                                    <li>• Advanced search and filtering</li>
-                                    <li>• Rich text editing capabilities</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">User Experience</h4>
-                                <p class="text-gray-600">
-                                    The application features a distraction-free writing environment with powerful organization 
-                                    tools, making it perfect for students, professionals, and anyone needing to capture ideas quickly.
-                                </p>
-                            </div>
-                        </div>
-                    `
-                },
-                'damiqueen': {
-                    title: 'Damiqueen Designs Portfolio',
-                    content: `
-                        <div class="space-y-6">
-                            <img src="./resources/project-3.jpg" alt="Damiqueen Designs" class="w-full h-64 object-cover rounded-lg">
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
-                                <p class="text-gray-600 mb-4">
-                                    A creative portfolio website showcasing design work and creative projects. 
-                                    The site features an elegant, artistic design that reflects the creative nature of the brand.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Design Process</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>• Figma for design and prototyping</li>
-                                    <li>• Custom CSS animations and transitions</li>
-                                    <li>• Interactive project showcase</li>
-                                    <li>• Optimized image galleries</li>
-                                    <li>• Mobile-first responsive approach</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Impact</h4>
-                                <p class="text-gray-600">
-                                    The portfolio successfully showcases the designer's work and has helped attract new clients 
-                                    and opportunities in the creative industry.
-                                </p>
-                            </div>
-                        </div>
-                    `
-                },
-                'victory-edge': {
-                    title: 'Victory Edge Solutions',
-                    content: `
-                        <div class="space-y-6">
-                            <img src="./resources/project-4.jpg" alt="Victory Edge Solutions" class="w-full h-64 object-cover rounded-lg">
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
-                                <p class="text-gray-600 mb-4">
-                                    A professional business website for a solutions provider company. The site features 
-                                    a modern corporate design with comprehensive service information and client testimonials.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Business Goals</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>• Establish professional online presence</li>
-                                    <li>• Showcase service offerings clearly</li>
-                                    <li>• Build trust through testimonials</li>
-                                    <li>• Generate qualified leads</li>
-                                    <li>• Support business growth objectives</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Technical Features</h4>
-                                <p class="text-gray-600">
-                                    Built with Next.js for optimal performance and SEO, featuring dynamic content management, 
-                                    responsive design, and integrated analytics tracking.
-                                </p>
-                            </div>
-                        </div>
-                    `
-                },
-                'tee-stella': {
-                    title: 'Tee Stella Stitches',
-                    content: `
-                        <div class="space-y-6">
-                            <img src="./resources/project-5.jpg" alt="Tee Stella Stitches" class="w-full h-64 object-cover rounded-lg">
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Project Overview</h4>
-                                <p class="text-gray-600 mb-4">
-                                    A luxury fashion e-commerce website featuring elegant product showcases and shopping functionality. 
-                                    The design reflects the premium nature of the brand while providing a seamless shopping experience.
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">E-commerce Features</h4>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>• Product catalog with advanced filtering</li>
-                                    <li>• Shopping cart and checkout process</li>
-                                    <li>• Image gallery with zoom functionality</li>
-                                    <li>• Mobile-optimized shopping experience</li>
-                                    <li>• Inventory management integration</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-navy mb-3">Design Excellence</h4>
-                                <p class="text-gray-600">
-                                    The website combines elegant aesthetics with powerful functionality, creating an online 
-                                    shopping experience that matches the quality and sophistication of the fashion brand.
-                                </p>
-                            </div>
-                        </div>
-                    `
-                }
-            };
-            
-            const project = projectData[projectId];
-            if (project) {
-                title.textContent = project.title;
-                content.innerHTML = project.content;
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        // Close project modal
-        function closeProjectModal() {
-            const modal = document.getElementById('project-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('project-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeProjectModal();
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
