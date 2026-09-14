@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="dark h-full overflow-hidden">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayoola Damisile — Software Engineer & Open-Source Creator</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
     
@@ -28,8 +28,9 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#09090b',
-                        darkCard: '#121215'
+                        darkBg: '#08080a',
+                        darkCard: '#101014',
+                        borderMuted: '#24242a'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -42,418 +43,476 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        html, body {
-            background-color: #09090b;
+        body {
+            background-color: #08080a;
             color: #f4f4f5;
             font-family: 'Inter', sans-serif;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            touch-action: none;
         }
-        .card-border {
+        .bento-card {
+            background: #101014;
             border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
         }
-        .card-border:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-        .panel-scroll::-webkit-scrollbar {
-            width: 5px;
-        }
-        .panel-scroll::-webkit-scrollbar-track {
-            background: #09090b;
-        }
-        .panel-scroll::-webkit-scrollbar-thumb {
-            background: #27272a;
-            border-radius: 4px;
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.22);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="antialiased selection:bg-white selection:text-black">
 
-    <!-- Fixed Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-md border-b border-zinc-800/80 h-16 flex items-center px-4 sm:px-8 justify-between">
-        <a href="javascript:void(0)" onclick="goToPanel(0)" class="font-bold text-white tracking-tight hover:opacity-80 transition-opacity">
-            Ayoola Damisile
-        </a>
-
-        <!-- Horizontal Panel Links -->
-        <nav class="hidden md:flex items-center gap-6 text-xs font-mono font-medium text-zinc-400">
-            <a href="javascript:void(0)" class="nav-panel-link pb-1 transition-colors hover:text-white" data-panel-index="0">01 // INTRO</a>
-            <a href="javascript:void(0)" class="nav-panel-link pb-1 transition-colors hover:text-white" data-panel-index="1">02 // OPEN SOURCE</a>
-            <a href="javascript:void(0)" class="nav-panel-link pb-1 transition-colors hover:text-white" data-panel-index="2">03 // PROJECTS</a>
-            <a href="javascript:void(0)" class="nav-panel-link pb-1 transition-colors hover:text-white" data-panel-index="3">04 // SKILLS</a>
-            <a href="javascript:void(0)" class="nav-panel-link pb-1 transition-colors hover:text-white" data-panel-index="4">05 // MUSIC</a>
-            <a href="javascript:void(0)" class="nav-panel-link pb-1 transition-colors hover:text-white" data-panel-index="5">06 // CONTACT</a>
-        </nav>
-
-        <div class="flex items-center gap-4 text-sm font-medium">
-            <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors">
-                <i class="fa-brands fa-github"></i>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#08080a]/90 backdrop-blur-md border-b border-zinc-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#home" class="font-bold text-white tracking-tight hover:opacity-80 transition-opacity">
+                Ayoola Damisile
             </a>
-            <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="#open-source" class="hover:text-white transition-colors">Open Source</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#music" class="hover:text-white transition-colors">Music</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <!-- Command Palette Trigger Button -->
+                <button class="cmd-palette-trigger px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400 hover:text-white hover:border-zinc-700 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search</span>
+                    <kbd class="px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-300">⌘K</kbd>
+                </button>
+
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors p-1">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
 
-        <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#08080a] border-b border-zinc-800 px-6 py-4 space-y-3 text-sm text-zinc-300">
+            <a href="#open-source" class="block hover:text-white">Open Source</a>
+            <a href="#projects" class="block hover:text-white">Projects</a>
+            <a href="#skills" class="block hover:text-white">Skills</a>
+            <a href="#music" class="block hover:text-white">Music</a>
+            <a href="#contact" class="block hover:text-white">Contact</a>
+        </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 z-40 bg-[#09090b] border-b border-zinc-800 px-6 py-4 space-y-3 text-xs font-mono text-zinc-300">
-        <a href="javascript:void(0)" onclick="goToPanel(0)" class="block hover:text-white">01 // INTRO</a>
-        <a href="javascript:void(0)" onclick="goToPanel(1)" class="block hover:text-white">02 // OPEN SOURCE</a>
-        <a href="javascript:void(0)" onclick="goToPanel(2)" class="block hover:text-white">03 // PROJECTS</a>
-        <a href="javascript:void(0)" onclick="goToPanel(3)" class="block hover:text-white">04 // SKILLS</a>
-        <a href="javascript:void(0)" onclick="goToPanel(4)" class="block hover:text-white">05 // MUSIC</a>
-        <a href="javascript:void(0)" onclick="goToPanel(5)" class="block hover:text-white">06 // CONTACT</a>
+    <!-- COMMAND PALETTE (CMD+K) SPOTLIGHT OVERLAY -->
+    <div id="cmd-palette-overlay" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm p-4 sm:p-6 items-start justify-center pt-20">
+        <div class="bg-[#101014] border border-zinc-700 rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl space-y-3 p-4">
+            <div class="flex items-center gap-3 px-3 py-2 border-b border-zinc-800">
+                <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
+                <input id="cmd-palette-input" type="text" placeholder="Type a command or search (e.g. fixmcp, checkIn, contact)..." class="w-full bg-transparent border-none outline-none font-mono text-sm text-white placeholder-zinc-500">
+                <kbd class="px-2 py-0.5 rounded bg-zinc-800 text-[10px] font-mono text-zinc-400">ESC</kbd>
+            </div>
+
+            <div id="cmd-palette-list" class="max-h-72 overflow-y-auto space-y-1 font-mono text-xs text-zinc-300">
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="scroll" data-target="#open-source">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-box text-cyan-400"></i>
+                        <span>Jump to Open-Source Tools</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">Section</span>
+                </div>
+
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="copy" data-target="npx fixmcp">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-terminal text-cyan-400"></i>
+                        <span>Copy: npx fixmcp</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">CLI Command</span>
+                </div>
+
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="copy" data-target="npx @damisile_ayoola/envvault">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                        <span>Copy: npx @damisile_ayoola/envvault</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">CLI Command</span>
+                </div>
+
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="scroll" data-target="#projects">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-cubes text-amber-400"></i>
+                        <span>Jump to Featured Projects</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">Section</span>
+                </div>
+
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="link" data-target="https://check-in-gray.vercel.app">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-eye text-cyan-400"></i>
+                        <span>Launch: checkIn Facial Biometrics App</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">External Link</span>
+                </div>
+
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="scroll" data-target="#music">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-music text-purple-400"></i>
+                        <span>Jump to Classical Pianist & Organist</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">Section</span>
+                </div>
+
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="copy" data-target="ayooladamisile24@gmail.com">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-zinc-400"></i>
+                        <span>Copy: ayooladamisile24@gmail.com</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">Email</span>
+                </div>
+
+                <div class="cmd-item px-3 py-2.5 rounded-lg hover:bg-zinc-800 cursor-pointer flex items-center justify-between" data-action="link" data-target="https://wa.me/2348169787869">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Open: WhatsApp Direct Chat</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500">WhatsApp</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- MAIN VIEWPORT WRAPPER -->
-    <main class="h-full w-full pt-16 pb-16 overflow-hidden relative">
+    <!-- MAIN BENTO GRID CANVAS -->
+    <main id="home" class="pt-28 pb-20 px-4 sm:px-6 max-w-6xl mx-auto space-y-8">
         
-        <!-- HORIZONTAL SLIDING TRACK (600vw wide) -->
-        <div id="horizontal-track" class="flex h-full w-[600vw] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
-
-            <!-- PANEL 0: HERO INTRO -->
-            <section class="w-[100vw] h-full flex-shrink-0 flex items-center justify-center p-6 md:p-12 overflow-y-auto panel-scroll">
-                <div class="max-w-4xl space-y-6">
-                    <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">01 // INTRODUCTION</span>
+        <!-- HERO BENTO BLOCK -->
+        <div class="grid lg:grid-cols-12 gap-6 items-stretch">
+            
+            <!-- Main Hero Bento Card (8-col) -->
+            <div class="lg:col-span-8 bento-card p-8 sm:p-10 flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
                     <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
                         Ayoola Damisile
                     </h1>
                     <p class="text-xl sm:text-2xl text-zinc-400 font-normal">
                         Software Engineer & Open-Source Author
                     </p>
-                    <p class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                        I build web applications, developer CLI security tools, and computer vision systems. Based in Nigeria, studying Business Information Technology at FUTA. Creator of <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-white underline underline-offset-4 font-mono font-medium hover:text-zinc-300">fixmcp</a> and <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-white underline underline-offset-4 font-mono font-medium hover:text-zinc-300">@damisile_ayoola/envvault</a>.
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        I build web applications, developer CLI security tools, and computer vision systems. Based in Nigeria, studying Business Information Technology at FUTA. Creator of <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-white underline font-mono">fixmcp</a> and <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-white underline font-mono">@damisile_ayoola/envvault</a>.
+                    </p>
+                </div>
+
+                <!-- Executable CLI Snippet Pills -->
+                <div class="grid sm:grid-cols-2 gap-3 pt-2 font-mono text-xs">
+                    <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 flex items-center justify-between">
+                        <span class="text-zinc-300">$ npx fixmcp</span>
+                        <button onclick="copyToClipboard('npx fixmcp', this)" class="text-zinc-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                    <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 flex items-center justify-between">
+                        <span class="text-zinc-300">$ npx @damisile_ayoola/envvault</span>
+                        <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-zinc-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2 text-sm font-medium">
+                    <a href="#open-source" class="px-5 py-2.5 rounded-lg bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
+                        Explore Open Source
+                    </a>
+                    <a href="#projects" class="px-5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:border-zinc-700 transition-all">
+                        Featured Work
+                    </a>
+                    <a href="https://wa.me/2348169787869" target="_blank" class="px-5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:border-zinc-700 transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Profile Bento Card (4-col) -->
+            <div class="lg:col-span-4 bento-card p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white font-bold font-mono">
+                        AD
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Ayoola Damisile (Adams)</h3>
+                        <p class="text-xs font-mono text-zinc-400">@Ayoola-tech2024</p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-mono text-zinc-300 border-t border-zinc-800/80 pt-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-zinc-500"></i> FUTA BIT Scholar</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-box text-zinc-500"></i> 2 Published npm Tools</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-eye text-zinc-500"></i> Biometric Computer Vision</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-music text-zinc-500"></i> Classical Pianist & Organist</li>
+                    </ul>
+                </div>
+
+                <div class="pt-2">
+                    <button class="cmd-palette-trigger w-full py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300 hover:text-white hover:border-zinc-700 transition-all flex items-center justify-center gap-2">
+                        <span>Press ⌘K for Spotlight</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BENTO SECTION 1: PUBLISHED OPEN SOURCE TOOLS -->
+        <div id="open-source" class="space-y-4 pt-6">
+            <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+                <i class="fa-solid fa-box text-zinc-400"></i> Published Open-Source Packages
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <!-- Tool 1: fixmcp -->
+                <div class="bento-card overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                            <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-bold font-mono text-white">fixmcp</h3>
+                                <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v0.1.0</span>
+                            </div>
+                            <p class="text-zinc-300 text-xs leading-relaxed">
+                                Diagnostic and auto-repair utility for Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
+                            </p>
+                            <div class="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
+                                <span>$ npx fixmcp</span>
+                                <button onclick="copyToClipboard('npx fixmcp', this)" class="text-zinc-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+                            <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">TypeScript</span>
+                            <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">JSON-RPC 2.0</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
+                            <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-white hover:underline">npm Package</a>
+                            <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: envvault -->
+                <div class="bento-card overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                            <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-bold font-mono text-white">@damisile_ayoola/envvault</h3>
+                                <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v1.1.0</span>
+                            </div>
+                            <p class="text-zinc-300 text-xs leading-relaxed">
+                                Zero-dependency CLI tool that encrypts environment secrets into authenticated .env.vault files using AES-256-GCM cipher and PBKDF2 SHA-512.
+                            </p>
+                            <div class="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
+                                <span>$ npx @damisile_ayoola/envvault</span>
+                                <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-zinc-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+                            <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">AES-256-GCM</span>
+                            <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">PBKDF2 SHA-512</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
+                            <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-white hover:underline">npm Package</a>
+                            <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BENTO SECTION 2: FEATURED APPLICATIONS -->
+        <div id="projects" class="space-y-4 pt-6">
+            <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+                <i class="fa-solid fa-cubes text-zinc-400"></i> Featured Applications & Web Systems
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1: checkIn -->
+                <div class="bento-card overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-40 bg-zinc-900 overflow-hidden relative">
+                            <img src="cover images/checkin-cover-photo.jpg" alt="checkIn screenshot" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-base font-bold text-white">checkIn</h3>
+                            <p class="text-zinc-400 text-xs leading-relaxed">Facial biometric attendance portal using MediaPipe 3D FaceMesh.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <a href="https://check-in-gray.vercel.app" target="_blank" class="text-xs font-mono text-white hover:underline">Launch App →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Memodams -->
+                <div class="bento-card overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-40 bg-zinc-900 overflow-hidden relative">
+                            <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-base font-bold text-white">Memodams</h3>
+                            <p class="text-zinc-400 text-xs leading-relaxed">Digital memorial & tribute platform with interactive photo streams.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <a href="https://memodams.com" target="_blank" class="text-xs font-mono text-white hover:underline">memodams.com →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Paul Hilpert -->
+                <div class="bento-card overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-40 bg-zinc-900 overflow-hidden relative">
+                            <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert screenshot" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-base font-bold text-white">Paul Hilpert</h3>
+                            <p class="text-zinc-400 text-xs leading-relaxed">Corporate strategy management portal and executive site.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono text-white hover:underline">paulhilpert... →</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Tee Stella -->
+                <div class="bento-card overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-40 bg-zinc-900 overflow-hidden relative">
+                            <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella screenshot" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="text-base font-bold text-white">Tee Stella Stitches</h3>
+                            <p class="text-zinc-400 text-xs leading-relaxed">Fashion catalog & bespoke tailoring e-commerce application.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <a href="projects.html" class="text-xs font-mono text-zinc-400 hover:text-white">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BENTO SECTION 3: SKILLS, MUSIC & CONTACT -->
+        <div class="grid lg:grid-cols-12 gap-6 pt-6">
+            
+            <!-- Skills Bento Card (7-col) -->
+            <div id="skills" class="lg:col-span-7 bento-card p-6 sm:p-8 space-y-4">
+                <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-zinc-400"></i> Technical Architecture
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-4 font-mono text-xs">
+                    <div class="space-y-1.5">
+                        <span class="text-zinc-400 font-bold block">Frontend & Mobile</span>
+                        <p class="text-zinc-300">Next.js 15, TypeScript, React 19, React Native, Tailwind CSS, Zustand</p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="text-zinc-400 font-bold block">Security & Systems</span>
+                        <p class="text-zinc-300">AES-256-GCM, PBKDF2 SHA-512, MCP JSON-RPC 2.0, Git Hooks</p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="text-zinc-400 font-bold block">Databases & Cloud</span>
+                        <p class="text-zinc-300">PostgreSQL, Supabase, InsForge, Cloudinary, Webhooks</p>
+                    </div>
+                    <div class="space-y-1.5">
+                        <span class="text-zinc-400 font-bold block">AI & Computer Vision</span>
+                        <p class="text-zinc-300">MediaPipe 3D FaceMesh, Anti-Spoofing, WhatsApp AI Bots</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music Bento Card (5-col) -->
+            <div id="music" class="lg:col-span-5 bento-card p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+                <div class="space-y-3">
+                    <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-music text-zinc-400"></i> Pianist & Organist
+                    </h2>
+                    <p class="text-zinc-300 text-xs leading-relaxed">
+                        Accomplished classical pianist, pipe organist, and choir accompanist. Voice-leading counterpoint (J.S. Bach) informs decoupled software architecture.
+                    </p>
+                </div>
+                <div>
+                    <a href="music.html" class="text-xs font-mono text-white underline underline-offset-4 hover:text-zinc-300">
+                        Explore Music Showcase →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CONTACT BENTO CARD (12-col) -->
+        <div id="contact" class="bento-card p-8 sm:p-10">
+            <div class="grid md:grid-cols-12 gap-8">
+                <div class="md:col-span-5 space-y-4">
+                    <h2 class="text-2xl font-bold text-white">Direct Contact</h2>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Send an email or message on WhatsApp for software development, tool builds, or open-source collaboration.
                     </p>
 
-                    <div class="flex flex-wrap items-center gap-4 pt-4 text-sm font-medium">
-                        <button onclick="goToPanel(1)" class="px-5 py-2.5 rounded-lg bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
-                            Explore Open Source →
-                        </button>
-                        <button onclick="goToPanel(2)" class="px-5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:border-zinc-700 transition-all">
-                            View Featured Projects →
-                        </button>
-                        <a href="https://wa.me/2348169787869" target="_blank" class="px-5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:border-zinc-700 transition-all flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PANEL 1: OPEN SOURCE PACKAGES -->
-            <section class="w-[100vw] h-full flex-shrink-0 flex items-center justify-center p-6 md:p-12 overflow-y-auto panel-scroll">
-                <div class="max-w-5xl w-full space-y-6">
-                    <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">02 // PUBLISHED OPEN SOURCE</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Open-Source Packages</h2>
-
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Tool 1: fixmcp -->
-                        <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="h-44 bg-zinc-900 overflow-hidden relative">
-                                    <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-6 space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <h3 class="text-lg font-bold font-mono text-white">fixmcp</h3>
-                                        <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v0.1.0</span>
-                                    </div>
-                                    <p class="text-zinc-300 text-xs leading-relaxed">
-                                        CLI diagnostic tool that scans, validates, and fixes Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
-                                    </p>
-
-                                    <div class="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
-                                        <span>$ npx fixmcp</span>
-                                        <button onclick="copyToClipboard('npx fixmcp', this)" class="text-zinc-400 hover:text-white transition-colors"><i class="fa-regular fa-copy"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-6 pt-0 space-y-2">
-                                <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
-                                    <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">TypeScript</span>
-                                    <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">JSON-RPC 2.0</span>
-                                </div>
-                                <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
-                                    <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-white hover:underline">npm Package</a>
-                                    <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repo</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tool 2: envvault -->
-                        <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
-                            <div>
-                                <div class="h-44 bg-zinc-900 overflow-hidden relative">
-                                    <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-6 space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <h3 class="text-lg font-bold font-mono text-white">@damisile_ayoola/envvault</h3>
-                                        <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v1.1.0</span>
-                                    </div>
-                                    <p class="text-zinc-300 text-xs leading-relaxed">
-                                        Zero-dependency CLI tool that encrypts environment secrets into authenticated .env.vault files using AES-256-GCM cipher and PBKDF2 SHA-512.
-                                    </p>
-
-                                    <div class="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
-                                        <span>$ npx @damisile_ayoola/envvault</span>
-                                        <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-zinc-400 hover:text-white transition-colors"><i class="fa-regular fa-copy"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-6 pt-0 space-y-2">
-                                <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
-                                    <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">AES-256-GCM</span>
-                                    <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">PBKDF2 SHA-512</span>
-                                </div>
-                                <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
-                                    <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-white hover:underline">npm Package</a>
-                                    <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PANEL 2: FEATURED PROJECTS -->
-            <section class="w-[100vw] h-full flex-shrink-0 flex items-center justify-center p-6 md:p-12 overflow-y-auto panel-scroll">
-                <div class="max-w-5xl w-full space-y-6">
-                    <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">03 // FEATURED WORK</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Projects & Applications</h2>
-
-                    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-                        <!-- Project 1: checkIn -->
-                        <div class="bg-[#121215] rounded-xl overflow-hidden card-border flex flex-col justify-between">
-                            <div>
-                                <div class="h-36 bg-zinc-900 overflow-hidden relative">
-                                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn screenshot" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-4 space-y-2">
-                                    <h3 class="text-base font-bold text-white">checkIn</h3>
-                                    <p class="text-zinc-400 text-[11px] leading-relaxed">Biometric facial recognition portal with MediaPipe 3D FaceMesh.</p>
-                                </div>
-                            </div>
-                            <div class="p-4 pt-0">
-                                <a href="https://check-in-gray.vercel.app" target="_blank" class="text-xs font-mono text-white hover:underline">Live App →</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 2: Memodams -->
-                        <div class="bg-[#121215] rounded-xl overflow-hidden card-border flex flex-col justify-between">
-                            <div>
-                                <div class="h-36 bg-zinc-900 overflow-hidden relative">
-                                    <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-4 space-y-2">
-                                    <h3 class="text-base font-bold text-white">Memodams</h3>
-                                    <p class="text-zinc-400 text-[11px] leading-relaxed">Digital tribute & memory platform with photo streams.</p>
-                                </div>
-                            </div>
-                            <div class="p-4 pt-0">
-                                <a href="https://memodams.com" target="_blank" class="text-xs font-mono text-white hover:underline">memodams.com →</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 3: Paul Hilpert -->
-                        <div class="bg-[#121215] rounded-xl overflow-hidden card-border flex flex-col justify-between">
-                            <div>
-                                <div class="h-36 bg-zinc-900 overflow-hidden relative">
-                                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert screenshot" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-4 space-y-2">
-                                    <h3 class="text-base font-bold text-white">Paul Hilpert</h3>
-                                    <p class="text-zinc-400 text-[11px] leading-relaxed">Corporate strategy website & consulting portal.</p>
-                                </div>
-                            </div>
-                            <div class="p-4 pt-0">
-                                <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono text-white hover:underline">paulhilpert... →</a>
-                            </div>
-                        </div>
-
-                        <!-- Project 4: Tee Stella -->
-                        <div class="bg-[#121215] rounded-xl overflow-hidden card-border flex flex-col justify-between">
-                            <div>
-                                <div class="h-36 bg-zinc-900 overflow-hidden relative">
-                                    <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella screenshot" class="w-full h-full object-cover">
-                                </div>
-                                <div class="p-4 space-y-2">
-                                    <h3 class="text-base font-bold text-white">Tee Stella</h3>
-                                    <p class="text-zinc-400 text-[11px] leading-relaxed">Fashion catalog & bespoke tailoring e-commerce.</p>
-                                </div>
-                            </div>
-                            <div class="p-4 pt-0">
-                                <a href="projects.html" class="text-xs font-mono text-zinc-400 hover:text-white">Details →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <a href="projects.html" class="text-xs font-mono text-white underline underline-offset-4 hover:text-zinc-300">
-                            View Full Project Specs Catalog →
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PANEL 3: SKILLS MATRIX -->
-            <section class="w-[100vw] h-full flex-shrink-0 flex items-center justify-center p-6 md:p-12 overflow-y-auto panel-scroll">
-                <div class="max-w-5xl w-full space-y-6">
-                    <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">04 // TECHNICAL MATRIX</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Skills & Architecture</h2>
-
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
-                        <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800 space-y-3">
-                            <h3 class="text-sm font-bold text-white">Languages & Core</h3>
-                            <ul class="space-y-1.5 text-zinc-400">
-                                <li>• TypeScript</li>
-                                <li>• JavaScript (ESNext)</li>
-                                <li>• HTML5 & CSS3</li>
-                                <li>• Node.js</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800 space-y-3">
-                            <h3 class="text-sm font-bold text-white">Frontend & Mobile</h3>
-                            <ul class="space-y-1.5 text-zinc-400">
-                                <li>• Next.js (App Router)</li>
-                                <li>• React & React Native</li>
-                                <li>• Tailwind CSS</li>
-                                <li>• Zustand & Redux</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800 space-y-3">
-                            <h3 class="text-sm font-bold text-white">Security & Backend</h3>
-                            <ul class="space-y-1.5 text-zinc-400">
-                                <li>• AES-256-GCM / PBKDF2</li>
-                                <li>• MCP (Model Context)</li>
-                                <li>• PostgreSQL & Supabase</li>
-                                <li>• RESTful & Webhooks</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800 space-y-3">
-                            <h3 class="text-sm font-bold text-white">AI & Biometrics</h3>
-                            <ul class="space-y-1.5 text-zinc-400">
-                                <li>• MediaPipe 3D FaceMesh</li>
-                                <li>• Anti-Spoofing Vision</li>
-                                <li>• WhatsApp/Telegram AI</li>
-                                <li>• AI Agent Integrations</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PANEL 4: MUSIC & ORGAN -->
-            <section class="w-[100vw] h-full flex-shrink-0 flex items-center justify-center p-6 md:p-12 overflow-y-auto panel-scroll">
-                <div class="max-w-5xl w-full bg-[#121215] rounded-xl p-8 border border-zinc-800 grid md:grid-cols-12 gap-8 items-center">
-                    <div class="md:col-span-7 space-y-4">
-                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">05 // DUAL-TRACK DISCIPLINE</span>
-                        <h2 class="text-2xl font-bold text-white">Classical Pianist & Pipe Organist</h2>
-                        <p class="text-zinc-300 text-sm leading-relaxed">
-                            Beyond software engineering, I am an accomplished classical pianist, pipe organist, and choir accompanist. Studying counterpoint and multi-voice polyphony (J.S. Bach) informs how I think about decoupled software architecture and clean pattern design.
-                        </p>
+                    <div class="space-y-3 pt-2 text-xs font-mono text-zinc-300">
                         <div>
-                            <a href="music.html" class="inline-flex items-center gap-2 text-xs font-mono text-white underline underline-offset-4 hover:text-zinc-300">
-                                Explore Music Showcase →
-                            </a>
+                            <span class="text-zinc-500 block">Direct Email:</span>
+                            <a href="mailto:ayooladamisile24@gmail.com" class="text-white hover:underline">ayooladamisile24@gmail.com</a>
                         </div>
-                    </div>
-
-                    <div class="md:col-span-5">
-                        <div class="rounded-lg overflow-hidden border border-zinc-800">
-                            <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Organist" class="w-full h-56 object-cover object-top">
+                        <div>
+                            <span class="text-zinc-500 block">WhatsApp Direct:</span>
+                            <a href="https://wa.me/2348169787869" target="_blank" class="text-white hover:underline">+234 816 978 7869</a>
+                        </div>
+                        <div>
+                            <span class="text-zinc-500 block">GitHub Profile:</span>
+                            <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-white hover:underline">@Ayoola-tech2024</a>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- PANEL 5: CONTACT & INQUIRY -->
-            <section class="w-[100vw] h-full flex-shrink-0 flex items-center justify-center p-6 md:p-12 overflow-y-auto panel-scroll">
-                <div class="max-w-5xl w-full grid md:grid-cols-12 gap-10">
-                    <div class="md:col-span-5 space-y-4">
-                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block">06 // DIRECT CONTACT</span>
-                        <h2 class="text-2xl font-bold text-white">Get In Touch</h2>
-                        <p class="text-zinc-400 text-sm leading-relaxed">
-                            Interested in working together or collaborating on open-source software? Send an email or reach out on WhatsApp.
-                        </p>
-
-                        <div class="space-y-3 pt-2 text-xs font-mono text-zinc-300">
-                            <div>
-                                <span class="text-zinc-500 block">Email:</span>
-                                <a href="mailto:ayooladamisile24@gmail.com" class="text-white hover:underline">ayooladamisile24@gmail.com</a>
-                            </div>
-                            <div>
-                                <span class="text-zinc-500 block">WhatsApp:</span>
-                                <a href="https://wa.me/2348169787869" target="_blank" class="text-white hover:underline">+234 816 978 7869</a>
-                            </div>
-                            <div>
-                                <span class="text-zinc-500 block">GitHub:</span>
-                                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-white hover:underline">@Ayoola-tech2024</a>
-                            </div>
+                <div class="md:col-span-7">
+                    <form id="contact-form" class="space-y-4 text-xs">
+                        <div>
+                            <label class="block text-zinc-400 font-mono mb-1">Your Name *</label>
+                            <input id="contact-name" type="text" placeholder="e.g. John Doe" required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors">
                         </div>
-                    </div>
-
-                    <div class="md:col-span-7">
-                        <form id="contact-form" class="bg-[#121215] p-6 rounded-xl border border-zinc-800 space-y-4 text-xs">
-                            <div>
-                                <label class="block text-zinc-400 font-mono mb-1">Your Name *</label>
-                                <input id="contact-name" type="text" placeholder="e.g. John Doe" required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors">
-                            </div>
-                            <div>
-                                <label class="block text-zinc-400 font-mono mb-1">Email Address *</label>
-                                <input id="contact-email" type="email" placeholder="e.g. john@example.com" required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors">
-                            </div>
-                            <div>
-                                <label class="block text-zinc-400 font-mono mb-1">Message *</label>
-                                <textarea id="contact-message" rows="4" placeholder="Your message..." required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors"></textarea>
-                            </div>
-                            <button type="submit" class="w-full py-2.5 rounded-lg bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
-                                Send Message via WhatsApp
-                            </button>
-                        </form>
-                    </div>
+                        <div>
+                            <label class="block text-zinc-400 font-mono mb-1">Email Address *</label>
+                            <input id="contact-email" type="email" placeholder="e.g. john@example.com" required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-zinc-400 font-mono mb-1">Message *</label>
+                            <textarea id="contact-message" rows="3" placeholder="Your message..." required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-2.5 rounded-lg bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
+                            Send Message via WhatsApp
+                        </button>
+                    </form>
                 </div>
-            </section>
-
+            </div>
         </div>
+
     </main>
 
-    <!-- FIXED BOTTOM CONTROLS & INDICATORS -->
-    <footer class="fixed bottom-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-md border-t border-zinc-800/80 h-14 flex items-center px-4 sm:px-8 justify-between text-xs font-mono">
-        <!-- Panel Counter -->
-        <div class="flex items-center gap-3">
-            <span id="current-panel-num" class="text-white font-bold">01</span>
-            <span class="text-zinc-600">/ 06</span>
-            <span class="hidden sm:inline text-zinc-500 ml-2">Swipe or Scroll Down ➔ Slide Sideways</span>
-        </div>
-
-        <!-- Center Progress Bar -->
-        <div class="w-24 sm:w-48 h-1 bg-zinc-800 rounded-full overflow-hidden">
-            <div id="scroll-progress-bar" class="h-full bg-white transition-all duration-500 w-[16.66%]"></div>
-        </div>
-
-        <!-- Arrow Buttons -->
-        <div class="flex items-center gap-2">
-            <button id="prev-panel-btn" class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-white hover:border-zinc-600 transition-all">
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <button id="next-panel-btn" class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-white hover:border-zinc-600 transition-all">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-800/80 py-8 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+            <div>© 2026 Ayoola Damisile. All rights reserved.</div>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-zinc-300">GitHub</a>
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:text-zinc-300">NPM</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:text-zinc-300">LinkedIn</a>
+                <a href="projects.html" class="hover:text-zinc-300">Projects</a>
+                <a href="music.html" class="hover:text-zinc-300">Music</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Main JavaScript Engine -->
     <script src="main.js"></script>
 </body>
 </html>
