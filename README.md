@@ -2,7 +2,7 @@
 
 # Hi there, I'm Ayoola Damisile 👋
 
-**Full-Stack Software Engineer • Open-Source Creator • Systems Architect • Classical Pianist & Organist**
+**Full-Stack Software Engineer • Open-Source Creator • Systems Architect • Classical Pianist**
 
 *Building high-performance web applications, AES-256 encrypted devtools, biometric verification systems, and AI-driven workflows.*
 
@@ -65,7 +65,7 @@
 - **Backend & APIs**: Node.js, Express, PostgREST, REST APIs, WebSockets, Webhooks
 - **Databases & Cloud**: PostgreSQL, InsForge, Supabase, Cloudinary, IndexedDB (`idb`)
 - **Security & DevSecOps**: AES-256-GCM, PBKDF2, Git Security Auditing, Docker, CI/CD, Git
-- **Music Tech & Audio**: Web Audio API, Pitch Detection, Music Sheet Rendering, Classical Organ & Piano Performance
+- **Music Tech & Audio**: Web Audio API, Pitch Detection, Music Sheet Rendering, Classical Piano Performance
 
 ---
 
