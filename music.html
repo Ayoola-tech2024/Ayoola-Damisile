@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayoola Damisile — Classical Pianist & Organist Performance Showcase</title>
+    <title>Ayoola Damisile — Classical Pianist & Pipe Organist</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
-    <meta name="description" content="Explore Ayoola Damisile's classical music performances as an accomplished pianist, organist, and choir accompanist. Polyphonic mastery, organ repertoire, and musical discipline.">
+    <meta name="description" content="Classical piano and organ performance showcase of Ayoola Damisile. Polyphonic counterpoint, organ registration, and choir accompaniment.">
     <link rel="canonical" href="https://www.damisile.name.ng/music.html">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,10 +21,8 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#0B0F17',
-                        darkCard: '#131B2E',
-                        brandCyan: '#38bdf8',
-                        brandAmber: '#f59e0b'
+                        darkBg: '#09090b',
+                        darkCard: '#121215'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -38,145 +36,125 @@
 
     <style>
         body {
-            background-color: #0B0F17;
-            color: #e2e8f0;
+            background-color: #09090b;
+            color: #f4f4f5;
             font-family: 'Inter', sans-serif;
         }
-        .glass-panel {
-            background: rgba(19, 27, 46, 0.75);
-            backdrop-filter: blur(16px);
+        .card-border {
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .glass-nav {
-            background: rgba(11, 15, 23, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        .card-border:hover {
+            border-color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="antialiased selection:bg-white selection:text-black">
 
-    <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center font-mono font-bold text-slate-950 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-                    AD
-                </div>
-                <div>
-                    <span class="font-bold text-slate-100 tracking-tight text-lg group-hover:text-amber-400 transition-colors">Ayoola Damisile</span>
-                    <span class="block text-xs font-mono text-amber-400">Pianist & Organist</span>
-                </div>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-md border-b border-zinc-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-white tracking-tight hover:opacity-80 transition-opacity">
+                Ayoola Damisile
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="index.html#home" class="hover:text-amber-400 transition-colors">Home</a>
-                <a href="index.html#open-source" class="hover:text-amber-400 transition-colors">Open Source</a>
-                <a href="index.html#systems" class="hover:text-amber-400 transition-colors">Systems</a>
-                <a href="projects.html" class="hover:text-amber-400 transition-colors">Projects</a>
-                <a href="music.html" class="text-amber-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-music"></i> Music Showcase</a>
-                <a href="index.html#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="index.html#home" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html#open-source" class="hover:text-white transition-colors">Open Source</a>
+                <a href="projects.html" class="hover:text-white transition-colors">Projects</a>
+                <a href="music.html" class="text-white font-semibold">Music</a>
+                <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
             </nav>
 
-            <a href="https://wa.me/2348169787869" target="_blank" class="px-4 py-2 rounded-full glass-panel text-xs font-mono text-amber-400 flex items-center gap-2 border-amber-500/30 hover:border-amber-500/60 transition-all">
-                Book Accompanist
-            </a>
+            <div class="flex items-center gap-4 text-sm font-medium">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/60 border border-amber-800/40 text-amber-400 text-xs font-mono">
-            <i class="fa-solid fa-music"></i> Polyphonic Performance & Discipline
-        </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight">
-            Classical Pianist, Pipe Organist & Accompanist
+    <section class="pt-32 pb-12 px-4 sm:px-6 max-w-5xl mx-auto space-y-4">
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Classical Pianist & Organist
         </h1>
-        <p class="text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
-            Exploring polyphony, counterpoint, and choir accompaniment. Navigating multi-voice Bach fugues and complex classical score reading with mathematical precision.
+        <p class="text-zinc-400 text-base max-w-2xl leading-relaxed">
+            Exploring polyphony, counterpoint, and choir accompaniment. Studying multi-voice Bach fugues and complex score reading.
         </p>
     </section>
 
     <!-- PERFORMANCE GALLERY GRID -->
-    <section class="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
-        <div class="grid md:grid-cols-3 gap-8">
+    <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto space-y-12">
+        <div class="grid sm:grid-cols-3 gap-8">
             
-            <div class="glass-panel rounded-2xl overflow-hidden space-y-4 hover:border-amber-500/50 transition-all group">
-                <div class="h-64 bg-slate-900 overflow-hidden relative">
-                    <img src="resources/piano-1.jpg" alt="Piano Performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border space-y-4">
+                <div class="h-56 bg-zinc-900 overflow-hidden relative">
+                    <img src="resources/piano-1.jpg" alt="Piano Performance" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 space-y-2">
-                    <span class="text-xs font-mono text-amber-400">Classical Repertoire</span>
-                    <h3 class="text-xl font-bold text-slate-100">Polyphonic Piano & Counterpoint</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">Focusing on Baroque fugal structure, voice-leading balance, and expressive dynamics across romantic and classical compositions.</p>
+                    <h3 class="text-lg font-bold text-white">Polyphonic Piano</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Focusing on Baroque fugal structure, voice-leading balance, and dynamics.</p>
                 </div>
             </div>
 
-            <div class="glass-panel rounded-2xl overflow-hidden space-y-4 hover:border-amber-500/50 transition-all group">
-                <div class="h-64 bg-slate-900 overflow-hidden relative">
-                    <img src="resources/piano-2.jpg" alt="Organ Performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border space-y-4">
+                <div class="h-56 bg-zinc-900 overflow-hidden relative">
+                    <img src="resources/piano-2.jpg" alt="Organ Performance" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 space-y-2">
-                    <span class="text-xs font-mono text-amber-400">Organ Mastery</span>
-                    <h3 class="text-xl font-bold text-slate-100">Pipe & Electronic Organ</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">Controlling pedalboards, registration stops, and multi-manual instrumentations for liturgical services and classical Recitals.</p>
+                    <h3 class="text-lg font-bold text-white">Pipe & Digital Organ</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Controlling pedalboards, registration stops, and multi-manual instrumentation.</p>
                 </div>
             </div>
 
-            <div class="glass-panel rounded-2xl overflow-hidden space-y-4 hover:border-amber-500/50 transition-all group">
-                <div class="h-64 bg-slate-900 overflow-hidden relative">
-                    <img src="resources/piano-3.jpg" alt="Choir Accompaniment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border space-y-4">
+                <div class="h-56 bg-zinc-900 overflow-hidden relative">
+                    <img src="resources/piano-3.jpg" alt="Choir Accompaniment" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 space-y-2">
-                    <span class="text-xs font-mono text-amber-400">Choral Leadership</span>
-                    <h3 class="text-xl font-bold text-slate-100">Choir Direction & Accompaniment</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">Collaborating with vocal ensembles, directing voice rehearsals, and supporting four-part choral sight-reading.</p>
+                    <h3 class="text-lg font-bold text-white">Choral Accompaniment</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Directing rehearsals and accompanying four-part choral ensembles.</p>
                 </div>
             </div>
 
         </div>
 
-        <!-- REPERTOIRE HIGHLIGHT BOX -->
-        <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-700/60">
-            <h2 class="text-2xl font-bold text-slate-100 font-mono mb-6 flex items-center gap-3">
-                <i class="fa-solid fa-music text-amber-400"></i> Core Repertoire & Musical Focus
-            </h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <span class="text-amber-400 font-bold block">J.S. Bach</span>
-                    <p class="text-slate-400">Fugues, Preludes, Inventions & Organ Chorales</p>
+        <div class="bg-[#121215] rounded-xl p-8 border border-zinc-800 space-y-4">
+            <h2 class="text-xl font-bold text-white">Repertoire Highlights</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-xs font-mono text-zinc-400">
+                <div>
+                    <span class="text-white font-bold block mb-1">J.S. Bach</span>
+                    <p>Fugues, Preludes & Organ Chorales</p>
                 </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <span class="text-amber-400 font-bold block">F. Chopin</span>
-                    <p class="text-slate-400">Nocturnes, Waltzes & Etudes</p>
+                <div>
+                    <span class="text-white font-bold block mb-1">F. Chopin</span>
+                    <p>Nocturnes, Waltzes & Etudes</p>
                 </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <span class="text-amber-400 font-bold block">Choral Works</span>
-                    <p class="text-slate-400">Handel Messiah, Hymn Variations & Anthems</p>
+                <div>
+                    <span class="text-white font-bold block mb-1">Choral Works</span>
+                    <p>Handel Messiah & Sacred Anthems</p>
                 </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <span class="text-amber-400 font-bold block">Liturgical Organ</span>
-                    <p class="text-slate-400">Registration, Modulation & Service Playing</p>
+                <div>
+                    <span class="text-white font-bold block mb-1">Organ Service</span>
+                    <p>Liturgical Modulation & Hymnology</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-800 bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 font-mono">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center font-bold text-slate-950">AD</div>
-                <span>© 2026 Ayoola Damisile (Adams). Classical Pianist & Organist.</span>
-            </div>
+    <footer class="border-t border-zinc-800/80 py-8 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+            <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
-                <a href="index.html" class="hover:text-amber-400 transition-colors">Home</a>
-                <a href="projects.html" class="hover:text-amber-400 transition-colors">Projects</a>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-amber-400 transition-colors">GitHub</a>
-                <a href="index.html#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+                <a href="index.html" class="hover:text-zinc-300">Home</a>
+                <a href="projects.html" class="hover:text-zinc-300">Projects</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-zinc-300">GitHub</a>
+                <a href="index.html#contact" class="hover:text-zinc-300">Contact</a>
             </div>
         </div>
     </footer>

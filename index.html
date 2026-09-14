@@ -3,45 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayoola Damisile — Full-Stack Software Engineer & Open-Source Author</title>
+    <title>Ayoola Damisile — Software Engineer & Open-Source Creator</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
     
-    <!-- SEO & Metadata -->
-    <meta name="description" content="Ayoola Damisile (Adams) - Full-Stack Software Engineer, Open-Source Author (fixmcp, @damisile_ayoola/envvault), and BIT Scholar at FUTA. Specialized in Next.js, TypeScript, security CLI tools, and biometric systems.">
+    <meta name="description" content="Ayoola Damisile (Adams) - Software Engineer & Open-Source Author. Creator of fixmcp and @damisile_ayoola/envvault. BIT student at FUTA.">
     <link rel="canonical" href="https://www.damisile.name.ng/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.damisile.name.ng/">
-    <meta property="og:site_name" content="Ayoola Damisile Portfolio">
-    <meta property="og:title" content="Ayoola Damisile — Full-Stack Software Engineer & Open-Source Author">
-    <meta property="og:description" content="Author of fixmcp and @damisile_ayoola/envvault. Building mission-critical web applications, biometric face recognition systems, and security CLI tools.">
+    <meta property="og:title" content="Ayoola Damisile — Software Engineer & Open-Source Creator">
+    <meta property="og:description" content="Software Engineer & Open-Source Author. Creator of fixmcp and @damisile_ayoola/envvault.">
     <meta property="og:image" content="https://www.damisile.name.ng/resources/ayoola-damisile-frontend-developer.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@Damisile_dev">
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ayoola Damisile Ayooluwa",
-      "alternateName": ["Damisile", "Adams", "Ayoola Damisile"],
-      "url": "https://www.damisile.name.ng/",
-      "image": "https://www.damisile.name.ng/resources/ayoola-damisile-frontend-developer.webp",
-      "jobTitle": ["Full-Stack Software Engineer", "Open-Source Author", "Product Engineer", "Pianist"],
-      "knowsAbout": ["Full-Stack Development", "TypeScript", "Next.js", "Model Context Protocol", "AES-256-GCM Cryptography", "MediaPipe 3D FaceMesh", "PostgreSQL", "Piano Performance"],
-      "sameAs": [
-        "https://github.com/Ayoola-tech2024",
-        "https://www.npmjs.com/~damisile_ayoola",
-        "https://www.linkedin.com/in/damisile-ayoola-096a7b382",
-        "https://x.com/Damisile_dev"
-      ]
-    }
-    </script>
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,12 +28,9 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#0B0F17',
-                        darkCard: '#131B2E',
-                        darkCardBorder: 'rgba(255, 255, 255, 0.08)',
-                        brandCyan: '#38bdf8',
-                        brandEmerald: '#10b981',
-                        brandAmber: '#f59e0b'
+                        darkBg: '#09090b',
+                        darkCard: '#121215',
+                        borderMuted: '#27272a'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -66,308 +40,170 @@
             }
         }
     </script>
-
-    <!-- FontAwesome & Typed.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    
+
     <style>
         body {
-            background-color: #0B0F17;
-            color: #e2e8f0;
+            background-color: #09090b;
+            color: #f4f4f5;
             font-family: 'Inter', sans-serif;
         }
-        .glow-cyan {
-            box-shadow: 0 0 30px -5px rgba(56, 189, 248, 0.25);
-        }
-        .glow-emerald {
-            box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25);
-        }
-        .glass-panel {
-            background: rgba(19, 27, 46, 0.75);
-            backdrop-filter: blur(16px);
+        .card-border {
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .glass-nav {
-            background: rgba(11, 15, 23, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .term-scroll::-webkit-scrollbar {
-            width: 6px;
-        }
-        .term-scroll::-webkit-scrollbar-track {
-            background: #0d1322;
-        }
-        .term-scroll::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 3px;
+        .card-border:hover {
+            border-color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-cyan-500 selection:text-slate-950">
+<body class="antialiased selection:bg-white selection:text-black">
 
-    <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-                    AD
-                </div>
-                <div>
-                    <span class="font-bold text-slate-100 tracking-tight text-lg group-hover:text-cyan-400 transition-colors">Ayoola Damisile</span>
-                    <span class="block text-xs font-mono text-cyan-400">@Ayoola-tech2024</span>
-                </div>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-md border-b border-zinc-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#home" class="font-bold text-white tracking-tight hover:opacity-80 transition-opacity">
+                Ayoola Damisile
             </a>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#open-source" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-box text-cyan-400"></i> Open Source</a>
-                <a href="#systems" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-cubes text-emerald-400"></i> Systems</a>
-                <a href="#client-work" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-briefcase text-amber-400"></i> Client Work</a>
-                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-                <a href="#music" class="hover:text-cyan-400 transition-colors">Music</a>
-                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="#open-source" class="hover:text-white transition-colors">Open Source</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#music" class="hover:text-white transition-colors">Music</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             </nav>
 
-            <!-- Status Pill & Actions -->
-            <div class="hidden lg:flex items-center gap-4">
-                <a href="https://wa.me/2348169787869" target="_blank" class="px-4 py-2 rounded-full glass-panel text-xs font-mono text-emerald-400 flex items-center gap-2 border-emerald-500/30 hover:border-emerald-500/60 transition-all">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Available for Hire
+            <div class="flex items-center gap-4 text-sm font-medium">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors">
+                    <i class="fa-brands fa-linkedin"></i>
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
-                <i class="fa-solid fa-bars text-xl"></i>
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-6 py-6 space-y-4 text-slate-200">
-            <a href="#open-source" class="block font-medium hover:text-cyan-400">📦 Open Source Tools</a>
-            <a href="#systems" class="block font-medium hover:text-cyan-400">⚡ Full-Stack Systems</a>
-            <a href="#client-work" class="block font-medium hover:text-cyan-400">💼 Client Applications</a>
-            <a href="#skills" class="block font-medium hover:text-cyan-400">🛠 Technical Skills</a>
-            <a href="#music" class="block font-medium hover:text-cyan-400">🎹 Music & Piano</a>
-            <a href="#contact" class="block font-medium hover:text-cyan-400">📧 Direct Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#09090b] border-b border-zinc-800 px-6 py-4 space-y-3 text-sm text-zinc-300">
+            <a href="#open-source" class="block hover:text-white">Open Source</a>
+            <a href="#projects" class="block hover:text-white">Projects</a>
+            <a href="#skills" class="block hover:text-white">Skills</a>
+            <a href="#music" class="block hover:text-white">Music</a>
+            <a href="#contact" class="block hover:text-white">Contact</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 max-w-5xl mx-auto">
+        <div class="space-y-6">
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                Ayoola Damisile
+            </h1>
+            <p class="text-xl sm:text-2xl text-zinc-400 font-normal">
+                Software Engineer & Open-Source Author
+            </p>
+            <p class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                I build web applications, developer CLI security tools, and computer vision systems. Based in Nigeria, studying Business Information Technology at FUTA. Creator of <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-white underline underline-offset-4 font-mono font-medium hover:text-zinc-300">fixmcp</a> and <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-white underline underline-offset-4 font-mono font-medium hover:text-zinc-300">@damisile_ayoola/envvault</a>.
+            </p>
 
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Left Column: Bio & Value Prop -->
-            <div class="lg:col-span-7 space-y-6">
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono text-cyan-400">
-                    <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-                    </span>
-                    <span>Open to Full-Stack & Remote Software Engineering Roles</span>
-                </div>
-
-                <!-- Main Title & Typed Subtitle -->
-                <div class="space-y-2">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight leading-tight">
-                        Ayoola <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">Damisile</span>
-                    </h1>
-                    <div class="text-lg sm:text-xl font-mono text-cyan-400 font-medium h-8 flex items-center">
-                        <span id="typed-text"></span>
-                    </div>
-                </div>
-
-                <!-- Body Bio -->
-                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                    I build mission-critical web applications, security CLI tools, and biometric attendance architectures. Author of published npm tools <span class="text-cyan-400 font-mono font-semibold">fixmcp</span> and <span class="text-emerald-400 font-mono font-semibold">@damisile_ayoola/envvault</span>. Full-stack specialist driven by system performance, security encryption, and clean developer tooling.
-                </p>
-
-                <!-- Quick Action Buttons -->
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#open-source" class="px-6 py-3.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20 flex items-center gap-2">
-                        <i class="fa-solid fa-code"></i> Explore Open Source
-                    </a>
-                    <a href="#systems" class="px-6 py-3.5 rounded-xl glass-panel text-slate-200 font-semibold text-sm hover:border-cyan-400/50 hover:text-cyan-400 transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-server"></i> View Production Systems
-                    </a>
-                    <a href="https://wa.me/2348169787869" target="_blank" class="px-6 py-3.5 rounded-xl bg-emerald-600/90 text-white font-semibold text-sm hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Direct Chat
-                    </a>
-                </div>
-
-                <!-- Quick Copy Command Badges -->
-                <div class="pt-4 flex flex-wrap items-center gap-3 text-xs font-mono">
-                    <span class="text-slate-400">Quick run:</span>
-                    <button onclick="copyToClipboard('npx fixmcp', this)" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-all flex items-center gap-2 group">
-                        <span class="text-cyan-400">$</span> npx fixmcp
-                        <i class="fa-regular fa-copy opacity-60 group-hover:opacity-100"></i>
-                    </button>
-                    <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-all flex items-center gap-2 group">
-                        <span class="text-emerald-400">$</span> npx @damisile_ayoola/envvault
-                        <i class="fa-regular fa-copy opacity-60 group-hover:opacity-100"></i>
-                    </button>
-                </div>
+            <div class="flex flex-wrap items-center gap-4 pt-4 text-sm font-medium">
+                <a href="#open-source" class="px-5 py-2.5 rounded-lg bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
+                    View Open Source
+                </a>
+                <a href="#projects" class="px-5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:border-zinc-700 transition-all">
+                    Featured Work
+                </a>
+                <a href="https://wa.me/2348169787869" target="_blank" class="px-5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:border-zinc-700 transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
             </div>
-
-            <!-- Right Column: Interactive CLI Terminal Emulator -->
-            <div class="lg:col-span-5">
-                <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 glow-cyan">
-                    <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                            <span class="ml-2 text-xs font-mono text-slate-400">ayoola@portfolio: ~ (bash)</span>
-                        </div>
-                        <span class="text-[10px] font-mono text-cyan-400/80 bg-cyan-950/60 border border-cyan-800/40 px-2 py-0.5 rounded">v2.4 CLI</span>
-                    </div>
-
-                    <div class="bg-slate-900/90 px-3 py-2 border-b border-slate-800/80 flex flex-wrap gap-1.5 text-[11px] font-mono">
-                        <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 transition-colors" data-cmd="npx fixmcp">npx fixmcp</button>
-                        <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 transition-colors" data-cmd="npx @damisile_ayoola/envvault">envvault</button>
-                        <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-amber-400 transition-colors" data-cmd="cat bio">cat bio</button>
-                        <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 transition-colors" data-cmd="skills">skills</button>
-                        <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 transition-colors" data-cmd="contact">contact</button>
-                    </div>
-
-                    <div id="terminal-body" class="p-4 h-72 overflow-y-auto font-mono text-xs md:text-sm text-slate-300 space-y-2 term-scroll bg-[#0a0e17]">
-                        <div class="text-slate-400 italic">Welcome to Ayoola's interactive terminal. Click any button above or type commands below.</div>
-                        <div class="text-cyan-400 font-semibold">Try typing <span class="underline">npx fixmcp</span> or <span class="underline">cat bio</span></div>
-                    </div>
-
-                    <div class="bg-slate-950 px-4 py-3 border-t border-slate-800 flex items-center gap-2">
-                        <span class="text-emerald-400 font-mono text-xs font-bold">ayoola@portfolio:~$</span>
-                        <input id="terminal-input" type="text" placeholder="type 'help' or 'npx fixmcp'..." class="bg-transparent border-none outline-none flex-1 font-mono text-xs text-white placeholder-slate-500">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- SECTION 1: PUBLISHED OPEN-SOURCE TOOLS -->
-    <section id="open-source" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-mono">
-                <i class="fa-solid fa-cubes"></i> NPM Published Packages
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-                Published Open-Source CLI & Security Tools
-            </h2>
-            <p class="text-slate-400 text-base">
-                Developer tools engineered for security, zero-dependency performance, and seamless AI agent integrations.
-            </p>
+    <!-- SECTION 1: PUBLISHED OPEN SOURCE TOOLS -->
+    <section id="open-source" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-zinc-800/80">
+        <div class="space-y-2 mb-10">
+            <h2 class="text-2xl font-bold text-white">Open-Source Packages</h2>
+            <p class="text-zinc-400 text-sm">CLI security and developer diagnostic tools published on npm.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
             
             <!-- Tool 1: fixmcp -->
-            <div class="glass-panel rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group glow-cyan flex flex-col justify-between">
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
                 <div>
-                    <div class="h-56 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#131B2E] via-transparent to-transparent"></div>
+                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                        <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-6 sm:p-8 space-y-6">
-                        <div class="flex items-start justify-between gap-4">
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-3">
-                                    <h3 class="text-2xl font-bold font-mono text-cyan-400 group-hover:text-cyan-300">fixmcp</h3>
-                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">v0.1.0</span>
-                                </div>
-                                <p class="text-xs font-mono text-slate-400">Model Context Protocol Server Diagnostic Utility</p>
-                            </div>
-                            <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-slate-400 hover:text-cyan-400 text-xl transition-colors">
-                                <i class="fa-brands fa-npm"></i>
-                            </a>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold font-mono text-white">fixmcp</h3>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v0.1.0</span>
                         </div>
-
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Automated CLI diagnostic tool built to scan, validate, and repair broken Model Context Protocol (MCP) server configurations across <span class="text-slate-200 font-semibold">Claude Code</span>, <span class="text-slate-200 font-semibold">Cursor</span>, and <span class="text-slate-200 font-semibold">Windsurf</span>. Features real-time JSON-RPC 2.0 schema checking and interactive configuration repair.
+                        <p class="text-zinc-300 text-sm leading-relaxed">
+                            CLI diagnostic tool that scans, validates, and fixes Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
                         </p>
 
-                        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
-                            <span class="text-cyan-400 font-medium"><span class="text-slate-500">$</span> npx fixmcp</span>
-                            <button onclick="copyToClipboard('npx fixmcp', this)" class="px-3 py-1 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 transition-all flex items-center gap-1.5">
-                                <i class="fa-regular fa-copy"></i> Copy
+                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
+                            <span>$ npx fixmcp</span>
+                            <button onclick="copyToClipboard('npx fixmcp', this)" class="text-zinc-400 hover:text-white transition-colors">
+                                <i class="fa-regular fa-copy"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="p-6 sm:p-8 pt-0 space-y-4">
-                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">Node.js</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">TypeScript</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">JSON-RPC</span>
+                <div class="p-6 pt-0 space-y-3">
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">JSON-RPC 2.0</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">CLI</span>
                     </div>
 
-                    <div class="flex items-center gap-4">
-                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">
-                            <i class="fa-brands fa-npm"></i> View on npm <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1">
-                            <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-white hover:underline">npm Package</a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repository</a>
                     </div>
                 </div>
             </div>
 
             <!-- Tool 2: @damisile_ayoola/envvault -->
-            <div class="glass-panel rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all group glow-emerald flex flex-col justify-between">
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
                 <div>
-                    <div class="h-56 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#131B2E] via-transparent to-transparent"></div>
+                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                        <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-6 sm:p-8 space-y-6">
-                        <div class="flex items-start justify-between gap-4">
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-3">
-                                    <h3 class="text-2xl font-bold font-mono text-emerald-400 group-hover:text-emerald-300">envvault</h3>
-                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">v1.1.0</span>
-                                </div>
-                                <p class="text-xs font-mono text-slate-400">AES-256 Encrypted Environment Variable Vault</p>
-                            </div>
-                            <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-slate-400 hover:text-emerald-400 text-xl transition-colors">
-                                <i class="fa-brands fa-npm"></i>
-                            </a>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold font-mono text-white">@damisile_ayoola/envvault</h3>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v1.1.0</span>
                         </div>
-
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Zero-dependency cryptographic security tool that encrypts sensitive environment secrets into authenticated <span class="text-slate-200 font-semibold">.env.vault</span> files using <span class="text-slate-200 font-semibold">AES-256-GCM</span> cipher and PBKDF2 SHA-512 key derivation. Features automatic git pre-commit hook secret leak scanners.
+                        <p class="text-zinc-300 text-sm leading-relaxed">
+                            Zero-dependency CLI tool that encrypts environment secrets into authenticated .env.vault files using AES-256-GCM cipher and PBKDF2 SHA-512 key derivation.
                         </p>
 
-                        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
-                            <span class="text-emerald-400 font-medium"><span class="text-slate-500">$</span> npx @damisile_ayoola/envvault</span>
-                            <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="px-3 py-1 rounded bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 transition-all flex items-center gap-1.5">
-                                <i class="fa-regular fa-copy"></i> Copy
+                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
+                            <span>$ npx @damisile_ayoola/envvault</span>
+                            <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-zinc-400 hover:text-white transition-colors">
+                                <i class="fa-regular fa-copy"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="p-6 sm:p-8 pt-0 space-y-4">
-                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">AES-256-GCM</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">PBKDF2 SHA-512</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">Git Hooks</span>
+                <div class="p-6 pt-0 space-y-3">
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">AES-256-GCM</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">PBKDF2 SHA-512</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Git Pre-Commit</span>
                     </div>
 
-                    <div class="flex items-center gap-4">
-                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-xs font-mono text-emerald-400 hover:underline flex items-center gap-1">
-                            <i class="fa-brands fa-npm"></i> View on npm <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1">
-                            <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-white hover:underline">npm Package</a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repository</a>
                     </div>
                 </div>
             </div>
@@ -375,393 +211,274 @@
         </div>
     </section>
 
-    <!-- SECTION 2: PRODUCTION FULL-STACK SYSTEMS -->
-    <section id="systems" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 text-xs font-mono">
-                <i class="fa-solid fa-server"></i> Full-Stack Architecture
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-                Biometric & Production AI Systems
-            </h2>
-            <p class="text-slate-400 text-base">
-                End-to-end web applications combining modern frontend frameworks, real-time biometrics, and database backends.
-            </p>
+    <!-- SECTION 2: FEATURED PROJECTS -->
+    <section id="projects" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-zinc-800/80">
+        <div class="space-y-2 mb-10">
+            <h2 class="text-2xl font-bold text-white">Featured Projects & Applications</h2>
+            <p class="text-zinc-400 text-sm">Biometric systems, web applications, and client solutions.</p>
         </div>
 
-        <div class="max-w-3xl mx-auto">
-            <!-- System 1: checkIn -->
-            <div class="glass-panel rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group">
-                <div class="h-64 bg-slate-900 overflow-hidden relative">
-                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#131B2E] via-transparent to-transparent"></div>
-                </div>
-                <div class="p-6 sm:p-8 space-y-6">
-                    <div class="flex items-start justify-between gap-4">
-                        <div class="space-y-1">
-                            <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-[11px] font-mono border border-cyan-800/40">Biometrics & AI</span>
-                            <h3 class="text-2xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">checkIn — Facial Biometric Attendance Portal</h3>
-                        </div>
-                        <a href="https://check-in-gray.vercel.app" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-cyan-500 hover:text-slate-950 transition-all">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Production biometric attendance management platform using <span class="text-slate-100 font-medium">MediaPipe 3D FaceMesh</span> for real-time facial feature extraction, anti-spoofing liveness verification, and instant webhook event dispatches to central databases.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs text-slate-400">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-microchip text-cyan-400"></i> Next.js 14 App Router + Supabase DB</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-eye text-cyan-400"></i> MediaPipe 3D FaceMesh Landmark Analysis</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-cyan-400"></i> Real-time Anti-Spoofing & Webhook Logs</div>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">Next.js 14</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">MediaPipe AI</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">Supabase</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">Webhooks</span>
-                    </div>
-
-                    <a href="https://check-in-gray.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:underline">
-                        Launch Live Application <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: ELEVATED CLIENT APPLICATIONS -->
-    <section id="client-work" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/60 border border-amber-800/40 text-amber-400 text-xs font-mono">
-                <i class="fa-solid fa-briefcase"></i> Enterprise & Client Projects
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-                Client Platforms & Deployed Web Applications
-            </h2>
-            <p class="text-slate-400 text-base">
-                Custom web solutions developed for businesses, consultancies, and organizations.
-            </p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid sm:grid-cols-2 gap-8">
             
-            <!-- Client 1: Memodams -->
-            <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
+            <!-- Project 1: checkIn -->
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/Memodams.jpg" alt="Memodams" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                        <img src="cover images/checkin-cover-photo.jpg" alt="checkIn screenshot" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">Memodams</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Digital memorial & tribute platform offering interactive memory books, photo streams, and condolences messaging.</p>
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">checkIn</h3>
+                            <a href="https://check-in-gray.vercel.app" target="_blank" class="text-zinc-400 hover:text-white text-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                        <p class="text-zinc-300 text-xs leading-relaxed">
+                            Biometric facial recognition attendance management portal built with Next.js 14, MediaPipe 3D FaceMesh for anti-spoofing verification, and Supabase.
+                        </p>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
-                    <span class="text-[11px] font-mono text-slate-400">Full-Stack App</span>
-                    <a href="https://memodams.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">
-                        memodams.com <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                <div class="p-6 pt-0 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Next.js 14</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">MediaPipe AI</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Supabase</span>
+                    </div>
+                    <a href="https://check-in-gray.vercel.app" target="_blank" class="block text-xs font-mono text-white hover:underline">
+                        Open Live Application →
                     </a>
                 </div>
             </div>
 
-            <!-- Client 2: Paul Hilpert Consultancy -->
-            <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
+            <!-- Project 2: Memodams -->
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                        <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">Paul Hilpert Consultancy</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Corporate website for executive strategy and management consulting firm with scheduling integrations.</p>
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">Memodams</h3>
+                            <a href="https://memodams.com" target="_blank" class="text-zinc-400 hover:text-white text-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                        <p class="text-zinc-300 text-xs leading-relaxed">
+                            Digital memorial & tribute platform offering interactive memory books, photo streams, and condolences messaging.
+                        </p>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
-                    <span class="text-[11px] font-mono text-slate-400">Corporate Portal</span>
-                    <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">
-                        paulhilpert... <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                <div class="p-6 pt-0 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Full-Stack Web</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Media Platform</span>
+                    </div>
+                    <a href="https://memodams.com" target="_blank" class="block text-xs font-mono text-white hover:underline">
+                        memodams.com →
                     </a>
                 </div>
             </div>
 
-            <!-- Client 3: Tee Stella Stitches -->
-            <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
+            <!-- Project 3: Paul Hilpert Consultancy -->
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                        <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy screenshot" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">Tee Stella Stitches</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Fashion catalog & bespoke tailoring e-commerce showcase featuring dynamic garment customizers.</p>
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">Paul Hilpert Consultancy</h3>
+                            <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-zinc-400 hover:text-white text-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                        <p class="text-zinc-300 text-xs leading-relaxed">
+                            Corporate web application for executive strategy and management consulting firm with scheduling integrations.
+                        </p>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
-                    <span class="text-[11px] font-mono text-slate-400">Fashion E-Commerce</span>
-                    <a href="projects.html" class="text-xs font-mono text-slate-400 hover:text-cyan-400">
-                        View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                <div class="p-6 pt-0 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Corporate Site</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Consulting Portal</span>
+                    </div>
+                    <a href="https://paulhilpertconsultancy.com" target="_blank" class="block text-xs font-mono text-white hover:underline">
+                        paulhilpertconsultancy.com →
                     </a>
                 </div>
             </div>
 
-            <!-- Client 4: Damiqueen Designs -->
-            <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
+            <!-- Project 4: Tee Stella Stitches -->
+            <div class="bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
+                        <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches screenshot" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">Damiqueen Designs</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Visual brand portfolio and design studio web portal highlighting graphics, branding, and media art.</p>
+                        <h3 class="text-xl font-bold text-white">Tee Stella Stitches</h3>
+                        <p class="text-zinc-300 text-xs leading-relaxed">
+                            Fashion catalog & bespoke tailoring e-commerce showcase featuring dynamic garment customizers.
+                        </p>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
-                    <span class="text-[11px] font-mono text-slate-400">Brand Showcase</span>
-                    <a href="projects.html" class="text-xs font-mono text-slate-400 hover:text-cyan-400">
-                        View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                <div class="p-6 pt-0 space-y-3">
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">E-Commerce</span>
+                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Tailoring Catalog</span>
+                    </div>
+                    <a href="projects.html" class="block text-xs font-mono text-zinc-400 hover:text-white">
+                        View Project Details →
                     </a>
                 </div>
             </div>
 
         </div>
 
-        <div class="mt-12 text-center">
-            <a href="projects.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-200 hover:text-cyan-400 font-mono text-sm transition-all">
-                Browse Full Project Catalog & Specs <i class="fa-solid fa-arrow-right"></i>
+        <div class="mt-8 text-center">
+            <a href="projects.html" class="inline-flex items-center gap-2 text-sm font-mono text-zinc-300 hover:text-white underline underline-offset-4">
+                View All Projects Catalog & Spec →
             </a>
         </div>
     </section>
 
-    <!-- SECTION 4: SKILLS MATRIX -->
-    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-mono">
-                <i class="fa-solid fa-layer-group"></i> Technical Core
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-                Software Architecture & Skill Matrix
-            </h2>
-            <p class="text-slate-400 text-base">
-                Engineering skills categorized across cryptography, full-stack web, cloud, and biometric AI systems.
-            </p>
+    <!-- SECTION 3: SKILLS MATRIX -->
+    <section id="skills" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-zinc-800/80">
+        <div class="space-y-2 mb-10">
+            <h2 class="text-2xl font-bold text-white">Skills & Technologies</h2>
+            <p class="text-zinc-400 text-sm">Technical stack and tools used across projects.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Category 1 -->
-            <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-cyan-500/40 transition-all">
-                <div class="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-800/50 flex items-center justify-center text-cyan-400 text-xl font-bold">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-100 font-mono">Systems & Security</h3>
-                <ul class="space-y-2 text-xs font-mono text-slate-300">
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> AES-256-GCM Encryption</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> PBKDF2 SHA-512 Derivation</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> MCP (Model Context Protocol)</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> JSON-RPC 2.0 Specs</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Git Pre-Commit Security Hooks</li>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
+            <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800/80 space-y-3">
+                <h3 class="text-sm font-bold text-white">Languages & Core</h3>
+                <ul class="space-y-1.5 text-zinc-400">
+                    <li>• TypeScript</li>
+                    <li>• JavaScript (ESNext)</li>
+                    <li>• HTML5 & CSS3</li>
+                    <li>• Node.js</li>
                 </ul>
             </div>
 
-            <!-- Category 2 -->
-            <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-emerald-500/40 transition-all">
-                <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-xl font-bold">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-100 font-mono">Full-Stack & Mobile</h3>
-                <ul class="space-y-2 text-xs font-mono text-slate-300">
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Next.js 15 (App Router)</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> TypeScript & ESNext</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> React 19 & React Native</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Tailwind CSS & Framer Motion</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Zustand & Redux Toolkit</li>
+            <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800/80 space-y-3">
+                <h3 class="text-sm font-bold text-white">Frontend & Mobile</h3>
+                <ul class="space-y-1.5 text-zinc-400">
+                    <li>• Next.js (App Router)</li>
+                    <li>• React & React Native</li>
+                    <li>• Tailwind CSS</li>
+                    <li>• Zustand & Redux</li>
                 </ul>
             </div>
 
-            <!-- Category 3 -->
-            <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
-                <div class="w-12 h-12 rounded-xl bg-amber-950/80 border border-amber-800/50 flex items-center justify-center text-amber-400 text-xl font-bold">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-100 font-mono">Databases & Cloud</h3>
-                <ul class="space-y-2 text-xs font-mono text-slate-300">
-                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> PostgreSQL & Supabase</li>
-                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> InsForge Platform</li>
-                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> IndexedDB (idb) & WebStorage</li>
-                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> Cloudinary API</li>
-                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> RESTful APIs & Webhooks</li>
+            <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800/80 space-y-3">
+                <h3 class="text-sm font-bold text-white">Security & Backend</h3>
+                <ul class="space-y-1.5 text-zinc-400">
+                    <li>• AES-256-GCM / PBKDF2</li>
+                    <li>• MCP (Model Context Protocol)</li>
+                    <li>• PostgreSQL & Supabase</li>
+                    <li>• RESTful & Webhooks</li>
                 </ul>
             </div>
 
-            <!-- Category 4 -->
-            <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-cyan-500/40 transition-all">
-                <div class="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-800/50 flex items-center justify-center text-cyan-400 text-xl font-bold">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-100 font-mono">AI & Biometrics</h3>
-                <ul class="space-y-2 text-xs font-mono text-slate-300">
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> MediaPipe 3D FaceMesh</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Computer Vision Anti-Spoof</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Telegram & WhatsApp AI Bots</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Prompt Engineering</li>
-                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> AI Agent Workflows</li>
+            <div class="bg-[#121215] p-5 rounded-xl border border-zinc-800/80 space-y-3">
+                <h3 class="text-sm font-bold text-white">AI & Biometrics</h3>
+                <ul class="space-y-1.5 text-zinc-400">
+                    <li>• MediaPipe 3D FaceMesh</li>
+                    <li>• Computer Vision Anti-Spoofing</li>
+                    <li>• WhatsApp/Telegram AI Bots</li>
+                    <li>• AI Agent Integrations</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
-    <!-- SECTION 5: MUSIC & CLASSICAL ORGAN DUAL-TRACK -->
-    <section id="music" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60">
-        <div class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-            <div class="grid lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-700/50 text-amber-400 text-xs font-mono">
-                        <i class="fa-solid fa-music"></i> Dual-Track Discipline
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-                        Polyphonic Precision: Classical Pianist & Organist
-                    </h2>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        The same mental rigor, pattern recognition, and polyphonic voice-leading required to perform J.S. Bach fugues or direct choir accompaniments translates directly to designing decoupled software architectures, managing async concurrency, and writing bulletproof code.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="music.html" class="px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm hover:bg-amber-400 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-compact-disc"></i> Explore Music & Performances
-                        </a>
-                    </div>
+    <!-- SECTION 4: MUSIC & ORGAN -->
+    <section id="music" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-zinc-800/80">
+        <div class="bg-[#121215] rounded-xl p-8 border border-zinc-800/80 grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7 space-y-4">
+                <h2 class="text-2xl font-bold text-white">Classical Pianist & Pipe Organist</h2>
+                <p class="text-zinc-300 text-sm leading-relaxed">
+                    Beyond software engineering, I am an accomplished classical pianist, pipe organist, and choir accompanist. Studying counterpoint and multi-voice polyphony (J.S. Bach) informs how I think about decoupled software architecture and clean pattern design.
+                </p>
+                <div>
+                    <a href="music.html" class="inline-flex items-center gap-2 text-xs font-mono text-white underline underline-offset-4 hover:text-zinc-300">
+                        Explore Music Performances →
+                    </a>
                 </div>
+            </div>
 
-                <div class="lg:col-span-5 relative">
-                    <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl relative group">
-                        <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Pianist" class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-800 text-xs font-mono text-amber-300">
-                            🎹 Classical Organist & Pianist | FUTA BIT Scholar
-                        </div>
-                    </div>
+            <div class="md:col-span-5">
+                <div class="rounded-lg overflow-hidden border border-zinc-800">
+                    <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Organist" class="w-full h-56 object-cover object-top">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 6: CONTACT & FOOTER -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60">
-        <div class="grid lg:grid-cols-12 gap-12">
-            
-            <!-- Direct Channels -->
-            <div class="lg:col-span-6 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-mono">
-                    <i class="fa-solid fa-paper-plane"></i> Get In Touch
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-                    Let's Build Something Exceptional
-                </h2>
-                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                    Whether you are recruiting for a full-stack engineering role, need custom tool development, or want to collaborate on open-source software, my inbox and WhatsApp are always open.
+    <!-- SECTION 5: CONTACT & FOOTER -->
+    <section id="contact" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-zinc-800/80">
+        <div class="grid md:grid-cols-12 gap-10">
+            <div class="md:col-span-5 space-y-4">
+                <h2 class="text-2xl font-bold text-white">Get In Touch</h2>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Interested in working together or collaborating on open-source projects? Send an email or reach out on WhatsApp.
                 </p>
 
-                <!-- Channels List -->
-                <div class="space-y-4 pt-4 font-mono text-sm">
-                    <a href="mailto:ayooladamisile24@gmail.com" class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:border-cyan-400 transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-cyan-950 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div>
-                            <span class="block text-xs text-slate-400">Direct Email</span>
-                            <span class="text-slate-100 font-semibold group-hover:text-cyan-400">ayooladamisile24@gmail.com</span>
-                        </div>
-                    </a>
-
-                    <a href="https://wa.me/2348169787869" target="_blank" class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:border-emerald-400 transition-all group">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                        </div>
-                        <div>
-                            <span class="block text-xs text-slate-400">WhatsApp Direct</span>
-                            <span class="text-slate-100 font-semibold group-hover:text-emerald-400">+234 816 978 7869</span>
-                        </div>
-                    </a>
-
-                    <div class="grid sm:grid-cols-3 gap-4 pt-2">
-                        <a href="https://github.com/Ayoola-tech2024" target="_blank" class="glass-panel p-3.5 rounded-xl text-center hover:border-slate-500 transition-all">
-                            <i class="fa-brands fa-github text-xl text-slate-300 block mb-1"></i>
-                            <span class="text-xs text-slate-300">GitHub</span>
-                        </a>
-                        <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="glass-panel p-3.5 rounded-xl text-center hover:border-red-500 transition-all">
-                            <i class="fa-brands fa-npm text-xl text-red-400 block mb-1"></i>
-                            <span class="text-xs text-slate-300">NPM</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="glass-panel p-3.5 rounded-xl text-center hover:border-blue-500 transition-all">
-                            <i class="fa-brands fa-linkedin text-xl text-blue-400 block mb-1"></i>
-                            <span class="text-xs text-slate-300">LinkedIn</span>
-                        </a>
+                <div class="space-y-3 pt-2 text-xs font-mono text-zinc-300">
+                    <div>
+                        <span class="text-zinc-500 block">Email:</span>
+                        <a href="mailto:ayooladamisile24@gmail.com" class="text-white hover:underline">ayooladamisile24@gmail.com</a>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block">WhatsApp:</span>
+                        <a href="https://wa.me/2348169787869" target="_blank" class="text-white hover:underline">+234 816 978 7869</a>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block">GitHub:</span>
+                        <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-white hover:underline">@Ayoola-tech2024</a>
+                    </div>
+                    <div>
+                        <span class="text-zinc-500 block">NPM:</span>
+                        <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="text-white hover:underline">~damisile_ayoola</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Quick WhatsApp Hire Form -->
-            <div class="lg:col-span-6">
-                <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
-                    <h3 class="text-xl font-bold text-slate-100 font-mono flex items-center gap-2">
-                        <i class="fa-solid fa-paperclip text-cyan-400"></i> Send Quick Inquiry
-                    </h3>
-                    <form id="hire-form" class="space-y-4 font-sans text-xs sm:text-sm">
-                        <div>
-                            <label class="block text-slate-300 font-mono mb-1 text-xs">Your Name *</label>
-                            <input id="hire-name" type="text" placeholder="e.g. Sarah Jenkins" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-slate-300 font-mono mb-1 text-xs">Email Address *</label>
-                            <input id="hire-email" type="email" placeholder="e.g. sarah@company.com" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-slate-300 font-mono mb-1 text-xs">Inquiry Type</label>
-                            <select id="hire-role" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-cyan-400 transition-colors">
-                                <option value="Full-Stack / Remote Engineering Role">Full-Stack / Remote Engineering Role</option>
-                                <option value="Custom Software / Tool Build">Custom Software / Tool Build</option>
-                                <option value="Open-Source Collaboration">Open-Source Collaboration</option>
-                                <option value="General Technical Inquiry">General Technical Inquiry</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-slate-300 font-mono mb-1 text-xs">Project / Opportunity Details</label>
-                            <textarea id="hire-message" rows="4" placeholder="Describe the role or project requirements..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-base"></i> Send Inquiry via WhatsApp
-                        </button>
-                    </form>
-                </div>
+            <div class="md:col-span-7">
+                <form id="contact-form" class="bg-[#121215] p-6 rounded-xl border border-zinc-800/80 space-y-4 text-xs">
+                    <div>
+                        <label class="block text-zinc-400 font-mono mb-1">Your Name *</label>
+                        <input id="contact-name" type="text" placeholder="e.g. John Doe" required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-zinc-400 font-mono mb-1">Email Address *</label>
+                        <input id="contact-email" type="email" placeholder="e.g. john@example.com" required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-zinc-400 font-mono mb-1">Message *</label>
+                        <textarea id="contact-message" rows="4" placeholder="Your message or project details..." required class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-2.5 rounded-lg bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
+                        Send Message via WhatsApp
+                    </button>
+                </form>
             </div>
-
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-800 bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 font-mono">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-cyan-500 flex items-center justify-center font-bold text-slate-950">AD</div>
-                <span>© 2026 Ayoola Damisile (Adams). Built with precision.</span>
-            </div>
-
+    <footer class="border-t border-zinc-800/80 py-8 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+            <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-cyan-400 transition-colors">GitHub</a>
-                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:text-cyan-400 transition-colors">NPM</a>
-                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:text-cyan-400 transition-colors">LinkedIn</a>
-                <a href="projects.html" class="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="music.html" class="hover:text-cyan-400 transition-colors">Music</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-zinc-300">GitHub</a>
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:text-zinc-300">NPM</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:text-zinc-300">LinkedIn</a>
+                <a href="projects.html" class="hover:text-zinc-300">Projects</a>
+                <a href="music.html" class="hover:text-zinc-300">Music</a>
             </div>
         </div>
     </footer>
 
-    <!-- Main JavaScript Engine -->
     <script src="main.js"></script>
 </body>
 </html>
