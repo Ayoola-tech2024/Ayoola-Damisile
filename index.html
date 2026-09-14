@@ -140,7 +140,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button idmobile-menu-btn" id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
@@ -158,7 +158,6 @@
 
     <!-- HERO SECTION -->
     <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <!-- Radial Gradient Blur Backdrops -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute top-1/3 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -220,7 +219,6 @@
             <!-- Right Column: Interactive CLI Terminal Emulator -->
             <div class="lg:col-span-5">
                 <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 glow-cyan">
-                    <!-- Terminal Window Header -->
                     <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
@@ -231,7 +229,6 @@
                         <span class="text-[10px] font-mono text-cyan-400/80 bg-cyan-950/60 border border-cyan-800/40 px-2 py-0.5 rounded">v2.4 CLI</span>
                     </div>
 
-                    <!-- Quick Command Buttons -->
                     <div class="bg-slate-900/90 px-3 py-2 border-b border-slate-800/80 flex flex-wrap gap-1.5 text-[11px] font-mono">
                         <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 transition-colors" data-cmd="npx fixmcp">npx fixmcp</button>
                         <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 transition-colors" data-cmd="npx @damisile_ayoola/envvault">envvault</button>
@@ -240,13 +237,11 @@
                         <button class="term-quick-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 transition-colors" data-cmd="contact">contact</button>
                     </div>
 
-                    <!-- Terminal Output Screen -->
                     <div id="terminal-body" class="p-4 h-72 overflow-y-auto font-mono text-xs md:text-sm text-slate-300 space-y-2 term-scroll bg-[#0a0e17]">
                         <div class="text-slate-400 italic">Welcome to Ayoola's interactive terminal. Click any button above or type commands below.</div>
                         <div class="text-cyan-400 font-semibold">Try typing <span class="underline">npx fixmcp</span> or <span class="underline">cat bio</span></div>
                     </div>
 
-                    <!-- Terminal Prompt Input -->
                     <div class="bg-slate-950 px-4 py-3 border-t border-slate-800 flex items-center gap-2">
                         <span class="text-emerald-400 font-mono text-xs font-bold">ayoola@portfolio:~$</span>
                         <input id="terminal-input" type="text" placeholder="type 'help' or 'npx fixmcp'..." class="bg-transparent border-none outline-none flex-1 font-mono text-xs text-white placeholder-slate-500">
@@ -274,110 +269,106 @@
         <div class="grid md:grid-cols-2 gap-8">
             
             <!-- Tool 1: fixmcp -->
-            <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 hover:border-cyan-500/50 transition-all group glow-cyan">
-                <div class="flex items-start justify-between gap-4">
-                    <div class="space-y-1">
-                        <div class="flex items-center gap-3">
-                            <h3 class="text-2xl font-bold font-mono text-cyan-400 group-hover:text-cyan-300">fixmcp</h3>
-                            <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">v0.1.0</span>
-                        </div>
-                        <p class="text-xs font-mono text-slate-400">Model Context Protocol Server Diagnostic & Repair Utility</p>
+            <div class="glass-panel rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group glow-cyan flex flex-col justify-between">
+                <div>
+                    <div class="h-56 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#131B2E] via-transparent to-transparent"></div>
                     </div>
-                    <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-slate-400 hover:text-cyan-400 text-xl transition-colors">
-                        <i class="fa-brands fa-npm"></i>
-                    </a>
+                    <div class="p-6 sm:p-8 space-y-6">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-3">
+                                    <h3 class="text-2xl font-bold font-mono text-cyan-400 group-hover:text-cyan-300">fixmcp</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">v0.1.0</span>
+                                </div>
+                                <p class="text-xs font-mono text-slate-400">Model Context Protocol Server Diagnostic Utility</p>
+                            </div>
+                            <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-slate-400 hover:text-cyan-400 text-xl transition-colors">
+                                <i class="fa-brands fa-npm"></i>
+                            </a>
+                        </div>
+
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Automated CLI diagnostic tool built to scan, validate, and repair broken Model Context Protocol (MCP) server configurations across <span class="text-slate-200 font-semibold">Claude Code</span>, <span class="text-slate-200 font-semibold">Cursor</span>, and <span class="text-slate-200 font-semibold">Windsurf</span>. Features real-time JSON-RPC 2.0 schema checking and interactive configuration repair.
+                        </p>
+
+                        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
+                            <span class="text-cyan-400 font-medium"><span class="text-slate-500">$</span> npx fixmcp</span>
+                            <button onclick="copyToClipboard('npx fixmcp', this)" class="px-3 py-1 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 transition-all flex items-center gap-1.5">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <p class="text-slate-300 text-sm leading-relaxed">
-                    Automated CLI diagnostic tool built to scan, validate, and repair broken Model Context Protocol (MCP) server configurations across <span class="text-slate-200 font-semibold">Claude Code</span>, <span class="text-slate-200 font-semibold">Cursor</span>, and <span class="text-slate-200 font-semibold">Windsurf</span>. Features real-time JSON-RPC 2.0 schema checking and interactive configuration repair.
-                </p>
+                <div class="p-6 sm:p-8 pt-0 space-y-4">
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">Node.js</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">TypeScript</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">JSON-RPC</span>
+                    </div>
 
-                <!-- Executable Command Box -->
-                <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
-                    <span class="text-cyan-400 font-medium"><span class="text-slate-500">$</span> npx fixmcp</span>
-                    <button onclick="copyToClipboard('npx fixmcp', this)" class="px-3 py-1 rounded bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 transition-all flex items-center gap-1.5">
-                        <i class="fa-regular fa-copy"></i> Copy
-                    </button>
-                </div>
-
-                <!-- Features & Tech Stack -->
-                <div class="space-y-3 pt-2">
-                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider font-mono">Key Highlights</div>
-                    <ul class="text-xs text-slate-300 space-y-2 font-sans">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Multi-client discovery (Claude Code, Cursor, Windsurf)</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> JSON-RPC 2.0 protocol endpoint verification</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Interactive step-by-step repair runner</li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">Node.js</span>
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">TypeScript</span>
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">JSON-RPC</span>
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-cyan-400 border border-cyan-900/40">CLI Automation</span>
-                </div>
-
-                <div class="flex items-center gap-4 pt-2">
-                    <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">
-                        <i class="fa-brands fa-npm"></i> View on npm <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                    <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1">
-                        <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1">
+                            <i class="fa-brands fa-npm"></i> View on npm <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1">
+                            <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Tool 2: @damisile_ayoola/envvault -->
-            <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 hover:border-emerald-500/50 transition-all group glow-emerald">
-                <div class="flex items-start justify-between gap-4">
-                    <div class="space-y-1">
-                        <div class="flex items-center gap-3">
-                            <h3 class="text-2xl font-bold font-mono text-emerald-400 group-hover:text-emerald-300">envvault</h3>
-                            <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">v1.1.0</span>
-                        </div>
-                        <p class="text-xs font-mono text-slate-400">Zero-Dependency AES-256 Encrypted .env Secrets Manager</p>
+            <div class="glass-panel rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all group glow-emerald flex flex-col justify-between">
+                <div>
+                    <div class="h-56 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#131B2E] via-transparent to-transparent"></div>
                     </div>
-                    <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-slate-400 hover:text-emerald-400 text-xl transition-colors">
-                        <i class="fa-brands fa-npm"></i>
-                    </a>
+                    <div class="p-6 sm:p-8 space-y-6">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-3">
+                                    <h3 class="text-2xl font-bold font-mono text-emerald-400 group-hover:text-emerald-300">envvault</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">v1.1.0</span>
+                                </div>
+                                <p class="text-xs font-mono text-slate-400">AES-256 Encrypted Environment Variable Vault</p>
+                            </div>
+                            <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-slate-400 hover:text-emerald-400 text-xl transition-colors">
+                                <i class="fa-brands fa-npm"></i>
+                            </a>
+                        </div>
+
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Zero-dependency cryptographic security tool that encrypts sensitive environment secrets into authenticated <span class="text-slate-200 font-semibold">.env.vault</span> files using <span class="text-slate-200 font-semibold">AES-256-GCM</span> cipher and PBKDF2 SHA-512 key derivation. Features automatic git pre-commit hook secret leak scanners.
+                        </p>
+
+                        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
+                            <span class="text-emerald-400 font-medium"><span class="text-slate-500">$</span> npx @damisile_ayoola/envvault</span>
+                            <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="px-3 py-1 rounded bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 transition-all flex items-center gap-1.5">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <p class="text-slate-300 text-sm leading-relaxed">
-                    Zero-dependency cryptographic security tool that encrypts sensitive environment secrets into authenticated <span class="text-slate-200 font-semibold">.env.vault</span> files using <span class="text-slate-200 font-semibold">AES-256-GCM</span> cipher and PBKDF2 SHA-512 key derivation. Features automatic git pre-commit hook leak scanners.
-                </p>
+                <div class="p-6 sm:p-8 pt-0 space-y-4">
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">AES-256-GCM</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">PBKDF2 SHA-512</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">Git Hooks</span>
+                    </div>
 
-                <!-- Executable Command Box -->
-                <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
-                    <span class="text-emerald-400 font-medium"><span class="text-slate-500">$</span> npx @damisile_ayoola/envvault</span>
-                    <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="px-3 py-1 rounded bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 transition-all flex items-center gap-1.5">
-                        <i class="fa-regular fa-copy"></i> Copy
-                    </button>
-                </div>
-
-                <!-- Features & Tech Stack -->
-                <div class="space-y-3 pt-2">
-                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider font-mono">Key Highlights</div>
-                    <ul class="text-xs text-slate-300 space-y-2 font-sans">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> AES-256-GCM cipher with PBKDF2 100k iteration SHA-512</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Zero npm runtime dependencies for attack surface reduction</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Automatic git pre-commit hook secret leak blocking</li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">AES-256-GCM</span>
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">PBKDF2 SHA-512</span>
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">Git Hooks</span>
-                    <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-emerald-400 border border-emerald-900/40">Zero-Dep</span>
-                </div>
-
-                <div class="flex items-center gap-4 pt-2">
-                    <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-xs font-mono text-emerald-400 hover:underline flex items-center gap-1">
-                        <i class="fa-brands fa-npm"></i> View on npm <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                    <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1">
-                        <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-xs font-mono text-emerald-400 hover:underline flex items-center gap-1">
+                            <i class="fa-brands fa-npm"></i> View on npm <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1">
+                            <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -391,17 +382,20 @@
                 <i class="fa-solid fa-server"></i> Full-Stack Architecture
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-                Full-Stack & Biometric AI Systems
+                Biometric & Production AI Systems
             </h2>
             <p class="text-slate-400 text-base">
                 End-to-end web applications combining modern frontend frameworks, real-time biometrics, and database backends.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            
+        <div class="max-w-3xl mx-auto">
             <!-- System 1: checkIn -->
             <div class="glass-panel rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group">
+                <div class="h-64 bg-slate-900 overflow-hidden relative">
+                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#131B2E] via-transparent to-transparent"></div>
+                </div>
                 <div class="p-6 sm:p-8 space-y-6">
                     <div class="flex items-start justify-between gap-4">
                         <div class="space-y-1">
@@ -435,43 +429,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- System 2: buysolar.ng -->
-            <div class="glass-panel rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all group">
-                <div class="p-6 sm:p-8 space-y-6">
-                    <div class="flex items-start justify-between gap-4">
-                        <div class="space-y-1">
-                            <span class="px-2.5 py-1 rounded bg-amber-950 text-amber-400 text-[11px] font-mono border border-amber-800/40">Clean Energy E-Commerce</span>
-                            <h3 class="text-2xl font-bold text-slate-100 group-hover:text-amber-400 transition-colors">buysolar.ng — Solar Energy Platform</h3>
-                        </div>
-                        <a href="https://buysolar.ng" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-amber-500 hover:text-slate-950 transition-all">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Full e-commerce platform for solar power deployment. Features an interactive load calculation wizard, custom inverter/battery sizing recommendations, and payment checkout gateway.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs text-slate-400">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-calculator text-amber-400"></i> Interactive Solar Load Sizing Engine</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-credit-card text-amber-400"></i> Secure Payment Gateway Integration</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-mobile-screen text-amber-400"></i> Responsive Mobile Shopping Experience</div>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">Next.js</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">Tailwind CSS</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">Paystack API</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-900 text-xs font-mono text-slate-300">PostgreSQL</span>
-                    </div>
-
-                    <a href="https://buysolar.ng" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono text-amber-400 hover:underline">
-                        Visit buysolar.ng <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -489,12 +446,12 @@
             </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- Client 1: Memodams -->
             <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
                 <div>
-                    <div class="h-48 bg-slate-900 overflow-hidden relative">
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Memodams.jpg" alt="Memodams" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     </div>
@@ -514,7 +471,7 @@
             <!-- Client 2: Paul Hilpert Consultancy -->
             <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
                 <div>
-                    <div class="h-48 bg-slate-900 overflow-hidden relative">
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     </div>
@@ -531,30 +488,10 @@
                 </div>
             </div>
 
-            <!-- Client 3: Victory Edge Solutions -->
+            <!-- Client 3: Tee Stella Stitches -->
             <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
                 <div>
-                    <div class="h-48 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/Victory Edge Solutions Provider.jpg" alt="Victory Edge Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">Victory Edge Solutions</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Corporate services portal highlighting advisory programs, client portfolios, and engineering consultation.</p>
-                    </div>
-                </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
-                    <span class="text-[11px] font-mono text-slate-400">Business Services</span>
-                    <a href="https://victoryedgesolutions.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">
-                        victoryedge... <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Client 4: Tee Stella Stitches -->
-            <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
-                <div>
-                    <div class="h-48 bg-slate-900 overflow-hidden relative">
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     </div>
@@ -571,10 +508,10 @@
                 </div>
             </div>
 
-            <!-- Client 5: Damiqueen Designs -->
+            <!-- Client 4: Damiqueen Designs -->
             <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
                 <div>
-                    <div class="h-48 bg-slate-900 overflow-hidden relative">
+                    <div class="h-44 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     </div>
@@ -585,26 +522,6 @@
                 </div>
                 <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
                     <span class="text-[11px] font-mono text-slate-400">Brand Showcase</span>
-                    <a href="projects.html" class="text-xs font-mono text-slate-400 hover:text-cyan-400">
-                        View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Client 6: AFSS Alumni Portal -->
-            <div class="glass-panel rounded-xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between">
-                <div>
-                    <div class="h-48 bg-slate-900 overflow-hidden relative flex items-center justify-center p-6">
-                        <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-32 object-contain group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">AFSS Alumni Network</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Alumni management system built for Air Force Secondary School alumni network directory and event coordination.</p>
-                    </div>
-                </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
-                    <span class="text-[11px] font-mono text-slate-400">Alumni Directory</span>
                     <a href="projects.html" class="text-xs font-mono text-slate-400 hover:text-cyan-400">
                         View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </a>

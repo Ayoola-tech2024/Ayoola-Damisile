@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayoola Damisile — Engineering Projects & Open-Source Portfolio</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
-    <meta name="description" content="Explore Ayoola Damisile's software engineering portfolio: published npm packages (fixmcp, @damisile_ayoola/envvault), biometric AI systems (checkIn), clean energy platforms (buysolar.ng), and enterprise client web applications.">
+    <meta name="description" content="Explore Ayoola Damisile's software engineering portfolio: published npm packages (fixmcp, @damisile_ayoola/envvault), biometric AI systems (checkIn), and enterprise client web applications.">
     <link rel="canonical" href="https://www.damisile.name.ng/projects.html">
 
     <!-- Fonts -->
@@ -107,7 +107,7 @@
                 📦 Open-Source Tools
             </button>
             <button class="filter-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 border border-slate-700 hover:border-cyan-400 transition-all" data-filter="systems">
-                ⚡ Full-Stack & AI Systems
+                ⚡ Biometric Systems
             </button>
             <button class="filter-btn px-4 py-2.5 rounded-xl bg-slate-800/80 text-slate-300 border border-slate-700 hover:border-cyan-400 transition-all" data-filter="client">
                 💼 Client Applications
@@ -120,24 +120,29 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <!-- Project 1: fixmcp -->
-            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-cyan-500/50 transition-all group flex flex-col justify-between" data-category="open-source">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-[11px] font-mono border border-cyan-800/40">npm CLI Tool</span>
-                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-slate-400 hover:text-cyan-400 text-lg">
-                            <i class="fa-brands fa-npm"></i>
-                        </a>
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group flex flex-col justify-between" data-category="open-source">
+                <div>
+                    <div class="h-48 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-2xl font-bold font-mono text-cyan-400">fixmcp</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Diagnostic and auto-repair utility for Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
-                    </p>
-                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
-                        <span class="text-cyan-400">$ npx fixmcp</span>
-                        <button onclick="copyToClipboard('npx fixmcp', this)" class="text-slate-400 hover:text-cyan-400"><i class="fa-regular fa-copy"></i></button>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-[11px] font-mono border border-cyan-800/40">npm CLI Tool</span>
+                            <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-slate-400 hover:text-cyan-400 text-lg">
+                                <i class="fa-brands fa-npm"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-2xl font-bold font-mono text-cyan-400">fixmcp</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Diagnostic and auto-repair utility for Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
+                        </p>
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
+                            <span class="text-cyan-400">$ npx fixmcp</span>
+                            <button onclick="copyToClipboard('npx fixmcp', this)" class="text-slate-400 hover:text-cyan-400"><i class="fa-regular fa-copy"></i></button>
+                        </div>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-slate-800 space-y-3">
+                <div class="p-6 pt-0 border-t border-slate-800 space-y-3 mt-4">
                     <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
                         <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-400 border border-cyan-900/40">TypeScript</span>
                         <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-400 border border-cyan-900/40">JSON-RPC 2.0</span>
@@ -150,24 +155,29 @@
             </div>
 
             <!-- Project 2: @damisile_ayoola/envvault -->
-            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-emerald-500/50 transition-all group flex flex-col justify-between" data-category="open-source">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded bg-emerald-950 text-emerald-400 text-[11px] font-mono border border-emerald-800/40">Cryptography CLI</span>
-                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-slate-400 hover:text-emerald-400 text-lg">
-                            <i class="fa-brands fa-npm"></i>
-                        </a>
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all group flex flex-col justify-between" data-category="open-source">
+                <div>
+                    <div class="h-48 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-2xl font-bold font-mono text-emerald-400">@damisile_ayoola/envvault</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Zero-dependency encrypted environment variable vault using AES-256-GCM cipher and git pre-commit secret leak scanners.
-                    </p>
-                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
-                        <span class="text-emerald-400">$ npx @damisile_ayoola/envvault</span>
-                        <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-slate-400 hover:text-emerald-400"><i class="fa-regular fa-copy"></i></button>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-emerald-950 text-emerald-400 text-[11px] font-mono border border-emerald-800/40">Cryptography CLI</span>
+                            <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-slate-400 hover:text-emerald-400 text-lg">
+                                <i class="fa-brands fa-npm"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-2xl font-bold font-mono text-emerald-400">@damisile_ayoola/envvault</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Zero-dependency encrypted environment variable vault using AES-256-GCM cipher and git pre-commit secret leak scanners.
+                        </p>
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between font-mono text-xs">
+                            <span class="text-emerald-400">$ npx @damisile_ayoola/envvault</span>
+                            <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-slate-400 hover:text-emerald-400"><i class="fa-regular fa-copy"></i></button>
+                        </div>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-slate-800 space-y-3">
+                <div class="p-6 pt-0 border-t border-slate-800 space-y-3 mt-4">
                     <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
                         <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-400 border border-emerald-900/40">AES-256-GCM</span>
                         <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-400 border border-emerald-900/40">PBKDF2 SHA-512</span>
@@ -180,18 +190,23 @@
             </div>
 
             <!-- Project 3: checkIn -->
-            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-cyan-500/50 transition-all group flex flex-col justify-between" data-category="systems">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-[11px] font-mono border border-cyan-800/40">Biometrics & AI</span>
-                        <a href="https://check-in-gray.vercel.app" target="_blank" class="text-slate-400 hover:text-cyan-400 text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group flex flex-col justify-between" data-category="systems">
+                <div>
+                    <div class="h-48 bg-slate-900 overflow-hidden relative">
+                        <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-100">checkIn</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Facial biometric attendance portal powered by MediaPipe 3D FaceMesh, anti-spoofing liveness verification, and real-time database webhooks.
-                    </p>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-[11px] font-mono border border-cyan-800/40">Biometrics & AI</span>
+                            <a href="https://check-in-gray.vercel.app" target="_blank" class="text-slate-400 hover:text-cyan-400 text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-100">checkIn</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Facial biometric attendance portal powered by MediaPipe 3D FaceMesh, anti-spoofing liveness verification, and real-time database webhooks.
+                        </p>
+                    </div>
                 </div>
-                <div class="pt-4 border-t border-slate-800 space-y-3">
+                <div class="p-6 pt-0 border-t border-slate-800 space-y-3 mt-4">
                     <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
                         <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">Next.js 14</span>
                         <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">MediaPipe AI</span>
@@ -203,34 +218,10 @@
                 </div>
             </div>
 
-            <!-- Project 4: buysolar.ng -->
-            <div class="project-item glass-panel rounded-2xl p-6 space-y-5 hover:border-amber-500/50 transition-all group flex flex-col justify-between" data-category="systems">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <span class="px-2.5 py-1 rounded bg-amber-950 text-amber-400 text-[11px] font-mono border border-amber-800/40">E-Commerce</span>
-                        <a href="https://buysolar.ng" target="_blank" class="text-slate-400 hover:text-amber-400 text-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-100">buysolar.ng</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed">
-                        Clean energy solar deployment platform featuring load sizing wizard, equipment recommendations, and payment checkout gateway.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800 space-y-3">
-                    <div class="flex flex-wrap gap-1.5 text-[10px] font-mono">
-                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">Next.js</span>
-                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">Paystack</span>
-                        <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300">PostgreSQL</span>
-                    </div>
-                    <a href="https://buysolar.ng" target="_blank" class="text-xs font-mono text-amber-400 hover:underline flex items-center gap-1">
-                        Visit Site <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project 5: Memodams -->
+            <!-- Project 4: Memodams -->
             <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                    <div class="h-48 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Memodams.jpg" alt="Memodams" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 space-y-3">
@@ -244,10 +235,10 @@
                 </div>
             </div>
 
-            <!-- Project 6: Paul Hilpert Consultancy -->
+            <!-- Project 5: Paul Hilpert Consultancy -->
             <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                    <div class="h-48 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 space-y-3">
@@ -261,27 +252,10 @@
                 </div>
             </div>
 
-            <!-- Project 7: Victory Edge Solutions -->
+            <!-- Project 6: Tee Stella Stitches -->
             <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
-                        <img src="cover images/Victory Edge Solutions Provider.jpg" alt="Victory Edge Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-slate-100">Victory Edge Solutions</h3>
-                        <p class="text-slate-300 text-xs leading-relaxed">Corporate services portal highlighting advisory programs, client portfolios, and engineering consultation.</p>
-                    </div>
-                </div>
-                <div class="p-6 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between">
-                    <span class="text-[10px] font-mono text-slate-400">Business Services</span>
-                    <a href="https://victoryedgesolutions.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">victoryedge...</a>
-                </div>
-            </div>
-
-            <!-- Project 8: Tee Stella Stitches -->
-            <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
-                <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                    <div class="h-48 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 space-y-3">
@@ -295,10 +269,10 @@
                 </div>
             </div>
 
-            <!-- Project 9: Damiqueen Designs -->
+            <!-- Project 7: Damiqueen Designs -->
             <div class="project-item glass-panel rounded-2xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col justify-between" data-category="client">
                 <div>
-                    <div class="h-44 bg-slate-900 overflow-hidden relative">
+                    <div class="h-48 bg-slate-900 overflow-hidden relative">
                         <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6 space-y-3">
