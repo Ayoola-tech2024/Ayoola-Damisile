@@ -398,6 +398,237 @@
             </div>
             
             <div class="space-y-16">
+                <!-- Project 0A: fixmcp (Published NPM CLI Tool) -->
+                <div class="project-card bg-navy text-white rounded-2xl shadow-xl overflow-hidden reveal border border-gray-800">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="p-6 sm:p-8 lg:p-12 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="bg-gold/20 text-gold border border-gold/40 text-xs font-mono px-3 py-1 rounded-full font-semibold">
+                                        NPM Package v0.1.0
+                                    </span>
+                                    <span class="text-gray-400 text-xs font-mono">Published Open Source</span>
+                                </div>
+                                <h3 class="project-title font-display font-bold text-white mb-4">fixmcp — Doctor CLI for MCP Servers</h3>
+                                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                                    A zero-install diagnostic CLI that finds every Model Context Protocol (MCP) server configuration across 6 AI agents (Claude Code, Cursor, VS Code, opencode, Codex), executes real stdio JSON-RPC handshakes, measures per-server latency, and auto-fixes broken registry paths.
+                                </p>
+                                
+                                <div class="bg-gray-900 rounded-lg p-3 font-mono text-sm text-green-400 mb-6 flex justify-between items-center border border-gray-800">
+                                    <code>$ npx fixmcp</code>
+                                    <button onclick="navigator.clipboard.writeText('npx fixmcp'); alert('Copied npx fixmcp!')" class="text-gray-400 hover:text-white text-xs bg-gray-800 px-3 py-1.5 rounded">
+                                        Copy
+                                    </button>
+                                </div>
+
+                                <div class="space-y-3 mb-8">
+                                    <h4 class="font-semibold text-gold text-sm uppercase tracking-wider">Key Engineering Features:</h4>
+                                    <ul class="space-y-2 text-gray-300 text-sm">
+                                        <li class="project-feature flex">
+                                            <i class="fas fa-check-circle text-gold mr-2.5 mt-1"></i>
+                                            Multi-Agent Config Auto-Discovery across Windows, macOS, and Linux
+                                        </li>
+                                        <li class="project-feature flex">
+                                            <i class="fas fa-check-circle text-gold mr-2.5 mt-1"></i>
+                                            Real stdio JSON-RPC Handshakes & Response Latency Diagnostics
+                                        </li>
+                                        <li class="project-feature flex">
+                                            <i class="fas fa-check-circle text-gold mr-2.5 mt-1"></i>
+                                            Safe Rewrite Engine with automatic <code class="text-gold">.bak</code> configuration backups
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-4 pt-4 border-t border-gray-800">
+                                <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener" class="bg-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
+                                    <i class="fab fa-npm text-lg"></i> View on NPM
+                                </a>
+                                <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" rel="noopener" class="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
+                                    <i class="fab fa-github text-lg"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-8 bg-gray-900 font-mono text-xs text-gray-300 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-800">
+                            <div class="bg-black/60 p-6 rounded-xl border border-gray-800 space-y-3">
+                                <div class="text-green-400 font-bold">$ npx fixmcp</div>
+                                <div class="text-gray-400">🔍 Discovering MCP configs (Claude Code, Cursor, VS Code)...</div>
+                                <div class="text-gray-400">⚡ Executing stdio handshakes...</div>
+                                <div class="text-white">✓ <span class="text-gold">context7</span>: healthy (42ms, 12 tools)</div>
+                                <div class="text-red-400">✗ <span class="text-red-400">sqlite-mcp</span>: command not found (npx @latest roundtrip)</div>
+                                <div class="text-yellow-400">💡 Run <code class="text-white">npx fixmcp --fix</code> to rewrite paths safely</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 0B: @damisile_ayoola/envvault (Published NPM CLI Tool) -->
+                <div class="project-card bg-navy text-white rounded-2xl shadow-xl overflow-hidden reveal border border-gray-800">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="p-6 sm:p-8 lg:p-12 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="bg-green-500/20 text-green-400 border border-green-500/40 text-xs font-mono px-3 py-1 rounded-full font-semibold">
+                                        NPM Package v1.1.0
+                                    </span>
+                                    <span class="text-gray-400 text-xs font-mono">Security Infrastructure</span>
+                                </div>
+                                <h3 class="project-title font-display font-bold text-white mb-4">EnvVault — AES-256 Encrypted Secret Manager</h3>
+                                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                                    Zero-dependency AES-256-GCM environment variable CLI manager. Encrypts project secrets with PBKDF2 SHA-512 key derivation, injects decrypted variables into process memory (<code class="text-gold">envvault run</code>) without saving plain text files to disk, and audits git security.
+                                </p>
+                                
+                                <div class="bg-gray-900 rounded-lg p-3 font-mono text-sm text-green-400 mb-6 flex justify-between items-center border border-gray-800">
+                                    <code>$ npm i -g @damisile_ayoola/envvault</code>
+                                    <button onclick="navigator.clipboard.writeText('npm i -g @damisile_ayoola/envvault'); alert('Copied install command!')" class="text-gray-400 hover:text-white text-xs bg-gray-800 px-3 py-1.5 rounded">
+                                        Copy
+                                    </button>
+                                </div>
+
+                                <div class="space-y-3 mb-8">
+                                    <h4 class="font-semibold text-gold text-sm uppercase tracking-wider">Key Security Features:</h4>
+                                    <ul class="space-y-2 text-gray-300 text-sm">
+                                        <li class="project-feature flex">
+                                            <i class="fas fa-shield-alt text-green-400 mr-2.5 mt-1"></i>
+                                            AES-256-GCM Authenticated Encryption & PBKDF2 100k Iteration Key Derivation
+                                        </li>
+                                        <li class="project-feature flex">
+                                            <i class="fas fa-shield-alt text-green-400 mr-2.5 mt-1"></i>
+                                            Direct Process Memory Injection (<code class="text-gold">envvault run -- npm start</code>)
+                                        </li>
+                                        <li class="project-feature flex">
+                                            <i class="fas fa-shield-alt text-green-400 mr-2.5 mt-1"></i>
+                                            Built-in Git Security Linter & Leak Auditor (<code class="text-gold">envvault audit</code>)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-4 pt-4 border-t border-gray-800">
+                                <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener" class="bg-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
+                                    <i class="fab fa-npm text-lg"></i> View on NPM
+                                </a>
+                                <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" rel="noopener" class="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover-lift inline-flex items-center gap-2">
+                                    <i class="fab fa-github text-lg"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-8 bg-gray-900 font-mono text-xs text-gray-300 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-800">
+                            <div class="bg-black/60 p-6 rounded-xl border border-gray-800 space-y-3">
+                                <div class="text-green-400 font-bold">$ envvault audit</div>
+                                <div class="text-gray-300">🛡️ Running EnvVault Security Audit...</div>
+                                <div class="text-green-400">  ✅ Encrypted .envvault storage detected.</div>
+                                <div class="text-green-400">  ✅ .envvault is properly listed in .gitignore.</div>
+                                <div class="text-green-400">  ✅ Zero plaintext secrets exposed on disk.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 0C: checkIn (Biometric Platform) -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal border border-gray-200">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="p-6 sm:p-8 lg:p-12">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-mono font-semibold px-3 py-1 rounded-full">Production Platform • FUTA SLIT</span>
+                            <h3 class="project-title font-display font-bold text-navy mt-4 mb-4">checkIn — Biometric Attendance System</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                A production university attendance platform engineered for FUTA School of Logistics and Innovation Technology. Solves physical scanner dependency by validating students directly on their phones via 3D facial biometrics and GPS geofencing.
+                            </p>
+
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag tailwind">Next.js 16</span>
+                                <span class="tech-tag javascript">TypeScript</span>
+                                <span class="tech-tag html">MediaPipe 3D</span>
+                                <span class="tech-tag css">PostgreSQL</span>
+                                <span class="tech-tag tailwind">IndexedDB</span>
+                            </div>
+
+                            <div class="space-y-4 mb-8">
+                                <h4 class="font-semibold text-navy">Key Engineering Innovations:</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="project-feature flex">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        Google MediaPipe FaceMesh 468 3D landmark extraction & similarity routing
+                                    </li>
+                                    <li class="project-feature flex">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        Haversine GPS validation (50m radius threshold around lecturer session)
+                                    </li>
+                                    <li class="project-feature flex">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        IndexedDB offline payload queueing with automatic background sync when network returns
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-navy p-8 text-white flex flex-col justify-center">
+                            <div class="space-y-4">
+                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                                    <div class="text-gold font-mono text-sm font-semibold">Biometric Match Rate</div>
+                                    <div class="text-2xl font-bold">&gt; 50% Present • 40-50% Pending Review</div>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                                    <div class="text-gold font-mono text-sm font-semibold">Hierarchy Support</div>
+                                    <div class="text-2xl font-bold">Admin • HOD • Lecturer • Student</div>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                                    <div class="text-gold font-mono text-sm font-semibold">SLIT Departments</div>
+                                    <div class="text-sm text-gray-300">FINT, BIT, EMT, LTT, PMT, PRMT, SIMT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 0D: buysolar.ng (Clean Energy Marketplace) -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal border border-gray-200">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="p-6 sm:p-8 lg:p-12">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-mono font-semibold px-3 py-1 rounded-full">E-Commerce & AI Copilot</span>
+                            <h3 class="project-title font-display font-bold text-navy mt-4 mb-4">buysolar.ng — Solar Marketplace & AI Bot</h3>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                Commercial solar equipment e-commerce platform & product catalog. Features automated Cloudinary media pipelines, PostgreSQL data layer, and an omnichannel WhatsApp/Telegram AI support copilot.
+                            </p>
+
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag tailwind">Next.js</span>
+                                <span class="tech-tag css">Cloudinary CDN</span>
+                                <span class="tech-tag javascript">PostgreSQL</span>
+                                <span class="tech-tag html">WhatsApp AI Bot</span>
+                            </div>
+
+                            <div class="space-y-4 mb-8">
+                                <h4 class="font-semibold text-navy">Key Features:</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="project-feature flex">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        Automated image matching & Cloudinary CDN asset pipelines
+                                    </li>
+                                    <li class="project-feature flex">
+                                        <svg class="w-5 h-5 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        Omnichannel WhatsApp & Telegram AI customer inquiry bot
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-charcoal p-8 text-white flex flex-col justify-center">
+                            <div class="space-y-4">
+                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                                    <div class="text-gold font-mono text-sm font-semibold">Catalog Capacity</div>
+                                    <div class="text-2xl font-bold">500+ Authentic Solar Products</div>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                                    <div class="text-gold font-mono text-sm font-semibold">Integrations</div>
+                                    <div class="text-sm text-gray-300">Cloudinary CDN, InsForge API, Telegram Bot API</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Project 1: Paul Hilpert Consultancy -->
                 <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
                     <div class="grid lg:grid-cols-2 gap-0">

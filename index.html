@@ -385,6 +385,165 @@
         </div>
     </section>
 
+    <!-- Open-Source Tools & Production Engineering Systems -->
+    <section id="featured-systems" class="py-20 bg-white relative z-20 border-t border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-gold font-mono font-semibold uppercase tracking-wider text-sm">Published Tools & Full-Stack Systems</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mt-2 mb-6">Engineering & Open Source</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
+                    Developer infrastructure, AES-256 encrypted CLI tools, biometric verification platforms, and AI-driven automation built to scale.
+                </p>
+            </div>
+
+            <!-- 2x2 Grid of Featured Systems -->
+            <div class="grid lg:grid-cols-2 gap-8 reveal">
+
+                <!-- 1. fixmcp Card -->
+                <div class="bg-navy rounded-2xl p-8 text-white shadow-xl hover-lift border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-gold/20 text-gold border border-gold/40 text-xs font-mono px-3 py-1 rounded-full font-semibold">
+                                NPM v0.1.0 • CLI Tool
+                            </span>
+                            <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-npm text-3xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-2">fixmcp — Doctor CLI for MCP Servers</h3>
+                        <p class="text-gray-300 mb-6 text-sm leading-relaxed">
+                            Stop guessing which Model Context Protocol (MCP) server is broken. Discovers configs across 6 AI agents (Claude Code, Cursor, VS Code, Codex), runs real stdio JSON-RPC handshakes, and auto-fixes broken registry paths.
+                        </p>
+                        
+                        <div class="bg-gray-900/90 rounded-lg p-3 font-mono text-xs text-green-400 mb-6 flex justify-between items-center border border-gray-800">
+                            <code>$ npx fixmcp</code>
+                            <button onclick="navigator.clipboard.writeText('npx fixmcp'); alert('Copied npx fixmcp to clipboard!')" class="text-gray-400 hover:text-white text-xs bg-gray-800 px-2 py-1 rounded">
+                                Copy
+                            </button>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">TypeScript</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">MCP / JSON-RPC</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">Stdio Diagnostics</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">Zero Install</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pt-4 border-t border-gray-800">
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener" class="bg-gold hover:bg-yellow-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+                            <i class="fab fa-npm"></i> View NPM Package
+                        </a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" rel="noopener" class="border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub Repo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. @damisile_ayoola/envvault Card -->
+                <div class="bg-navy rounded-2xl p-8 text-white shadow-xl hover-lift border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-green-500/20 text-green-400 border border-green-500/40 text-xs font-mono px-3 py-1 rounded-full font-semibold">
+                                NPM v1.1.0 • Security CLI
+                            </span>
+                            <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-npm text-3xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-2">EnvVault — AES-256 Encrypted Secret Manager</h3>
+                        <p class="text-gray-300 mb-6 text-sm leading-relaxed">
+                            Zero-dependency AES-256-GCM environment secret manager. Injects decrypted secrets directly into process memory (<code class="text-gold">envvault run</code>) without saving plaintext passwords to disk, plus built-in git leak auditing (<code class="text-gold">envvault audit</code>).
+                        </p>
+
+                        <div class="bg-gray-900/90 rounded-lg p-3 font-mono text-xs text-green-400 mb-6 flex justify-between items-center border border-gray-800">
+                            <code>$ npm i -g @damisile_ayoola/envvault</code>
+                            <button onclick="navigator.clipboard.writeText('npm i -g @damisile_ayoola/envvault'); alert('Copied install command!')" class="text-gray-400 hover:text-white text-xs bg-gray-800 px-2 py-1 rounded">
+                                Copy
+                            </button>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">AES-256-GCM</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">PBKDF2 SHA-512</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">Process Memory Injection</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs px-2.5 py-1 rounded font-mono">Security Auditor</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pt-4 border-t border-gray-800">
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener" class="bg-gold hover:bg-yellow-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+                            <i class="fab fa-npm"></i> View NPM Package
+                        </a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" rel="noopener" class="border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub Repo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. checkIn Card -->
+                <div class="bg-light-gray rounded-2xl p-8 shadow-lg hover-lift border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-blue-100 text-blue-800 border border-blue-200 text-xs font-mono px-3 py-1 rounded-full font-semibold">
+                                Enterprise Platform • FUTA SLIT
+                            </span>
+                            <i class="fas fa-[#1a1f36] fa-user-check text-2xl text-navy"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-navy mb-2">checkIn — Biometric University Platform</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Production university attendance platform with Google MediaPipe 3D FaceMesh extracting 468 facial landmarks, 50m Haversine GPS geofencing, 3-tier similarity routing, and IndexedDB offline queue resilience.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">Next.js 16</span>
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">TypeScript</span>
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">MediaPipe 3D</span>
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">PostgreSQL / InsForge</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pt-4 border-t border-gray-200">
+                        <a href="projects.html" class="bg-navy hover:bg-gray-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+                            <i class="fas fa-layer-group"></i> Architecture & Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. buysolar.ng Card -->
+                <div class="bg-light-gray rounded-2xl p-8 shadow-lg hover-lift border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-amber-100 text-amber-800 border border-amber-200 text-xs font-mono px-3 py-1 rounded-full font-semibold">
+                                Clean Energy • E-Commerce & AI
+                            </span>
+                            <i class="fas fa-solar-panel text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-navy mb-2">buysolar.ng — Solar Marketplace & AI Bot</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Commercial solar equipment e-commerce platform with automated Cloudinary asset migration pipelines, PostgreSQL database architecture, and an omnichannel WhatsApp/Telegram AI admin copilot.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">Next.js</span>
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">Cloudinary CDN</span>
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">PostgreSQL</span>
+                            <span class="bg-white border border-gray-300 text-charcoal text-xs px-2.5 py-1 rounded font-mono">WhatsApp AI Bot</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pt-4 border-t border-gray-200">
+                        <a href="projects.html" class="bg-navy hover:bg-gray-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+                            <i class="fas fa-external-link-alt"></i> View Marketplace Projects
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
