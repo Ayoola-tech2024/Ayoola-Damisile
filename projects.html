@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayoola Damisile — Engineering Projects Catalog</title>
+    <title>Ayoola Damisile — Engineering Projects Specification Catalog</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
-    <meta name="description" content="Complete project catalog of Ayoola Damisile: fixmcp, @damisile_ayoola/envvault, checkIn, Memodams, and client web applications.">
+    <meta name="description" content="Complete technical specifications catalog for Ayoola Damisile's engineering projects: fixmcp, @damisile_ayoola/envvault, checkIn biometrics, Memodams, and enterprise client web applications.">
     <link rel="canonical" href="https://www.damisile.name.ng/projects.html">
 
     <!-- Fonts -->
@@ -44,7 +44,7 @@
             color: #f4f4f5;
         }
         .light body {
-            background-color: #f8fafc;
+            background-color: #ffffff;
             color: #0f172a;
         }
         .bento-card {
@@ -55,7 +55,7 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .light .bento-card {
-            background: #ffffff;
+            background: #f8fafc;
             border: 1px solid #e2e8f0;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
@@ -66,14 +66,16 @@
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold tracking-tight dark:text-white text-zinc-900 hover:opacity-80 transition-opacity">
-                Ayoola Damisile
+            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
+                <span>Ayoola Damisile</span>
             </a>
 
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium dark:text-zinc-400 text-zinc-600">
                 <a href="index.html#home" class="hover:underline">Home</a>
+                <a href="index.html#about" class="hover:underline">About</a>
                 <a href="index.html#open-source" class="hover:underline">Open Source</a>
-                <a href="projects.html" class="dark:text-white text-zinc-900 font-semibold">Projects</a>
+                <a href="projects.html" class="dark:text-white text-zinc-900 font-semibold">Projects Catalog</a>
                 <a href="music.html" class="hover:underline">Music</a>
                 <a href="index.html#contact" class="hover:underline">Contact</a>
             </nav>
@@ -94,155 +96,300 @@
     </header>
 
     <!-- HEADER HERO -->
-    <section class="pt-32 pb-12 px-4 sm:px-6 max-w-5xl mx-auto space-y-4">
+    <section class="pt-32 pb-10 px-4 sm:px-6 max-w-5xl mx-auto space-y-4">
         <h1 class="text-3xl sm:text-5xl font-extrabold dark:text-white text-zinc-900 tracking-tight">
-            Projects Catalog
+            Engineering Projects & Specifications
         </h1>
-        <p class="dark:text-zinc-400 text-zinc-600 text-base max-w-2xl">
-            A list of published open-source CLI tools, biometric applications, and client websites.
+        <p class="dark:text-zinc-400 text-zinc-600 text-base max-w-3xl leading-relaxed">
+            Detailed technical breakdowns, architecture specifications, algorithms, and links for published open-source tools, AI biometrics, and enterprise client web applications built by Ayoola Damisile.
         </p>
+
+        <!-- CATEGORY FILTER BUTTONS -->
+        <div class="flex flex-wrap items-center gap-2 pt-4 font-mono text-xs">
+            <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-black font-semibold transition-all" data-filter="all">
+                All Projects
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="open-source">
+                Open-Source Tools
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="biometrics">
+                Biometrics & AI
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="client">
+                Client Applications
+            </button>
+        </div>
     </section>
 
-    <!-- PROJECTS GRID CATALOG -->
-    <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto">
-        <div class="grid sm:grid-cols-2 gap-8">
-            
-            <!-- Project 1: fixmcp -->
-            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="open-source">
-                <div>
-                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                        <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold font-mono dark:text-white text-zinc-900">fixmcp</h3>
-                            <span class="text-xs font-mono px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v0.1.0</span>
-                        </div>
-                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
-                            Diagnostic and auto-repair utility for Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
-                        </p>
-
-                        <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
-                            <span>$ npx fixmcp</span>
-                            <button onclick="copyToClipboard('npx fixmcp', this)" class="dark:text-zinc-400 text-zinc-600"><i class="fa-regular fa-copy"></i></button>
-                        </div>
-                    </div>
+    <!-- PROJECTS CATALOG SPECS GRID -->
+    <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto space-y-12">
+        
+        <!-- PROJECT 1: fixmcp -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-56 object-cover">
                 </div>
-
-                <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-2 text-xs font-mono dark:text-zinc-400 text-zinc-600">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">TypeScript</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">JSON-RPC 2.0</span>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Published npm Utility</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">fixmcp</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v0.1.0</span>
                     </div>
 
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t dark:border-zinc-800 border-zinc-200">
-                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
-                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repo</a>
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Automated CLI diagnostic tool engineered to scan, inspect, and auto-repair broken Model Context Protocol (MCP) server configuration files across Claude Code, Cursor, and Windsurf IDE environments.
+                    </p>
+
+                    <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
+                        <span>$ npx fixmcp</span>
+                        <button onclick="copyToClipboard('npx fixmcp', this)" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900"><i class="fa-regular fa-copy"></i> Copy</button>
+                    </div>
+
+                    <!-- Specs Breakdown Table -->
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Config Discovery:</strong> Automatically checks `~/.claude.json`, `%APPDATA%\Cursor\mcp.json`, and Windsurf configs.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Protocol Validation:</strong> Validates JSON-RPC 2.0 schema endpoints and tool definitions.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Auto-Fix Engine:</strong> Interactive repair step runner fixing invalid JSON paths, syntax errors, and broken server registrations.</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 underline">npm Package →</a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Source →</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Project 2: @damisile_ayoola/envvault -->
-            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="open-source">
-                <div>
-                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                        <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold font-mono dark:text-white text-zinc-900">@damisile_ayoola/envvault</h3>
-                            <span class="text-xs font-mono px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.1.0</span>
-                        </div>
-                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
-                            Zero-dependency CLI tool that encrypts environment secrets into authenticated .env.vault files using AES-256-GCM cipher and PBKDF2 SHA-512.
-                        </p>
-
-                        <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
-                            <span>$ npx @damisile_ayoola/envvault</span>
-                            <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="dark:text-zinc-400 text-zinc-600"><i class="fa-regular fa-copy"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-2 text-xs font-mono dark:text-zinc-400 text-zinc-600">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">AES-256-GCM</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">PBKDF2 SHA-512</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t dark:border-zinc-800 border-zinc-200">
-                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
-                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: checkIn -->
-            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="systems">
-                <div>
-                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                        <img src="cover images/checkin-cover-photo.jpg" alt="checkIn screenshot" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold dark:text-white text-zinc-900">checkIn</h3>
-                            <a href="https://check-in-gray.vercel.app" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-sm">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
-                            Biometric facial recognition attendance portal using MediaPipe 3D FaceMesh, anti-spoofing verification, and Supabase.
-                        </p>
-                    </div>
-                </div>
-                <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono dark:text-zinc-400 text-zinc-600">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">Next.js 14</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">MediaPipe AI</span>
-                    </div>
-                    <a href="https://check-in-gray.vercel.app" target="_blank" class="block text-xs font-mono dark:text-white text-zinc-900 hover:underline">
-                        Open Live Application →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project 4: Memodams -->
-            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="client">
-                <div>
-                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                        <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold dark:text-white text-zinc-900">Memodams</h3>
-                            <a href="https://memodams.com" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-sm">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
-                            Digital memorial & tribute platform offering interactive memory books, photo streams, and condolences messaging.
-                        </p>
-                    </div>
-                </div>
-                <div class="p-6 pt-0 space-y-3">
-                    <a href="https://memodams.com" target="_blank" class="block text-xs font-mono dark:text-white text-zinc-900 hover:underline">
-                        memodams.com →
-                    </a>
-                </div>
-            </div>
-
         </div>
+
+        <!-- PROJECT 2: envvault -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-emerald-500 font-bold block uppercase">Published Cryptography Utility</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">@damisile_ayoola/envvault</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.1.0</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Zero-dependency cryptographic CLI tool that encrypts plaintext environment secrets into authenticated `.env.vault` files using AES-256-GCM cipher and PBKDF2 SHA-512 key derivation.
+                    </p>
+
+                    <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
+                        <span>$ npx @damisile_ayoola/envvault</span>
+                        <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900"><i class="fa-regular fa-copy"></i> Copy</button>
+                    </div>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Cipher Architecture:</strong> Authenticated AES-256-GCM encryption with 128-bit authentication tag.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Key Derivation:</strong> PBKDF2 SHA-512 key stretching with 100,000 iterations and unique random salts.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Pre-Commit Blocker:</strong> Installs automated git hooks that prevent accidental secret commits to remote repos.</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 underline">npm Package →</a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Source →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 3: checkIn -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn screenshot" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Biometric AI System</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">checkIn</h2>
+                        </div>
+                        <a href="https://check-in-gray.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900">Live App →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Production biometric attendance management portal built to verify facial identity in real time using MediaPipe 3D FaceMesh, 3D head pose estimation, and anti-spoofing liveness verification.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Computer Vision:</strong> MediaPipe 3D FaceMesh tracking 468 3D facial landmark coordinates.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Anti-Spoofing:</strong> Depth map estimation and liveness movement check to prevent photo/screen spoofing.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Database & Webhooks:</strong> Supabase real-time database with automated HTTP webhook triggers for check-in events.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://check-in-gray.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline">Launch Live Application →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 4: Memodams -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-amber-500 font-bold block uppercase">Client Digital Platform</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Memodams</h2>
+                        </div>
+                        <a href="https://memodams.com" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900">memodams.com →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Digital memorial and tribute web application featuring interactive tribute books, high-concurrency photo streams, condolence messaging, and digital memory archives.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Media Pipeline:</strong> Optimized image processing and cloud photo stream galleries.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Guestbook Engine:</strong> Interactive message submission with spam filter verification.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://memodams.com" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline">Visit Website →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 5: Paul Hilpert Consultancy -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy screenshot" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-purple-500 font-bold block uppercase">Corporate Consulting Portal</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Paul Hilpert Consultancy</h2>
+                        </div>
+                        <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900">paulhilpert... →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Corporate executive portal built for strategy consultancy firm, showcasing executive case studies, service frameworks, and client booking integrations.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Architecture:</strong> Corporate responsive portal with custom appointment booking engine.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline">Visit Website →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 6: Tee Stella Stitches -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella screenshot" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-zinc-500 font-bold block uppercase">Fashion E-Commerce</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Tee Stella Stitches</h2>
+                        </div>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Custom bespoke fashion catalog and e-commerce application featuring dynamic garment customization options, order placement UI, and media galleries.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Catalog Engine:</strong> Dynamic garment category filtering and custom order form processing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 7: Damiqueen Designs -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs screenshot" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-zinc-500 font-bold block uppercase">Design Studio Showcase</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Damiqueen Designs</h2>
+                        </div>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Visual branding portfolio and design studio web portal highlighting graphics, media art, brand identity collections, and creative showcases.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 8: AFSS Alumni System -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200 flex items-center justify-center p-6">
+                    <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-36 object-contain">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-zinc-500 font-bold block uppercase">Alumni Directory System</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Air Force Secondary School Alumni Portal</h2>
+                        </div>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Alumni network management system developed for Air Force Secondary School alumni, featuring member directory, event scheduling, and alumni news.
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- FOOTER -->
     <footer class="border-t dark:border-zinc-800/80 border-zinc-200 py-8 px-4 sm:px-6">
-        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
                 <a href="index.html" class="hover:underline">Home</a>
                 <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
-                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:underline">NPM</a>
-                <a href="music.html" class="hover:underline">Music</a>
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:underline">npm Profile</a>
+                <a href="music.html" class="hover:underline">Music Showcase</a>
             </div>
         </div>
     </footer>

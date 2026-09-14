@@ -1,11 +1,11 @@
-// Ayoola Damisile - Bento Grid, Theme Switcher & Mobile Action Sheet Engine (v6.0)
+// Ayoola Damisile - Professional Multi-Page Portfolio Engine (v7.0)
 
 document.addEventListener('DOMContentLoaded', function () {
     initializeTheme();
     initializeCommandPalette();
     initializeMobileActionSheet();
     initializeNavigation();
-    initializeScrollReveal();
+    initializeProjectFilters();
     initializeForm();
 });
 
@@ -14,7 +14,6 @@ function initializeTheme() {
     const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
     const storedTheme = localStorage.getItem('theme');
 
-    // Default to dark mode if no preference set
     if (storedTheme === 'light') {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
@@ -54,7 +53,7 @@ function updateThemeIcons() {
     });
 }
 
-// 2. Desktop Command Palette (Cmd+K / Ctrl+K)
+// 2. Spotlight Search / Command Palette (Cmd+K / Ctrl+K)
 function initializeCommandPalette() {
     const paletteOverlay = document.getElementById('cmd-palette-overlay');
     const paletteInput = document.getElementById('cmd-palette-input');
@@ -139,7 +138,7 @@ function initializeCommandPalette() {
     });
 }
 
-// 3. Mobile Bottom Action Sheet Drawer
+// 3. Mobile Touch Quick-Action Bottom Drawer
 function openMobileSheet() {
     const mobileSheet = document.getElementById('mobile-action-sheet');
     const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
@@ -210,7 +209,7 @@ function initializeMobileActionSheet() {
     window.closeMobileSheet = closeMobileSheet;
 }
 
-// 4. Navigation
+// 4. Mobile Menu & Navigation
 function initializeNavigation() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -239,22 +238,35 @@ function initializeNavigation() {
     });
 }
 
-// 5. Scroll Reveal Observer
-function initializeScrollReveal() {
-    const revealEls = document.querySelectorAll('.bento-card');
-    if (!revealEls.length) return;
+// 5. Project Filtering on Catalog Page
+function initializeProjectFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-catalog-item');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                entry.target.classList.remove('opacity-0', 'translate-y-4');
-                observer.unobserve(entry.target);
-            }
+    if (!filterBtns.length || !projectCards.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-zinc-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-semibold');
+                b.classList.add('bg-zinc-100', 'text-zinc-700', 'dark:bg-zinc-800/80', 'dark:text-zinc-400');
+            });
+
+            this.classList.remove('bg-zinc-100', 'text-zinc-700', 'dark:bg-zinc-800/80', 'dark:text-zinc-400');
+            this.classList.add('bg-zinc-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-semibold');
+
+            const category = this.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category || (cardCat && cardCat.includes(category))) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
-    }, { threshold: 0.1 });
-
-    revealEls.forEach(el => observer.observe(el));
+    });
 }
 
 // 6. Copy Helper & Toast
@@ -263,7 +275,7 @@ function copyToClipboard(text, btnElement) {
         showToast(`Copied: ${text}`);
         if (btnElement) {
             const originalText = btnElement.innerHTML;
-            btnElement.innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i> Copied`;
+            btnElement.innerHTML = `<i class="fa-solid fa-check text-emerald-500"></i> Copied`;
             setTimeout(() => {
                 btnElement.innerHTML = originalText;
             }, 2000);
@@ -278,7 +290,7 @@ function showToast(message) {
     existing.forEach(t => t.remove());
 
     const toast = document.createElement('div');
-    toast.className = 'app-toast fixed bottom-20 md:bottom-6 right-6 z-50 px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs font-mono text-zinc-200 shadow-2xl flex items-center gap-2';
+    toast.className = 'app-toast fixed bottom-20 md:bottom-6 right-6 z-50 px-4 py-2.5 rounded-lg dark:bg-zinc-900 bg-white border dark:border-zinc-700 border-zinc-300 text-xs font-mono dark:text-zinc-200 text-zinc-800 shadow-2xl flex items-center gap-2';
     toast.innerHTML = `<span>✓</span> <span>${message}</span>`;
     document.body.appendChild(toast);
 
@@ -299,6 +311,7 @@ function initializeForm() {
         
         const name = document.getElementById('contact-name')?.value || '';
         const email = document.getElementById('contact-email')?.value || '';
+        const subject = document.getElementById('contact-subject')?.value || 'Portfolio Inquiry';
         const message = document.getElementById('contact-message')?.value || '';
 
         if (!name || !email || !message) {
@@ -306,7 +319,7 @@ function initializeForm() {
             return;
         }
 
-        const waText = `Hi Ayoola,\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+        const waText = `Hi Ayoola,\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
         const waUrl = `https://wa.me/2348169787869?text=${encodeURIComponent(waText)}`;
         
         showToast('Redirecting to WhatsApp...');
