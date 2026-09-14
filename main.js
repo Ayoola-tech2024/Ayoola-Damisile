@@ -1,6 +1,7 @@
-// Ayoola Damisile - Bento Grid, Command Palette & Mobile Action Sheet Engine (v5.0)
+// Ayoola Damisile - Bento Grid, Theme Switcher & Mobile Action Sheet Engine (v6.0)
 
 document.addEventListener('DOMContentLoaded', function () {
+    initializeTheme();
     initializeCommandPalette();
     initializeMobileActionSheet();
     initializeNavigation();
@@ -8,7 +9,52 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeForm();
 });
 
-// 1. Desktop Command Palette (Cmd+K / Ctrl+K)
+// 1. Dark / Light Mode Theme Toggle Engine
+function initializeTheme() {
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    const storedTheme = localStorage.getItem('theme');
+
+    // Default to dark mode if no preference set
+    if (storedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+    } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    }
+
+    updateThemeIcons();
+
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcons();
+        });
+    });
+}
+
+function updateThemeIcons() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const themeIcons = document.querySelectorAll('.theme-toggle-icon');
+
+    themeIcons.forEach(icon => {
+        if (isDark) {
+            icon.className = 'theme-toggle-icon fa-solid fa-sun text-amber-400';
+        } else {
+            icon.className = 'theme-toggle-icon fa-solid fa-moon text-zinc-700';
+        }
+    });
+}
+
+// 2. Desktop Command Palette (Cmd+K / Ctrl+K)
 function initializeCommandPalette() {
     const paletteOverlay = document.getElementById('cmd-palette-overlay');
     const paletteInput = document.getElementById('cmd-palette-input');
@@ -18,7 +64,6 @@ function initializeCommandPalette() {
     if (!paletteOverlay || !paletteInput) return;
 
     function openPalette() {
-        // If on mobile (screen width < 768px), open mobile action sheet instead for better touch UX
         if (window.innerWidth < 768) {
             openMobileSheet();
             return;
@@ -94,7 +139,7 @@ function initializeCommandPalette() {
     });
 }
 
-// 2. Mobile Bottom Action Sheet Drawer (Touch-Optimized Mobile Experience)
+// 3. Mobile Bottom Action Sheet Drawer
 function openMobileSheet() {
     const mobileSheet = document.getElementById('mobile-action-sheet');
     const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
@@ -126,7 +171,6 @@ function initializeMobileActionSheet() {
         mobileBackdrop.addEventListener('click', closeMobileSheet);
     }
 
-    // Touch Swipe Down to Close Drawer
     let touchStartY = 0;
     if (mobileSheet) {
         mobileSheet.addEventListener('touchstart', function (e) {
@@ -162,12 +206,11 @@ function initializeMobileActionSheet() {
         });
     }
 
-    // Expose globally
     window.openMobileSheet = openMobileSheet;
     window.closeMobileSheet = closeMobileSheet;
 }
 
-// 3. Navigation & Mobile Menu
+// 4. Navigation
 function initializeNavigation() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -196,7 +239,7 @@ function initializeNavigation() {
     });
 }
 
-// 4. Scroll Reveal Observer
+// 5. Scroll Reveal Observer
 function initializeScrollReveal() {
     const revealEls = document.querySelectorAll('.bento-card');
     if (!revealEls.length) return;
@@ -214,7 +257,7 @@ function initializeScrollReveal() {
     revealEls.forEach(el => observer.observe(el));
 }
 
-// 5. Copy Helper & Toast
+// 6. Copy Helper & Toast
 function copyToClipboard(text, btnElement) {
     navigator.clipboard.writeText(text).then(() => {
         showToast(`Copied: ${text}`);
@@ -246,7 +289,7 @@ function showToast(message) {
     }, 2500);
 }
 
-// 6. Contact Form Handler
+// 7. Contact Form Handler
 function initializeForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;

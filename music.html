@@ -21,8 +21,8 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#09090b',
-                        darkCard: '#121215'
+                        darkBg: '#08080a',
+                        darkCard: '#101014'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -36,42 +36,58 @@
 
     <style>
         body {
-            background-color: #09090b;
-            color: #f4f4f5;
             font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .card-border {
+        .dark body {
+            background-color: #08080a;
+            color: #f4f4f5;
+        }
+        .light body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .bento-card {
+            transition: all 0.3s ease;
+        }
+        .dark .bento-card {
+            background: #101014;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .card-border:hover {
-            border-color: rgba(255, 255, 255, 0.2);
+        .light .bento-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-white selection:text-black">
+<body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
     <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-md border-b border-zinc-800/80">
+    <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-white tracking-tight hover:opacity-80 transition-opacity">
+            <a href="index.html" class="font-bold tracking-tight dark:text-white text-zinc-900 hover:opacity-80 transition-opacity">
                 Ayoola Damisile
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-                <a href="index.html#home" class="hover:text-white transition-colors">Home</a>
-                <a href="index.html#open-source" class="hover:text-white transition-colors">Open Source</a>
-                <a href="projects.html" class="hover:text-white transition-colors">Projects</a>
-                <a href="music.html" class="text-white font-semibold">Music</a>
-                <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium dark:text-zinc-400 text-zinc-600">
+                <a href="index.html#home" class="hover:underline">Home</a>
+                <a href="index.html#open-source" class="hover:underline">Open Source</a>
+                <a href="projects.html" class="hover:underline">Projects</a>
+                <a href="music.html" class="dark:text-white text-zinc-900 font-semibold">Music</a>
+                <a href="index.html#contact" class="hover:underline">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-4 text-sm font-medium">
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors">
+            <div class="flex items-center gap-3">
+                <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
+                    <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
+                </button>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2">
+            <button id="mobile-menu-btn" class="md:hidden dark:text-zinc-400 text-zinc-600 p-2">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -79,10 +95,10 @@
 
     <!-- HERO SECTION -->
     <section class="pt-32 pb-12 px-4 sm:px-6 max-w-5xl mx-auto space-y-4">
-        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Classical Pianist & Organist
+        <h1 class="text-3xl sm:text-5xl font-extrabold dark:text-white text-zinc-900 tracking-tight">
+            Classical Pianist & Pipe Organist
         </h1>
-        <p class="text-zinc-400 text-base max-w-2xl leading-relaxed">
+        <p class="dark:text-zinc-400 text-zinc-600 text-base max-w-2xl leading-relaxed">
             Exploring polyphony, counterpoint, and choir accompaniment. Studying multi-voice Bach fugues and complex score reading.
         </p>
     </section>
@@ -91,55 +107,55 @@
     <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto space-y-12">
         <div class="grid sm:grid-cols-3 gap-8">
             
-            <div class="bg-[#121215] rounded-xl overflow-hidden card-border space-y-4">
+            <div class="bento-card rounded-xl overflow-hidden space-y-4">
                 <div class="h-56 bg-zinc-900 overflow-hidden relative">
                     <img src="resources/piano-1.jpg" alt="Piano Performance" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 space-y-2">
-                    <h3 class="text-lg font-bold text-white">Polyphonic Piano</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">Focusing on Baroque fugal structure, voice-leading balance, and dynamics.</p>
+                    <h3 class="text-lg font-bold dark:text-white text-zinc-900">Polyphonic Piano</h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">Focusing on Baroque fugal structure, voice-leading balance, and dynamics.</p>
                 </div>
             </div>
 
-            <div class="bg-[#121215] rounded-xl overflow-hidden card-border space-y-4">
+            <div class="bento-card rounded-xl overflow-hidden space-y-4">
                 <div class="h-56 bg-zinc-900 overflow-hidden relative">
                     <img src="resources/piano-2.jpg" alt="Organ Performance" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 space-y-2">
-                    <h3 class="text-lg font-bold text-white">Pipe & Digital Organ</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">Controlling pedalboards, registration stops, and multi-manual instrumentation.</p>
+                    <h3 class="text-lg font-bold dark:text-white text-zinc-900">Pipe & Digital Organ</h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">Controlling pedalboards, registration stops, and multi-manual instrumentation.</p>
                 </div>
             </div>
 
-            <div class="bg-[#121215] rounded-xl overflow-hidden card-border space-y-4">
+            <div class="bento-card rounded-xl overflow-hidden space-y-4">
                 <div class="h-56 bg-zinc-900 overflow-hidden relative">
                     <img src="resources/piano-3.jpg" alt="Choir Accompaniment" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 space-y-2">
-                    <h3 class="text-lg font-bold text-white">Choral Accompaniment</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">Directing rehearsals and accompanying four-part choral ensembles.</p>
+                    <h3 class="text-lg font-bold dark:text-white text-zinc-900">Choral Accompaniment</h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">Directing rehearsals and accompanying four-part choral ensembles.</p>
                 </div>
             </div>
 
         </div>
 
-        <div class="bg-[#121215] rounded-xl p-8 border border-zinc-800 space-y-4">
-            <h2 class="text-xl font-bold text-white">Repertoire Highlights</h2>
-            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-xs font-mono text-zinc-400">
+        <div class="bento-card rounded-xl p-8 space-y-4">
+            <h2 class="text-xl font-bold dark:text-white text-zinc-900">Repertoire Highlights</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-xs font-mono dark:text-zinc-400 text-zinc-600">
                 <div>
-                    <span class="text-white font-bold block mb-1">J.S. Bach</span>
+                    <span class="dark:text-white text-zinc-900 font-bold block mb-1">J.S. Bach</span>
                     <p>Fugues, Preludes & Organ Chorales</p>
                 </div>
                 <div>
-                    <span class="text-white font-bold block mb-1">F. Chopin</span>
+                    <span class="dark:text-white text-zinc-900 font-bold block mb-1">F. Chopin</span>
                     <p>Nocturnes, Waltzes & Etudes</p>
                 </div>
                 <div>
-                    <span class="text-white font-bold block mb-1">Choral Works</span>
+                    <span class="dark:text-white text-zinc-900 font-bold block mb-1">Choral Works</span>
                     <p>Handel Messiah & Sacred Anthems</p>
                 </div>
                 <div>
-                    <span class="text-white font-bold block mb-1">Organ Service</span>
+                    <span class="dark:text-white text-zinc-900 font-bold block mb-1">Organ Service</span>
                     <p>Liturgical Modulation & Hymnology</p>
                 </div>
             </div>
@@ -147,14 +163,14 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-zinc-800/80 py-8 px-4 sm:px-6">
+    <footer class="border-t dark:border-zinc-800/80 border-zinc-200 py-8 px-4 sm:px-6">
         <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
-                <a href="index.html" class="hover:text-zinc-300">Home</a>
-                <a href="projects.html" class="hover:text-zinc-300">Projects</a>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-zinc-300">GitHub</a>
-                <a href="index.html#contact" class="hover:text-zinc-300">Contact</a>
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="projects.html" class="hover:underline">Projects</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
+                <a href="index.html#contact" class="hover:underline">Contact</a>
             </div>
         </div>
     </footer>

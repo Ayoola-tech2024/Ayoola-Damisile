@@ -21,8 +21,8 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#09090b',
-                        darkCard: '#121215'
+                        darkBg: '#08080a',
+                        darkCard: '#101014'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -36,42 +36,58 @@
 
     <style>
         body {
-            background-color: #09090b;
-            color: #f4f4f5;
             font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .card-border {
+        .dark body {
+            background-color: #08080a;
+            color: #f4f4f5;
+        }
+        .light body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .bento-card {
+            transition: all 0.3s ease;
+        }
+        .dark .bento-card {
+            background: #101014;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .card-border:hover {
-            border-color: rgba(255, 255, 255, 0.2);
+        .light .bento-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-white selection:text-black">
+<body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
     <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-md border-b border-zinc-800/80">
+    <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-white tracking-tight hover:opacity-80 transition-opacity">
+            <a href="index.html" class="font-bold tracking-tight dark:text-white text-zinc-900 hover:opacity-80 transition-opacity">
                 Ayoola Damisile
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-                <a href="index.html#home" class="hover:text-white transition-colors">Home</a>
-                <a href="index.html#open-source" class="hover:text-white transition-colors">Open Source</a>
-                <a href="projects.html" class="text-white font-semibold">Projects</a>
-                <a href="music.html" class="hover:text-white transition-colors">Music</a>
-                <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium dark:text-zinc-400 text-zinc-600">
+                <a href="index.html#home" class="hover:underline">Home</a>
+                <a href="index.html#open-source" class="hover:underline">Open Source</a>
+                <a href="projects.html" class="dark:text-white text-zinc-900 font-semibold">Projects</a>
+                <a href="music.html" class="hover:underline">Music</a>
+                <a href="index.html#contact" class="hover:underline">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-4 text-sm font-medium">
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="text-zinc-400 hover:text-white text-lg transition-colors">
+            <div class="flex items-center gap-3">
+                <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
+                    <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
+                </button>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2">
+            <button id="mobile-menu-btn" class="md:hidden dark:text-zinc-400 text-zinc-600 p-2">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -79,28 +95,12 @@
 
     <!-- HEADER HERO -->
     <section class="pt-32 pb-12 px-4 sm:px-6 max-w-5xl mx-auto space-y-4">
-        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        <h1 class="text-3xl sm:text-5xl font-extrabold dark:text-white text-zinc-900 tracking-tight">
             Projects Catalog
         </h1>
-        <p class="text-zinc-400 text-base max-w-2xl">
+        <p class="dark:text-zinc-400 text-zinc-600 text-base max-w-2xl">
             A list of published open-source CLI tools, biometric applications, and client websites.
         </p>
-
-        <!-- CATEGORY FILTER BUTTONS -->
-        <div class="flex flex-wrap items-center gap-2 pt-4 font-mono text-xs">
-            <button class="filter-btn px-3.5 py-1.5 rounded-lg bg-white text-black font-semibold transition-all" data-filter="all">
-                All
-            </button>
-            <button class="filter-btn px-3.5 py-1.5 rounded-lg bg-zinc-800/80 text-zinc-400 hover:text-white transition-all" data-filter="open-source">
-                Open-Source Tools
-            </button>
-            <button class="filter-btn px-3.5 py-1.5 rounded-lg bg-zinc-800/80 text-zinc-400 hover:text-white transition-all" data-filter="systems">
-                Biometrics & Systems
-            </button>
-            <button class="filter-btn px-3.5 py-1.5 rounded-lg bg-zinc-800/80 text-zinc-400 hover:text-white transition-all" data-filter="client">
-                Client Apps
-            </button>
-        </div>
     </section>
 
     <!-- PROJECTS GRID CATALOG -->
@@ -108,184 +108,126 @@
         <div class="grid sm:grid-cols-2 gap-8">
             
             <!-- Project 1: fixmcp -->
-            <div class="project-item bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between" data-category="open-source">
+            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="open-source">
                 <div>
                     <div class="h-48 bg-zinc-900 overflow-hidden relative">
                         <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-4">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold font-mono text-white">fixmcp</h3>
-                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v0.1.0</span>
+                            <h3 class="text-xl font-bold font-mono dark:text-white text-zinc-900">fixmcp</h3>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v0.1.0</span>
                         </div>
-                        <p class="text-zinc-300 text-xs leading-relaxed">
+                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
                             Diagnostic and auto-repair utility for Model Context Protocol (MCP) server configurations across Claude Code, Cursor, and Windsurf environments.
                         </p>
 
-                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
+                        <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
                             <span>$ npx fixmcp</span>
-                            <button onclick="copyToClipboard('npx fixmcp', this)" class="text-zinc-400 hover:text-white transition-colors">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
+                            <button onclick="copyToClipboard('npx fixmcp', this)" class="dark:text-zinc-400 text-zinc-600"><i class="fa-regular fa-copy"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">TypeScript</span>
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">JSON-RPC 2.0</span>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono dark:text-zinc-400 text-zinc-600">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">JSON-RPC 2.0</span>
                     </div>
 
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
-                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-white hover:underline">npm Package</a>
-                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repo</a>
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t dark:border-zinc-800 border-zinc-200">
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repo</a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 2: @damisile_ayoola/envvault -->
-            <div class="project-item bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between" data-category="open-source">
+            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="open-source">
                 <div>
                     <div class="h-48 bg-zinc-900 overflow-hidden relative">
                         <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-4">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold font-mono text-white">@damisile_ayoola/envvault</h3>
-                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">v1.1.0</span>
+                            <h3 class="text-xl font-bold font-mono dark:text-white text-zinc-900">@damisile_ayoola/envvault</h3>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.1.0</span>
                         </div>
-                        <p class="text-zinc-300 text-xs leading-relaxed">
-                            Zero-dependency CLI tool that encrypts environment secrets into authenticated .env.vault files using AES-256-GCM cipher and PBKDF2 SHA-512 key derivation.
+                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
+                            Zero-dependency CLI tool that encrypts environment secrets into authenticated .env.vault files using AES-256-GCM cipher and PBKDF2 SHA-512.
                         </p>
 
-                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 flex items-center justify-between font-mono text-xs text-zinc-300">
+                        <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
                             <span>$ npx @damisile_ayoola/envvault</span>
-                            <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="text-zinc-400 hover:text-white transition-colors">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
+                            <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="dark:text-zinc-400 text-zinc-600"><i class="fa-regular fa-copy"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">AES-256-GCM</span>
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">PBKDF2 SHA-512</span>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono dark:text-zinc-400 text-zinc-600">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">AES-256-GCM</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">PBKDF2 SHA-512</span>
                     </div>
 
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t border-zinc-800">
-                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-white hover:underline">npm Package</a>
-                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="text-zinc-400 hover:text-white">GitHub Repo</a>
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t dark:border-zinc-800 border-zinc-200">
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repo</a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 3: checkIn -->
-            <div class="project-item bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between" data-category="systems">
+            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="systems">
                 <div>
                     <div class="h-48 bg-zinc-900 overflow-hidden relative">
                         <img src="cover images/checkin-cover-photo.jpg" alt="checkIn screenshot" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-3">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">checkIn</h3>
-                            <a href="https://check-in-gray.vercel.app" target="_blank" class="text-zinc-400 hover:text-white text-sm">
+                            <h3 class="text-xl font-bold dark:text-white text-zinc-900">checkIn</h3>
+                            <a href="https://check-in-gray.vercel.app" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-sm">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
-                        <p class="text-zinc-300 text-xs leading-relaxed">
+                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
                             Biometric facial recognition attendance portal using MediaPipe 3D FaceMesh, anti-spoofing verification, and Supabase.
                         </p>
                     </div>
                 </div>
                 <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Next.js 14</span>
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">MediaPipe AI</span>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono dark:text-zinc-400 text-zinc-600">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">Next.js 14</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">MediaPipe AI</span>
                     </div>
-                    <a href="https://check-in-gray.vercel.app" target="_blank" class="block text-xs font-mono text-white hover:underline">
+                    <a href="https://check-in-gray.vercel.app" target="_blank" class="block text-xs font-mono dark:text-white text-zinc-900 hover:underline">
                         Open Live Application →
                     </a>
                 </div>
             </div>
 
             <!-- Project 4: Memodams -->
-            <div class="project-item bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between" data-category="client">
+            <div class="bento-card rounded-xl overflow-hidden flex flex-col justify-between" data-category="client">
                 <div>
                     <div class="h-48 bg-zinc-900 overflow-hidden relative">
                         <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 space-y-3">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">Memodams</h3>
-                            <a href="https://memodams.com" target="_blank" class="text-zinc-400 hover:text-white text-sm">
+                            <h3 class="text-xl font-bold dark:text-white text-zinc-900">Memodams</h3>
+                            <a href="https://memodams.com" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-sm">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
-                        <p class="text-zinc-300 text-xs leading-relaxed">
+                        <p class="dark:text-zinc-300 text-zinc-700 text-xs leading-relaxed">
                             Digital memorial & tribute platform offering interactive memory books, photo streams, and condolences messaging.
                         </p>
                     </div>
                 </div>
                 <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Full-Stack Web</span>
-                    </div>
-                    <a href="https://memodams.com" target="_blank" class="block text-xs font-mono text-white hover:underline">
+                    <a href="https://memodams.com" target="_blank" class="block text-xs font-mono dark:text-white text-zinc-900 hover:underline">
                         memodams.com →
                     </a>
-                </div>
-            </div>
-
-            <!-- Project 5: Paul Hilpert Consultancy -->
-            <div class="project-item bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between" data-category="client">
-                <div>
-                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                        <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy screenshot" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">Paul Hilpert Consultancy</h3>
-                            <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-zinc-400 hover:text-white text-sm">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                        <p class="text-zinc-300 text-xs leading-relaxed">
-                            Corporate web application for executive strategy and management consulting firm with scheduling integrations.
-                        </p>
-                    </div>
-                </div>
-                <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Corporate Site</span>
-                    </div>
-                    <a href="https://paulhilpertconsultancy.com" target="_blank" class="block text-xs font-mono text-white hover:underline">
-                        paulhilpertconsultancy.com →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project 6: Tee Stella Stitches -->
-            <div class="project-item bg-[#121215] rounded-xl overflow-hidden card-border transition-all flex flex-col justify-between" data-category="client">
-                <div>
-                    <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                        <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches screenshot" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-white">Tee Stella Stitches</h3>
-                        <p class="text-zinc-300 text-xs leading-relaxed">
-                            Fashion catalog & bespoke tailoring e-commerce showcase featuring dynamic garment customizers.
-                        </p>
-                    </div>
-                </div>
-                <div class="p-6 pt-0 space-y-3">
-                    <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
-                        <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">E-Commerce</span>
-                    </div>
-                    <span class="block text-xs font-mono text-zinc-500">
-                        Fashion Showcase
-                    </span>
                 </div>
             </div>
 
@@ -293,14 +235,14 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-zinc-800/80 py-8 px-4 sm:px-6">
+    <footer class="border-t dark:border-zinc-800/80 border-zinc-200 py-8 px-4 sm:px-6">
         <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
-                <a href="index.html" class="hover:text-zinc-300">Home</a>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:text-zinc-300">GitHub</a>
-                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:text-zinc-300">NPM</a>
-                <a href="music.html" class="hover:text-zinc-300">Music</a>
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:underline">NPM</a>
+                <a href="music.html" class="hover:underline">Music</a>
             </div>
         </div>
     </footer>
