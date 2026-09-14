@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayoola Damisile — Engineering Projects Specification Catalog</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
-    <meta name="description" content="Complete technical specifications catalog for Ayoola Damisile's engineering projects: fixmcp, @damisile_ayoola/envvault, checkIn biometrics, Memodams, and enterprise client web applications.">
+    <meta name="description" content="Complete technical specifications catalog for Ayoola Damisile's engineering projects: fixmcp, @damisile_ayoola/envvault, checkIn biometrics, Memodams, and client web applications.">
     <link rel="canonical" href="https://www.damisile.name.ng/projects.html">
 
     <!-- Fonts -->
@@ -97,26 +97,30 @@
 
     <!-- HEADER HERO -->
     <section class="pt-32 pb-10 px-4 sm:px-6 max-w-5xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-300 text-zinc-700">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Technical Specifications Catalog
+        </div>
         <h1 class="text-3xl sm:text-5xl font-extrabold dark:text-white text-zinc-900 tracking-tight">
-            Engineering Projects & Specifications
+            Engineering Projects & Systems
         </h1>
         <p class="dark:text-zinc-400 text-zinc-600 text-base max-w-3xl leading-relaxed">
-            Detailed technical breakdowns, architecture specifications, algorithms, and links for published open-source tools, AI biometrics, and enterprise client web applications built by Ayoola Damisile.
+            Detailed technical breakdowns, problem & solution statements, algorithm specifications, live site URLs, and repository links for published open-source tools, biometric platforms, and client applications built by Ayoola Damisile.
         </p>
 
         <!-- CATEGORY FILTER BUTTONS -->
         <div class="flex flex-wrap items-center gap-2 pt-4 font-mono text-xs">
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-black font-semibold transition-all" data-filter="all">
-                All Projects
+                All Projects (8)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="open-source">
-                Open-Source Tools
+                Open-Source Tools (2)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="biometrics">
-                Biometrics & AI
+                Biometrics & AI (1)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="client">
-                Client Applications
+                Client Applications (5)
             </button>
         </div>
     </section>
@@ -133,14 +137,14 @@
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Published npm Utility</span>
+                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Published npm CLI Utility</span>
                             <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">fixmcp</h2>
                         </div>
                         <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v0.1.0</span>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Automated CLI diagnostic tool engineered to scan, inspect, and auto-repair broken Model Context Protocol (MCP) server configuration files across Claude Code, Cursor, and Windsurf IDE environments.
+                        <em>"Stop guessing which MCP server is broken. Ask the doctor."</em> One-command diagnostic & auto-fix CLI tool that discovers Model Context Protocol (MCP) configurations across 6 AI agents (Claude Code, Cursor, VS Code, opencode, Windsurf, Codex), executes real stdio JSON-RPC handshakes, validates tool schemas, and rewrites broken paths.
                     </p>
 
                     <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
@@ -148,19 +152,18 @@
                         <button onclick="copyToClipboard('npx fixmcp', this)" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900"><i class="fa-regular fa-copy"></i> Copy</button>
                     </div>
 
-                    <!-- Specs Breakdown Table -->
                     <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
                         <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
                         <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Config Discovery:</strong> Automatically checks `~/.claude.json`, `%APPDATA%\Cursor\mcp.json`, and Windsurf configs.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Protocol Validation:</strong> Validates JSON-RPC 2.0 schema endpoints and tool definitions.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Auto-Fix Engine:</strong> Interactive repair step runner fixing invalid JSON paths, syntax errors, and broken server registrations.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Multi-Agent Discovery:</strong> Automatically scans `~/.claude.json`, `%APPDATA%\Cursor\mcp.json`, VS Code, and Windsurf configurations.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Protocol Handshake:</strong> Validates stdio JSON-RPC 2.0 payload schemas and resolves timeout error `-32001`.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Auto-Fix Engine:</strong> Interactive step runner repairing invalid JSON paths, syntax errors, and broken server registrations without restarting the AI client.</li>
                         </ul>
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 underline">npm Package →</a>
-                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Source →</a>
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">npm Package →</a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -182,7 +185,7 @@
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Zero-dependency cryptographic CLI tool that encrypts plaintext environment secrets into authenticated `.env.vault` files using AES-256-GCM cipher and PBKDF2 SHA-512 key derivation.
+                        <em>"Zero-dependency AES-256-GCM encrypted secret manager with sub-process memory injection."</em> Encrypts plaintext environment secrets into authenticated `.env.vault` files using Node native `crypto` (AES-256-GCM + PBKDF2 SHA-512 key derivation with 100,000 iterations). Injects secrets directly into `process.env` in memory (`envvault run -- npm start`) without writing plaintext passwords to disk.
                     </p>
 
                     <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
@@ -193,15 +196,16 @@
                     <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
                         <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
                         <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Cipher Architecture:</strong> Authenticated AES-256-GCM encryption with 128-bit authentication tag.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Cipher Architecture:</strong> Authenticated AES-256-GCM encryption with 128-bit authentication tag and Galois Counter Mode integrity verification.</li>
                             <li>• <strong class="dark:text-zinc-200 text-zinc-800">Key Derivation:</strong> PBKDF2 SHA-512 key stretching with 100,000 iterations and unique random salts.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Pre-Commit Blocker:</strong> Installs automated git hooks that prevent accidental secret commits to remote repos.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Sub-Process Memory Injection:</strong> `envvault run` feeds secrets directly into `process.env` without saving unencrypted files to disk.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Git Security Linter:</strong> Installs automated pre-commit git hooks (`envvault audit`) to block accidental plaintext secret leaks.</li>
                         </ul>
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 underline">npm Package →</a>
-                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Source →</a>
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">npm Package →</a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -211,32 +215,41 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn screenshot" class="w-full h-56 object-cover">
+                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover image" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Biometric AI System</span>
-                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">checkIn</h2>
+                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Production Biometric AI Platform (FUTA SLIT)</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">checkIn — Biometric & Geofenced Attendance System</h2>
                         </div>
-                        <a href="https://check-in-gray.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900">Live App →</a>
+                        <a href="https://checkin-futa.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live App →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Production biometric attendance management portal built to verify facial identity in real time using MediaPipe 3D FaceMesh, 3D head pose estimation, and anti-spoofing liveness verification.
+                        Production university attendance platform engineered for FUTA (Federal University of Technology Akure) School of Logistics and Innovation Technology (SLIT). Solves physical scanner dependency by validating student presence directly on their mobile phones via 3D facial biometrics and GPS geofencing.
                     </p>
 
                     <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
                         <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
                         <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Computer Vision:</strong> MediaPipe 3D FaceMesh tracking 468 3D facial landmark coordinates.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Anti-Spoofing:</strong> Depth map estimation and liveness movement check to prevent photo/screen spoofing.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Database & Webhooks:</strong> Supabase real-time database with automated HTTP webhook triggers for check-in events.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Computer Vision:</strong> Google MediaPipe FaceMesh extracting 468 3D facial landmarks with 3-tier similarity thresholding (>50% present, 40-50% pending review, <40% fraud reject).</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">GPS Geofencing:</strong> Haversine distance algorithm enforcing a 50-meter radius threshold around active lecturer sessions.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Offline Resilience Engine:</strong> Custom IndexedDB payload queueing (`idb`) with automatic background sync when cellular or Wi-Fi connectivity drops.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Hierarchy & Roles:</strong> Admin, HOD, Lecturer, Student across 7 SLIT departments (FINT, BIT, EMT, LTT, PMT, PRMT, SIMT).</li>
                         </ul>
                     </div>
 
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Next.js 16</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">MediaPipe 3D</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">PostgreSQL</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">IndexedDB</span>
+                    </div>
+
                     <div class="pt-2">
-                        <a href="https://check-in-gray.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline">Launch Live Application →</a>
+                        <a href="https://checkin-futa.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Launch Live Application →</a>
                     </div>
                 </div>
             </div>
@@ -251,32 +264,83 @@
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-mono text-amber-500 font-bold block uppercase">Client Digital Platform</span>
-                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Memodams</h2>
+                            <span class="text-xs font-mono text-amber-500 font-bold block uppercase">Client Web Application</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">MemoDams — Note Taking & Organization Workspace</h2>
                         </div>
-                        <a href="https://memodams.com" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900">memodams.com →</a>
+                        <a href="https://memo-dams.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">memo-dams.vercel.app →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Digital memorial and tribute web application featuring interactive tribute books, high-concurrency photo streams, condolence messaging, and digital memory archives.
+                        A sleek, minimalist note-taking workspace application designed for effortless idea capture, structured document organization, rich-text formatting, and rapid multi-tag search.
                     </p>
 
                     <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
                         <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
                         <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Media Pipeline:</strong> Optimized image processing and cloud photo stream galleries.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Guestbook Engine:</strong> Interactive message submission with spam filter verification.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Distraction-Free Editor:</strong> Component-based React architecture with live rich-text rendering and markdown shortcuts.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Hybrid Storage Engine:</strong> Client-side LocalStorage instant state persistence backed up by Firebase cloud data synchronization.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Advanced Tag & Query Search:</strong> Fast multi-field indexing across note titles, body content, and tag categories.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Responsive Touch UI:</strong> Fully optimized for mobile screens with smooth drawer navigation.</li>
                         </ul>
                     </div>
 
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">React.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Firebase</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">LocalStorage</span>
+                    </div>
+
                     <div class="pt-2">
-                        <a href="https://memodams.com" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline">Visit Website →</a>
+                        <a href="https://memo-dams.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Application →</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PROJECT 5: Paul Hilpert Consultancy -->
+        <!-- PROJECT 5: AFSS E-Magazine -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200 flex items-center justify-center p-6">
+                    <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-48 object-contain">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-purple-500 font-bold block uppercase">Digital Memorial & School Platform</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">AFSS Ado Ekiti (Set 2024/2025) E-Magazine</h2>
+                        </div>
+                        <a href="https://afss-set2024-25.onrender.com" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">afss-set2024-25... →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Digital publishing platform created to document and celebrate the graduating class of Apostolic Faith Secondary School (AFSS) Ado Ekiti (SET 2024–2025). Presents student achievements, valedictory articles, and memory archives in a modern digital magazine format.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Digital Flipbook Layout:</strong> Mobile and desktop responsive magazine layout for smooth reading.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Photo Archives:</strong> Optimized image galleries showcasing student moments, awards, and valedictory memories.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Class Directory:</strong> Organized sections for valedictory articles, student creative pieces, and alumni registry records.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Render</span>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://afss-set2024-25.onrender.com" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live E-Magazine →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 6: Paul Hilpert Consultancy -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -285,59 +349,82 @@
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-mono text-purple-500 font-bold block uppercase">Corporate Consulting Portal</span>
+                            <span class="text-xs font-mono text-blue-500 font-bold block uppercase">Corporate Advisory Portal</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Paul Hilpert Consultancy</h2>
                         </div>
-                        <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900">paulhilpert... →</a>
+                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live Web Portal →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Corporate executive portal built for strategy consultancy firm, showcasing executive case studies, service frameworks, and client booking integrations.
+                        A corporate web platform for an international business strategy consultancy firm, showcasing practice areas, advisory frameworks, client case studies, and an automated lead conversion funnel.
                     </p>
 
                     <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
                         <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
                         <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Architecture:</strong> Corporate responsive portal with custom appointment booking engine.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Executive Design System:</strong> Clean corporate layout with custom service cards and client booking modal.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Automated Lead Routing:</strong> Instant inquiry form processing routing client specifications to consultant inbox.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">SEO Schema Markup:</strong> Structured JSON-LD Organization and Service metadata for search engine indexing.</li>
                         </ul>
                     </div>
 
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">GitHub Pages</span>
+                    </div>
+
                     <div class="pt-2">
-                        <a href="https://paulhilpertconsultancy.com" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline">Visit Website →</a>
+                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Portal →</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PROJECT 6: Tee Stella Stitches -->
+        <!-- PROJECT 7: Tee Stella Stitches -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella screenshot" class="w-full h-56 object-cover">
+                    <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches screenshot" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-mono text-zinc-500 font-bold block uppercase">Fashion E-Commerce</span>
+                            <span class="text-xs font-mono text-rose-500 font-bold block uppercase">Fashion Showcase & E-Commerce</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Tee Stella Stitches</h2>
                         </div>
+                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">tee-stella-luxury... →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Custom bespoke fashion catalog and e-commerce application featuring dynamic garment customization options, order placement UI, and media galleries.
+                        A luxury bespoke fashion e-commerce application featuring interactive garment showcases, product catalog filtering, high-resolution galleries, and direct WhatsApp order dispatch for custom tailoring clients.
                     </p>
 
                     <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
                         <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
                         <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Catalog Engine:</strong> Dynamic garment category filtering and custom order form processing.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Garment Catalog Engine:</strong> Multi-category filtering with image gallery zoom and measurement options.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Direct WhatsApp Dispatch:</strong> Automated checkout formatting customer measurement selections directly to WhatsApp.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Mobile Touch UX:</strong> Fast page renders, gesture controls, and responsive product modals.</li>
                         </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Next.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vercel</span>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live E-Commerce Site →</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PROJECT 7: Damiqueen Designs -->
+        <!-- PROJECT 8: Damiqueen Designs -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -346,35 +433,35 @@
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-mono text-zinc-500 font-bold block uppercase">Design Studio Showcase</span>
+                            <span class="text-xs font-mono text-pink-500 font-bold block uppercase">Creative Design Portfolio</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Damiqueen Designs</h2>
                         </div>
+                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live Portfolio →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Visual branding portfolio and design studio web portal highlighting graphics, media art, brand identity collections, and creative showcases.
+                        A creative portfolio website showcasing brand identity systems, graphic design projects, visual media art collections, and UI prototypes for a creative design agency.
                     </p>
-                </div>
-            </div>
-        </div>
 
-        <!-- PROJECT 8: AFSS Alumni System -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
-            <div class="grid md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200 flex items-center justify-center p-6">
-                    <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-36 object-contain">
-                </div>
-                <div class="md:col-span-7 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-mono text-zinc-500 font-bold block uppercase">Alumni Directory System</span>
-                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Air Force Secondary School Alumni Portal</h2>
-                        </div>
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Artistic Gallery Grid:</strong> Interactive portfolio category filtering displaying brand identity projects and UI mockups.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Custom Micro-Animations:</strong> Smooth hover states, card depth elevation, and scroll-triggered animations.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Mobile Media Optimization:</strong> Fluid image scaling and fast picture load optimization.</li>
+                        </ul>
                     </div>
 
-                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Alumni network management system developed for Air Force Secondary School alumni, featuring member directory, event scheduling, and alumni news.
-                    </p>
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Figma</span>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Portfolio →</a>
+                    </div>
                 </div>
             </div>
         </div>
