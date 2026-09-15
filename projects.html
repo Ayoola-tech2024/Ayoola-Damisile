@@ -111,13 +111,13 @@
         <!-- CATEGORY FILTER BUTTONS -->
         <div class="flex flex-wrap items-center gap-2 pt-4 font-mono text-xs">
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-black font-semibold transition-all" data-filter="all">
-                All Projects (8)
+                All Projects (10)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="open-source">
-                Open-Source Tools (2)
+                Open-Source Tools (3)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="biometrics">
-                Biometrics & AI (1)
+                Biometrics & AI (2)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="client">
                 Client Applications (5)
@@ -127,6 +127,90 @@
 
     <!-- PROJECTS CATALOG SPECS GRID -->
     <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto space-y-12">
+        
+        <!-- PROJECT: Talk-to-DB (v1.1.0) -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="resources/talk-to-db.png" alt="TALK-TO-DB v1.1.0" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-emerald-500 font-bold block uppercase">Interactive AI & Database Platform</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Talk-to-DB (v1.1.0) — Schema Visualizer & AI Query Engine</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.1.0</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        An interactive AI-powered database schema visualizer, ERD explorer, and natural-language query engine. Features live foreign-key relationship mapping, plain-English AI database querying, and real-time schema statistics.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Schema ERD Visualizer:</strong> Automated interactive ERD diagram generation with visual foreign key mapping.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Plain-English AI Queries:</strong> Natural language query bar converting plain English questions into executable SQL statements.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Data Explorer:</strong> Live database table inspector displaying rows, field types, primary keys, and table stats.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Node.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">SQL Engine</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://github.com/Ayoola-tech2024/Talk-to-db" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: ReleaseNote Studio -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="ReleaseNote Studio" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-purple-500 font-bold block uppercase">Developer Product Studio</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">ReleaseNote Studio</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.0.0</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        A modern developer studio engineered to automate release note generation, track product changelogs, and streamline team update distribution across software releases.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Automated Generator:</strong> Converts commit logs into clean user-facing release notes.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Multi-Project Dashboard:</strong> Version tracking and changelog history manager across product repos.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Export Engine:</strong> Instant Markdown, HTML, and JSON format exporting for developer distribution.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">React</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Node.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://github.com/Ayoola-tech2024/releasenote-studio" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- PROJECT 1: fixmcp -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
