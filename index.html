@@ -668,56 +668,111 @@
         <!-- SKILLS & TECHNICAL ARCHITECTURE -->
         <section id="skills" class="space-y-6 border-t dark:border-zinc-800/80 border-zinc-200 pt-12">
             <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-300 text-zinc-700">
+                    <i class="fa-solid fa-code text-cyan-500"></i> Engineering Competencies & Stack Breakdown
+                </div>
                 <h2 class="text-2xl font-bold dark:text-white text-zinc-900 tracking-tight flex items-center gap-2">
-                    <i class="fa-solid fa-layer-group text-zinc-500"></i> Technical Architecture & Stack
+                    Technical Architecture & Stack
                 </h2>
-                <p class="dark:text-zinc-400 text-zinc-600 text-sm">Engineering competencies categorized by core domains.</p>
+                <p class="dark:text-zinc-400 text-zinc-600 text-sm">Full-stack languages, backend security, AI biometrics, and cloud infrastructure.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
-                <div class="bento-card p-6 space-y-3">
-                    <h3 class="text-sm font-bold dark:text-white text-zinc-900">Languages & Core</h3>
-                    <ul class="space-y-2 dark:text-zinc-300 text-zinc-700">
-                        <li>• TypeScript & ESNext</li>
-                        <li>• JavaScript (Node.js)</li>
-                        <li>• HTML5 & Modern CSS</li>
-                        <li>• JSON-RPC 2.0 Protocol</li>
-                        <li>• Git Hooks & CLI Tools</li>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs">
+                
+                <!-- Category 1: Languages & Runtimes -->
+                <div class="bento-card p-6 space-y-4">
+                    <div class="flex items-center gap-2 text-cyan-500 font-bold border-b dark:border-zinc-800 border-zinc-200 pb-2">
+                        <i class="fa-solid fa-terminal text-sm"></i>
+                        <h3 class="text-sm dark:text-white text-zinc-900 font-sans">Languages & Runtimes</h3>
+                    </div>
+                    <ul class="space-y-2.5 dark:text-zinc-300 text-zinc-700">
+                        <li>• <strong class="dark:text-white text-zinc-900">Python 3:</strong> Asyncio, Telegram Bot API, PyTorch/NLP, scripting & automation</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">TypeScript & ESNext:</strong> Strict typing, generic interfaces, protocol contracts</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">JavaScript (Node.js):</strong> V8 engine runtime, CLI packages, npm tools</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">HTML5 & Modern CSS:</strong> Responsive layout systems, DOM accessibility (a11y)</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">SQL & Relational DBs:</strong> Complex queries, ERD schema design, indexing</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">JSON-RPC 2.0 & Stdio:</strong> Standardized AI agent IPC protocols</li>
                     </ul>
                 </div>
 
-                <div class="bento-card p-6 space-y-3">
-                    <h3 class="text-sm font-bold dark:text-white text-zinc-900">Frontend & Mobile</h3>
-                    <ul class="space-y-2 dark:text-zinc-300 text-zinc-700">
-                        <li>• Next.js 16 (App Router)</li>
-                        <li>• React 19 & React Native</li>
-                        <li>• Tailwind CSS</li>
-                        <li>• Framer Motion</li>
-                        <li>• Zustand & Redux</li>
+                <!-- Category 2: Frontend & UI Engineering -->
+                <div class="bento-card p-6 space-y-4">
+                    <div class="flex items-center gap-2 text-amber-500 font-bold border-b dark:border-zinc-800 border-zinc-200 pb-2">
+                        <i class="fa-solid fa-laptop-code text-sm"></i>
+                        <h3 class="text-sm dark:text-white text-zinc-900 font-sans">Frontend & UI Engineering</h3>
+                    </div>
+                    <ul class="space-y-2.5 dark:text-zinc-300 text-zinc-700">
+                        <li>• <strong class="dark:text-white text-zinc-900">Next.js 16 (App Router):</strong> React Server Components, SSR, Edge APIs</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">React 19 & React Native:</strong> Concurrent Mode, cross-platform mobile apps</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Tailwind CSS & Design Systems:</strong> Custom tokens, dark/light themes</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Vite & Webpack:</strong> Sub-second HMR bundlers, production optimization</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">KaTeX & HTML5 Canvas:</strong> Math typesetting, interactive 2D graphics</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Zustand, Redux & State:</strong> Immutable global state & client caching</li>
                     </ul>
                 </div>
 
-                <div class="bento-card p-6 space-y-3">
-                    <h3 class="text-sm font-bold dark:text-white text-zinc-900">Security & Backend</h3>
-                    <ul class="space-y-2 dark:text-zinc-300 text-zinc-700">
-                        <li>• AES-256-GCM Cipher</li>
-                        <li>• PBKDF2 SHA-512 Key Deriv</li>
-                        <li>• PostgreSQL & Supabase</li>
-                        <li>• InsForge Platform</li>
-                        <li>• RESTful & Webhooks</li>
+                <!-- Category 3: Security & Cryptography -->
+                <div class="bento-card p-6 space-y-4">
+                    <div class="flex items-center gap-2 text-emerald-500 font-bold border-b dark:border-zinc-800 border-zinc-200 pb-2">
+                        <i class="fa-solid fa-shield-halved text-sm"></i>
+                        <h3 class="text-sm dark:text-white text-zinc-900 font-sans">Security & Cryptography</h3>
+                    </div>
+                    <ul class="space-y-2.5 dark:text-zinc-300 text-zinc-700">
+                        <li>• <strong class="dark:text-white text-zinc-900">AES-256-GCM Cipher:</strong> Authenticated encryption with 128-bit tags</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">PBKDF2 SHA-512:</strong> Key stretching with 100,000 salt iterations</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Git Hooks & npm Security:</strong> Pre-commit secret audit hook automation</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">PostgreSQL, Supabase & Firebase:</strong> RLS policies, live data sync</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">InsForge & Microservices:</strong> Agentic coding backend infrastructure</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">RESTful APIs & Webhooks:</strong> Event-driven architecture & rate limiting</li>
                     </ul>
                 </div>
 
-                <div class="bento-card p-6 space-y-3">
-                    <h3 class="text-sm font-bold dark:text-white text-zinc-900">AI & Biometrics</h3>
-                    <ul class="space-y-2 dark:text-zinc-300 text-zinc-700">
-                        <li>• MediaPipe 3D FaceMesh</li>
-                        <li>• Computer Vision Anti-Spoof</li>
-                        <li>• Telegram & WhatsApp AI</li>
-                        <li>• AI Agent Integrations</li>
-                        <li>• Prompt Engineering</li>
+                <!-- Category 4: AI & Biometrics -->
+                <div class="bento-card p-6 space-y-4">
+                    <div class="flex items-center gap-2 text-purple-500 font-bold border-b dark:border-zinc-800 border-zinc-200 pb-2">
+                        <i class="fa-solid fa-brain text-sm"></i>
+                        <h3 class="text-sm dark:text-white text-zinc-900 font-sans">AI & Biometrics</h3>
+                    </div>
+                    <ul class="space-y-2.5 dark:text-zinc-300 text-zinc-700">
+                        <li>• <strong class="dark:text-white text-zinc-900">MediaPipe 3D FaceMesh:</strong> 468 landmark facial recognition</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Computer Vision Anti-Spoof:</strong> Spatial liveness & GPS Haversine</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Telegram & WhatsApp Bots:</strong> Python bots, automated chat pipelines</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Model Context Protocol (MCP):</strong> Stdio server diagnostics & tool calling</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Socratic AI & LLM Systems:</strong> Prompt engineering & active recall labs</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Voice AI Integrations:</strong> Alexa Skills Kit & SSML speech bridges</li>
                     </ul>
                 </div>
+
+                <!-- Category 5: DevOps & Tooling -->
+                <div class="bento-card p-6 space-y-4">
+                    <div class="flex items-center gap-2 text-blue-500 font-bold border-b dark:border-zinc-800 border-zinc-200 pb-2">
+                        <i class="fa-solid fa-cloud text-sm"></i>
+                        <h3 class="text-sm dark:text-white text-zinc-900 font-sans">DevOps & Tooling</h3>
+                    </div>
+                    <ul class="space-y-2.5 dark:text-zinc-300 text-zinc-700">
+                        <li>• <strong class="dark:text-white text-zinc-900">Published npm Packages:</strong> `fixmcp`, `@damisile_ayoola/envvault`</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Cloud Deployments:</strong> Vercel Edge, Render, GitHub Pages CI/CD</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Offline-First Engines:</strong> IndexedDB (`idb`) & LocalStorage queuing</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Docker & Containers:</strong> Isolated runtime sandboxes for agent execution</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Git & GitHub Workflow:</strong> Version control, interactive rebasing, workflows</li>
+                    </ul>
+                </div>
+
+                <!-- Category 6: Performance & Systems -->
+                <div class="bento-card p-6 space-y-4">
+                    <div class="flex items-center gap-2 text-rose-500 font-bold border-b dark:border-zinc-800 border-zinc-200 pb-2">
+                        <i class="fa-solid fa-gauge-high text-sm"></i>
+                        <h3 class="text-sm dark:text-white text-zinc-900 font-sans">Performance & Systems</h3>
+                    </div>
+                    <ul class="space-y-2.5 dark:text-zinc-300 text-zinc-700">
+                        <li>• <strong class="dark:text-white text-zinc-900">Zero-Dependency Systems:</strong> Pure native Node.js cryptography</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Memory & Sub-Process:</strong> Environment variable memory injection</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Core Web Vitals:</strong> Sub-second load times & image optimization</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Polyphonic Discipline:</strong> J.S. Bach organ/piano fugue precision</li>
+                        <li>• <strong class="dark:text-white text-zinc-900">Pentesting & Security Audits:</strong> In-browser security framework tools</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
