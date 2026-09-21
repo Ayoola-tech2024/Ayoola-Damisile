@@ -111,22 +111,148 @@
         <!-- CATEGORY FILTER BUTTONS -->
         <div class="flex flex-wrap items-center gap-2 pt-4 font-mono text-xs">
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-black font-semibold transition-all" data-filter="all">
-                All Projects (10)
+                All Projects (13)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="open-source">
-                Open-Source Tools (3)
+                Open-Source Tools (4)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="biometrics">
-                Biometrics & AI (2)
+                Biometrics & AI (3)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="client">
-                Client Applications (5)
+                Client Applications (6)
             </button>
         </div>
     </section>
 
     <!-- PROJECTS CATALOG SPECS GRID -->
     <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto space-y-12">
+        
+        <!-- PROJECT: AI Assistant for Microsoft Word -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="AI Assistant for Word" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-blue-500 font-bold block uppercase">AI Document Intelligence</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">AI Assistant for Microsoft Word</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.0.0</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        <em>"Talk to Microsoft Word in plain English."</em> AI integration for Microsoft Word enabling users to draft, refine, format, and research document content using natural language commands.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Plain-English Interface:</strong> Direct natural language document drafting and intelligent formatting automation inside MS Word.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Contextual Refinement:</strong> Real-time text rewriting, tone adjustments, and live research lookup pipeline.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Python AI Engine:</strong> High-performance NLP processing pipeline integrated with office document APIs.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Python</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">AI / LLM</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">MS Word API</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">NLP</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://github.com/Ayoola-tech2024/ai-assistant-for-word" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: Zatil Platform -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Memodams.jpg" alt="Zatil Platform" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Modern Web Application</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Zatil Platform</h2>
+                        </div>
+                        <a href="https://zatil.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">zatil.vercel.app →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        High-performance modern Web application platform built with TypeScript, Next.js, and Tailwind CSS featuring dynamic responsive UI components and fast cloud deployment.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Next.js App Router:</strong> Server component architecture with instant page transitions.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Tailwind Component System:</strong> Dark/light mode theme switching and responsive layout structures.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Vercel Edge Network:</strong> Automated CI/CD deployment pipeline with continuous deployment.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Next.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vercel</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://zatil.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Launch Live App →</a>
+                        <a href="https://github.com/Ayoola-tech2024/zatil" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: Xense Energy Platform -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Xense Energy Platform" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-emerald-500 font-bold block uppercase">Clean Tech & Energy Web Portal</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Xense Energy Platform</h2>
+                        </div>
+                        <a href="https://xense-energy-website.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">xense-energy... →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Renewable energy management platform and technology showcase presenting clean tech solutions, energy hardware specifications, and interactive sustainability tools.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Clean Tech Layout:</strong> High-resolution product cards displaying solar & clean energy hardware details.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Responsive Performance:</strong> Sub-second load times optimized for mobile and desktop screens.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vercel</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://xense-energy-website.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Visit Live Portal →</a>
+                        <a href="https://github.com/Ayoola-tech2024/xense-energy-website" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- PROJECT: Talk-to-DB (v1.1.0) -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
