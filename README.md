@@ -86,4 +86,4 @@
 - 💼 **LinkedIn**: [linkedin.com/in/damisile-ayoola-096a7b382](https://www.linkedin.com/in/damisile-ayoola-096a7b382)
 - 🐦 **Twitter / X**: [@Damisile_dev](https://x.com/Damisile_dev)
 - 📦 **NPM Profile**: [npmjs.com/~damisile_ayoola](https://www.npmjs.com/~damisile_ayoola)
-- ✉️ **Email**: [ayoola.tech2024@gmail.com](mailto:ayoola.tech2024@gmail.com)
+- ✉️ **Email**: [damisileayoola@gmail.com](mailto:damisileayoola@gmail.com)
