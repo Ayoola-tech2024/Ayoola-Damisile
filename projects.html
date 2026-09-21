@@ -111,16 +111,16 @@
         <!-- CATEGORY FILTER BUTTONS -->
         <div class="flex flex-wrap items-center gap-2 pt-4 font-mono text-xs">
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-black font-semibold transition-all" data-filter="all">
-                All Projects (20)
+                All Projects (14)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="open-source">
-                Open-Source Tools (10)
+                Open-Source Tools (6)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="biometrics">
-                Biometrics & AI (4)
+                Biometrics & AI (3)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="client">
-                Client Applications (7)
+                Client Applications (5)
             </button>
         </div>
     </section>
@@ -128,11 +128,11 @@
     <!-- PROJECTS CATALOG SPECS GRID -->
     <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto space-y-12">
         
-        <!-- PROJECT: Synapse Study -->
+        <!-- PROJECT 1: Synapse Study -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Memodams.jpg" alt="Synapse Study" class="w-full h-56 object-cover">
+                    <img src="resources/synapse-study-ui.jpg" alt="Synapse Study" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -171,11 +171,11 @@
             </div>
         </div>
 
-        <!-- PROJECT: Time Capsule -->
+        <!-- PROJECT 2: Time Capsule -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Time Capsule" class="w-full h-56 object-cover">
+                    <img src="resources/time-capsule-ui.jpg" alt="Time Capsule" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -212,11 +212,11 @@
             </div>
         </div>
 
-        <!-- PROJECT: EchoFlow (Alexa MCP) -->
+        <!-- PROJECT 3: EchoFlow (Alexa MCP) -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/env-vault.png" alt="EchoFlow Alexa MCP" class="w-full h-56 object-cover">
+                    <img src="resources/echoflow-alexa.jpg" alt="EchoFlow Alexa MCP" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -254,180 +254,11 @@
             </div>
         </div>
 
-        <!-- PROJECT: InsForge Platform -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
-            <div class="grid md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/fixmcp-linkedin.png" alt="InsForge Platform" class="w-full h-56 object-cover">
-                </div>
-                <div class="md:col-span-7 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-mono text-emerald-500 font-bold block uppercase">Agentic Coding Backend Infrastructure</span>
-                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">InsForge Platform</h2>
-                        </div>
-                        <a href="https://insforge.dev" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">insforge.dev →</a>
-                    </div>
-
-                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        The all-in-one open-source backend platform for agentic coding. Gives coding agents database, auth, storage, compute, hosting, and AI gateway capabilities to deploy full-stack apps autonomously end-to-end.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
-                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
-                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Agent Backend Provisioner:</strong> Instant PostgreSQL database provisioning and auth token management for AI agents.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">AI Gateway:</strong> Low-latency LLM routing layer with rate limiting and fallback providers.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Sandbox Compute Runtime:</strong> Secure isolated execution environments for running build tasks and agent commands.</li>
-                        </ul>
-                    </div>
-
-                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Node.js</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Docker</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">AI Gateway</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://insforge.dev" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Visit Live Platform →</a>
-                        <a href="https://github.com/Ayoola-tech2024/InsForge" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECT: BugBounty Framework -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
-            <div class="grid md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/env-vault.png" alt="BugBounty Framework" class="w-full h-56 object-cover">
-                </div>
-                <div class="md:col-span-7 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-mono text-red-500 font-bold block uppercase">In-Browser Pentesting Suite</span>
-                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">BugBounty Framework</h2>
-                        </div>
-                        <a href="https://bugbounty-framework.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">bugbounty-frame... →</a>
-                    </div>
-
-                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Browser-based bug bounty framework with 17 in-browser pentesting tools, reconnaissance utilities, vulnerability scanners, XSS/SQLi/SSRF/LFI testers, JWT cracker, and payload library. Zero setup required.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
-                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
-                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">17 Web Pentest Tools:</strong> Integrated header analysis, CORS misconfig scanner, and XSS payload generator.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">JWT Decoder & Secret Cracker:</strong> Client-side cryptographic signature verifier and secret dictionary tester.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Zero-Install Runtime:</strong> Runs entirely in modern web browsers using React + Vite.</li>
-                        </ul>
-                    </div>
-
-                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">React</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vite</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Web Security</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://bugbounty-framework.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Launch Framework →</a>
-                        <a href="https://github.com/Ayoola-tech2024/bugbounty-framework" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECT: Vibe PFP Studio -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
-            <div class="grid md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Damiqueen Designs.jpg" alt="Vibe PFP Studio" class="w-full h-56 object-cover">
-                </div>
-                <div class="md:col-span-7 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-mono text-pink-500 font-bold block uppercase">Visual Canvas & Avatar Studio</span>
-                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Vibe PFP Studio</h2>
-                        </div>
-                        <a href="https://vibe-pfp-studio.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">vibe-pfp-studio... →</a>
-                    </div>
-
-                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Interactive profile picture studio and visual avatar editor featuring real-time HTML5 canvas manipulation, color gradient filters, custom badges, and high-resolution export for social media.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
-                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
-                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">HTML5 Canvas Engine:</strong> Sub-second image layering, scaling, mask filters, and rotation.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Filter Presets:</strong> Retro, cyber, neon, and monochrome profile preset filters.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Export Pipeline:</strong> Direct client-side PNG rendering with custom resolution choices.</li>
-                        </ul>
-                    </div>
-
-                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Next.js</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5 Canvas</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://vibe-pfp-studio.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Visit Live Studio →</a>
-                        <a href="https://github.com/Ayoola-tech2024/vibe-pfp-studio" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECT: Work Files DB -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
-            <div class="grid md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Memodams.jpg" alt="Work Files DB" class="w-full h-56 object-cover">
-                </div>
-                <div class="md:col-span-7 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Cloud File Asset Vault</span>
-                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">Work-Files DB</h2>
-                        </div>
-                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.0.0</span>
-                    </div>
-
-                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Quick work-files vault allowing developers and teams to store, organize, and instantly share project assets, datasets, store review backups, and documentation via fast public permalinks.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
-                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
-                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Instant File Linker:</strong> Direct link generator for review stores, JSON datasets, and binary media assets.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Lightweight Architecture:</strong> Zero-overhead client interface optimized for instant loading.</li>
-                        </ul>
-                    </div>
-
-                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Cloud Storage</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://github.com/Ayoola-tech2024/work-files-db" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECT: AI Assistant for Microsoft Word -->
+        <!-- PROJECT 4: AI Assistant for Microsoft Word -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="AI Assistant for Word" class="w-full h-56 object-cover">
+                    <img src="resources/ai-assistant-word.jpg" alt="AI Assistant for Word" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -465,95 +296,11 @@
             </div>
         </div>
 
-        <!-- PROJECT: Zatil Platform -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+        <!-- PROJECT 5: Talk-to-DB (v1.1.0) -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Memodams.jpg" alt="Zatil Platform" class="w-full h-56 object-cover">
-                </div>
-                <div class="md:col-span-7 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Modern Web Application</span>
-                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Zatil Platform</h2>
-                        </div>
-                        <a href="https://zatil.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">zatil.vercel.app →</a>
-                    </div>
-
-                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        High-performance modern Web application platform built with TypeScript, Next.js, and Tailwind CSS featuring dynamic responsive UI components and fast cloud deployment.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
-                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
-                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Next.js App Router:</strong> Server component architecture with instant page transitions.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Tailwind Component System:</strong> Dark/light mode theme switching and responsive layout structures.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Vercel Edge Network:</strong> Automated CI/CD deployment pipeline with continuous deployment.</li>
-                        </ul>
-                    </div>
-
-                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Next.js</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vercel</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://zatil.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Launch Live App →</a>
-                        <a href="https://github.com/Ayoola-tech2024/zatil" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECT: Xense Energy Platform -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
-            <div class="grid md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Xense Energy Platform" class="w-full h-56 object-cover">
-                </div>
-                <div class="md:col-span-7 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-mono text-emerald-500 font-bold block uppercase">Clean Tech & Energy Web Portal</span>
-                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Xense Energy Platform</h2>
-                        </div>
-                        <a href="https://xense-energy-website.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">xense-energy... →</a>
-                    </div>
-
-                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                        Renewable energy management platform and technology showcase presenting clean tech solutions, energy hardware specifications, and interactive sustainability tools.
-                    </p>
-
-                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
-                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
-                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Clean Tech Layout:</strong> High-resolution product cards displaying solar & clean energy hardware details.</li>
-                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Responsive Performance:</strong> Sub-second load times optimized for mobile and desktop screens.</li>
-                        </ul>
-                    </div>
-
-                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
-                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vercel</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://xense-energy-website.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Visit Live Portal →</a>
-                        <a href="https://github.com/Ayoola-tech2024/xense-energy-website" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- PROJECT: Talk-to-DB (v1.1.0) -->
-        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
-            <div class="grid md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/talk-to-db.png" alt="TALK-TO-DB v1.1.0" class="w-full h-56 object-cover">
+                    <img src="resources/talk-to-db-ui.jpg" alt="TALK-TO-DB v1.1.0" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -591,11 +338,11 @@
             </div>
         </div>
 
-        <!-- PROJECT: ReleaseNote Studio -->
+        <!-- PROJECT 6: ReleaseNote Studio -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="ReleaseNote Studio" class="w-full h-56 object-cover">
+                    <img src="resources/releasenote-studio.jpg" alt="ReleaseNote Studio" class="w-full h-56 object-cover">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -633,7 +380,7 @@
             </div>
         </div>
         
-        <!-- PROJECT 1: fixmcp -->
+        <!-- PROJECT 7: fixmcp -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -674,7 +421,7 @@
             </div>
         </div>
 
-        <!-- PROJECT 2: envvault -->
+        <!-- PROJECT 8: envvault -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -716,7 +463,7 @@
             </div>
         </div>
 
-        <!-- PROJECT 3: checkIn -->
+        <!-- PROJECT 9: checkIn -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -760,7 +507,7 @@
             </div>
         </div>
 
-        <!-- PROJECT 4: Memodams -->
+        <!-- PROJECT 10: Memodams -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -803,7 +550,7 @@
             </div>
         </div>
 
-        <!-- PROJECT 5: AFSS E-Magazine -->
+        <!-- PROJECT 11: AFSS E-Magazine -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200 flex items-center justify-center p-6">
@@ -845,7 +592,7 @@
             </div>
         </div>
 
-        <!-- PROJECT 6: Paul Hilpert Consultancy -->
+        <!-- PROJECT 12: Paul Hilpert Consultancy -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -887,7 +634,7 @@
             </div>
         </div>
 
-        <!-- PROJECT 7: Tee Stella Stitches -->
+        <!-- PROJECT 13: Tee Stella Stitches -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
@@ -929,7 +676,7 @@
             </div>
         </div>
 
-        <!-- PROJECT 8: Damiqueen Designs -->
+        <!-- PROJECT 14: Damiqueen Designs -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
