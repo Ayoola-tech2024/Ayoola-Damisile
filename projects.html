@@ -111,16 +111,16 @@
         <!-- CATEGORY FILTER BUTTONS -->
         <div class="flex flex-wrap items-center gap-2 pt-4 font-mono text-xs">
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-black font-semibold transition-all" data-filter="all">
-                All Projects (13)
+                All Projects (20)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="open-source">
-                Open-Source Tools (4)
+                Open-Source Tools (10)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="biometrics">
-                Biometrics & AI (3)
+                Biometrics & AI (4)
             </button>
             <button class="filter-btn px-4 py-2 rounded-lg bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400 transition-all" data-filter="client">
-                Client Applications (6)
+                Client Applications (7)
             </button>
         </div>
     </section>
@@ -128,6 +128,301 @@
     <!-- PROJECTS CATALOG SPECS GRID -->
     <section class="pb-24 px-4 sm:px-6 max-w-5xl mx-auto space-y-12">
         
+        <!-- PROJECT: Synapse Study -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Memodams.jpg" alt="Synapse Study" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-purple-500 font-bold block uppercase">Socratic AI & Active Recall Engine</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">Synapse Study</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Hackathon V4</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        🧠 <em>Socratic AI Knowledge Graph & Active Recall Lab</em> built for Next Byte Hacks: V4. Integrates interactive concept nodes, automated flashcard generation, KaTeX math typesetting, and adaptive Socratic learning algorithms.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Socratic AI Dialogue Engine:</strong> Guides learners using adaptive Socratic questioning rather than static answers.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Interactive Concept Graph:</strong> Visual graph of concept nodes using Vite, React, and KaTeX for LaTeX mathematical typesetting.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Active Recall Lab:</strong> Spaced-repetition scheduling with celebration micro-interactions (canvas-confetti).</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">React</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vite</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">KaTeX</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://github.com/Ayoola-tech2024/synapse-study" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: Time Capsule -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Time Capsule" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-amber-500 font-bold block uppercase">Digital Memory & Scheduled Unlock Vault</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">Time Capsule</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.0.0</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        An interactive digital time capsule application allowing users to write encrypted memory notes, store digital artifacts, and set strict lock timers that reveal content only on designated future release dates.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Time-Lock Mechanism:</strong> Cryptographic client-side timestamps enforcing unseal date restrictions.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Local State Persistence:</strong> Secure browser vault storage unsealing content upon target countdown completion.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Clean Retro UI:</strong> Minimalist dark interface with animated countdown timers and unsealing effects.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://github.com/Ayoola-tech2024/time-capsule" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: EchoFlow (Alexa MCP) -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/env-vault.png" alt="EchoFlow Alexa MCP" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Voice AI & Protocol Bridge</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">EchoFlow (Alexa MCP)</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.0.0</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Bridge protocol connecting Alexa voice commands directly to Model Context Protocol (MCP) servers and AI coding agents. Enables hands-free voice triggers for developer workflows, agent execution, and real-time status query.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Alexa Skill Integration:</strong> Amazon Alexa Skills Kit handling natural voice intent classification.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">JSON-RPC 2.0 Stdio Bridge:</strong> Translates voice utterances into valid MCP tool call payloads.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Real-Time Status Speech:</strong> Converts machine status and agent outputs into SSML audio responses.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Node.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Alexa SDK</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">MCP Protocol</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://github.com/Ayoola-tech2024/echoflow-alexa-mcp" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: InsForge Platform -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/fixmcp-linkedin.png" alt="InsForge Platform" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-emerald-500 font-bold block uppercase">Agentic Coding Backend Infrastructure</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">InsForge Platform</h2>
+                        </div>
+                        <a href="https://insforge.dev" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">insforge.dev →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        The all-in-one open-source backend platform for agentic coding. Gives coding agents database, auth, storage, compute, hosting, and AI gateway capabilities to deploy full-stack apps autonomously end-to-end.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Agent Backend Provisioner:</strong> Instant PostgreSQL database provisioning and auth token management for AI agents.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">AI Gateway:</strong> Low-latency LLM routing layer with rate limiting and fallback providers.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Sandbox Compute Runtime:</strong> Secure isolated execution environments for running build tasks and agent commands.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Node.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Docker</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">AI Gateway</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://insforge.dev" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Visit Live Platform →</a>
+                        <a href="https://github.com/Ayoola-tech2024/InsForge" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: BugBounty Framework -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/env-vault.png" alt="BugBounty Framework" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-red-500 font-bold block uppercase">In-Browser Pentesting Suite</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">BugBounty Framework</h2>
+                        </div>
+                        <a href="https://bugbounty-framework.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">bugbounty-frame... →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Browser-based bug bounty framework with 17 in-browser pentesting tools, reconnaissance utilities, vulnerability scanners, XSS/SQLi/SSRF/LFI testers, JWT cracker, and payload library. Zero setup required.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">17 Web Pentest Tools:</strong> Integrated header analysis, CORS misconfig scanner, and XSS payload generator.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">JWT Decoder & Secret Cracker:</strong> Client-side cryptographic signature verifier and secret dictionary tester.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Zero-Install Runtime:</strong> Runs entirely in modern web browsers using React + Vite.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">React</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Vite</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Web Security</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://bugbounty-framework.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Launch Framework →</a>
+                        <a href="https://github.com/Ayoola-tech2024/bugbounty-framework" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: Vibe PFP Studio -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Damiqueen Designs.jpg" alt="Vibe PFP Studio" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-pink-500 font-bold block uppercase">Visual Canvas & Avatar Studio</span>
+                            <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Vibe PFP Studio</h2>
+                        </div>
+                        <a href="https://vibe-pfp-studio.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">vibe-pfp-studio... →</a>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Interactive profile picture studio and visual avatar editor featuring real-time HTML5 canvas manipulation, color gradient filters, custom badges, and high-resolution export for social media.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">HTML5 Canvas Engine:</strong> Sub-second image layering, scaling, mask filters, and rotation.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Filter Presets:</strong> Retro, cyber, neon, and monochrome profile preset filters.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Export Pipeline:</strong> Direct client-side PNG rendering with custom resolution choices.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Next.js</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5 Canvas</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Tailwind CSS</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://vibe-pfp-studio.vercel.app" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">Visit Live Studio →</a>
+                        <a href="https://github.com/Ayoola-tech2024/vibe-pfp-studio" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT: Work Files DB -->
+        <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
+                    <img src="cover images/Memodams.jpg" alt="Work Files DB" class="w-full h-56 object-cover">
+                </div>
+                <div class="md:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Cloud File Asset Vault</span>
+                            <h2 class="text-2xl font-bold font-mono dark:text-white text-zinc-900">Work-Files DB</h2>
+                        </div>
+                        <span class="text-xs font-mono px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.0.0</span>
+                    </div>
+
+                    <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        Quick work-files vault allowing developers and teams to store, organize, and instantly share project assets, datasets, store review backups, and documentation via fast public permalinks.
+                    </p>
+
+                    <div class="space-y-2 font-mono text-xs border-t dark:border-zinc-800 border-zinc-200 pt-3">
+                        <div class="text-xs font-bold dark:text-white text-zinc-900 font-sans">Technical Specifications:</div>
+                        <ul class="space-y-1.5 dark:text-zinc-400 text-zinc-600">
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Instant File Linker:</strong> Direct link generator for review stores, JSON datasets, and binary media assets.</li>
+                            <li>• <strong class="dark:text-zinc-200 text-zinc-800">Lightweight Architecture:</strong> Zero-overhead client interface optimized for instant loading.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">HTML5</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">JavaScript</span>
+                        <span class="px-2 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Cloud Storage</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xs font-mono pt-2">
+                        <a href="https://github.com/Ayoola-tech2024/work-files-db" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- PROJECT: AI Assistant for Microsoft Word -->
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
             <div class="grid md:grid-cols-12 gap-8 items-start">
