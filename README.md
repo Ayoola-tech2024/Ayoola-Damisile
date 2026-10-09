@@ -84,6 +84,6 @@
 
 - 🌐 **Portfolio Website**: [damisile.name.ng](https://www.damisile.name.ng/)
 - 💼 **LinkedIn**: [linkedin.com/in/damisile-ayoola-096a7b382](https://www.linkedin.com/in/damisile-ayoola-096a7b382)
-- 🐦 **Twitter / X**: [@Damisile_dev](https://x.com/Damisile_dev)
+- 🐦 **Twitter / X**: [@damisiledev](https://x.com/damisiledev)
 - 📦 **NPM Profile**: [npmjs.com/~damisile_ayoola](https://www.npmjs.com/~damisile_ayoola)
 - ✉️ **Email**: [damisileayoola@gmail.com](mailto:damisileayoola@gmail.com)
