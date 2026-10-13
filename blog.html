@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Ayoola Damisile, Software Engineer & Classical Pianist</title>
+    <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
+    <meta name="description" content="Essays by Ayoola Damisile on developer tooling, cybersecurity, open source, and the discipline of classical music applied to software engineering.">
+    <link rel="canonical" href="https://www.damisile.name.ng/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.damisile.name.ng/blog.html">
+    <meta property="og:title" content="Blog — Ayoola Damisile">
+    <meta property="og:description" content="Essays on developer tooling, cybersecurity, open source, and classical music.">
+    <meta property="og:image" content="https://www.damisile.name.ng/resources/ayoola-damisile-frontend-developer.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://www.damisile.name.ng/blog.html",
+      "url": "https://www.damisile.name.ng/blog.html",
+      "name": "Ayoola Damisile — Essays",
+      "description": "Essays on developer tooling, cybersecurity, open source, and classical music.",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": "https://www.wikidata.org/wiki/Q141703795",
+        "name": "Ayoola Damisile",
+        "url": "https://www.damisile.name.ng/"
+      }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#08080a',
+                        darkCard: '#101014'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark body {
+            background-color: #08080a;
+            color: #f4f4f5;
+        }
+        .light body {
+            background-color: #ffffff;
+            color: #0f172a;
+        }
+        .bento-card {
+            transition: all 0.3s ease;
+        }
+        .dark .bento-card {
+            background: #101014;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dark .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .light .bento-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        }
+        .light .bento-card:hover {
+            border-color: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
+                <span>Ayoola Damisile</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium dark:text-zinc-400 text-zinc-600">
+                <a href="index.html#home" class="hover:underline">Home</a>
+                <a href="index.html#open-source" class="hover:underline">Open Source</a>
+                <a href="projects.html" class="hover:underline">Projects Catalog</a>
+                <a href="blog.html" class="dark:text-white text-zinc-900 font-semibold">Blog</a>
+                <a href="music.html" class="hover:underline">Music & Training</a>
+                <a href="index.html#contact" class="hover:underline">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
+                    <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
+                </button>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden dark:text-zinc-400 text-zinc-600 p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- BLOG INDEX -->
+    <main class="pt-28 pb-20 px-4 sm:px-6 max-w-5xl mx-auto space-y-10">
+        <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-300 text-zinc-700">
+                <i class="fa-solid fa-pen-nib text-amber-500"></i> Essays
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold dark:text-white text-zinc-900 tracking-tight">
+                Writing
+            </h1>
+            <p class="dark:text-zinc-400 text-zinc-600 text-sm max-w-2xl leading-relaxed">
+                Essays on developer tooling, cybersecurity, open source, and what classical music taught me about software. New pieces land here first.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+            <!-- Post 1 -->
+            <a href="blog-fixmcp-mcp-doctor.html" class="bento-card rounded-2xl overflow-hidden flex flex-col group">
+                <div class="h-44 bg-zinc-900 overflow-hidden">
+                    <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6 space-y-2">
+                    <div class="text-[11px] font-mono text-emerald-500">DevTools · MCP · 13 Oct 2026</div>
+                    <h2 class="text-lg font-bold dark:text-white text-zinc-900 leading-snug">How npx @latest Was Silently Killing My MCP Servers</h2>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">One invisible config bug kept killing my AI agents at boot. How I found it and built fixmcp, a doctor for MCP server configurations.</p>
+                    <span class="text-xs font-mono dark:text-white text-zinc-900 underline">Read essay →</span>
+                </div>
+            </a>
+
+            <!-- Coming soon -->
+            <div class="bento-card rounded-2xl overflow-hidden flex flex-col opacity-70">
+                <div class="h-44 dark:bg-zinc-900 bg-zinc-100 flex items-center justify-center">
+                    <i class="fa-solid fa-shield-halved text-4xl text-zinc-600"></i>
+                </div>
+                <div class="p-6 space-y-2">
+                    <div class="text-[11px] font-mono text-amber-500">Cybersecurity · Coming soon</div>
+                    <h2 class="text-lg font-bold dark:text-white text-zinc-900 leading-snug">Think Like an Attacker: Notes from IBM Cybersecurity Architecture</h2>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">Threat modeling first, features second — what the certification changed about how I write backend code.</p>
+                    <span class="text-xs font-mono text-zinc-500">Drafting…</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t dark:border-zinc-800/80 border-zinc-200 py-8 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+            <div>© 2026 Ayoola Damisile. All rights reserved.</div>
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:underline">LinkedIn</a>
+                <a href="https://dev.to/damisile_ayoola" target="_blank" class="hover:underline">DEV</a>
+                <a href="index.html#contact" class="hover:underline">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
