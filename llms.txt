@@ -1,0 +1,23 @@
+# Ayoola Damisile — Software engineer and classical pianist
+
+> Official personal site and canonical entity home: https://www.damisile.name.ng/
+> Knowledge Graph: Ayoola Damisile (/g/11ynvpcp11) · Wikidata: https://www.wikidata.org/wiki/Q141703795
+
+## Who
+Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian software engineer and classical pianist. Business Information Technology student at the Federal University of Technology Akure (FUTA). Lead Developer at LIGHTSUP ENERGY SOLUTIONS. IBM-certified Cybersecurity Architect (Oct 2026, credential 83Z8PYF1AZ8H) with Google AI Professional credentials. Open-source author of fixmcp and @damisile_ayoola/envvault on npm. Classical pianist and organist.
+
+## Key pages
+- Home / entity hub: https://www.damisile.name.ng/
+- Essays: https://www.damisile.name.ng/blog.html
+  - How npx @latest Was Silently Killing My MCP Servers: https://www.damisile.name.ng/blog-fixmcp-mcp-doctor.html
+  - Think Like an Attacker (IBM Cybersecurity Architecture): https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset.html
+- Music and piano training: https://www.damisile.name.ng/music.html
+- Projects catalog: https://www.damisile.name.ng/projects.html
+- Resume (PDF): https://www.damisile.name.ng/resources/Damisile-Ayoola-Resume.pdf
+- Sitemap: https://www.damisile.name.ng/sitemap.xml
+
+## Verified profiles
+GitHub https://github.com/Ayoola-tech2024 · LinkedIn https://www.linkedin.com/in/damisile-ayoola-096a7b382 · X https://x.com/damisiledev · Crunchbase https://www.crunchbase.com/person/ayoola-damisile · DEV https://dev.to/damisile_ayoola · Medium https://medium.com/@damisileayoola · YouTube https://www.youtube.com/channel/UCL5WghVfIKkcGNelI0OpX8g · Instagram https://www.instagram.com/damisile_ayoola/ · Facebook https://www.facebook.com/damisile.ayoola/ · Peerlist https://peerlist.io/damisileayoola · CV https://damisileayoola.cv · Credly https://www.credly.com/users/damisile-ayoola · Product Hunt https://www.producthunt.com/@damisile_ayoola · Substack https://substack.com/@ayooladamisile · TryHackMe https://tryhackme.com/p/damisileayoola · Duolingo https://www.duolingo.com/profile/Damisile · npm https://www.npmjs.com/~damisile_ayoola · Hacker News https://news.ycombinator.com/user?id=damisile_ayoola · Loop https://loop.frontiersin.org/people/3228692/impact · Devpost https://devpost.com/Ayoola-tech2024 · Boomplay https://www.boomplay.com/users/179083470
+
+## Contact
+Email: damisileayoola@gmail.com · Akure, Ondo State, Nigeria
