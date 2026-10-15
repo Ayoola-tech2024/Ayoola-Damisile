@@ -62,6 +62,7 @@
         body {
             font-family: 'Inter', sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
         }
         .dark body {
             background-color: #08080a;
@@ -90,9 +91,10 @@
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2">
+            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
                 <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
-                <span>Ayoola Damisile</span>
+                <span class="hidden sm:inline">Ayoola Damisile</span>
+                <span class="sm:hidden">Ayoola</span>
             </a>
 
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium dark:text-zinc-400 text-zinc-600">
@@ -105,7 +107,7 @@
                 <a href="index.html#contact" class="hover:underline">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2 sm:gap-3">
                 <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
                     <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
                 </button>
@@ -114,9 +116,19 @@
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden dark:text-zinc-400 text-zinc-600 p-2">
+            <button id="mobile-menu-btn" class="md:hidden dark:text-zinc-400 text-zinc-600 p-2 shrink-0">
                 <i class="fa-solid fa-bars"></i>
             </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
+            <a href="index.html#home" class="block">Home</a>
+            <a href="index.html#about" class="block">About</a>
+            <a href="index.html#open-source" class="block">Open Source</a>
+            <a href="projects.html" class="block">Projects Catalog</a>
+            <a href="blog.html" class="block">Blog</a>
+            <a href="music.html" class="block font-semibold">Music & Training</a>
+            <a href="index.html#contact" class="block">Contact</a>
         </div>
     </header>
 
