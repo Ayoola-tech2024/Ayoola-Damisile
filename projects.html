@@ -73,7 +73,7 @@
                 <span class="sm:hidden">Ayoola</span>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium dark:text-zinc-400 text-zinc-600">
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium dark:text-zinc-400 text-zinc-600">
                 <a href="index.html#home" class="hover:underline">Home</a>
                 <a href="index.html#about" class="hover:underline">About</a>
                 <a href="index.html#open-source" class="hover:underline">Open Source</a>
@@ -92,12 +92,12 @@
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden dark:text-zinc-400 text-zinc-600 p-2 shrink-0">
+            <button id="mobile-menu-btn" class="lg:hidden dark:text-zinc-400 text-zinc-600 p-2 shrink-0">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
+        <div id="mobile-menu" class="hidden lg:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
             <a href="index.html#home" class="block">Home</a>
             <a href="index.html#about" class="block">About</a>
             <a href="index.html#open-source" class="block">Open Source</a>
@@ -412,8 +412,8 @@
                         <em>"Stop guessing which MCP server is broken. Ask the doctor."</em> One-command diagnostic & auto-fix CLI tool that discovers Model Context Protocol (MCP) configurations across 6 AI agents (Claude Code, Cursor, VS Code, opencode, Windsurf, Codex), executes real stdio JSON-RPC handshakes, validates tool schemas, and rewrites broken paths.
                     </p>
 
-                    <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
-                        <span>$ npx fixmcp</span>
+                    <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between gap-2 min-w-0 font-mono text-xs dark:text-zinc-300 text-zinc-800">
+                        <span class="break-all">$ npx fixmcp</span>
                         <button onclick="copyToClipboard('npx fixmcp', this)" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900"><i class="fa-regular fa-copy"></i> Copy</button>
                     </div>
 
@@ -453,8 +453,8 @@
                         <em>"Zero-dependency AES-256-GCM encrypted secret manager with sub-process memory injection."</em> Encrypts plaintext environment secrets into authenticated `.env.vault` files using Node native `crypto` (AES-256-GCM + PBKDF2 SHA-512 key derivation with 100,000 iterations). Injects secrets directly into `process.env` in memory (`envvault run -- npm start`) without writing plaintext passwords to disk.
                     </p>
 
-                    <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between font-mono text-xs dark:text-zinc-300 text-zinc-800">
-                        <span>$ npx @damisile_ayoola/envvault</span>
+                    <div class="dark:bg-zinc-950 bg-zinc-100 p-3 rounded-lg border dark:border-zinc-800 border-zinc-300 flex items-center justify-between gap-2 min-w-0 font-mono text-xs dark:text-zinc-300 text-zinc-800">
+                        <span class="break-all">$ npx @damisile_ayoola/envvault</span>
                         <button onclick="copyToClipboard('npx @damisile_ayoola/envvault', this)" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900"><i class="fa-regular fa-copy"></i> Copy</button>
                     </div>
 
