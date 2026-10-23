@@ -77,6 +77,27 @@
         .spec-table th, .spec-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .light .spec-table th, .light .spec-table td { border-bottom: 1px solid #e2e8f0; }
     </style>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.damisile.name.ng/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Architecture Case Studies",
+      "item": "https://www.damisile.name.ng/case-studies"
+    }
+  ]
+}
+    </script>
 </head>
 <body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
@@ -124,6 +145,12 @@
 
     <!-- MAIN CONTAINER -->
     <main class="pt-28 pb-20 px-4 sm:px-6 max-w-5xl mx-auto space-y-16">
+
+        <!-- Visual Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-mono dark:text-zinc-400 text-zinc-600 mb-6 flex-wrap">
+            <i class="fa-solid fa-folder-tree text-amber-500 text-[11px]"></i>
+            <a href="/" class="hover:underline dark:text-zinc-400 text-zinc-500">Home</a> <span class="text-zinc-600 dark:text-zinc-500">/</span> <span class="dark:text-zinc-200 text-zinc-900 font-medium truncate max-w-xs" aria-current="page">Architecture Case Studies</span>
+        </nav>
 
         <!-- HEADER -->
         <div class="space-y-4">

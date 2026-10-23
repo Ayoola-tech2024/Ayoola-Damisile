@@ -121,6 +121,33 @@
         }
     </style>
     <meta name="theme-color" content="#08080a">
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.damisile.name.ng/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Essays",
+      "item": "https://www.damisile.name.ng/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Unseen Cost of Building",
+      "item": "https://www.damisile.name.ng/blog-the-unseen-cost-of-building"
+    }
+  ]
+}
+    </script>
 </head>
 <body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
@@ -168,6 +195,12 @@
 
     <!-- ARTICLE -->
     <main class="pt-28 pb-20 px-4 sm:px-6 max-w-3xl mx-auto">
+
+        <!-- Visual Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-mono dark:text-zinc-400 text-zinc-600 mb-6 flex-wrap">
+            <i class="fa-solid fa-folder-tree text-amber-500 text-[11px]"></i>
+            <a href="/" class="hover:underline dark:text-zinc-400 text-zinc-500">Home</a> <span class="text-zinc-600 dark:text-zinc-500">/</span> <a href="/blog" class="hover:underline dark:text-zinc-400 text-zinc-500">Essays</a> <span class="text-zinc-600 dark:text-zinc-500">/</span> <span class="dark:text-zinc-200 text-zinc-900 font-medium truncate max-w-xs" aria-current="page">The Unseen Cost of Building</span>
+        </nav>
         <a href="/blog" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">← All essays</a>
 
         <div class="mt-4 space-y-4">
