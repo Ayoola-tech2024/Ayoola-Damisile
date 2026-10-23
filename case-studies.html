@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Technical Architecture & Systems Engineering Case Studies — Ayoola Damisile</title>
+    <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
+    <meta name="description" content="In-depth technical architecture case studies by Ayoola Damisile: AES-256-GCM memory injection in envvault, JSON-RPC 2.0 stdio diagnostics in fixmcp, and 468-point 3D biometric edge verification with offline IndexedDB sync in checkIn.">
+    <link rel="canonical" href="https://www.damisile.name.ng/case-studies">
+    <meta name="theme-color" content="#08080a">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.damisile.name.ng/case-studies">
+    <meta property="og:title" content="Deep Technical Architecture & Systems Engineering Case Studies — Ayoola Damisile">
+    <meta property="og:description" content="Detailed engineering deep dives: cryptographic memory injection (envvault), JSON-RPC stdio protocol handshakes (fixmcp), and client-side biometric verification (checkIn).">
+    <meta property="og:image" content="https://www.damisile.name.ng/resources/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Deep Technical Architecture Case Studies — Ayoola Damisile">
+    <meta name="twitter:description" content="In-depth systems design, cryptography, protocol handshakes, and resilient edge architecture.">
+    <meta name="twitter:image" content="https://www.damisile.name.ng/resources/og-image.jpg">
+
+    <!-- Schema.org TechnicalArticle / CollectionPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.damisile.name.ng/case-studies#envvault",
+          "headline": "Zero-Disk AES-256-GCM Cryptographic Memory Injection: Inside envvault",
+          "description": "Architectural breakdown of zero-dependency authenticated AES-256-GCM encryption with PBKDF2 SHA-512 key stretching and sub-process memory injection.",
+          "author": { "@id": "https://www.damisile.name.ng/#person" },
+          "datePublished": "2026-10-23",
+          "inLanguage": "en",
+          "proficiencyLevel": "Expert"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.damisile.name.ng/case-studies#fixmcp",
+          "headline": "Stdio JSON-RPC 2.0 Protocol Diagnostics and Automated Repair: Inside fixmcp",
+          "description": "Multi-agent discovery and live stdio transport handshake verification across Claude Code, Cursor, Windsurf, and VS Code MCP servers.",
+          "author": { "@id": "https://www.damisile.name.ng/#person" },
+          "datePublished": "2026-10-23",
+          "inLanguage": "en",
+          "proficiencyLevel": "Expert"
+        },
+        {
+          "@type": "TechArticle",
+          "@id": "https://www.damisile.name.ng/case-studies#checkin",
+          "headline": "Offline-First Client-Side 3D Biometrics: The checkIn Architecture",
+          "description": "468-point facial landmark topology extraction via WebAssembly MediaPipe, Haversine spatial geofencing, and idempotent IndexedDB transactional sync.",
+          "author": { "@id": "https://www.damisile.name.ng/#person" },
+          "datePublished": "2026-10-23",
+          "inLanguage": "en",
+          "proficiencyLevel": "Expert"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="resources/style.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dark body { background-color: #08080a; color: #f4f4f5; }
+        .light body { background-color: #ffffff; color: #0f172a; }
+        .bento-card { transition: all 0.3s ease; }
+        .dark .bento-card { background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .dark .bento-card:hover { border-color: rgba(255, 255, 255, 0.2); }
+        .light .bento-card { background: #f8fafc; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        pre code { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; line-height: 1.6; }
+        .spec-table th, .spec-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .light .spec-table th, .light .spec-table td { border-bottom: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-40 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="/" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
+                <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
+                <span class="hidden sm:inline">Ayoola Damisile</span>
+                <span class="sm:hidden">Ayoola</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium dark:text-zinc-400 text-zinc-600">
+                <a href="/#about" class="hover:underline">About</a>
+                <a href="/projects" class="hover:underline">Projects Catalog</a>
+                <a href="/case-studies" class="dark:text-white text-zinc-900 font-semibold underline">Architecture Deep Dives</a>
+                <a href="/blog" class="hover:underline">Blog</a>
+                <a href="/music" class="hover:underline">Music & Training</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Light/Dark Theme">
+                    <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
+                </button>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900 text-lg transition-colors p-1">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden dark:text-zinc-400 text-zinc-600 p-2 shrink-0">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
+            <a href="/#about" class="block">About</a>
+            <a href="/projects" class="block">Projects Catalog</a>
+            <a href="/case-studies" class="block font-semibold">Architecture Deep Dives</a>
+            <a href="/blog" class="block">Blog</a>
+            <a href="/music" class="block">Music & Training</a>
+            <a href="/#contact" class="block">Contact</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="pt-28 pb-20 px-4 sm:px-6 max-w-5xl mx-auto space-y-16">
+
+        <!-- HEADER -->
+        <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-300 text-zinc-700">
+                <i class="fa-solid fa-microchip text-cyan-500"></i> Systems Architecture & Engineering Specifications
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold dark:text-white text-zinc-900 tracking-tight leading-tight">
+                Engineering Case Studies & Technical Deep Dives
+            </h1>
+            <p class="dark:text-zinc-400 text-zinc-600 text-sm sm:text-base max-w-3xl leading-relaxed">
+                Production-grade architectural blueprints, threat mitigation models, protocol handshakes, and algorithmic implementations for published developer tooling and enterprise systems.
+            </p>
+        </div>
+
+        <!-- QUICK NAV PILLS -->
+        <div class="flex flex-wrap gap-2.5 font-mono text-xs">
+            <a href="#envvault" class="px-3.5 py-1.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-300 text-zinc-700 hover:border-emerald-500 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-emerald-500"></i> 1. envvault (AES-256-GCM / Memory Injection)
+            </a>
+            <a href="#fixmcp" class="px-3.5 py-1.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-300 text-zinc-700 hover:border-cyan-500 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-stethoscope text-cyan-500"></i> 2. fixmcp (JSON-RPC 2.0 / Stdio Discovery)
+            </a>
+            <a href="#checkin" class="px-3.5 py-1.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-300 text-zinc-700 hover:border-amber-500 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-eye text-amber-500"></i> 3. checkIn (MediaPipe 3D Edge / IndexedDB Queue)
+            </a>
+        </div>
+
+        <!-- ==================================================================== -->
+        <!-- CASE STUDY 1: envvault -->
+        <!-- ==================================================================== -->
+        <section id="envvault" class="bento-card p-6 sm:p-10 rounded-2xl space-y-8 border dark:border-zinc-800 border-zinc-200">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b dark:border-zinc-800 border-zinc-200 pb-6">
+                <div class="space-y-1">
+                    <span class="text-xs font-mono text-emerald-500 font-bold uppercase tracking-wider">Cryptographic Security Engineering</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-mono dark:text-white text-zinc-900">
+                        @damisile_ayoola/envvault
+                    </h2>
+                    <p class="text-xs font-mono text-zinc-500">Zero-Dependency AES-256-GCM Secret Management with In-Memory Process Injection</p>
+                </div>
+                <div class="flex items-center gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v1.1.0</span>
+                    <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-red-600 text-white font-bold hover:bg-red-700">npm package</a>
+                    <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700 hover:underline">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Problem / Solution Overview -->
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-2 p-5 rounded-xl dark:bg-zinc-950/70 bg-zinc-50 border dark:border-zinc-800/80 border-zinc-200">
+                    <h3 class="font-bold text-red-400 flex items-center gap-2 font-mono text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Threat Vector & Problem
+                    </h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">
+                        Plaintext <code>.env</code> files are notoriously vulnerable to accidental staging (<code>git add .</code>), TOCTOU (Time-of-Check to Time-of-Use) filesystem tampering, and cold storage swap extraction. Most secrets tooling requires heavy cloud runtime daemons or leaves temporary decrypted artifacts on disk.
+                    </p>
+                </div>
+
+                <div class="space-y-2 p-5 rounded-xl dark:bg-zinc-950/70 bg-zinc-50 border dark:border-zinc-800/80 border-zinc-200">
+                    <h3 class="font-bold text-emerald-400 flex items-center gap-2 font-mono text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-shield-check"></i> Architectural Solution
+                    </h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">
+                        A zero-dependency CLI written strictly atop Node's native <code>crypto</code> module. Uses PBKDF2 (SHA-512, 100,000 iterations) for key stretching, authenticated AES-256-GCM for ciphertext and tag generation, and child process in-memory IPC injection (<code>process.env</code>) so plaintext passwords never touch the filesystem.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pipeline Visual ASCII / Monospace Flow -->
+            <div class="space-y-2">
+                <div class="text-xs font-mono font-bold dark:text-zinc-300 text-zinc-700 flex items-center gap-2">
+                    <i class="fa-solid fa-diagram-project text-emerald-500"></i> Cryptographic Key Derivation & Process Execution Lifecycle
+                </div>
+                <div class="dark:bg-zinc-950 bg-zinc-100 p-4 sm:p-6 rounded-xl border dark:border-zinc-800 border-zinc-300 overflow-x-auto">
+                    <pre class="text-emerald-400">
+┌────────────────────────┐      ┌───────────────────────────────┐      ┌─────────────────────────────┐
+│ Master Passphrase (CLI) │ ───> │  crypto.pbkdf2Sync (SHA-512)  │ ───> │ 256-bit Symmetric Key (KDK) │
+└────────────────────────┘      │  Iterations: 100,000          │      └──────────────┬──────────────┘
+                                │  Salt: crypto.randomBytes(32) │                     │
+                                └───────────────────────────────┘                     ▼
+┌────────────────────────┐      ┌───────────────────────────────┐      ┌─────────────────────────────┐
+│  Plaintext Environment │ ───> │  AES-256-GCM Cipher Instance  │ <─── │ 96-bit Random IV (GCM Nonce)│
+│  Key=Value Stream      │      │  + 128-bit Auth Tag (MAC)     │      └─────────────────────────────┘
+└────────────────────────┘      └──────────────┬────────────────┘
+                                               │
+                                               ▼
+                              ┌───────────────────────────────────┐
+                              │  .env.vault Encrypted File Payload│
+                              │  [salt: 32B][iv: 12B][tag: 16B]   │
+                              │  [ciphertext: Variable Length]    │
+                              └────────────────┬──────────────────┘
+                                               │
+                                               ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ envvault run -- &lt;cmd&gt; (In-Memory Subprocess Pipeline):                                           │
+│ 1. Read .env.vault -> Decrypt into volatile Buffer -> Parse Key-Value pairs                      │
+│ 2. child_process.spawn(cmd, { env: { ...process.env, ...decryptedSecrets }, stdio: 'inherit' })  │
+│ 3. Buffer zeroization / GC -> Subprocess terminates -> ZERO PLAINTEXT TOUCHED DISK               │
+└──────────────────────────────────────────────────────────────────────────────────────────────────┘
+                    </pre>
+                </div>
+            </div>
+
+            <!-- Technical Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs font-mono spec-table">
+                    <thead>
+                        <tr class="dark:text-zinc-300 text-zinc-700 dark:bg-zinc-900/60 bg-zinc-100">
+                            <th>Component</th>
+                            <th>Specification & Implementation</th>
+                            <th>Security Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody class="dark:text-zinc-400 text-zinc-600">
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Symmetric Cipher</td>
+                            <td>AES-256-GCM (Authenticated Encryption with Associated Data)</td>
+                            <td>Prevents bit-flipping attacks via mandatory 128-bit GHASH authentication tag validation before decryption.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Key Derivation (KDF)</td>
+                            <td>PBKDF2-HMAC-SHA512 (100,000 iterations, 32-byte cryptographically secure random salt)</td>
+                            <td>Resistant to high-speed GPU/ASIC rainbow table dictionary attacks. Compliant with NIST SP 800-132 recommendations.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Process Injection</td>
+                            <td><code>child_process.spawn</code> with ephemeral in-memory environment dictionary</td>
+                            <td>Eliminates disk I/O vulnerabilities (tempfiles, swap file dumping, inode retention). Passwords exist exclusively in child process virtual memory.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Pre-Commit Security Linter</td>
+                            <td><code>envvault audit</code> + automated Git hook injection into <code>.git/hooks/pre-commit</code></td>
+                            <td>Inspects git staged index via entropy heuristics and regex patterns to proactively block raw API tokens before <code>git push</code>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================================================================== -->
+        <!-- CASE STUDY 2: fixmcp -->
+        <!-- ==================================================================== -->
+        <section id="fixmcp" class="bento-card p-6 sm:p-10 rounded-2xl space-y-8 border dark:border-zinc-800 border-zinc-200">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b dark:border-zinc-800 border-zinc-200 pb-6">
+                <div class="space-y-1">
+                    <span class="text-xs font-mono text-cyan-500 font-bold uppercase tracking-wider">Protocol Diagnostics & Developer Tooling</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-mono dark:text-white text-zinc-900">
+                        fixmcp
+                    </h2>
+                    <p class="text-xs font-mono text-zinc-500">Autonomous JSON-RPC 2.0 Stdio Diagnostic Doctor & Configuration Repair Utility</p>
+                </div>
+                <div class="flex items-center gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">v0.1.0</span>
+                    <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-red-600 text-white font-bold hover:bg-red-700">npm package</a>
+                    <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700 hover:underline">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Problem / Solution Overview -->
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-2 p-5 rounded-xl dark:bg-zinc-950/70 bg-zinc-50 border dark:border-zinc-800/80 border-zinc-200">
+                    <h3 class="font-bold text-red-400 flex items-center gap-2 font-mono text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Protocol Failure Mode
+                    </h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">
+                        Model Context Protocol (MCP) clients (Claude Code, Cursor, Windsurf, VS Code) spawn server subprocesses via stdio. Configurations are fractured across OS-specific JSON files. When a server crashes or times out (<code>error -32001</code>) due to <code>npx @latest</code> registry round-trips or invalid JSON schemas, AI clients fail silently at boot without informative stack traces.
+                    </p>
+                </div>
+
+                <div class="space-y-2 p-5 rounded-xl dark:bg-zinc-950/70 bg-zinc-50 border dark:border-zinc-800/80 border-zinc-200">
+                    <h3 class="font-bold text-cyan-400 flex items-center gap-2 font-mono text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-stethoscope"></i> Diagnostic Engine
+                    </h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">
+                        Discovers configs across 6 major AI agent environments, validates JSON syntax, and spawns real stdio sub-processes to execute active JSON-RPC 2.0 handshakes (<code>initialize</code> & <code>tools/list</code>). Times latency, counts registered capabilities, and provides an idempotent <code>--fix</code> runner that creates automated backups and normalizes paths.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Architecture Diagram -->
+            <div class="space-y-2">
+                <div class="text-xs font-mono font-bold dark:text-zinc-300 text-zinc-700 flex items-center gap-2">
+                    <i class="fa-solid fa-network-wired text-cyan-500"></i> stdio JSON-RPC 2.0 Protocol Verification Architecture
+                </div>
+                <div class="dark:bg-zinc-950 bg-zinc-100 p-4 sm:p-6 rounded-xl border dark:border-zinc-800 border-zinc-300 overflow-x-auto">
+                    <pre class="text-cyan-400">
+[fixmcp Discovery Engine]
+  ├── Claude Desktop: ~/Library/Application Support/Claude/claude_desktop_config.json
+  ├── Claude Code:    ~/.claude.json
+  ├── Cursor:         %APPDATA%/Cursor/User/globalStorage/saoudrizwan.claude-dev/.../mcp.json
+  ├── Windsurf:       ~/.codeium/windsurf/mcp_config.json
+  └── VS Code:        ~/.config/Code/User/globalStorage/.../mcp.json
+          │
+          ▼
+[JSON Syntax & Path Verification] ──(Syntax Error)──> [Automated Backup & AST Normalizer]
+          │
+          ▼
+[Subprocess Spawner via stdio IPC]
+          │
+          ├──> Outgoing: {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05"}}
+          │
+          ├──< Incoming: {"jsonrpc":"2.0","id":1,"result":{"capabilities":{"tools":{}}}}
+          │
+          ├──> Outgoing: {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
+          │
+          └──< Incoming: {"jsonrpc":"2.0","id":2,"result":{"tools":[...14 tools]}}
+          │
+          ▼
+[Diagnostic Health Matrix]
+  ├── ✔ Handshake latency: 124ms
+  ├── ✔ Active Tool Schemas Verified: 14 tools
+  └── ✖ High Latency Warning: server using 'npx -y pkg@latest' -> Suggest pinned local binary
+                    </pre>
+                </div>
+            </div>
+
+            <!-- Technical Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs font-mono spec-table">
+                    <thead>
+                        <tr class="dark:text-zinc-300 text-zinc-700 dark:bg-zinc-900/60 bg-zinc-100">
+                            <th>Capability</th>
+                            <th>Implementation Details</th>
+                            <th>Diagnostic Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="dark:text-zinc-400 text-zinc-600">
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Multi-Agent Discovery</td>
+                            <td>Cross-platform path resolver mapping Windows (<code>%APPDATA%</code>), macOS (<code>~/Library</code>), and Linux (<code>~/.config</code>)</td>
+                            <td>Locates configurations across Claude Desktop, Claude Code, Cursor, Windsurf, and VS Code without user input.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Live stdio Handshake</td>
+                            <td>Node <code>child_process.spawn</code> with custom line-buffered stream parser over <code>stdin/stdout</code></td>
+                            <td>Differentiates between binary crashes, missing PATH binaries, missing environment variables, and protocol-level schema violations.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Timeout & Deadlock Protection</td>
+                            <td>Promise-race timer with configurable 5000ms threshold per server</td>
+                            <td>Pinpoints servers failing the Model Context Protocol initialization timeout (standard error <code>-32001</code>).</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold dark:text-zinc-200 text-zinc-800">Automated Remediation Engine</td>
+                            <td><code>npx fixmcp --fix</code> with timestamped atomic file backups (<code>.backup-YYYYMMDD.json</code>)</td>
+                            <td>Replaces unpinned <code>@latest</code> commands with local binaries, strips trailing commas, and repairs broken Windows path backslashes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================================================================== -->
+        <!-- CASE STUDY 3: checkIn -->
+        <!-- ==================================================================== -->
+        <section id="checkin" class="bento-card p-6 sm:p-10 rounded-2xl space-y-8 border dark:border-zinc-800 border-zinc-200">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b dark:border-zinc-800 border-zinc-200 pb-6">
+                <div class="space-y-1">
+                    <span class="text-xs font-mono text-amber-500 font-bold uppercase tracking-wider">Edge Computer Vision & Distributed Systems</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-mono dark:text-white text-zinc-900">
+                        checkIn — Biometric & Geofenced Attendance System
+                    </h2>
+                    <p class="text-xs font-mono text-zinc-500">Production Platform for the School of Logistics and Innovation Technology (FUTA SLIT)</p>
+                </div>
+                <div class="flex items-center gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1 rounded dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-300 text-zinc-700">Production</span>
+                    <a href="https://checkin-futa.vercel.app" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-amber-500 text-black font-bold hover:bg-amber-600">Live Application →</a>
+                </div>
+            </div>
+
+            <!-- Problem / Solution Overview -->
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-2 p-5 rounded-xl dark:bg-zinc-950/70 bg-zinc-50 border dark:border-zinc-800/80 border-zinc-200">
+                    <h3 class="font-bold text-red-400 flex items-center gap-2 font-mono text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Real-World Constraints
+                    </h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">
+                        University lecture halls with 200+ students encounter major failure points: hardware fingerprint queues take 45+ minutes, buddy-punching (proxy attendance) undermines trust, and unstable cellular/Wi-Fi connectivity causes high network dropped-packet rates when submitting data to cloud backends.
+                    </p>
+                </div>
+
+                <div class="space-y-2 p-5 rounded-xl dark:bg-zinc-950/70 bg-zinc-50 border dark:border-zinc-800/80 border-zinc-200">
+                    <h3 class="font-bold text-amber-400 flex items-center gap-2 font-mono text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-shield-halved"></i> Multi-Tier Verification Architecture
+                    </h3>
+                    <p class="dark:text-zinc-400 text-zinc-600 text-xs leading-relaxed">
+                        Decentralizes verification to student smartphones. Extracts 468 3D facial landmarks directly on the client using WebAssembly MediaPipe (zero video streaming over network, preserving bandwidth and privacy), enforces a 50m Haversine GPS fence around the lecturer, and stores check-ins inside an offline IndexedDB queue with automatic background sync.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mathematical / Algorithmic Formulations -->
+            <div class="space-y-4">
+                <div class="text-xs font-mono font-bold dark:text-zinc-300 text-zinc-700 flex items-center gap-2">
+                    <i class="fa-solid fa-calculator text-amber-500"></i> Mathematical Verification Models
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="dark:bg-zinc-950 bg-zinc-100 p-5 rounded-xl border dark:border-zinc-800 border-zinc-300 space-y-2 font-mono text-xs">
+                        <span class="font-bold text-amber-400 block">1. Haversine Spatial Geodesic Distance Formula:</span>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Calculates great-circle distance between student GPS coordinate $(lat_1, lon_1)$ and lecturer coordinate $(lat_2, lon_2)$:
+                        </p>
+                        <pre class="text-zinc-300">
+a = sin²(Δlat/2) + cos(lat₁) · cos(lat₂) · sin²(Δlon/2)
+c = 2 · atan2(√a, √(1−a))
+d = R · c  (where R = 6,371,000 meters)
+
+Threshold Assertion:
+d &lt;= 50.0m  ──>  GPS Boundary Verified
+d &gt;  50.0m  ──>  Location Spoofing Rejected
+                        </pre>
+                    </div>
+
+                    <div class="dark:bg-zinc-950 bg-zinc-100 p-5 rounded-xl border dark:border-zinc-800 border-zinc-300 space-y-2 font-mono text-xs">
+                        <span class="font-bold text-amber-400 block">2. 468-Landmark Topology Similarity Thresholding:</span>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Cosine similarity across 3D normalized landmark vectors $\mathbf{u}$ and $\mathbf{v}$:
+                        </p>
+                        <pre class="text-zinc-300">
+Similarity = (u · v) / (||u|| ||v||)
+
+3-Tier Decision Matrix:
+• Similarity &gt;= 0.50  ──> Verified Present (Instant Success)
+• 0.40 &lt;= Sim &lt; 0.50  ──> Flagged for Manual Admin Review
+• Similarity &lt; 0.40   ──> Fraud Rejection (Identity Mismatch)
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offline Resilience Engine Flow -->
+            <div class="space-y-2">
+                <div class="text-xs font-mono font-bold dark:text-zinc-300 text-zinc-700 flex items-center gap-2">
+                    <i class="fa-solid fa-arrows-rotate text-amber-500"></i> Offline IndexedDB Resilience Pipeline
+                </div>
+                <div class="dark:bg-zinc-950 bg-zinc-100 p-4 sm:p-6 rounded-xl border dark:border-zinc-800 border-zinc-300 overflow-x-auto">
+                    <pre class="text-amber-400">
+[Student Camera & GPS Check-In Triggered]
+          │
+          ▼
+[Edge Verification: MediaPipe Mesh & Haversine Distance Calculated Locally]
+          │
+          ▼
+[Network Check: navigator.onLine]
+    ├── ONLINE ──> [Direct HTTPS POST to PostgreSQL API Endpoint] ──> [Attendance Confirmed]
+    │
+    └── OFFLINE (Campus Network Drop)
+            │
+            ▼
+    [IndexedDB 'idb' ObjectStore Transaction]
+    Store payload: { studentId, sessionId, timestamp, biometricScore, gpsDelta, nonce, syncStatus: 'pending' }
+            │
+            ▼
+    [Service Worker / Window 'online' Event Listener Triggered]
+            │
+            ▼
+    [Idempotent Drain Queue Worker]
+    Sequentially reads pending records -> Sends batch POST with unique idempotency nonces ->
+    Server acknowledges write -> Record updated to syncStatus: 'synced' -> UI reflects verified state.
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA TO CONNECT -->
+        <div class="p-8 sm:p-10 rounded-2xl bento-card text-center space-y-4 border dark:border-zinc-800 border-zinc-200">
+            <h3 class="text-2xl font-bold dark:text-white text-zinc-900">Looking for Deep Engineering & Systems Design?</h3>
+            <p class="dark:text-zinc-400 text-zinc-600 text-sm max-w-xl mx-auto">
+                I am actively interested in software engineering roles, distributed systems, open-source tooling, and security architecture. Let's discuss engineering challenges.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-2 font-mono text-xs">
+                <a href="mailto:damisileayoola@gmail.com" class="px-5 py-2.5 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-bold hover:opacity-90">damisileayoola@gmail.com</a>
+                <a href="https://linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 hover:underline">LinkedIn Profile →</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t dark:border-zinc-800/80 border-zinc-200 py-8 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+            <div>© 2026 Ayoola Damisile. All rights reserved.</div>
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+                <a href="/" class="hover:underline">Home</a>
+                <a href="/projects" class="hover:underline">Projects</a>
+                <a href="/case-studies" class="hover:underline">Case Studies</a>
+                <a href="/blog" class="hover:underline">Blog</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -14,6 +14,7 @@ Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian 
   - Think Like an Attacker (IBM Cybersecurity Architecture): https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset
 - Music and piano training: https://www.damisile.name.ng/music
 - Projects catalog: https://www.damisile.name.ng/projects
+- Deep technical architecture case studies: https://www.damisile.name.ng/case-studies (Detailed specifications for envvault AES-256-GCM memory injection, fixmcp stdio JSON-RPC 2.0 diagnostics, and checkIn 3D facial biometrics/offline sync)
 - Resume (PDF): https://www.damisile.name.ng/resources/Damisile-Ayoola-Resume.pdf
 - Sitemap: https://www.damisile.name.ng/sitemap.xml
 
