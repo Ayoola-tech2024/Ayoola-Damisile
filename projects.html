@@ -6,7 +6,16 @@
     <title>Ayoola Damisile — Engineering Projects Specification Catalog</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
     <meta name="description" content="Complete technical specifications catalog for Ayoola Damisile's engineering projects: fixmcp, @damisile_ayoola/envvault, checkIn biometrics, Memodams, and client web applications.">
-    <link rel="canonical" href="https://www.damisile.name.ng/projects.html">
+        <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.damisile.name.ng/projects">
+    <meta property="og:title" content="Ayoola Damisile — Engineering Projects Specification Catalog">
+    <meta property="og:description" content="Technical specifications for fixmcp, envvault, checkIn biometrics, Memodams, and software engineering systems.">
+    <meta property="og:image" content="https://www.damisile.name.ng/resources/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ayoola Damisile — Engineering Projects Catalog">
+    <meta name="twitter:description" content="Technical specifications for fixmcp, envvault, checkIn biometrics, and software engineering systems.">
+    <meta name="twitter:image" content="https://www.damisile.name.ng/resources/og-image.jpg">
+    <link rel="canonical" href="https://www.damisile.name.ng/projects">
 
     <!-- Google Structured Schema: projects authored by the unified Person entity -->
     <script type="application/ld+json">
@@ -15,8 +24,8 @@
       "@graph": [
         {
           "@type": "CollectionPage",
-          "@id": "https://www.damisile.name.ng/projects.html#webpage",
-          "url": "https://www.damisile.name.ng/projects.html",
+          "@id": "https://www.damisile.name.ng/projects#webpage",
+          "url": "https://www.damisile.name.ng/projects",
           "name": "Ayoola Damisile — Engineering Projects Catalog",
           "inLanguage": "en",
           "isPartOf": { "@id": "https://www.damisile.name.ng/#website" },
@@ -78,24 +87,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#08080a',
-                        darkCard: '#101014'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="resources/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -125,33 +117,34 @@
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
     </style>
+    <meta name="theme-color" content="#08080a">
 </head>
 <body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
+            <a href="/" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
                 <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
                 <span class="hidden sm:inline">Ayoola Damisile</span>
                 <span class="sm:hidden">Ayoola</span>
             </a>
 
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium dark:text-zinc-400 text-zinc-600">
-                <a href="index.html#home" class="hover:underline">Home</a>
-                <a href="index.html#about" class="hover:underline">About</a>
-                <a href="index.html#open-source" class="hover:underline">Open Source</a>
-                <a href="projects.html" class="dark:text-white text-zinc-900 font-semibold">Projects Catalog</a>
-                <a href="blog.html" class="hover:underline">Blog</a>
-                <a href="music.html" class="hover:underline">Music</a>
-                <a href="index.html#contact" class="hover:underline">Contact</a>
+                <a href="/#home" class="hover:underline">Home</a>
+                <a href="/#about" class="hover:underline">About</a>
+                <a href="/#open-source" class="hover:underline">Open Source</a>
+                <a href="/projects" class="dark:text-white text-zinc-900 font-semibold">Projects Catalog</a>
+                <a href="/blog" class="hover:underline">Blog</a>
+                <a href="/music" class="hover:underline">Music</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-3">
                 <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
                     <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
                 </button>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
@@ -162,13 +155,13 @@
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
-            <a href="index.html#home" class="block">Home</a>
-            <a href="index.html#about" class="block">About</a>
-            <a href="index.html#open-source" class="block">Open Source</a>
-            <a href="projects.html" class="block font-semibold">Projects Catalog</a>
-            <a href="blog.html" class="block">Blog</a>
-            <a href="music.html" class="block">Music</a>
-            <a href="index.html#contact" class="block">Contact</a>
+            <a href="/#home" class="block">Home</a>
+            <a href="/#about" class="block">About</a>
+            <a href="/#open-source" class="block">Open Source</a>
+            <a href="/projects" class="block font-semibold">Projects Catalog</a>
+            <a href="/blog" class="block">Blog</a>
+            <a href="/music" class="block">Music</a>
+            <a href="/#contact" class="block">Contact</a>
         </div>
     </header>
 
@@ -209,7 +202,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/synapse-study-ui.jpg" alt="Synapse Study" class="w-full h-56 object-cover">
+                    <img src="resources/synapse-study-ui.jpg" alt="Synapse Study" class="w-full h-56 object-cover" decoding="async" fetchpriority="high">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -242,7 +235,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://github.com/Ayoola-tech2024/synapse-study" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                        <a href="https://github.com/Ayoola-tech2024/synapse-study" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -252,7 +245,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/time-capsule-ui.jpg" alt="Time Capsule" class="w-full h-56 object-cover">
+                    <img src="resources/time-capsule-ui.jpg" alt="Time Capsule" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -283,7 +276,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://github.com/Ayoola-tech2024/time-capsule" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                        <a href="https://github.com/Ayoola-tech2024/time-capsule" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -293,7 +286,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/echoflow-alexa.jpg" alt="EchoFlow Alexa MCP" class="w-full h-56 object-cover">
+                    <img src="resources/echoflow-alexa.jpg" alt="EchoFlow Alexa MCP" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -325,7 +318,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://github.com/Ayoola-tech2024/echoflow-alexa-mcp" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                        <a href="https://github.com/Ayoola-tech2024/echoflow-alexa-mcp" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -335,7 +328,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/ai-assistant-word.jpg" alt="AI Assistant for Word" class="w-full h-56 object-cover">
+                    <img src="resources/ai-assistant-word.jpg" alt="AI Assistant for Word" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -367,7 +360,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://github.com/Ayoola-tech2024/ai-assistant-for-word" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                        <a href="https://github.com/Ayoola-tech2024/ai-assistant-for-word" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -377,7 +370,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/talk-to-db-ui.jpg" alt="TALK-TO-DB v1.1.0" class="w-full h-56 object-cover">
+                    <img src="resources/talk-to-db-ui.jpg" alt="TALK-TO-DB v1.1.0" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -409,7 +402,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://github.com/Ayoola-tech2024/Talk-to-db" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                        <a href="https://github.com/Ayoola-tech2024/Talk-to-db" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -419,7 +412,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/releasenote-studio.jpg" alt="ReleaseNote Studio" class="w-full h-56 object-cover">
+                    <img src="resources/releasenote-studio.jpg" alt="ReleaseNote Studio" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -451,7 +444,7 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://github.com/Ayoola-tech2024/releasenote-studio" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
+                        <a href="https://github.com/Ayoola-tech2024/releasenote-studio" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -461,7 +454,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-56 object-cover">
+                    <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -491,8 +484,8 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">npm Package →</a>
-                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
+                        <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">npm Package →</a>
+                        <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -502,7 +495,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="open-source">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-56 object-cover">
+                    <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -533,8 +526,8 @@
                     </div>
 
                     <div class="flex items-center gap-4 text-xs font-mono pt-2">
-                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 underline font-semibold">npm Package →</a>
-                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
+                        <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 underline font-semibold">npm Package →</a>
+                        <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -544,7 +537,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="biometrics">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover image" class="w-full h-56 object-cover">
+                    <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover image" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -552,7 +545,7 @@
                             <span class="text-xs font-mono text-cyan-500 font-bold block uppercase">Production Biometric AI Platform (FUTA SLIT)</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">checkIn — Biometric & Geofenced Attendance System</h2>
                         </div>
-                        <a href="https://checkin-futa.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live App →</a>
+                        <a href="https://checkin-futa.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live App →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
@@ -578,7 +571,7 @@
                     </div>
 
                     <div class="pt-2">
-                        <a href="https://checkin-futa.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Launch Live Application →</a>
+                        <a href="https://checkin-futa.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Launch Live Application →</a>
                     </div>
                 </div>
             </div>
@@ -588,7 +581,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-56 object-cover">
+                    <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -596,7 +589,7 @@
                             <span class="text-xs font-mono text-amber-500 font-bold block uppercase">Client Web Application</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">MemoDams — Note Taking & Organization Workspace</h2>
                         </div>
-                        <a href="https://memo-dams.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">memo-dams.vercel.app →</a>
+                        <a href="https://memo-dams.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">memo-dams.vercel.app →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
@@ -621,7 +614,7 @@
                     </div>
 
                     <div class="pt-2">
-                        <a href="https://memo-dams.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Application →</a>
+                        <a href="https://memo-dams.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Application →</a>
                     </div>
                 </div>
             </div>
@@ -631,7 +624,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200 flex items-center justify-center p-6">
-                    <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-48 object-contain">
+                    <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-48 object-contain" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -639,7 +632,7 @@
                             <span class="text-xs font-mono text-purple-500 font-bold block uppercase">Digital Memorial & School Platform</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">AFSS Ado Ekiti (Set 2024/2025) E-Magazine</h2>
                         </div>
-                        <a href="https://afss-set2024-25.onrender.com" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">afss-set2024-25... →</a>
+                        <a href="https://afss-set2024-25.onrender.com" target="_blank" rel="noopener noreferrer" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">afss-set2024-25... →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
@@ -663,7 +656,7 @@
                     </div>
 
                     <div class="pt-2">
-                        <a href="https://afss-set2024-25.onrender.com" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live E-Magazine →</a>
+                        <a href="https://afss-set2024-25.onrender.com" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live E-Magazine →</a>
                     </div>
                 </div>
             </div>
@@ -673,7 +666,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy screenshot" class="w-full h-56 object-cover">
+                    <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert Consultancy screenshot" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -681,7 +674,7 @@
                             <span class="text-xs font-mono text-blue-500 font-bold block uppercase">Corporate Advisory Portal</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Paul Hilpert Consultancy</h2>
                         </div>
-                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live Web Portal →</a>
+                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live Web Portal →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
@@ -705,7 +698,7 @@
                     </div>
 
                     <div class="pt-2">
-                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Portal →</a>
+                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Portal →</a>
                     </div>
                 </div>
             </div>
@@ -715,7 +708,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches screenshot" class="w-full h-56 object-cover">
+                    <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella Stitches screenshot" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -723,7 +716,7 @@
                             <span class="text-xs font-mono text-rose-500 font-bold block uppercase">Fashion Showcase & E-Commerce</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Tee Stella Stitches</h2>
                         </div>
-                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">tee-stella-luxury... →</a>
+                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">tee-stella-luxury... →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
@@ -747,7 +740,7 @@
                     </div>
 
                     <div class="pt-2">
-                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live E-Commerce Site →</a>
+                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live E-Commerce Site →</a>
                     </div>
                 </div>
             </div>
@@ -757,7 +750,7 @@
         <div class="project-catalog-item bento-card p-6 sm:p-8 space-y-6" data-category="client">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <div class="md:col-span-5 rounded-xl overflow-hidden bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                    <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs screenshot" class="w-full h-56 object-cover">
+                    <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs screenshot" class="w-full h-56 object-cover" loading="lazy" decoding="async">
                 </div>
                 <div class="md:col-span-7 space-y-4">
                     <div class="flex items-center justify-between">
@@ -765,7 +758,7 @@
                             <span class="text-xs font-mono text-pink-500 font-bold block uppercase">Creative Design Portfolio</span>
                             <h2 class="text-2xl font-bold dark:text-white text-zinc-900">Damiqueen Designs</h2>
                         </div>
-                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live Portfolio →</a>
+                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono underline dark:text-white text-zinc-900 font-semibold">Live Portfolio →</a>
                     </div>
 
                     <p class="dark:text-zinc-300 text-zinc-700 text-xs sm:text-sm leading-relaxed">
@@ -789,7 +782,7 @@
                     </div>
 
                     <div class="pt-2">
-                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Portfolio →</a>
+                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Visit Live Portfolio →</a>
                     </div>
                 </div>
             </div>
@@ -802,14 +795,14 @@
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
-                <a href="index.html" class="hover:underline">Home</a>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
-                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:underline">npm Profile</a>
-                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:underline">LinkedIn</a>
-                <a href="https://damisileayoola.cv" target="_blank" class="hover:underline">CV</a>
-                <a href="https://peerlist.io/damisileayoola" target="_blank" class="hover:underline">Peerlist</a>
-                <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" class="hover:underline">Credly</a>
-                <a href="music.html" class="hover:underline">Music Showcase</a>
+                <a href="/" class="hover:underline">Home</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">npm Profile</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+                <a href="https://damisileayoola.cv" target="_blank" rel="noopener noreferrer" class="hover:underline">CV</a>
+                <a href="https://peerlist.io/damisileayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Peerlist</a>
+                <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Credly</a>
+                <a href="/music" class="hover:underline">Music Showcase</a>
             </div>
         </div>
     </footer>

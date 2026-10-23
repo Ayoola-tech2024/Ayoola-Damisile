@@ -6,9 +6,9 @@
     <title>Blog — Ayoola Damisile, Software Engineer & Classical Pianist</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
     <meta name="description" content="Essays by Ayoola Damisile on developer tooling, cybersecurity, open source, and the discipline of classical music applied to software engineering.">
-    <link rel="canonical" href="https://www.damisile.name.ng/blog.html">
+    <link rel="canonical" href="https://www.damisile.name.ng/blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.damisile.name.ng/blog.html">
+    <meta property="og:url" content="https://www.damisile.name.ng/blog">
     <meta property="og:title" content="Blog — Ayoola Damisile">
     <meta property="og:description" content="Essays on developer tooling, cybersecurity, open source, and classical music.">
     <meta property="og:image" content="https://www.damisile.name.ng/resources/ayoola-damisile-frontend-developer.webp">
@@ -18,8 +18,8 @@
     {
       "@context": "https://schema.org",
       "@type": "Blog",
-      "@id": "https://www.damisile.name.ng/blog.html",
-      "url": "https://www.damisile.name.ng/blog.html",
+      "@id": "https://www.damisile.name.ng/blog",
+      "url": "https://www.damisile.name.ng/blog",
       "name": "Ayoola Damisile — Essays",
       "description": "Essays on developer tooling, cybersecurity, open source, and classical music.",
       "inLanguage": "en",
@@ -39,24 +39,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#08080a',
-                        darkCard: '#101014'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="resources/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -92,32 +75,33 @@
             border-color: #cbd5e1;
         }
     </style>
+    <meta name="theme-color" content="#08080a">
 </head>
 <body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
+            <a href="/" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
                 <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
                 <span class="hidden sm:inline">Ayoola Damisile</span>
                 <span class="sm:hidden">Ayoola</span>
             </a>
 
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium dark:text-zinc-400 text-zinc-600">
-                <a href="index.html#home" class="hover:underline">Home</a>
-                <a href="index.html#open-source" class="hover:underline">Open Source</a>
-                <a href="projects.html" class="hover:underline">Projects Catalog</a>
-                <a href="blog.html" class="dark:text-white text-zinc-900 font-semibold">Blog</a>
-                <a href="music.html" class="hover:underline">Music & Training</a>
-                <a href="index.html#contact" class="hover:underline">Contact</a>
+                <a href="/#home" class="hover:underline">Home</a>
+                <a href="/#open-source" class="hover:underline">Open Source</a>
+                <a href="/projects" class="hover:underline">Projects Catalog</a>
+                <a href="/blog" class="dark:text-white text-zinc-900 font-semibold">Blog</a>
+                <a href="/music" class="hover:underline">Music & Training</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-3">
                 <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
                     <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
                 </button>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
@@ -128,12 +112,12 @@
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
-            <a href="index.html#home" class="block">Home</a>
-            <a href="index.html#open-source" class="block">Open Source</a>
-            <a href="projects.html" class="block">Projects Catalog</a>
-            <a href="blog.html" class="block font-semibold">Blog</a>
-            <a href="music.html" class="block">Music & Training</a>
-            <a href="index.html#contact" class="block">Contact</a>
+            <a href="/#home" class="block">Home</a>
+            <a href="/#open-source" class="block">Open Source</a>
+            <a href="/projects" class="block">Projects Catalog</a>
+            <a href="/blog" class="block font-semibold">Blog</a>
+            <a href="/music" class="block">Music & Training</a>
+            <a href="/#contact" class="block">Contact</a>
         </div>
     </header>
 
@@ -153,9 +137,9 @@
 
         <div class="space-y-6">
             <!-- Featured Latest Post -->
-            <a href="blog-the-unseen-cost-of-building.html" class="bento-card rounded-2xl overflow-hidden flex flex-col md:flex-row group">
+            <a href="/blog-the-unseen-cost-of-building" class="bento-card rounded-2xl overflow-hidden flex flex-col md:flex-row group">
                 <div class="md:w-1/2 h-56 md:h-auto bg-zinc-900 overflow-hidden relative">
-                    <img src="cover images/the-unseen-cost-of-building.jpg" alt="The Unseen Cost of Building cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img src="cover images/the-unseen-cost-of-building.jpg" alt="The Unseen Cost of Building cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" fetchpriority="high">
                 </div>
                 <div class="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between space-y-3">
                     <div class="space-y-2">
@@ -174,9 +158,9 @@
 
             <div class="grid sm:grid-cols-2 gap-6">
                 <!-- Post 1 -->
-                <a href="blog-fixmcp-mcp-doctor.html" class="bento-card rounded-2xl overflow-hidden flex flex-col group">
+                <a href="/blog-fixmcp-mcp-doctor" class="bento-card rounded-2xl overflow-hidden flex flex-col group">
                     <div class="h-44 bg-zinc-900 overflow-hidden">
-                        <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6 space-y-2">
                         <div class="text-[11px] font-mono text-emerald-500">DevTools · MCP · 13 Oct 2026</div>
@@ -187,9 +171,9 @@
                 </a>
 
                 <!-- Post 2 -->
-                <a href="blog-ibm-cybersecurity-mindset.html" class="bento-card rounded-2xl overflow-hidden flex flex-col group">
+                <a href="/blog-ibm-cybersecurity-mindset" class="bento-card rounded-2xl overflow-hidden flex flex-col group">
                     <div class="h-44 bg-zinc-900 overflow-hidden">
-                        <img src="resources/ibm-cybersecurity-architecture-certificate.png" alt="IBM Cybersecurity Architecture certificate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+                        <img src="resources/ibm-cybersecurity-architecture-certificate.png" alt="IBM Cybersecurity Architecture certificate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                     </div>
                     <div class="p-6 space-y-2">
                         <div class="text-[11px] font-mono text-amber-500">Cybersecurity · Certification · 13 Oct 2026</div>
@@ -207,11 +191,11 @@
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
-                <a href="index.html" class="hover:underline">Home</a>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
-                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:underline">LinkedIn</a>
-                <a href="https://dev.to/damisile_ayoola" target="_blank" class="hover:underline">DEV</a>
-                <a href="index.html#contact" class="hover:underline">Contact</a>
+                <a href="/" class="hover:underline">Home</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+                <a href="https://dev.to/damisile_ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">DEV</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
             </div>
         </div>
     </footer>

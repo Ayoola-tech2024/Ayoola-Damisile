@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayoola Damisile — Full-Stack Software Engineer & Classical Pianist</title>
-    <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
+    <link rel="icon" href="resources/og-image.jpg" type="image/webp">
     
     <meta name="google-site-verification" content="Iuh6HsXwskTeKqW3dD6VRjeTmsb9Wxc2k3q_4kolimQ" />
     <meta name="description" content="Ayoola Damisile (Ayooluwa) - Full-Stack Software Engineer, Open-Source Author (fixmcp, @damisile_ayoola/envvault), BIT Scholar at FUTA, and Classical Pianist. Building web systems, security CLI tools, biometric AI architectures, and offering piano training.">
@@ -163,24 +163,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#08080a',
-                        darkCard: '#101014'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="resources/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -217,6 +200,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
         }
     </style>
+    <meta name="theme-color" content="#08080a">
 </head>
 <body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
@@ -233,10 +217,10 @@
                 <a href="#about" class="dark:hover:text-white hover:text-zinc-900 transition-colors">About</a>
                 <a href="#gallery" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Gallery</a>
                 <a href="#open-source" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Open Source</a>
-                <a href="projects.html" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Projects</a>
-                <a href="blog.html" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Blog</a>
+                <a href="/projects" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Projects</a>
+                <a href="/blog" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Blog</a>
                 <a href="#skills" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Skills</a>
-                <a href="music.html" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Music & Training</a>
+                <a href="/music" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Music & Training</a>
                 <a href="#contact" class="dark:hover:text-white hover:text-zinc-900 transition-colors">Contact</a>
             </nav>
 
@@ -253,10 +237,10 @@
                     <kbd class="px-1.5 py-0.5 rounded dark:bg-zinc-800 bg-zinc-200 text-[10px] dark:text-zinc-300 text-zinc-700">⌘K</kbd>
                 </button>
 
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900 text-lg transition-colors p-1">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900 text-lg transition-colors p-1">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="https://medium.com/@damisileayoola" target="_blank" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900 text-lg transition-colors p-1">
+                <a href="https://medium.com/@damisileayoola" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 dark:hover:text-white hover:text-zinc-900 text-lg transition-colors p-1">
                     <i class="fa-brands fa-medium"></i>
                 </a>
             </div>
@@ -270,9 +254,9 @@
             <a href="#about" class="block">About</a>
             <a href="#gallery" class="block">Photos & Identity</a>
             <a href="#open-source" class="block">Open Source</a>
-            <a href="projects.html" class="block font-semibold">Projects Catalog</a>
+            <a href="/projects" class="block font-semibold">Projects Catalog</a>
             <a href="#skills" class="block">Skills</a>
-            <a href="music.html" class="block font-semibold">Music & Lessons</a>
+            <a href="/music" class="block font-semibold">Music & Lessons</a>
             <a href="#contact" class="block">Contact</a>
         </div>
     </header>
@@ -299,7 +283,7 @@
                     <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-500"></i> <span>Copy: npx @damisile_ayoola/envvault</span></div>
                     <span class="text-[10px] text-zinc-400">CLI Command</span>
                 </div>
-                <div class="cmd-item px-3 py-2.5 rounded-lg dark:hover:bg-zinc-800 hover:bg-zinc-100 cursor-pointer flex items-center justify-between" data-action="link" data-target="projects.html">
+                <div class="cmd-item px-3 py-2.5 rounded-lg dark:hover:bg-zinc-800 hover:bg-zinc-100 cursor-pointer flex items-center justify-between" data-action="link" data-target="/projects">
                     <div class="flex items-center gap-2"><i class="fa-solid fa-cubes text-amber-500"></i> <span>Browse Complete Projects Catalog</span></div>
                     <span class="text-[10px] text-zinc-400">Page</span>
                 </div>
@@ -307,7 +291,7 @@
                     <div class="flex items-center gap-2"><i class="fa-solid fa-eye text-cyan-500"></i> <span>Launch: checkIn Biometrics App</span></div>
                     <span class="text-[10px] text-zinc-400">External App</span>
                 </div>
-                <div class="cmd-item px-3 py-2.5 rounded-lg dark:hover:bg-zinc-800 hover:bg-zinc-100 cursor-pointer flex items-center justify-between" data-action="link" data-target="music.html">
+                <div class="cmd-item px-3 py-2.5 rounded-lg dark:hover:bg-zinc-800 hover:bg-zinc-100 cursor-pointer flex items-center justify-between" data-action="link" data-target="/music">
                     <div class="flex items-center gap-2"><i class="fa-solid fa-music text-purple-500"></i> <span>Classical Pianist & Piano Lessons</span></div>
                     <span class="text-[10px] text-zinc-400">Page</span>
                 </div>
@@ -355,7 +339,7 @@
                 <span class="text-[10px] text-zinc-500 block">Tap to Copy</span>
             </button>
 
-            <button class="mobile-action-tile p-3 rounded-xl dark:bg-zinc-900 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 text-left space-y-1" data-action="link" data-target="projects.html">
+            <button class="mobile-action-tile p-3 rounded-xl dark:bg-zinc-900 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 text-left space-y-1" data-action="link" data-target="/projects">
                 <i class="fa-solid fa-cubes text-amber-500 block mb-1"></i>
                 <span class="dark:text-white text-zinc-900 block font-bold">Projects Catalog</span>
                 <span class="text-[10px] text-zinc-500 block">Full Specs Page</span>
@@ -403,7 +387,7 @@
                     </p>
 
                     <p class="dark:text-zinc-400 text-zinc-600 text-sm leading-relaxed max-w-2xl">
-                        I specialize in building production web applications, zero-dependency cryptographic CLI tools, and real-time computer vision attendance systems. Author of published npm security packages <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 font-mono underline font-medium">fixmcp</a> and <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 font-mono underline font-medium">@damisile_ayoola/envvault</a>.
+                        I specialize in building production web applications, zero-dependency cryptographic CLI tools, and real-time computer vision attendance systems. Author of published npm security packages <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 font-mono underline font-medium">fixmcp</a> and <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 font-mono underline font-medium">@damisile_ayoola/envvault</a>.
                     </p>
                 </div>
 
@@ -420,13 +404,13 @@
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 pt-2 text-sm font-medium">
-                    <a href="projects.html" class="px-5 py-2.5 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold dark:hover:bg-zinc-200 hover:bg-zinc-800 transition-colors flex items-center gap-2">
+                    <a href="/projects" class="px-5 py-2.5 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold dark:hover:bg-zinc-200 hover:bg-zinc-800 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-cubes"></i> Browse Projects Catalog
                     </a>
                     <a href="#open-source" class="px-5 py-2.5 rounded-lg dark:bg-zinc-900 bg-white border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 transition-all flex items-center gap-2">
                         <i class="fa-solid fa-box"></i> Open Source Tools
                     </a>
-                    <a href="https://wa.me/2348169787869" target="_blank" class="px-5 py-2.5 rounded-lg dark:bg-zinc-900 bg-white border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 transition-all flex items-center gap-2">
+                    <a href="https://wa.me/2348169787869" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg dark:bg-zinc-900 bg-white border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 transition-all flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-500"></i> WhatsApp Chat
                     </a>
                 </div>
@@ -437,7 +421,7 @@
                 <div class="space-y-4">
                     <!-- Profile Portrait Image -->
                     <div class="relative rounded-2xl overflow-hidden border dark:border-zinc-800 border-zinc-300 shadow-xl group">
-                        <img src="resources/ayoola-damisile-recent-portrait.jpg" alt="Ayoola Damisile - Full-Stack Software Engineer & Classical Pianist" class="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="resources/ayoola-damisile-recent-portrait.jpg" alt="Ayoola Damisile - Full-Stack Software Engineer & Classical Pianist" class="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105" decoding="async" fetchpriority="high">
                         <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-black/75 backdrop-blur-md border border-white/10 text-white text-xs font-mono space-y-1">
                             <span class="font-bold text-amber-400 block">Ayoola Damisile Ayooluwa</span>
                             <span class="text-[11px] text-zinc-300 block">FUTA BIT Scholar • Software Engineer</span>
@@ -454,7 +438,7 @@
                 </div>
 
                 <div class="pt-2">
-                    <a href="music.html" class="w-full py-2.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-300 text-zinc-700 flex items-center justify-center gap-2 hover:underline">
+                    <a href="/music" class="w-full py-2.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-300 text-zinc-700 flex items-center justify-center gap-2 hover:underline">
                         <i class="fa-solid fa-music text-purple-400"></i> Music Showcase & Lessons →
                     </a>
                 </div>
@@ -478,7 +462,7 @@
                 <!-- Gallery Card 1: Recent Portrait -->
                 <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                     <div class="rounded-xl overflow-hidden h-64 bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                        <img src="resources/ayoola-damisile-recent-portrait.jpg" alt="Ayoola Damisile - Product Engineer & BIT Scholar" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                        <img src="resources/ayoola-damisile-recent-portrait.jpg" alt="Ayoola Damisile - Product Engineer & BIT Scholar" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" decoding="async" fetchpriority="high">
                     </div>
                     <div class="space-y-1">
                         <h3 class="text-sm font-bold dark:text-white text-zinc-900">Product Engineer & BIT Scholar</h3>
@@ -489,7 +473,7 @@
                 <!-- Gallery Card 2: Formal Pianist Portrait -->
                 <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                     <div class="rounded-xl overflow-hidden h-64 bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                        <img src="resources/ayoola-damisile-formal-pianist.jpg" alt="Ayoola Damisile - Classical Pianist & Concert Organist" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                        <img src="resources/ayoola-damisile-formal-pianist.jpg" alt="Ayoola Damisile - Classical Pianist & Concert Organist" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                     </div>
                     <div class="space-y-1">
                         <h3 class="text-sm font-bold dark:text-white text-zinc-900">Classical Pianist & Organist</h3>
@@ -500,7 +484,7 @@
                 <!-- Gallery Card 3: Software Developer -->
                 <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                     <div class="rounded-xl overflow-hidden h-64 bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                        <img src="resources/ayoola-damisile-frontend-developer.webp" alt="Ayoola Damisile Ayooluwa - Software Engineer" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                        <img src="resources/ayoola-damisile-frontend-developer.webp" alt="Ayoola Damisile Ayooluwa - Software Engineer" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                     </div>
                     <div class="space-y-1">
                         <h3 class="text-sm font-bold dark:text-white text-zinc-900">Software Engineer & Systems Author</h3>
@@ -511,7 +495,7 @@
                 <!-- Gallery Card 4: Academic Portrait -->
                 <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                     <div class="rounded-xl overflow-hidden h-64 bg-zinc-900 border dark:border-zinc-800 border-zinc-200">
-                        <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile - Academic Identity" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                        <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile - Academic Identity" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                     </div>
                     <div class="space-y-1">
                         <h3 class="text-sm font-bold dark:text-white text-zinc-900">Personal & Academic Portrait</h3>
@@ -572,7 +556,7 @@
                     </h2>
                     <p class="dark:text-zinc-400 text-zinc-600 text-sm">Security and developer diagnostic tools available live on npm.</p>
                 </div>
-                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-xs font-mono dark:text-white text-zinc-900 hover:underline">
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 text-xs font-mono dark:text-white text-zinc-900 hover:underline">
                     <i class="fa-brands fa-npm text-red-500"></i> npm Profile →
                 </a>
             </div>
@@ -583,7 +567,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                            <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover">
+                            <img src="cover images/fixmcp-linkedin.png" alt="fixmcp banner" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-6 sm:p-8 space-y-4">
                             <div class="flex items-center justify-between">
@@ -591,7 +575,7 @@
                                     <h3 class="text-xl font-bold font-mono dark:text-white text-zinc-900">fixmcp</h3>
                                     <span class="text-xs font-mono dark:text-zinc-400 text-zinc-600">v0.1.0 • npm package</span>
                                 </div>
-                                <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="text-slate-400 hover:text-cyan-400 text-xl">
+                                <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 text-xl">
                                     <i class="fa-brands fa-npm text-red-500"></i>
                                 </a>
                             </div>
@@ -614,8 +598,8 @@
                             <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">CLI Diagnostic</span>
                         </div>
                         <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t dark:border-zinc-800 border-zinc-200">
-                            <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
-                            <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository</a>
+                            <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
+                            <a href="https://github.com/Ayoola-tech2024/fixmcp" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository</a>
                         </div>
                     </div>
                 </div>
@@ -624,7 +608,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-48 bg-zinc-900 overflow-hidden relative">
-                            <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover">
+                            <img src="cover images/env-vault.png" alt="envvault banner" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-6 sm:p-8 space-y-4">
                             <div class="flex items-center justify-between">
@@ -632,7 +616,7 @@
                                     <h3 class="text-xl font-bold font-mono dark:text-white text-zinc-900">@damisile_ayoola/envvault</h3>
                                     <span class="text-xs font-mono dark:text-zinc-400 text-zinc-600">v1.1.0 • npm package</span>
                                 </div>
-                                <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="text-slate-400 hover:text-emerald-400 text-xl">
+                                <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-emerald-400 text-xl">
                                     <i class="fa-brands fa-npm text-red-500"></i>
                                 </a>
                             </div>
@@ -655,8 +639,8 @@
                             <span class="px-2 py-0.5 rounded dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200">Git Hooks</span>
                         </div>
                         <div class="flex items-center gap-4 text-xs font-mono pt-2 border-t dark:border-zinc-800 border-zinc-200">
-                            <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
-                            <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository</a>
+                            <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 hover:underline">npm Package</a>
+                            <a href="https://github.com/Ayoola-tech2024/envvault" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 hover:underline">GitHub Repository</a>
                         </div>
                     </div>
                 </div>
@@ -673,7 +657,7 @@
                     </h2>
                     <p class="dark:text-zinc-400 text-zinc-600 text-sm">Real-time biometrics, digital platforms, and corporate client systems.</p>
                 </div>
-                <a href="projects.html" class="inline-flex items-center gap-2 text-xs font-mono dark:text-white text-zinc-900 hover:underline">
+                <a href="/projects" class="inline-flex items-center gap-2 text-xs font-mono dark:text-white text-zinc-900 hover:underline">
                     View Full Specs Catalog →
                 </a>
             </div>
@@ -683,7 +667,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 bg-zinc-900 overflow-hidden relative">
-                            <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover image" class="w-full h-full object-cover">
+                            <img src="cover images/checkin-cover-photo.jpg" alt="checkIn cover image" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-5 space-y-2">
                             <span class="text-[10px] font-mono text-cyan-500 font-bold uppercase">Biometric 3D AI</span>
@@ -692,8 +676,8 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0 border-t dark:border-zinc-800/80 border-zinc-200 mt-2 flex items-center justify-between">
-                        <a href="https://checkin-futa.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live App →</a>
-                        <a href="projects.html" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
+                        <a href="https://checkin-futa.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live App →</a>
+                        <a href="/projects" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
                     </div>
                 </div>
 
@@ -701,7 +685,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 bg-zinc-900 overflow-hidden relative">
-                            <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-full object-cover">
+                            <img src="cover images/Memodams.jpg" alt="Memodams screenshot" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-5 space-y-2">
                             <span class="text-[10px] font-mono text-amber-500 font-bold uppercase">Note-Taking Workspace</span>
@@ -710,8 +694,8 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0 border-t dark:border-zinc-800/80 border-zinc-200 mt-2 flex items-center justify-between">
-                        <a href="https://memo-dams.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live App →</a>
-                        <a href="projects.html" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
+                        <a href="https://memo-dams.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live App →</a>
+                        <a href="/projects" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
                     </div>
                 </div>
 
@@ -719,7 +703,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 bg-zinc-900 overflow-hidden relative">
-                            <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert screenshot" class="w-full h-full object-cover">
+                            <img src="cover images/Paul Hilpert Consultancy.jpg" alt="Paul Hilpert screenshot" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-5 space-y-2">
                             <span class="text-[10px] font-mono text-blue-500 font-bold uppercase">Corporate Strategy</span>
@@ -728,8 +712,8 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0 border-t dark:border-zinc-800/80 border-zinc-200 mt-2 flex items-center justify-between">
-                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
-                        <a href="projects.html" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
+                        <a href="https://ayoola-tech2024.github.io/paulhilpertconsultancy/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
+                        <a href="/projects" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
                     </div>
                 </div>
 
@@ -737,7 +721,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 bg-zinc-900 overflow-hidden relative">
-                            <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella screenshot" class="w-full h-full object-cover">
+                            <img src="cover images/Tee Stella Stitches.jpg" alt="Tee Stella screenshot" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-5 space-y-2">
                             <span class="text-[10px] font-mono text-rose-500 font-bold uppercase">Fashion E-Commerce</span>
@@ -746,8 +730,8 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0 border-t dark:border-zinc-800/80 border-zinc-200 mt-2 flex items-center justify-between">
-                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
-                        <a href="projects.html" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
+                        <a href="https://tee-stella-luxury-site.vercel.app" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
+                        <a href="/projects" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
                     </div>
                 </div>
 
@@ -755,7 +739,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 bg-zinc-900 overflow-hidden relative flex items-center justify-center p-4">
-                            <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-36 object-contain">
+                            <img src="resources/Afss Logo.png" alt="AFSS Logo" class="max-h-36 object-contain" loading="lazy" decoding="async">
                         </div>
                         <div class="p-5 space-y-2">
                             <span class="text-[10px] font-mono text-purple-500 font-bold uppercase">Digital Publishing</span>
@@ -764,8 +748,8 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0 border-t dark:border-zinc-800/80 border-zinc-200 mt-2 flex items-center justify-between">
-                        <a href="https://afss-set2024-25.onrender.com" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
-                        <a href="projects.html" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
+                        <a href="https://afss-set2024-25.onrender.com" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
+                        <a href="/projects" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
                     </div>
                 </div>
 
@@ -773,7 +757,7 @@
                 <div class="bento-card overflow-hidden flex flex-col justify-between">
                     <div>
                         <div class="h-44 bg-zinc-900 overflow-hidden relative">
-                            <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs screenshot" class="w-full h-full object-cover">
+                            <img src="cover images/Damiqueen Designs.jpg" alt="Damiqueen Designs screenshot" class="w-full h-full object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="p-5 space-y-2">
                             <span class="text-[10px] font-mono text-pink-500 font-bold uppercase">Creative Design</span>
@@ -782,14 +766,14 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0 border-t dark:border-zinc-800/80 border-zinc-200 mt-2 flex items-center justify-between">
-                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
-                        <a href="projects.html" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
+                        <a href="https://ayoola-tech2024.github.io/damiqueendesigns/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono dark:text-white text-zinc-900 underline font-semibold">Live Site →</a>
+                        <a href="/projects" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">Specs Catalog</a>
                     </div>
                 </div>
             </div>
 
             <div class="pt-4 text-center">
-                <a href="projects.html" class="px-6 py-3 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-200 text-zinc-800 hover:underline inline-flex items-center gap-2">
+                <a href="/projects" class="px-6 py-3 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-200 text-zinc-800 hover:underline inline-flex items-center gap-2">
                     Open Full Projects Specification Page <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -916,10 +900,10 @@
                         Alongside software development, I am a classical pianist and keyboard accompanist. I perform classical pieces, Bach fugues, and offer structured piano training for students interested in developing keyboard skills, sight-reading, and music theory.
                     </p>
                     <div class="pt-2 flex flex-wrap gap-3 text-xs font-mono">
-                        <a href="music.html" class="px-4 py-2.5 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold flex items-center gap-2 hover:opacity-90">
+                        <a href="/music" class="px-4 py-2.5 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold flex items-center gap-2 hover:opacity-90">
                             View Music Showcase <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'm%20interested%20in%20your%20piano%20training%20lessons." target="_blank" class="px-4 py-2.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 flex items-center gap-2 hover:underline">
+                        <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'm%20interested%20in%20your%20piano%20training%20lessons." target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 flex items-center gap-2 hover:underline">
                             <i class="fa-brands fa-whatsapp text-emerald-500"></i> Inquire for Piano Lessons
                         </a>
                     </div>
@@ -927,7 +911,7 @@
 
                 <div class="md:col-span-5">
                     <div class="rounded-xl overflow-hidden border dark:border-zinc-800 border-zinc-200 shadow-lg">
-                        <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Classical Pianist" class="w-full h-60 object-cover object-top hover:scale-105 transition-transform duration-300">
+                        <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Classical Pianist" class="w-full h-60 object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -950,19 +934,19 @@
                             </div>
                             <div>
                                 <span class="text-zinc-500 block">WhatsApp Direct:</span>
-                                <a href="https://wa.me/2348169787869" target="_blank" class="dark:text-white text-zinc-900 hover:underline">+234 816 978 7869</a>
+                                <a href="https://wa.me/2348169787869" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 hover:underline">+234 816 978 7869</a>
                             </div>
                             <div>
                                 <span class="text-zinc-500 block">GitHub Profile:</span>
-                                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-white text-zinc-900 hover:underline">@Ayoola-tech2024</a>
+                                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 hover:underline">@Ayoola-tech2024</a>
                             </div>
                             <div>
                                 <span class="text-zinc-500 block">npm Profile:</span>
-                                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="dark:text-white text-zinc-900 hover:underline">~damisile_ayoola</a>
+                                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 hover:underline">~damisile_ayoola</a>
                             </div>
                             <div>
                                 <span class="text-zinc-500 block">Résumé (PDF):</span>
-                                <a href="resources/Damisile-Ayoola-Resume.pdf" target="_blank" class="dark:text-white text-zinc-900 hover:underline">View / Download →</a>
+                                <a href="resources/Damisile-Ayoola-Resume.pdf" target="_blank" rel="noopener noreferrer" class="dark:text-white text-zinc-900 hover:underline">View / Download →</a>
                             </div>
                         </div>
                     </div>
@@ -1001,24 +985,24 @@
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
-                <a href="https://medium.com/@damisileayoola" target="_blank" class="hover:underline">Medium</a>
-                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" class="hover:underline">npm Profile</a>
-                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:underline">LinkedIn</a>
-                <a href="https://damisileayoola.cv" target="_blank" class="hover:underline">CV</a>
-                <a href="https://peerlist.io/damisileayoola" target="_blank" class="hover:underline">Peerlist</a>
-                <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" class="hover:underline">Credly</a>
-                <a href="https://www.crunchbase.com/person/ayoola-damisile" target="_blank" class="hover:underline">Crunchbase</a>
-                <a href="https://dev.to/damisile_ayoola" target="_blank" class="hover:underline">DEV</a>
-                <a href="https://x.com/damisiledev" target="_blank" class="hover:underline">X</a>
-                <a href="https://www.producthunt.com/@damisile_ayoola" target="_blank" class="hover:underline">Product Hunt</a>
-                <a href="https://substack.com/@ayooladamisile" target="_blank" class="hover:underline">Substack</a>
-                <a href="https://tryhackme.com/p/damisileayoola" target="_blank" class="hover:underline">TryHackMe</a>
-                <a href="https://www.duolingo.com/profile/Damisile" target="_blank" class="hover:underline">Duolingo</a>
-                <a href="projects.html" class="hover:underline">Projects Catalog</a>
-                <a href="blog.html" class="hover:underline">Blog</a>
-                <a href="resources/Damisile-Ayoola-Resume.pdf" target="_blank" class="hover:underline">Résumé</a>
-                <a href="music.html" class="hover:underline">Music & Piano Lessons</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+                <a href="https://medium.com/@damisileayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Medium</a>
+                <a href="https://www.npmjs.com/~damisile_ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">npm Profile</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+                <a href="https://damisileayoola.cv" target="_blank" rel="noopener noreferrer" class="hover:underline">CV</a>
+                <a href="https://peerlist.io/damisileayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Peerlist</a>
+                <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Credly</a>
+                <a href="https://www.crunchbase.com/person/ayoola-damisile" target="_blank" rel="noopener noreferrer" class="hover:underline">Crunchbase</a>
+                <a href="https://dev.to/damisile_ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">DEV</a>
+                <a href="https://x.com/damisiledev" target="_blank" rel="noopener noreferrer" class="hover:underline">X</a>
+                <a href="https://www.producthunt.com/@damisile_ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Product Hunt</a>
+                <a href="https://substack.com/@ayooladamisile" target="_blank" rel="noopener noreferrer" class="hover:underline">Substack</a>
+                <a href="https://tryhackme.com/p/damisileayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">TryHackMe</a>
+                <a href="https://www.duolingo.com/profile/Damisile" target="_blank" rel="noopener noreferrer" class="hover:underline">Duolingo</a>
+                <a href="/projects" class="hover:underline">Projects Catalog</a>
+                <a href="/blog" class="hover:underline">Blog</a>
+                <a href="resources/Damisile-Ayoola-Resume.pdf" target="_blank" rel="noopener noreferrer" class="hover:underline">Résumé</a>
+                <a href="/music" class="hover:underline">Music & Piano Lessons</a>
             </div>
         </div>
     </footer>

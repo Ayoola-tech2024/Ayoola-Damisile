@@ -6,9 +6,9 @@
     <title>Think Like an Attacker: Notes from IBM Cybersecurity Architecture — Ayoola Damisile</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
     <meta name="description" content="Threat modeling first, features second. What IBM's Cybersecurity Architecture certification changed about how I write backend code — and how it reshaped my open-source security tooling.">
-    <link rel="canonical" href="https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset.html">
+    <link rel="canonical" href="https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset.html">
+    <meta property="og:url" content="https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset">
     <meta property="og:title" content="Think Like an Attacker: Notes from IBM Cybersecurity Architecture">
     <meta property="og:description" content="Threat modeling first, features second — what IBM's Cybersecurity Architecture certification changed about how I write backend code.">
     <meta property="og:image" content="https://www.damisile.name.ng/resources/ibm-cybersecurity-architecture-certificate.png">
@@ -21,8 +21,8 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "@id": "https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset.html",
-      "mainEntityOfPage": "https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset.html",
+      "@id": "https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset",
+      "mainEntityOfPage": "https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset",
       "headline": "Think Like an Attacker: Notes from IBM Cybersecurity Architecture",
       "description": "Threat modeling first, features second — what IBM's Cybersecurity Architecture certification changed about how I write backend code.",
       "image": "https://www.damisile.name.ng/resources/ibm-cybersecurity-architecture-certificate.png",
@@ -52,24 +52,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#08080a',
-                        darkCard: '#101014'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="resources/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -122,32 +105,33 @@
             background: #f1f5f9;
         }
     </style>
+    <meta name="theme-color" content="#08080a">
 </head>
 <body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
+            <a href="/" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
                 <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
                 <span class="hidden sm:inline">Ayoola Damisile</span>
                 <span class="sm:hidden">Ayoola</span>
             </a>
 
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium dark:text-zinc-400 text-zinc-600">
-                <a href="index.html#home" class="hover:underline">Home</a>
-                <a href="index.html#open-source" class="hover:underline">Open Source</a>
-                <a href="projects.html" class="hover:underline">Projects Catalog</a>
-                <a href="blog.html" class="dark:text-white text-zinc-900 font-semibold">Blog</a>
-                <a href="music.html" class="hover:underline">Music & Training</a>
-                <a href="index.html#contact" class="hover:underline">Contact</a>
+                <a href="/#home" class="hover:underline">Home</a>
+                <a href="/#open-source" class="hover:underline">Open Source</a>
+                <a href="/projects" class="hover:underline">Projects Catalog</a>
+                <a href="/blog" class="dark:text-white text-zinc-900 font-semibold">Blog</a>
+                <a href="/music" class="hover:underline">Music & Training</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-3">
                 <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
                     <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
                 </button>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
@@ -158,18 +142,18 @@
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
-            <a href="index.html#home" class="block">Home</a>
-            <a href="index.html#open-source" class="block">Open Source</a>
-            <a href="projects.html" class="block">Projects Catalog</a>
-            <a href="blog.html" class="block font-semibold">Blog</a>
-            <a href="music.html" class="block">Music & Training</a>
-            <a href="index.html#contact" class="block">Contact</a>
+            <a href="/#home" class="block">Home</a>
+            <a href="/#open-source" class="block">Open Source</a>
+            <a href="/projects" class="block">Projects Catalog</a>
+            <a href="/blog" class="block font-semibold">Blog</a>
+            <a href="/music" class="block">Music & Training</a>
+            <a href="/#contact" class="block">Contact</a>
         </div>
     </header>
 
     <!-- ARTICLE -->
     <main class="pt-28 pb-20 px-4 sm:px-6 max-w-3xl mx-auto">
-        <a href="blog.html" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">← All essays</a>
+        <a href="/blog" class="text-xs font-mono dark:text-zinc-400 text-zinc-600 hover:underline">← All essays</a>
 
         <div class="mt-4 space-y-4">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 text-xs font-mono dark:text-zinc-300 text-zinc-700">
@@ -181,11 +165,11 @@
             </h1>
 
             <p class="text-sm font-mono dark:text-zinc-400 text-zinc-600">
-                By <a href="index.html" class="underline">Ayoola Damisile</a> · Software engineer and classical pianist · 13 Oct 2026 · 4 min read
+                By <a href="/" class="underline">Ayoola Damisile</a> · Software engineer and classical pianist · 13 Oct 2026 · 4 min read
             </p>
 
             <div class="rounded-2xl overflow-hidden border dark:border-zinc-800 border-zinc-300">
-                <img src="resources/ibm-cybersecurity-architecture-certificate.png" alt="IBM Cybersecurity Architecture course certificate issued to Ayoola Damisile via Coursera, October 2026" class="w-full object-cover">
+                <img src="resources/ibm-cybersecurity-architecture-certificate.png" alt="IBM Cybersecurity Architecture course certificate issued to Ayoola Damisile via Coursera, October 2026" class="w-full object-cover" decoding="async" fetchpriority="high">
             </div>
             <p class="text-xs font-mono dark:text-zinc-500 text-zinc-500">My IBM Cybersecurity Architecture certificate (Oct 2026) — verifiable at coursera.org/verify/83Z8PYF1AZ8H.</p>
         </div>
@@ -207,16 +191,16 @@
 
             <h2>Applied immediately</h2>
 
-            <p>I took the new lens straight to <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="underline">envvault</a>, my open-source secrets manager: AES-256-GCM encryption, memory-only secrets, a pre-commit hook that blocks plaintext leaks before push. The course didn't just validate those choices — it gave me the vocabulary to explain <em>why</em> each layer exists, which is what turns a tool into a trustworthy one.</p>
+            <p>I took the new lens straight to <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener noreferrer" class="underline">envvault</a>, my open-source secrets manager: AES-256-GCM encryption, memory-only secrets, a pre-commit hook that blocks plaintext leaks before push. The course didn't just validate those choices — it gave me the vocabulary to explain <em>why</em> each layer exists, which is what turns a tool into a trustworthy one.</p>
 
-            <p>If you are a developer wondering whether security certifications are worth the hours: the credential opens doors, but the mindset pays rent every single day. Start with one habit — model the threats before you write the code. My full learning path, including Google AI credentials, is on <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="underline">LinkedIn</a> and <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" class="underline">Credly</a>.</p>
+            <p>If you are a developer wondering whether security certifications are worth the hours: the credential opens doors, but the mindset pays rent every single day. Start with one habit — model the threats before you write the code. My full learning path, including Google AI credentials, is on <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="underline">LinkedIn</a> and <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" rel="noopener noreferrer" class="underline">Credly</a>.</p>
         </article>
 
         <div class="mt-10 p-6 rounded-2xl bento-card flex flex-col sm:flex-row items-start gap-4">
-            <img src="resources/ayoola-damisile-frontend-developer.webp" alt="Ayoola Damisile" class="w-16 h-16 rounded-xl object-cover object-top">
+            <img src="resources/ayoola-damisile-frontend-developer.webp" alt="Ayoola Damisile" class="w-16 h-16 rounded-xl object-cover object-top" loading="lazy" decoding="async">
             <div class="text-sm">
                 <p class="font-bold dark:text-white text-zinc-900">Ayoola Damisile</p>
-                <p class="dark:text-zinc-400 text-zinc-600 mt-1">Software engineer and classical pianist. IBM-certified Cybersecurity Architect, open-source author of <a href="https://www.npmjs.com/package/fixmcp" target="_blank" class="underline">fixmcp</a> and <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" class="underline">envvault</a>, BIT student at FUTA.</p>
+                <p class="dark:text-zinc-400 text-zinc-600 mt-1">Software engineer and classical pianist. IBM-certified Cybersecurity Architect, open-source author of <a href="https://www.npmjs.com/package/fixmcp" target="_blank" rel="noopener noreferrer" class="underline">fixmcp</a> and <a href="https://www.npmjs.com/package/@damisile_ayoola/envvault" target="_blank" rel="noopener noreferrer" class="underline">envvault</a>, BIT student at FUTA.</p>
             </div>
         </div>
     </main>
@@ -226,10 +210,10 @@
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
-                <a href="blog.html" class="hover:underline">Blog</a>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
-                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:underline">LinkedIn</a>
-                <a href="index.html#contact" class="hover:underline">Contact</a>
+                <a href="/blog" class="hover:underline">Blog</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
             </div>
         </div>
     </footer>

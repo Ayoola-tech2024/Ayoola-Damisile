@@ -6,7 +6,7 @@
     <title>Ayoola Damisile — Classical Pianist, Accompanist & Piano Tutor</title>
     <link rel="icon" href="resources/ayoola-damisile-frontend-developer.webp" type="image/webp">
     <meta name="description" content="Classical piano performance, polyphonic Bach fugues, Chopin nocturnes, choir accompaniment, and piano training lessons by Ayoola Damisile. Classical musician & pianist.">
-    <link rel="canonical" href="https://www.damisile.name.ng/music.html">
+    <link rel="canonical" href="https://www.damisile.name.ng/music">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ayoola Damisile — Classical Pianist, Accompanist & Piano Tutor">
     <meta property="og:description" content="Classical piano performance, J.S. Bach fugues, choir accompaniment, and piano training lessons by Ayoola Damisile.">
@@ -19,8 +19,8 @@
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://www.damisile.name.ng/music.html#webpage",
-          "url": "https://www.damisile.name.ng/music.html",
+          "@id": "https://www.damisile.name.ng/music#webpage",
+          "url": "https://www.damisile.name.ng/music",
           "name": "Ayoola Damisile — Classical Pianist, Accompanist & Piano Tutor",
           "description": "Classical piano performance, choir accompaniment, and piano lessons by Ayoola Damisile, software engineer and classical pianist.",
           "inLanguage": "en",
@@ -61,24 +61,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#08080a',
-                        darkCard: '#101014'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="resources/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -108,33 +91,34 @@
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
     </style>
+    <meta name="theme-color" content="#08080a">
 </head>
 <body class="antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black">
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 dark:bg-[#08080a]/90 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 border-zinc-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
+            <a href="/" class="font-bold tracking-tight text-lg dark:text-white text-zinc-900 hover:opacity-80 transition-opacity flex items-center gap-2 min-w-0">
                 <span class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-white dark:text-black text-white font-mono font-bold text-xs flex items-center justify-center">AD</span>
                 <span class="hidden sm:inline">Ayoola Damisile</span>
                 <span class="sm:hidden">Ayoola</span>
             </a>
 
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium dark:text-zinc-400 text-zinc-600">
-                <a href="index.html#home" class="hover:underline">Home</a>
-                <a href="index.html#about" class="hover:underline">About</a>
-                <a href="index.html#open-source" class="hover:underline">Open Source</a>
-                <a href="projects.html" class="hover:underline">Projects Catalog</a>
-                <a href="blog.html" class="hover:underline">Blog</a>
-                <a href="music.html" class="dark:text-white text-zinc-900 font-semibold">Music Showcase & Training</a>
-                <a href="index.html#contact" class="hover:underline">Contact</a>
+                <a href="/#home" class="hover:underline">Home</a>
+                <a href="/#about" class="hover:underline">About</a>
+                <a href="/#open-source" class="hover:underline">Open Source</a>
+                <a href="/projects" class="hover:underline">Projects Catalog</a>
+                <a href="/blog" class="hover:underline">Blog</a>
+                <a href="/music" class="dark:text-white text-zinc-900 font-semibold">Music Showcase & Training</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-3">
                 <button class="theme-toggle-btn w-9 h-9 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 flex items-center justify-center transition-all" title="Toggle Theme">
                     <i class="theme-toggle-icon fa-solid fa-sun text-amber-400"></i>
                 </button>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="dark:text-zinc-400 text-zinc-600 text-lg p-1">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
@@ -145,13 +129,13 @@
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden dark:bg-[#08080a] bg-white border-b dark:border-zinc-800 border-zinc-200 px-6 py-4 space-y-3 text-sm dark:text-zinc-300 text-zinc-700">
-            <a href="index.html#home" class="block">Home</a>
-            <a href="index.html#about" class="block">About</a>
-            <a href="index.html#open-source" class="block">Open Source</a>
-            <a href="projects.html" class="block">Projects Catalog</a>
-            <a href="blog.html" class="block">Blog</a>
-            <a href="music.html" class="block font-semibold">Music & Training</a>
-            <a href="index.html#contact" class="block">Contact</a>
+            <a href="/#home" class="block">Home</a>
+            <a href="/#about" class="block">About</a>
+            <a href="/#open-source" class="block">Open Source</a>
+            <a href="/projects" class="block">Projects Catalog</a>
+            <a href="/blog" class="block">Blog</a>
+            <a href="/music" class="block font-semibold">Music & Training</a>
+            <a href="/#contact" class="block">Contact</a>
         </div>
     </header>
 
@@ -167,17 +151,17 @@
                     Ayoola Damisile is a classical pianist, keyboard accompanist, and music tutor. He performs classical piano pieces, polyphonic Bach fugues, accompanies choir rehearsals, and offers structured piano training lessons.
                 </p>
                 <div class="flex flex-wrap gap-3 pt-2 text-xs font-mono">
-                    <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'm%20interested%20in%20your%20piano%20training%20lessons." target="_blank" class="px-5 py-3 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold flex items-center gap-2 hover:opacity-90">
+                    <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'm%20interested%20in%20your%20piano%20training%20lessons." target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold flex items-center gap-2 hover:opacity-90">
                         <i class="fa-brands fa-whatsapp text-emerald-500"></i> Inquire for Piano Lessons
                     </a>
-                    <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'd%20like%20to%20discuss%20a%20piano%20performance%20or%20choral%20accompaniment." target="_blank" class="px-5 py-3 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 font-semibold flex items-center gap-2 hover:underline">
+                    <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'd%20like%20to%20discuss%20a%20piano%20performance%20or%20choral%20accompaniment." target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-lg dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-300 dark:text-zinc-200 text-zinc-800 font-semibold flex items-center gap-2 hover:underline">
                         <i class="fa-solid fa-music text-purple-400"></i> Book Performance / Accompaniment
                     </a>
                 </div>
             </div>
 
             <div class="md:col-span-5 rounded-2xl overflow-hidden border dark:border-zinc-800 border-zinc-300 shadow-2xl">
-                <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Classical Pianist" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-300">
+                <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Classical Pianist" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-300" decoding="async" fetchpriority="high">
             </div>
         </div>
     </section>
@@ -195,7 +179,7 @@
             
             <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                 <div class="h-60 bg-zinc-900 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Ayooluwa - Classical Pianist" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                    <img src="resources/Ayoola-Damisile-Ayooluwa.jpg" alt="Ayoola Damisile Ayooluwa - Classical Pianist" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-base font-bold dark:text-white text-zinc-900">Classical Pianist & Accompanist</h3>
@@ -207,7 +191,7 @@
 
             <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                 <div class="h-60 bg-zinc-900 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/piano-1.jpg" alt="Polyphonic Piano Performance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <img src="resources/piano-1.jpg" alt="Polyphonic Piano Performance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-base font-bold dark:text-white text-zinc-900">Polyphonic Piano</h3>
@@ -219,7 +203,7 @@
 
             <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                 <div class="h-60 bg-zinc-900 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/piano-2.jpg" alt="Classical Recital Performance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <img src="resources/piano-2.jpg" alt="Classical Recital Performance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-base font-bold dark:text-white text-zinc-900">Classical Piano Performance</h3>
@@ -231,7 +215,7 @@
 
             <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                 <div class="h-60 bg-zinc-900 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/piano-3.jpg" alt="Choral Accompaniment" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    <img src="resources/piano-3.jpg" alt="Choral Accompaniment" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-base font-bold dark:text-white text-zinc-900">Choral Accompaniment</h3>
@@ -243,7 +227,7 @@
 
             <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                 <div class="h-60 bg-zinc-900 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/ayoola-damisile-frontend-developer.webp" alt="Ayoola Damisile Profile" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                    <img src="resources/ayoola-damisile-frontend-developer.webp" alt="Ayoola Damisile Profile" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-base font-bold dark:text-white text-zinc-900">Ayoola Damisile</h3>
@@ -256,7 +240,7 @@
             <!-- Card 6: Updated with personal-portrait.jpg -->
             <div class="bento-card rounded-2xl overflow-hidden space-y-3 p-4 flex flex-col justify-between">
                 <div class="h-60 bg-zinc-900 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200">
-                    <img src="resources/personal-portrait.jpg" alt="Ayoola Damisile Ayooluwa Personal Portrait" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                    <img src="resources/personal-portrait.jpg" alt="Ayoola Damisile Ayooluwa Personal Portrait" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-base font-bold dark:text-white text-zinc-900">Ayoola Damisile Ayooluwa</h3>
@@ -278,7 +262,7 @@
                 Ayoola Damisile offers structured classical piano lessons, sight-reading practice, keyboard technique coaching, and foundational music theory for students looking to develop their piano skills.
             </p>
             <div class="pt-2">
-                <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'm%20interested%20in%20your%20piano%20training%20lessons." target="_blank" class="px-5 py-3 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold text-xs font-mono inline-flex items-center gap-2 hover:opacity-90">
+                <a href="https://wa.me/2348169787869?text=Hi%20Ayoola!%20I'm%20interested%20in%20your%20piano%20training%20lessons." target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-lg dark:bg-white bg-zinc-900 dark:text-black text-white font-semibold text-xs font-mono inline-flex items-center gap-2 hover:opacity-90">
                     <i class="fa-brands fa-whatsapp text-emerald-500"></i> Direct Inquiry for Piano Lessons on WhatsApp →
                 </a>
             </div>
@@ -319,14 +303,14 @@
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
             <div>© 2026 Ayoola Damisile. All rights reserved.</div>
             <div class="flex items-center gap-6">
-                <a href="index.html" class="hover:underline">Home</a>
-                <a href="projects.html" class="hover:underline">Projects Catalog</a>
-                <a href="https://github.com/Ayoola-tech2024" target="_blank" class="hover:underline">GitHub</a>
-                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" class="hover:underline">LinkedIn</a>
-                <a href="https://damisileayoola.cv" target="_blank" class="hover:underline">CV</a>
-                <a href="https://peerlist.io/damisileayoola" target="_blank" class="hover:underline">Peerlist</a>
-                <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" class="hover:underline">Credly</a>
-                <a href="index.html#contact" class="hover:underline">Contact</a>
+                <a href="/" class="hover:underline">Home</a>
+                <a href="/projects" class="hover:underline">Projects Catalog</a>
+                <a href="https://github.com/Ayoola-tech2024" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+                <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+                <a href="https://damisileayoola.cv" target="_blank" rel="noopener noreferrer" class="hover:underline">CV</a>
+                <a href="https://peerlist.io/damisileayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Peerlist</a>
+                <a href="https://www.credly.com/users/damisile-ayoola" target="_blank" rel="noopener noreferrer" class="hover:underline">Credly</a>
+                <a href="/#contact" class="hover:underline">Contact</a>
             </div>
         </div>
     </footer>
