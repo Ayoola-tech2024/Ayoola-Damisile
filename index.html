@@ -16,81 +16,144 @@
     <meta property="og:image" content="https://www.damisile.name.ng/resources/ayoola-damisile-frontend-developer.webp">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Google Structured Schema (Person & Image Indexing) -->
+    <!-- Google Structured Schema: unified entity graph (ProfilePage + Person + primary image) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://www.wikidata.org/wiki/Q141703795",
-      "name": "Ayoola Damisile",
-      "alternateName": ["Damisile Ayoola", "Ayoola Damisile Ayooluwa", "Ayoola Damisile FUTA"],
-      "description": "Software engineer and classical pianist",
-      "url": "https://www.damisile.name.ng/",
-      "image": [
-        "https://www.damisile.name.ng/resources/ayoola-damisile-recent-portrait.jpg",
-        "https://www.damisile.name.ng/resources/ayoola-damisile-formal-pianist.jpg",
-        "https://www.damisile.name.ng/resources/ayoola-damisile-frontend-developer.webp",
-        "https://www.damisile.name.ng/resources/Ayoola-Damisile-Ayooluwa.jpg",
-        "https://www.damisile.name.ng/resources/personal-portrait.jpg"
-      ],
-      "jobTitle": "Full-Stack Software Engineer & Classical Pianist",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "LIGHTSUP ENERGY SOLUTIONS",
-        "url": "https://www.lightsupenergy.com",
-        "jobTitle": "Lead Developer"
-      },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Federal University of Technology Akure",
-        "sameAs": "https://en.wikipedia.org/wiki/Federal_University_of_Technology_Akure"
-      },
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q141703795",
-        "https://damisileayoola.cv",
-        "https://peerlist.io/damisileayoola",
-        "https://www.credly.com/users/damisile-ayoola",
-        "https://www.producthunt.com/@damisile_ayoola",
-        "https://substack.com/@ayooladamisile",
-        "https://tryhackme.com/p/damisileayoola",
-        "https://www.duolingo.com/profile/Damisile",
-        "https://news.ycombinator.com/user?id=damisile_ayoola",
-        "https://www.facebook.com/damisile.ayoola/",
-        "https://www.youtube.com/@damisile_ayoola",
-        "https://www.youtube.com/channel/UCL5WghVfIKkcGNelI0OpX8g",
-        "https://github.com/Ayoola-tech2024",
-        "https://www.linkedin.com/in/damisile-ayoola-096a7b382",
-        "https://x.com/damisiledev",
-        "https://www.npmjs.com/~damisile_ayoola",
-        "https://github.com/Creditra/Creditra-Frontend",
-        "https://committers.top/nigeria.html",
-        "https://contribute.grantfox.xyz/public/profile/Ayoola-tech2024",
-        "https://loop.frontiersin.org/people/3228692/impact",
-        "https://www.boomplay.com/users/179083470",
-        "https://dev.to/damisile_ayoola",
-        "https://martechafrica.com/experts/ayoola-damisile/",
-        "https://gitsocial.space/passport/ayoola-tech2024",
-        "https://www.instagram.com/damisile_ayoola/",
-        "https://www.crunchbase.com/person/ayoola-damisile",
-        "https://devpost.com/Ayoola-tech2024",
-        "https://medium.com/@damisileayoola"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.damisile.name.ng/#website",
+          "url": "https://www.damisile.name.ng/",
+          "name": "Ayoola Damisile",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://www.damisile.name.ng/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://www.damisile.name.ng/#webpage",
+          "url": "https://www.damisile.name.ng/",
+          "name": "Ayoola Damisile — Full-Stack Software Engineer & Classical Pianist",
+          "description": "Official website of Ayoola Damisile, software engineer and classical pianist.",
+          "inLanguage": "en",
+          "dateModified": "2026-10-23",
+          "isPartOf": { "@id": "https://www.damisile.name.ng/#website" },
+          "about": { "@id": "https://www.damisile.name.ng/#person" },
+          "mainEntity": { "@id": "https://www.damisile.name.ng/#person" },
+          "primaryImageOfPage": { "@id": "https://www.damisile.name.ng/#primaryimage" }
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://www.damisile.name.ng/#primaryimage",
+          "url": "https://www.damisile.name.ng/resources/ayoola-damisile-formal-pianist.jpg",
+          "contentUrl": "https://www.damisile.name.ng/resources/ayoola-damisile-formal-pianist.jpg",
+          "width": 768,
+          "height": 1024,
+          "caption": "Ayoola Damisile",
+          "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Ayoola_Damisile_portrait_2026.jpg",
+          "creditText": "Ayoola Damisile",
+          "creator": { "@id": "https://www.damisile.name.ng/#person" },
+          "copyrightNotice": "Ayoola Damisile, CC BY-SA 4.0",
+          "sameAs": "https://commons.wikimedia.org/wiki/File:Ayoola_Damisile_portrait_2026.jpg"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.damisile.name.ng/#person",
+          "name": "Ayoola Damisile",
+          "givenName": "Ayoola",
+          "familyName": "Damisile",
+          "additionalName": "Ayooluwa",
+          "alternateName": ["Damisile Ayoola", "Ayoola Damisile Ayooluwa"],
+          "description": "Software engineer and classical pianist",
+          "disambiguatingDescription": "Nigerian full-stack software engineer, open-source author of fixmcp and envvault, and classical pianist.",
+          "url": "https://www.damisile.name.ng/",
+          "mainEntityOfPage": { "@id": "https://www.damisile.name.ng/#webpage" },
+          "image": [
+            { "@id": "https://www.damisile.name.ng/#primaryimage" },
+            "https://www.damisile.name.ng/resources/ayoola-damisile-recent-portrait.jpg",
+            "https://www.damisile.name.ng/resources/Ayoola-Damisile-Ayooluwa.jpg"
+          ],
+          "gender": "Male",
+          "nationality": {
+            "@type": "Country",
+            "name": "Nigeria",
+            "sameAs": "https://www.wikidata.org/wiki/Q1033"
+          },
+          "jobTitle": "Full-Stack Software Engineer",
+          "hasOccupation": [
+            {
+              "@type": "Occupation",
+              "name": "Software engineer",
+              "sameAs": "https://www.wikidata.org/wiki/Q1709010",
+              "occupationLocation": { "@type": "Country", "name": "Nigeria" },
+              "skills": "TypeScript, Next.js, React, Node.js, PostgreSQL, Python, developer tooling, application security"
+            },
+            {
+              "@type": "Occupation",
+              "name": "Pianist",
+              "sameAs": "https://www.wikidata.org/wiki/Q486748",
+              "occupationLocation": { "@type": "Country", "name": "Nigeria" },
+              "skills": "Classical piano performance, choral accompaniment, piano instruction"
+            }
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "LIGHTSUP ENERGY SOLUTIONS",
+            "url": "https://www.lightsupenergy.com"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Federal University of Technology Akure",
+            "sameAs": [
+              "https://www.wikidata.org/wiki/Q5440486",
+              "https://en.wikipedia.org/wiki/Federal_University_of_Technology_Akure"
+            ]
+          },
+          "knowsAbout": [
+            { "@type": "Thing", "name": "Software engineering", "sameAs": "https://www.wikidata.org/wiki/Q80993" },
+            { "@type": "Thing", "name": "Computer security", "sameAs": "https://www.wikidata.org/wiki/Q3510521" },
+            { "@type": "Thing", "name": "Information technology", "sameAs": "https://www.wikidata.org/wiki/Q11661" },
+            { "@type": "Thing", "name": "Classical music", "sameAs": "https://www.wikidata.org/wiki/Q9730" },
+            "TypeScript",
+            "Next.js",
+            "Model Context Protocol",
+            "Open-source developer tools"
+          ],
+          "knowsLanguage": [
+            { "@type": "Language", "name": "English", "sameAs": "https://www.wikidata.org/wiki/Q1860" },
+            { "@type": "Language", "name": "Yoruba", "sameAs": "https://www.wikidata.org/wiki/Q34311" }
+          ],
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q141703795",
+            "https://www.linkedin.com/in/damisile-ayoola-096a7b382",
+            "https://github.com/Ayoola-tech2024",
+            "https://x.com/damisiledev",
+            "https://www.npmjs.com/~damisile_ayoola",
+            "https://www.youtube.com/channel/UCL5WghVfIKkcGNelI0OpX8g",
+            "https://www.youtube.com/@damisile_ayoola",
+            "https://www.instagram.com/damisile_ayoola/",
+            "https://www.facebook.com/damisile.ayoola/",
+            "https://www.crunchbase.com/person/ayoola-damisile",
+            "https://medium.com/@damisileayoola",
+            "https://substack.com/@ayooladamisile",
+            "https://dev.to/damisile_ayoola",
+            "https://damisileayoola.cv",
+            "https://peerlist.io/damisileayoola",
+            "https://www.credly.com/users/damisile-ayoola",
+            "https://www.producthunt.com/@damisile_ayoola",
+            "https://devpost.com/Ayoola-tech2024",
+            "https://tryhackme.com/p/damisileayoola",
+            "https://news.ycombinator.com/user?id=damisile_ayoola",
+            "https://loop.frontiersin.org/people/3228692/impact",
+            "https://www.boomplay.com/users/179083470",
+            "https://martechafrica.com/experts/ayoola-damisile/",
+            "https://contribute.grantfox.xyz/public/profile/Ayoola-tech2024",
+            "https://gitsocial.space/passport/ayoola-tech2024",
+            "https://www.duolingo.com/profile/Damisile"
+          ]
+        }
       ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": "https://www.wikidata.org/wiki/Q141703795",
-      "url": "https://www.damisile.name.ng/",
-      "name": "Ayoola Damisile — Full-Stack Software Engineer & Classical Pianist",
-      "description": "Software engineer and classical pianist",
-      "inLanguage": "en",
-      "isPartOf": {
-        "@type": "WebSite",
-        "url": "https://www.damisile.name.ng/",
-        "name": "Ayoola Damisile"
-      }
     }
     </script>
 

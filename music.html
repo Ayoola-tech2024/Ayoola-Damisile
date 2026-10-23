@@ -12,23 +12,46 @@
     <meta property="og:description" content="Classical piano performance, J.S. Bach fugues, choir accompaniment, and piano training lessons by Ayoola Damisile.">
     <meta property="og:image" content="https://www.damisile.name.ng/resources/Ayoola-Damisile-Ayooluwa.jpg">
 
-    <!-- Google Structured Schema (Person & Music Indexing) -->
+    <!-- Google Structured Schema: music page about the same unified Person entity -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://www.wikidata.org/wiki/Q141703795",
-      "name": "Ayoola Damisile",
-      "alternateName": "Ayoola Damisile Ayooluwa",
-      "description": "Software engineer and classical pianist",
-      "url": "https://www.damisile.name.ng/music.html",
-      "image": [
-        "https://www.damisile.name.ng/resources/Ayoola-Damisile-Ayooluwa.jpg",
-        "https://www.damisile.name.ng/resources/personal-portrait.jpg",
-        "https://www.damisile.name.ng/resources/ayoola-damisile-frontend-developer.webp"
-      ],
-      "jobTitle": "Classical Pianist, Accompanist & Piano Tutor",
-      "genre": ["Classical Music", "Polyphonic Counterpoint", "Choral Accompaniment"]
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.damisile.name.ng/music.html#webpage",
+          "url": "https://www.damisile.name.ng/music.html",
+          "name": "Ayoola Damisile — Classical Pianist, Accompanist & Piano Tutor",
+          "description": "Classical piano performance, choir accompaniment, and piano lessons by Ayoola Damisile, software engineer and classical pianist.",
+          "inLanguage": "en",
+          "isPartOf": { "@id": "https://www.damisile.name.ng/#website" },
+          "about": { "@id": "https://www.damisile.name.ng/#person" },
+          "primaryImageOfPage": "https://www.damisile.name.ng/resources/Ayoola-Damisile-Ayooluwa.jpg"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.damisile.name.ng/#person",
+          "name": "Ayoola Damisile",
+          "alternateName": ["Damisile Ayoola", "Ayoola Damisile Ayooluwa"],
+          "description": "Software engineer and classical pianist",
+          "url": "https://www.damisile.name.ng/",
+          "image": [
+            "https://www.damisile.name.ng/resources/ayoola-damisile-formal-pianist.jpg",
+            "https://www.damisile.name.ng/resources/Ayoola-Damisile-Ayooluwa.jpg"
+          ],
+          "hasOccupation": [
+            { "@type": "Occupation", "name": "Software engineer", "sameAs": "https://www.wikidata.org/wiki/Q1709010" },
+            { "@type": "Occupation", "name": "Pianist", "sameAs": "https://www.wikidata.org/wiki/Q486748" }
+          ],
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q141703795",
+            "https://www.youtube.com/channel/UCL5WghVfIKkcGNelI0OpX8g",
+            "https://www.boomplay.com/users/179083470",
+            "https://www.linkedin.com/in/damisile-ayoola-096a7b382",
+            "https://github.com/Ayoola-tech2024"
+          ]
+        }
+      ]
     }
     </script>
 

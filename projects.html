@@ -8,6 +8,70 @@
     <meta name="description" content="Complete technical specifications catalog for Ayoola Damisile's engineering projects: fixmcp, @damisile_ayoola/envvault, checkIn biometrics, Memodams, and client web applications.">
     <link rel="canonical" href="https://www.damisile.name.ng/projects.html">
 
+    <!-- Google Structured Schema: projects authored by the unified Person entity -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://www.damisile.name.ng/projects.html#webpage",
+          "url": "https://www.damisile.name.ng/projects.html",
+          "name": "Ayoola Damisile — Engineering Projects Catalog",
+          "inLanguage": "en",
+          "isPartOf": { "@id": "https://www.damisile.name.ng/#website" },
+          "about": { "@id": "https://www.damisile.name.ng/#person" },
+          "author": { "@id": "https://www.damisile.name.ng/#person" },
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "item": { "@id": "https://github.com/Ayoola-tech2024/fixmcp" } },
+              { "@type": "ListItem", "position": 2, "item": { "@id": "https://github.com/Ayoola-tech2024/envvault" } }
+            ]
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://github.com/Ayoola-tech2024/fixmcp",
+          "name": "fixmcp",
+          "description": "Diagnostic and auto-fix CLI for Model Context Protocol (MCP) server configurations across AI coding agents.",
+          "codeRepository": "https://github.com/Ayoola-tech2024/fixmcp",
+          "programmingLanguage": "JavaScript",
+          "runtimePlatform": "Node.js",
+          "license": "https://opensource.org/licenses/MIT",
+          "sameAs": "https://www.npmjs.com/package/fixmcp",
+          "author": { "@id": "https://www.damisile.name.ng/#person" }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://github.com/Ayoola-tech2024/envvault",
+          "name": "envvault",
+          "alternateName": "@damisile_ayoola/envvault",
+          "description": "Zero-dependency AES-256-GCM encrypted secrets manager with in-memory environment injection.",
+          "codeRepository": "https://github.com/Ayoola-tech2024/envvault",
+          "programmingLanguage": "JavaScript",
+          "runtimePlatform": "Node.js",
+          "sameAs": "https://www.npmjs.com/package/@damisile_ayoola/envvault",
+          "author": { "@id": "https://www.damisile.name.ng/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.damisile.name.ng/#person",
+          "name": "Ayoola Damisile",
+          "url": "https://www.damisile.name.ng/",
+          "description": "Software engineer and classical pianist",
+          "image": "https://www.damisile.name.ng/resources/ayoola-damisile-formal-pianist.jpg",
+          "sameAs": [
+            "https://www.wikidata.org/wiki/Q141703795",
+            "https://github.com/Ayoola-tech2024",
+            "https://www.npmjs.com/~damisile_ayoola",
+            "https://www.linkedin.com/in/damisile-ayoola-096a7b382"
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
