@@ -1,10 +1,10 @@
-# Ayoola Damisile — Software engineer and classical pianist
+# Ayoola Damisile — Full-Stack Software Engineer & Systems Architect
 
 > Official personal site and canonical entity home: https://www.damisile.name.ng/
 > Knowledge Graph: Ayoola Damisile (/g/11ynvpcp11) • Wikidata: https://www.wikidata.org/wiki/Q141703795
 
 ## Who
-Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian full-stack software engineer and classical pianist. Business Information Technology scholar at the Federal University of Technology Akure (FUTA). Lead Developer at LIGHTSUP ENERGY SOLUTIONS. IBM-certified Cybersecurity Architect (Oct 2026, credential 83Z8PYF1AZ8H) with Google AI Professional credentials. Open-source author of fixmcp and @damisile_ayoola/envvault on npm. Classical pianist, organist, and accompanist.
+Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian full-stack software engineer, systems architect, and open-source creator. Business Information Technology scholar at the Federal University of Technology Akure (FUTA). Lead Developer at LIGHTSUP ENERGY SOLUTIONS. IBM-certified Cybersecurity Architect (Oct 2026, credential 83Z8PYF1AZ8H) with Google AI Professional credentials. Open-source author of fixmcp and @damisile_ayoola/envvault on npm. Outside of software engineering, he is also an accomplished classical pianist, organist, and accompanist.
 
 ## Key pages
 - Home / entity hub: https://www.damisile.name.ng/

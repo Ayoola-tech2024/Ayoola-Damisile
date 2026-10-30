@@ -3,7 +3,9 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./resources/style.css --minify"
+    "build": "tailwindcss -i ./src/input.css -o ./resources/style.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./resources/style.css --watch",
+    "dev": "powershell -NoProfile -ExecutionPolicy Bypass -File ./serve.ps1"
   },
   "devDependencies": {
     "sharp": "^0.33.5",
