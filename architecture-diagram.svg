@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%" style="background: #0d1117; font-family: 'Inter', -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="100%" stop-color="#1967D2"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c2128"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34A853"/>
+      <stop offset="100%" stop-color="#4285F4"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Title & Subtitle -->
+  <text x="500" y="45" text-anchor="middle" fill="#FFFFFF" font-size="22" font-weight="700" letter-spacing="-0.3">Enterprise Google Cloud &amp; Edge FinTech Architecture</text>
+  <text x="500" y="70" text-anchor="middle" fill="#8B949E" font-size="13">Architect: Ayoola Damisile · Google Knowledge Graph: /g/11ynvpcp11 · BuySolar.ng CAC: 8168912</text>
+
+  <!-- Group 1: Ingestion & Edge Security -->
+  <rect x="40" y="100" width="260" height="460" rx="12" fill="url(#cardGrad)" stroke="#30363D" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="40" y="100" width="260" height="36" rx="12" fill="#21262d"/>
+  <text x="55" y="124" fill="#58A6FF" font-size="13" font-weight="600">1. INGESTION &amp; EDGE SECURITY</text>
+
+  <!-- Client Node -->
+  <rect x="60" y="155" width="220" height="60" rx="8" fill="#0d1117" stroke="#4285F4" stroke-width="1.2"/>
+  <text x="75" y="180" fill="#FFFFFF" font-size="13" font-weight="600">Client Traffic &amp; Webhooks</text>
+  <text x="75" y="200" fill="#8B949E" font-size="11">Mobile 4G, Paystack Webhooks</text>
+
+  <!-- Cloud Armor -->
+  <rect x="60" y="240" width="220" height="60" rx="8" fill="#0d1117" stroke="#30363D" stroke-width="1.2"/>
+  <text x="75" y="265" fill="#FFFFFF" font-size="13" font-weight="600">Cloud Armor &amp; Global LB</text>
+  <text x="75" y="285" fill="#8B949E" font-size="11">DDoS Mitigation · Managed SSL</text>
+
+  <!-- Cloud Run Gateway -->
+  <rect x="60" y="325" width="220" height="75" rx="8" fill="#0d1117" stroke="#34A853" stroke-width="1.2"/>
+  <text x="75" y="350" fill="#FFFFFF" font-size="13" font-weight="600">Cloud Run: Edge Gateway</text>
+  <text x="75" y="370" fill="#8B949E" font-size="11">682 Next.js Routes · Scale-to-Zero</text>
+  <text x="75" y="388" fill="#34A853" font-size="11" font-weight="500">HMAC SHA-512 Verification</text>
+
+  <!-- MediaPipe WASM -->
+  <rect x="60" y="425" width="220" height="60" rx="8" fill="#0d1117" stroke="#FBBC04" stroke-width="1.2"/>
+  <text x="75" y="450" fill="#FFFFFF" font-size="13" font-weight="600">MediaPipe WebAssembly</text>
+  <text x="75" y="470" fill="#8B949E" font-size="11">468 3D Landmarks · Zero Disk</text>
+
+  <!-- Group 2: Intelligence & Processing -->
+  <rect x="370" y="100" width="260" height="460" rx="12" fill="url(#cardGrad)" stroke="#30363D" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="370" y="100" width="260" height="36" rx="12" fill="#21262d"/>
+  <text x="385" y="124" fill="#34A853" font-size="13" font-weight="600">2. INTELLIGENCE &amp; EVENTS</text>
+
+  <!-- Vertex AI Primary -->
+  <rect x="390" y="155" width="220" height="80" rx="8" fill="#0d1117" stroke="#4285F4" stroke-width="1.5"/>
+  <text x="405" y="180" fill="#FFFFFF" font-size="13" font-weight="600">Vertex AI: Gemini 2.5 Flash</text>
+  <text x="405" y="200" fill="#8B949E" font-size="11">Primary: europe-west1</text>
+  <text x="405" y="218" fill="#58A6FF" font-size="11">Sub-800ms Multimodal Quoting</text>
+
+  <!-- Circuit Breaker -->
+  <rect x="390" y="260" width="220" height="70" rx="8" fill="#0d1117" stroke="#EA4335" stroke-width="1.2"/>
+  <text x="405" y="285" fill="#FFFFFF" font-size="13" font-weight="600">Circuit-Breaker Interceptor</text>
+  <text x="405" y="303" fill="#8B949E" font-size="11">Timeout &gt; 2200ms Trigger</text>
+  <text x="405" y="320" fill="#EA4335" font-size="11">Multi-Region us-central1 Failover</text>
+
+  <!-- Eventarc & Pub/Sub -->
+  <rect x="390" y="355" width="220" height="65" rx="8" fill="#0d1117" stroke="#30363D" stroke-width="1.2"/>
+  <text x="405" y="380" fill="#FFFFFF" font-size="13" font-weight="600">Eventarc &amp; Cloud Pub/Sub</text>
+  <text x="405" y="400" fill="#8B949E" font-size="11">Asynchronous Ledger Worker</text>
+
+  <!-- Cloud Trace & Ops -->
+  <rect x="390" y="445" width="220" height="60" rx="8" fill="#0d1117" stroke="#30363D" stroke-width="1.2"/>
+  <text x="405" y="470" fill="#FFFFFF" font-size="13" font-weight="600">Cloud Trace &amp; Logging</text>
+  <text x="405" y="490" fill="#8B949E" font-size="11">Flame Charts · BigQuery Sinks</text>
+
+  <!-- Group 3: Resilient Data & Storage -->
+  <rect x="700" y="100" width="260" height="460" rx="12" fill="url(#cardGrad)" stroke="#30363D" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="700" y="100" width="260" height="36" rx="12" fill="#21262d"/>
+  <text x="715" y="124" fill="#FBBC04" font-size="13" font-weight="600">3. DATA, SECURITY &amp; BACKUP</text>
+
+  <!-- Cloud SQL HA -->
+  <rect x="720" y="155" width="220" height="85" rx="8" fill="#0d1117" stroke="#FBBC04" stroke-width="1.5"/>
+  <text x="735" y="180" fill="#FFFFFF" font-size="13" font-weight="600">Cloud SQL: PostgreSQL HA</text>
+  <text x="735" y="200" fill="#8B949E" font-size="11">Regional Synchronous Replicas</text>
+  <text x="735" y="218" fill="#34A853" font-size="11">Row Locks: SELECT FOR UPDATE</text>
+
+  <!-- Workload Identity & PAM -->
+  <rect x="720" y="265" width="220" height="65" rx="8" fill="#0d1117" stroke="#30363D" stroke-width="1.2"/>
+  <text x="735" y="290" fill="#FFFFFF" font-size="13" font-weight="600">Workload Identity &amp; PAM</text>
+  <text x="735" y="310" fill="#8B949E" font-size="11">Keyless OIDC · CEL IAM Conditions</text>
+
+  <!-- Cloud Storage Archive Tier -->
+  <rect x="720" y="355" width="220" height="65" rx="8" fill="#0d1117" stroke="#30363D" stroke-width="1.2"/>
+  <text x="735" y="380" fill="#FFFFFF" font-size="13" font-weight="600">Cloud Storage Archive Tier</text>
+  <text x="735" y="400" fill="#8B949E" font-size="11">7-Year Regulatory Compliance</text>
+
+  <!-- upload.am Offsite -->
+  <rect x="720" y="445" width="220" height="65" rx="8" fill="#0d1117" stroke="#4285F4" stroke-width="1.2"/>
+  <text x="735" y="470" fill="#FFFFFF" font-size="13" font-weight="600">upload.am Offsite Cloud</text>
+  <text x="735" y="490" fill="#8B949E" font-size="11">Automated Daily 02:00 AM Sync</text>
+
+  <!-- Connecting Arrows -->
+  <!-- Ingestion to Processing -->
+  <path d="M 280 185 L 390 185" stroke="#4285F4" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4,4"/>
+  <path d="M 280 360 L 390 200" stroke="#34A853" stroke-width="2"/>
+  <path d="M 280 370 L 390 380" stroke="#58A6FF" stroke-width="2"/>
+
+  <!-- Processing to Data -->
+  <path d="M 610 200 L 720 200" stroke="#4285F4" stroke-width="2"/>
+  <path d="M 610 390 L 720 220" stroke="#FBBC04" stroke-width="2"/>
+  <path d="M 830 240 L 830 355" stroke="#8B949E" stroke-width="2" stroke-dasharray="3,3"/>
+  <path d="M 830 420 L 830 445" stroke="#4285F4" stroke-width="2"/>
+
+  <!-- Footer Stats -->
+  <rect x="40" y="575" width="920" height="30" rx="6" fill="#161b22"/>
+  <text x="60" y="595" fill="#8B949E" font-size="11">P95 Latency: &lt;800ms · Availability: 99.99% · Infrastructure TCO Reduction: -73% · Zero Double-Allocation Race Conditions</text>
+</svg>
