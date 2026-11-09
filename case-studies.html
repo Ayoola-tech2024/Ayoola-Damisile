@@ -59,6 +59,16 @@
           "proficiencyLevel": "Expert"
         },
         {
+          "@type": "TechArticle",
+          "@id": "https://www.damisile.name.ng/case-studies#buysolar",
+          "headline": "Resilient FinTech Edge Architecture & Dual Gemini AI Quoting: Inside BuySolar.ng",
+          "description": "682 edge routes, Paystack HMAC SHA-512 webhook signature verification, PostgreSQL Row-Level Security, and dual-provider Gemini 2.5 Flash failover engine.",
+          "author": { "@id": "https://www.damisile.name.ng/#person" },
+          "datePublished": "2026-11-09",
+          "inLanguage": "en",
+          "proficiencyLevel": "Expert"
+        },
+        {
           "@type": "Person",
           "@id": "https://www.damisile.name.ng/#person",
           "name": "Ayoola Damisile",
@@ -531,6 +541,97 @@ Similarity = (u · v) / (||u|| ||v||)
     Sequentially reads pending records -> Sends batch POST with unique idempotency nonces ->
     Server acknowledges write -> Record updated to syncStatus: 'synced' -> UI reflects verified state.
                     </pre>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- ========================================== -->
+        <!-- CASE STUDY 4: BUYSOLAR.NG ARCHITECTURE -->
+        <!-- ========================================== -->
+        <section id="buysolar" class="p-6 sm:p-8 rounded-2xl bento-card space-y-8 border dark:border-zinc-800 border-zinc-200">
+            <div class="space-y-4">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                        ENTERPRISE FINTECH & MULTIMODAL AI
+                    </span>
+                    <span class="text-xs font-mono dark:text-zinc-500 text-zinc-400">Production Commercial System • CAC CAC: 8168912</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold dark:text-white text-zinc-900 tracking-tight">
+                    Resilient FinTech Edge Architecture & Dual Gemini AI Quoting: Inside BuySolar.ng
+                </h2>
+                <p class="dark:text-zinc-400 text-zinc-600 leading-relaxed max-w-4xl">
+                    BuySolar.ng is a high-volume renewable energy marketplace and commercial quoting platform engineered from scratch. The system coordinates 682 edge routes across Next.js, securely reconciling online payments via Paystack HMAC SHA-512 cryptographic webhooks while powering instantaneous automated solar energy load sizing through a dual-provider Gemini 2.5 Flash multimodal failover pipeline.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-2.5 py-1 rounded bg-zinc-800/40 text-zinc-300 text-xs font-mono border border-zinc-700/50">Next.js Edge</span>
+                    <span class="px-2.5 py-1 rounded bg-zinc-800/40 text-zinc-300 text-xs font-mono border border-zinc-700/50">PostgreSQL RLS</span>
+                    <span class="px-2.5 py-1 rounded bg-zinc-800/40 text-zinc-300 text-xs font-mono border border-zinc-700/50">Paystack HMAC SHA-512</span>
+                    <span class="px-2.5 py-1 rounded bg-zinc-800/40 text-zinc-300 text-xs font-mono border border-zinc-700/50">Gemini 2.5 Flash Failover</span>
+                    <span class="px-2.5 py-1 rounded bg-zinc-800/40 text-zinc-300 text-xs font-mono border border-zinc-700/50">Distributed Rate Limiting</span>
+                </div>
+            </div>
+
+            <!-- Architectural Blueprint Flow -->
+            <div class="space-y-2">
+                <div class="text-xs font-mono font-bold dark:text-zinc-300 text-zinc-700 flex items-center gap-2">
+                    <i class="fa-solid fa-network-wired text-emerald-500"></i> BuySolar.ng Distributed FinTech & AI Engine
+                </div>
+                <div class="dark:bg-zinc-950 bg-zinc-100 p-4 sm:p-6 rounded-xl border dark:border-zinc-800 border-zinc-300 overflow-x-auto">
+                    <pre class="text-emerald-400 font-mono text-xs leading-relaxed">
+[Client Device: Customer Load Sizing / Checkout]
+          │
+          ▼
+[Next.js Edge Middleware: GeoIP Validation & Token Bucket Rate Limiting]
+          │
+          ├──> [AI Energy Sizing Route]
+          │          │
+          │          ▼
+          │    [Dual-Provider Gemini 2.5 Flash Pipeline]
+          │    Primary: Gemini 2.5 Flash (Direct API) ──[Failover / Timeout > 2500ms]──> Secondary Vertex AI Failover
+          │          │
+          │          ▼
+          │    [Structured Output Validation: Zod Schema JSON Parse] ──> [Real-Time Load Recommendation]
+          │
+          └──> [Financial Payment Route: Paystack Checkout]
+                     │
+                     ▼
+               [Inbound Paystack Webhook Event: 'charge.success']
+                     │
+                     ▼
+               [HMAC SHA-512 Cryptographic Signature Verification]
+               Raw Body + Secret Key ──> crypto.createHmac('sha512', SECRET).update(rawBody).digest('hex')
+                     │
+                     ├── Signature Mismatch ──> [HTTP 401 Unauthorized & Immediate Security Drop]
+                     │
+                     └── Signature Verified Valid
+                             │
+                             ▼
+                     [Idempotent Database Transaction: PostgreSQL RLS]
+                     BEGIN TRANSACTION -> SELECT id, status FROM orders WHERE reference = $1 FOR UPDATE ->
+                     Check idempotency (prevent double crediting) -> UPDATE status = 'paid' -> COMMIT
+                    </pre>
+                </div>
+            </div>
+
+            <!-- Engineering Highlights Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                <div class="p-5 rounded-xl dark:bg-zinc-900/60 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 space-y-3">
+                    <div class="text-sm font-bold dark:text-zinc-200 text-zinc-800 flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-emerald-500"></i> Zero-Trust Webhook Reconciliation
+                    </div>
+                    <p class="text-xs leading-relaxed dark:text-zinc-400 text-zinc-600">
+                        Financial webhooks operate over unauthenticated public networks. BuySolar.ng enforces raw-body cryptographic buffer validation against Paystack's HMAC SHA-512 signatures, rejecting payload tampering before parsing JSON. Every payment confirmation executes inside a PostgreSQL row-locked transaction (<code class="text-emerald-400">SELECT ... FOR UPDATE</code>) with cryptographic idempotency nonces, eliminating double-allocation race conditions during high-volume checkout bursts.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl dark:bg-zinc-900/60 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 space-y-3">
+                    <div class="text-sm font-bold dark:text-zinc-200 text-zinc-800 flex items-center gap-2">
+                        <i class="fa-solid fa-microchip text-emerald-500"></i> Multimodal AI Energy Quotation Engine
+                    </div>
+                    <p class="text-xs leading-relaxed dark:text-zinc-400 text-zinc-600">
+                        Calculating solar panel arrays and battery storage traditionally required manual engineering consultations. BuySolar.ng automates this via Gemini 2.5 Flash, parsing user appliance inventories and rooftop photos to output structured JSON recommendations in under 800ms. An automated failover circuit breaker guarantees 99.99% uptime even during upstream provider rate limits.
+                    </p>
                 </div>
             </div>
         </section>
