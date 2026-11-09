@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayoola Damisile — Solutions Architect & Cloud Systems Engineer CV</title>
+  <meta name="description" content="Executive CV for Ayoola Damisile Ayooluwa — Solutions Architect & Cloud Systems Engineer. Business Information Technology scholar at FUTA. Google Knowledge Graph ID: /g/11ynvpcp11.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --primary-dark: #1557b0;
+      --text-main: #202124;
+      --text-muted: #5f6368;
+      --border: #dadce0;
+      --bg: #ffffff;
+      --tag-bg: #e8f0fe;
+      --tag-text: #1967d2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-main);
+      background: #f8f9fa;
+      line-height: 1.45;
+      font-size: 13.5px;
+      padding: 24px;
+    }
+
+    .cv-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 40px 48px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(60,64,67,0.15), 0 1px 2px rgba(60,64,67,0.3);
+      position: relative;
+    }
+
+    .print-actions {
+      position: absolute;
+      top: 24px;
+      right: 48px;
+    }
+
+    .btn-print {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+
+    .btn-print:hover {
+      background: var(--primary-dark);
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2px;
+      margin-bottom: 8px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .contact-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .contact-links a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 12px;
+    }
+
+    section {
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    .summary-text {
+      color: #3c4043;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 8px 16px;
+      font-size: 12.5px;
+    }
+
+    .skill-category strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .skill-category span {
+      color: var(--text-muted);
+    }
+
+    .job-item {
+      margin-bottom: 12px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 13.5px;
+    }
+
+    .job-company {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .job-date {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    ul.bullets {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    ul.bullets li {
+      margin-bottom: 3px;
+      color: #3c4043;
+      font-size: 12.5px;
+    }
+
+    ul.bullets li strong {
+      color: var(--text-main);
+    }
+
+    .education-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .edu-title {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .edu-school {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .credentials-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      margin-top: 6px;
+      font-size: 12px;
+    }
+
+    .cred-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #3c4043;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .cv-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-actions {
+        display: none;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    <div class="print-actions">
+      <button class="btn-print" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        Print / Save PDF
+      </button>
+    </div>
+
+    <header>
+      <h1>Ayoola Damisile Ayooluwa</h1>
+      <div class="subtitle">Solutions Architect & Cloud Systems Engineer · Business Information Technology Scholar</div>
+      <div class="contact-links">
+        <span>📍 Akure, Nigeria</span>
+        <a href="tel:+2348169787869">📞 +234 816 978 7869</a>
+        <a href="mailto:damisileayoola@gmail.com">✉️ damisileayoola@gmail.com</a>
+        <a href="https://www.damisile.name.ng" target="_blank">🌐 damisile.name.ng</a>
+        <a href="https://www.linkedin.com/in/damisile-ayoola-096a7b382" target="_blank">💼 LinkedIn</a>
+        <a href="https://github.com/Ayoola-tech2024" target="_blank">🐙 GitHub</a>
+        <a href="https://www.google.com/search?kgmid=/g/11ynvpcp11" target="_blank" class="badge-pill">Knowledge Graph: /g/11ynvpcp11</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Executive Summary</h2>
+      <p class="summary-text">
+        Solutions Architect and Cloud Systems Engineer pursuing <strong>Business Information Technology (BIT)</strong> at the <strong>Federal University of Technology, Akure (FUTA)</strong>. Specializing in high-availability, low-latency cloud architectures and production FinTech infrastructure. Sole software engineer behind <strong>BuySolar.ng</strong> (682 edge routes, zero-trust Paystack HMAC SHA-512 webhook reconciliation, and dual-provider Gemini 2.5 Flash failover). Globally indexed semantic entity (<strong>Google Knowledge Graph ID: /g/11ynvpcp11</strong>, <strong>Wikidata: Q141703795</strong>). Targeting <strong>Google Cloud Customer Engineering (CE)</strong> and <strong>Solutions Architecture (SA)</strong> roles across EMEA.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Technical Competencies</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <strong>Cloud & Infrastructure:</strong>
+          <span>Google Cloud (Cloud Run, Cloud SQL HA, VPC, Shared VPC, Cloud NAT, Cloud Armor), Docker, Nginx, Coolify</span>
+        </div>
+        <div class="skill-category">
+          <strong>AI & Multimodal Systems:</strong>
+          <span>Vertex AI, Gemini 2.5 Flash, MediaPipe WebAssembly FaceMesh, circuit-breaker failover patterns</span>
+        </div>
+        <div class="skill-category">
+          <strong>Security & Cryptography:</strong>
+          <span>Zero-Trust, Paystack HMAC SHA-512 raw verification, AES-256-GCM, PBKDF2 (100k rounds), PostgreSQL RLS, PAM</span>
+        </div>
+        <div class="skill-category">
+          <strong>Languages & Runtimes:</strong>
+          <span>TypeScript, JavaScript (Node.js/Bun), Python, SQL (PostgreSQL, SQLite), Bash, Next.js</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Production Systems Engineering Experience</h2>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div><span class="job-title">BuySolar.ng</span> — <span class="job-company">Sole Founding Software Engineer & Lead Architect</span></div>
+          <div class="job-date">01/2024 – Present</div>
+        </div>
+        <ul class="bullets">
+          <li>Architected the entire digital commerce, FinTech edge, and automated solar sizing platform from scratch across <strong>682 Next.js edge routes</strong>, achieving sub-800ms median turnaround times on mobile 4G networks.</li>
+          <li>Engineered a <strong>zero-trust cryptographic payment reconciliation pipeline</strong> validating raw-body Paystack HMAC SHA-512 signatures, eliminating replay attacks and double-crediting race conditions via PostgreSQL row locks (<code>SELECT ... FOR UPDATE</code>) and cryptographic nonces.</li>
+          <li>Built a <strong>dual-provider Gemini 2.5 Flash multimodal quoting pipeline</strong> with an automated 2,200ms latency circuit breaker, translating rooftop imagery and appliance inventories into structured JSON hardware recommendations.</li>
+          <li>Engineered corporate digital presence for <a href="https://lightsupenergy.com" target="_blank" style="color: inherit; text-decoration: underline;">lightsupenergy.com</a>.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div><span class="job-title">checkIn (FUTA SLIT)</span> — <span class="job-company">Lead Systems Architect & Biometrics Engineer</span></div>
+          <div class="job-date">03/2024 – Present</div>
+        </div>
+        <ul class="bullets">
+          <li>Architected a production campus attendance system powered by <strong>Google MediaPipe WebAssembly FaceMesh</strong> extracting 468 3D facial landmarks in real time directly on client browsers.</li>
+          <li>Enforced <strong>zero server-side biometric storage</strong> by executing vector similarity comparisons client-side, guaranteeing full NDPR/GDPR privacy compliance.</li>
+          <li>Engineered an offline-first transactional drain queue using IndexedDB and Haversine spatial geofencing, ensuring zero data loss during campus network dropouts.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Published Developer Tooling & Open Source</h2>
+      <div class="job-item">
+        <div class="job-header">
+          <div><span class="job-title">fixmcp</span> — <span class="job-company">npm CLI Tool (<code>npx fixmcp</code>)</span></div>
+          <div class="job-date">Author</div>
+        </div>
+        <ul class="bullets">
+          <li>Engineered a Model Context Protocol (MCP) diagnostics engine executing real stdio JSON-RPC 2.0 handshakes (<code>initialize</code>, <code>tools/list</code>) across Claude Code, Cursor, and VS Code, auto-healing unpinned <code>@latest</code> boot loops.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div><span class="job-title">@damisile_ayoola/envvault</span> — <span class="job-company">npm Package</span></div>
+          <div class="job-date">Author</div>
+        </div>
+        <ul class="bullets">
+          <li>Zero-disk runtime secrets manager injecting encrypted credentials directly into child process memory (<code>process.env</code>) using 100,000-iteration PBKDF2 SHA-512 key derivation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education & Verified Credentials</h2>
+      <div class="education-item">
+        <div><span class="edu-title">B.Sc. Business Information Technology</span> — <span class="edu-school">Federal University of Technology, Akure (FUTA)</span></div>
+        <div class="job-date">Expected 2027</div>
+      </div>
+      <div class="credentials-list">
+        <span class="cred-item">🏅 <strong>IBM Cybersecurity Analyst</strong> (ID: 83Z8PYF1AZ8H)</span>
+        <span class="cred-item">🏅 <strong>Google AI Essentials</strong> (Credly)</span>
+        <span class="cred-item">☁️ <strong>Google Cloud Associate Cloud Engineer (ACE)</strong> (In Progress)</span>
+        <span class="cred-item">🔬 <strong>Frontiers Loop Researcher</strong> (#3228692)</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
