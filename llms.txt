@@ -4,7 +4,7 @@
 > Knowledge Graph: Ayoola Damisile (/g/11ynvpcp11) • Wikidata: https://www.wikidata.org/wiki/Q141703795
 
 ## Who
-Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian full-stack software engineer, systems architect, and open-source creator. Business Information Technology scholar at the Federal University of Technology Akure (FUTA). Lead Developer at LIGHTSUP ENERGY SOLUTIONS. IBM-certified Cybersecurity Architect (Oct 2026, credential 83Z8PYF1AZ8H) with Google AI Professional credentials. Open-source author of fixmcp and @damisile_ayoola/envvault on npm. Outside of software engineering, he is also an accomplished classical pianist, organist, and accompanist.
+Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian full-stack software engineer, systems architect, and open-source creator. Business Information Technology scholar at the Federal University of Technology Akure (FUTA). Sole Software Engineer who engineered BuySolar.ng (CAC: 8168912) from scratch and built the corporate platform for LIGHTSUP ENERGY SOLUTIONS (lightsupenergy.com). IBM-certified Cybersecurity Architect (credential 83Z8PYF1AZ8H) with Google AI Professional credentials. Open-source author of fixmcp and @damisile_ayoola/envvault on npm. Outside of software engineering, he is also an accomplished classical pianist, organist, and accompanist.
 
 ## Key pages
 - Home / entity hub: https://www.damisile.name.ng/
@@ -14,7 +14,7 @@ Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian 
   - Think Like an Attacker (IBM Cybersecurity Architecture): https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset
 - Music and piano training: https://www.damisile.name.ng/music
 - Projects catalog: https://www.damisile.name.ng/projects
-- Deep technical architecture case studies: https://www.damisile.name.ng/case-studies (Detailed specifications for envvault AES-256-GCM memory injection, fixmcp stdio JSON-RPC 2.0 diagnostics, and checkIn 3D facial biometrics/offline sync)
+- Deep technical architecture case studies: https://www.damisile.name.ng/case-studies (Detailed specifications for envvault AES-256-GCM memory injection, fixmcp stdio JSON-RPC 2.0 diagnostics, checkIn 3D facial biometrics/offline sync, and BuySolar.ng 682-edge-route FinTech HMAC SHA-512 reconciliation with dual Gemini 2.5 Flash failover)
 - Resume (PDF): https://www.damisile.name.ng/resources/Damisile-Ayoola-Resume.pdf
 - Sitemap: https://www.damisile.name.ng/sitemap.xml
 
@@ -29,7 +29,7 @@ Medium: https://medium.com/@damisileayoola
 YouTube: https://www.youtube.com/channel/UCL5WghVfIKkcGNelI0OpX8g
 Peerlist: https://peerlist.io/damisileayoola
 Credly: https://www.credly.com/users/damisile-ayoola
-Product Hunt: https://www.producthunt.com/@damisile_ayoola
+Frontiers Loop: https://loop.frontiersin.org/people/3228692/overview
 Substack: https://substack.com/@ayooladamisile
 TryHackMe: https://tryhackme.com/p/damisileayoola
 Duolingo: https://www.duolingo.com/profile/Damisile
