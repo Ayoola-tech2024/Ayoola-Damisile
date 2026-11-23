@@ -323,26 +323,47 @@
 
       <div class="job-item">
         <div class="job-header">
-          <div><span class="job-title">checkIn (FUTA SLIT)</span> — <span class="job-company">Lead Systems Architect & Biometrics Engineer</span></div>
+          <div><span class="job-title">checkIn (FUTA SLIT)</span> — <span class="job-company">Lead Systems & Client-Side Engineer</span></div>
           <div class="job-date">03/2024 – Present</div>
         </div>
         <ul class="bullets">
-          <li>Architected a production campus attendance system powered by <strong>Google MediaPipe WebAssembly FaceMesh</strong> extracting 468 3D facial landmarks in real time directly on client browsers.</li>
-          <li>Enforced <strong>zero server-side biometric storage</strong> by executing vector similarity comparisons client-side, guaranteeing full NDPR/GDPR privacy compliance.</li>
+          <li>Architected campus attendance verification powered by <strong>Google MediaPipe WebAssembly FaceMesh</strong> extracting 468 3D facial landmarks directly on client browsers for geometric distance matching.</li>
+          <li>Enforced <strong>zero server-side biometric storage</strong> by executing geometric landmark Euclidean comparisons client-side, guaranteeing full NDPR/GDPR privacy compliance.</li>
           <li>Engineered an offline-first transactional drain queue using IndexedDB and Haversine spatial geofencing, ensuring zero data loss during campus network dropouts.</li>
         </ul>
       </div>
     </section>
 
     <section>
-      <h2>Published Developer Tooling & Open Source</h2>
+      <h2>Standards & Open Source Contributions</h2>
       <div class="job-item">
         <div class="job-header">
-          <div><span class="job-title">fixmcp</span> — <span class="job-company">npm CLI Tool (<code>npx fixmcp</code>)</span></div>
+          <div><span class="job-title">W3C Web Machine Learning Spec</span> — <span class="job-company">Community Group Contributor</span></div>
+          <div class="job-date">2026</div>
+        </div>
+        <ul class="bullets">
+          <li>Authored Issue <a href="https://github.com/webmachinelearning/web-nn/issues/288" target="_blank" style="color: inherit; text-decoration: underline;">#288</a> discovering user activation approval loop bypass when AI agents both invoke tools and automate the DOM; cited directly by W3C specification editors in Issue #365.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div><span class="job-title">InsForge (YC W24)</span> — <span class="job-company">Open Source Contributor & Reviewer</span></div>
+          <div class="job-date">2026</div>
+        </div>
+        <ul class="bullets">
+          <li>Authored PR <a href="https://github.com/InsForge/InsForge/pull/1965" target="_blank" style="color: inherit; text-decoration: underline;">#1965</a> adding Paystack payment provider for West African developers (15 green CI suites, clean merge state).</li>
+          <li>Contributed security code reviews on PR <a href="https://github.com/InsForge/InsForge/pull/2218" target="_blank" style="color: inherit; text-decoration: underline;">#2218</a> (PostgreSQL DDL event triggers for Row Level Security) and PR <a href="https://github.com/InsForge/InsForge/pull/2219" target="_blank" style="color: inherit; text-decoration: underline;">#2219</a> (SMTP host SSRF prevention and DNS rebinding mitigations).</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div><span class="job-title">fixmcp</span> — <span class="job-company">npm Package (<code>npx fixmcp</code> / <code>fixmcp serve</code>)</span></div>
           <div class="job-date">Author</div>
         </div>
         <ul class="bullets">
-          <li>Engineered a Model Context Protocol (MCP) diagnostics engine executing real stdio JSON-RPC 2.0 handshakes (<code>initialize</code>, <code>tools/list</code>) across Claude Code, Cursor, and VS Code, auto-healing unpinned <code>@latest</code> boot loops.</li>
+          <li>Engineered dual-mode Model Context Protocol (MCP) diagnostics engine and stdio server executing real JSON-RPC 2.0 handshakes (<code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>) across 6 agent environments with 24 passing unit tests.</li>
         </ul>
       </div>
 
@@ -352,7 +373,7 @@
           <div class="job-date">Author</div>
         </div>
         <ul class="bullets">
-          <li>Zero-disk runtime secrets manager injecting encrypted credentials directly into child process memory (<code>process.env</code>) using 100,000-iteration PBKDF2 SHA-512 key derivation.</li>
+          <li>Zero-disk runtime secrets manager injecting encrypted credentials directly into child process memory (<code>process.env</code>) using AES-256-GCM and PBKDF2 key derivation, backed by an 18-test tamper detection suite.</li>
         </ul>
       </div>
     </section>
