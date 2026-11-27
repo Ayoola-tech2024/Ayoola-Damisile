@@ -9,6 +9,7 @@ Ayoola Damisile (also: Damisile Ayoola, Ayoola Damisile Ayooluwa) is a Nigerian 
 ## Key pages
 - Home / entity hub: https://www.damisile.name.ng/
 - Essays: https://www.damisile.name.ng/blog
+  - The Invisible DOM Trap (Why Browser Agents Bypass Human Approval): https://www.damisile.name.ng/blog-invisible-dom-trap-w3c
   - The Unseen Cost of Building (14-Hour Days, Expensive Data, and Open Source): https://www.damisile.name.ng/blog-the-unseen-cost-of-building
   - How npx @latest Was Silently Killing My MCP Servers: https://www.damisile.name.ng/blog-fixmcp-mcp-doctor
   - Think Like an Attacker (IBM Cybersecurity Architecture): https://www.damisile.name.ng/blog-ibm-cybersecurity-mindset
